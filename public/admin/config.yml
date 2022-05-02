@@ -1,0 +1,124 @@
+backend:
+  name: git-gateway
+  # git-gateway
+media_folder: public/assets/images
+public_folder: assets/images
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "Home"
+        name: "home"
+        file: "utils/files/homepage.yml"
+        fields:
+          - { label: "About short", name: "aboutShort", widget: "markdown" }
+          - {
+              label: Selected Projects,
+              name: selectedProjects,
+              widget: "list",
+              allow_add: true,
+              collapsed: true,
+              fields:
+                [
+                  { label: "Title", name: "title", widget: "string" },
+                  { label: "Image", name: "image", widget: "image" },
+                  { label: "Page Slug", name: "slug", widget: "string" },
+                  {
+                    label: "Tags",
+                    name: "tags",
+                    widget: "list",
+                    hint: "Use comma to separate strings",
+                    allow_add: true,
+                    collapsed: true,
+                  },
+                ],
+            }
+          - {
+              label: "NDA disclaimer",
+              name: "ndaDisclaimer",
+              widget: "markdown",
+            }
+          - {
+              label: "More works description",
+              name: "moreWorksDesc",
+              widget: "text",
+            }
+          - {
+              label: More Works,
+              name: moreWorks,
+              widget: "list",
+              allow_add: true,
+              collapsed: true,
+              fields:
+                [
+                  { label: "Title", name: "title", widget: "string" },
+                  { label: "Image", name: "image", widget: "image" },
+                  { label: "Url", name: "url", widget: "string" },
+                  { label: "Description", name: "description", widget: "text" },
+                ],
+            }
+      - label: "About"
+        name: "about"
+        file: "utils/files/about.yml"
+        fields:
+          - { label: "Intro", name: "intro", widget: "markdown" }
+          - { label: "Description", name: "description", widget: "markdown" },
+          - { label: "Avatar", name: "avatar", widget: "image" },
+          - {
+              label: "Skills",
+              name: "skill",
+              widget: "list",
+              hint: "Use comma to separate strings",
+              allow_add: true,
+              collapsed: true,
+            }
+      - label: "Projects"
+        name: "projects"
+        file: "utils/files/projects.yml"
+        fields:
+          - {
+              label: Projects,
+              name: projects,
+              widget: "list",
+              allow_add: true,
+              collapsed: true,
+              fields:
+                [
+                  { label: "Title", name: "title", widget: "string" },
+                  { label: "Slug", name: "slug", widget: "string" },
+                  { label: "Image", name: "image", widget: "image" },
+                  {
+                    label: "Description",
+                    name: "description",
+                    widget: "markdown",
+                  },
+                  { label: "Company", name: "company", widget: "string" },
+                  { label: "Date", name: "date", widget: "string" },
+                  { label: "Link", name: "link", widget: "string" },
+                  { label: "Github", name: "github", widget: "string", required: false },
+                  {
+                    label: "Stack",
+                    name: "stack",
+                    widget: "list",
+                    hint: "Use comma to separate strings",
+                    allow_add: true,
+                    collapsed: true,
+                  },
+                  {
+                    label: "Text Block",
+                    name: "textBlock",
+                    widget: "list",
+                    allow_add: true,
+                    collapsed: true,
+                    fields:
+                      [
+                        {
+                          label: "Category",
+                          name: "category",
+                          widget: "string",
+                        },
+                        { label: "Body", name: "body", widget: "markdown" },
+                      ],
+                  },
+                ],
+            }

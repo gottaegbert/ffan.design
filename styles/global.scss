@@ -1,0 +1,228 @@
+@import "grid";
+@import "variables";
+@import "fonts";
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: black;//affect the img？
+  margin: 0;
+  font-family: $font-light;
+  color: $white;
+  font-size: 20px;
+  line-height: 1.4;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+ul,
+li {
+  margin: 0;
+  font-weight: normal;
+  em {
+    font-style: normal;
+  }
+  strong {
+    font-weight: normal;
+    font-family: $font-regular;
+  }
+}
+
+h1 {
+  font-size: 34px;
+  line-height: 1.2;
+  @media only screen and (min-width: $breakpoint-sm) {
+    font-size: 64px;
+  }
+  @media only screen and (min-width: $breakpoint-md) {
+    font-size: 80px;
+  }
+  @media only screen and (min-width: $breakpoint-lg) {
+    font-size: 112px;
+  }
+}
+
+h2 {
+  font-size: 40px;
+  line-height: 1.2;
+  font-family: $font-light;
+  @media only screen and (min-width: $breakpoint-sm) {
+    font-size: 80px;
+  }
+  @media only screen and (min-width: $breakpoint-md) {
+    font-size: 92px;
+  }
+  @media only screen and (min-width: $breakpoint-lg) {
+    font-size: 112px;
+  }
+}
+
+h3 {
+  font-size: 36px;
+  line-height: 1.2;
+  font-family: $font-light;
+  @media only screen and (min-width: $breakpoint-sm) {
+    font-size: 56px;
+  }
+  @media only screen and (min-width: $breakpoint-md) {
+    font-size: 64px;
+  }
+  @media only screen and (min-width: $breakpoint-lg) {
+    font-size: 64px;
+  }
+}
+h4 {
+  font-size: 24px;
+  line-height: 1.4;
+  font-family: $font-light;
+  @media only screen and (min-width: $breakpoint-md) {
+    font-size: 32px;
+  }
+}
+h5 {
+  font-size: 20px;
+  line-height: 1;
+  font-family: $font-regular;
+  @media only screen and (min-width: $breakpoint-md) {
+    font-size: 24px;
+  }
+}
+
+p {
+  font-family: $font-light;
+  font-size: 16px;
+  line-height: 1.4;
+  @media only screen and (min-width: $breakpoint-md) {
+    font-size: 20px;
+    line-height: 1.6;
+  }
+}
+p.small {
+  font-family: $font-light;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+p.xsmall {
+  font-family: $font-light;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+a {
+  color: $black;
+}
+a:hover,
+a:active {
+  color: $accent-color;
+}
+
+label,
+.label {
+  line-height: 1.5;
+  font-size: 12px;
+  line-height: 1.2;
+  letter-spacing: 2px;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+li {
+  padding-left: 20px;
+  position: relative;
+  line-height: 1.5;
+  font-family: monospace;
+
+  &:before {
+    content: "";
+    height: 5px;
+    width: 5px;
+    background-color: $accent-color;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: calc(50% - 2px);
+  }
+}
+
+::selection {
+  background: $accent-color; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: $accent-color; /* Gecko Browsers */
+}
+
+.hide {
+  visibility: none;
+}
+
+.nav-el {
+  opacity: 0;
+  transform: translate(0%, -100%);
+}
+
+.sectionSpacing {
+  position: relative;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  @media only screen and (min-width: $breakpoint-sm) {
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
+  @media only screen and (min-width: $breakpoint-md) {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+}
+
+.description {
+  margin-bottom: 35px;
+  margin-top: 35px;
+  @media only screen and (min-width: $breakpoint-sm) {
+    margin-bottom: 45px;
+    margin-top: 45px;
+  }
+  @media only screen and (min-width: $breakpoint-md) {
+    margin-bottom: 60px;
+    margin-top: 60px;
+  }
+}
+
+.tagContainer {
+  display: flex;
+  flex-wrap: wrap;
+  p {
+    display: inline;
+    position: relative;
+    margin-right: 24px;
+    color: $dark-grey;
+    text-decoration: none;
+
+    &::after {
+      content: "";
+      height: 5px;
+      width: 5px;
+      border-radius: 50%;
+      background-color: $dark-grey;
+      position: absolute;
+      right: -15px;
+      top: 49%;
+      transform: translateY(-50%);
+    }
+    &:last-child::after {
+      display: none;
+    }
+  }
+}

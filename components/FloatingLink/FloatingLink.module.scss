@@ -1,0 +1,116 @@
+@import "../../styles/variables.scss";
+
+.heroLink {
+  margin: 10px;
+  transition: transition(left);
+  transition: transition(top);
+  @media only screen and (min-width: $breakpoint-sm) {
+    margin: 20px;
+  }
+  @media only screen and (min-width: $breakpoint-md) {
+    align-items: center;
+    display: -webkit-flex;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    -webkit-align-items: center;
+    left: 40px;
+    top: 100%;
+    transform: translateX(-50%) translateY(-50%);
+
+    position: absolute;
+    animation: 2000ms ease-in-out 3s infinite alternate none running
+      move-up-down;
+    animation-delay: 200ms;
+
+    &::before {
+      transform: translate3d(0, 0, -1);
+      height: 600px;
+      width: 600px;
+      background-color: transparent;
+      border: 1px solid #6D9B77;
+      border-radius: 50%;
+      content: "";
+      pointer-events: none;
+      position: absolute;
+      transition: 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    &.heroLink2 {
+      left: calc(100% - 300px);
+      top: -350px;
+      animation-delay: -666ms;
+      &::before {
+        height: 800px;
+        width: 800px;
+      }
+    }
+    &.heroLink3 {
+      left: calc(100% - 80px);
+      top: calc(100% - 70px);
+      animation-delay: -1333ms;
+
+      &::before {
+        height: 400px;
+        width: 400px;
+      }
+    }
+  }
+  @media only screen and (min-width: $breakpoint-lg) {
+    &.heroLink2 {
+      left: calc(100% - 400px);
+      top: -450px;
+      &::before {
+        height: 500px;
+        width: 500px;
+      }
+    }
+    &.heroLink3 {
+      left: calc(100% - 50px);
+      top: calc(100% - 70px);
+      &::before {
+        height: 400px;
+        width: 400px;
+      }
+    }
+  }
+
+  span {
+    background-color: #f5f5f5;
+    border-radius: 50%;
+    height: 0;
+    width: 0;
+    transition: 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+    img {
+      display: block;
+      height: 32px;
+      width: 32px;
+      -o-object-fit: contain;
+      object-fit: contain;
+      opacity: 0;
+    }
+  }
+
+  &:hover {
+    &::before {
+      height: 200px;
+      width: 200px;
+    }
+  }
+}
+
+@keyframes move-up-down {
+  0% {
+    -webkit-transform: translateX(-50%) translateY(calc(-50% + 10px));
+    transform: translateX(-50%) translateY(calc(-50% + 10px));
+  }
+  100% {
+    -webkit-transform: translateX(-50%) translateY(calc(-50% - 10px));
+    transform: translateX(-50%) translateY(calc(-50% - 10px));
+  }
+}

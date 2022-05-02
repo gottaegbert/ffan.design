@@ -1,0 +1,169 @@
+@import "../../styles/variables.scss";
+
+.nav {
+  background-color: #000000;
+  height: $nav-h;
+  width: 100%;
+  max-width: $grid-max-width;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 $grid-margins;
+  margin: auto;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  z-index: 99;
+  transform: translateX(-50%);
+  @media only screen and (min-width: $breakpoint-sm) {
+    height: $nav-h-sm;
+    padding: 0 $grid-margins-sm;
+  }
+  @media only screen and (min-width: $breakpoint-md) {
+    height: $nav-h-md;
+    padding: 0 $grid-margins-md;
+  }
+  @media only screen and (min-width: $breakpoint-lg) {
+    height: $nav-h-lg;
+    padding: 0 $grid-margins-lg;
+  }
+  a {
+    font-size: 16px;
+    line-height: 1;
+    text-decoration: none;
+    transition: transition(color);
+  }
+}
+
+.aboutLink {
+  margin-left: auto;
+}
+
+.navLink {
+  padding-left: 20px;
+  @media only screen and (min-width: $breakpoint-md) {
+    padding-left: 40px;
+  }
+}
+
+.ddContainer {
+  position: relative;
+  padding: 20px 0;
+  cursor: pointer;
+  &:hover p {
+    color: $accent-color;
+    &:after {
+      border-top: 5px solid $accent-color;
+    }
+  }
+}
+
+p.ddTitle {
+  padding-left: 20px;
+  line-height: 1;
+  cursor: pointer;
+  position: relative;
+  padding-right: 20px;
+  transition: transition(color);
+  @media only screen and (min-width: $breakpoint-md) {
+    padding-left: 40px;
+  }
+  &:hover {
+    color: $accent-color;
+    &:after {
+      border-top: 5px solid $accent-color;
+    }
+  }
+  &:after {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid $black;
+    content: "";
+    height: 0;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    transition: transition(border-top);
+    width: 0;
+  }
+}
+
+.dropdown {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  transition: all 0.5s ease;
+  display: none;
+  align-items: flex-start;
+  background-color: $white;
+  border: 1px solid $border;
+  display: flex;
+  flex-direction: column;
+
+  padding: 0 30px 30px;
+  position: absolute;
+  top: calc(100% - 0.5rem);
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  transition: opacity 0.3s ease-out;
+  visibility: hidden;
+  width: 200px;
+  z-index: 11;
+  left: 10%;
+  @media only screen and (min-width: $breakpoint-sm) {
+    left: 15%;
+  }
+
+  @media only screen and (min-width: $breakpoint-md) {
+    left: 30%;
+  }
+  @media only screen and (min-width: $breakpoint-lg) {
+    left: 50%;
+  }
+  &:before {
+    border-bottom: 8px solid $border;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    content: "";
+    height: 0;
+    position: absolute;
+    top: -8px;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 0;
+    left: 70%;
+    @media only screen and (min-width: $breakpoint-sm) {
+      left: 68%;
+    }
+    @media only screen and (min-width: $breakpoint-md) {
+      left: 68%;
+    }
+    @media only screen and (min-width: $breakpoint-lg) {
+      left: 55%;
+    }
+  }
+}
+.ddContainer:hover > .dropdown,
+.dropdown:hover {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+}
+
+.dropdown a {
+  align-items: center;
+  display: flex;
+  margin-top: 30px;
+  width: 100%;
+  clear: both;
+
+  img {
+    height: 24px;
+    margin-right: 15px;
+    -o-object-fit: contain;
+    object-fit: contain;
+    width: 24px;
+  }
+}

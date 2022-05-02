@@ -1,0 +1,62 @@
+@import "../../styles/variables.scss";
+.work {
+  text-decoration: none;
+  position: relative;
+  display: block;
+  article {
+    padding: 50px 0 26px 0;
+    border-bottom: 1px solid $light-grey;
+  }
+  &:hover {
+    color: inherit;
+  }
+  &:hover .arrowContainer {
+    transform: rotate(-30deg);
+    transition: transition(transform);
+  }
+  &:hover .titleContainer .arrowContainer .arrowBg {
+    height: 60px;
+    width: 60px;
+    transition: height 150ms ease-out, width 150ms ease-out;
+  }
+  .titleContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    h4 {
+      margin-bottom: 8px;
+      text-decoration: none;
+    }
+    .arrowContainer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      transition: transition(transform);
+
+      img {
+        z-index: 1;
+        width: 60%;
+        @media only screen and (min-width: $breakpoint-md) {
+          width: unset;
+        }
+      }
+
+      .arrowBg {
+        background-color: $accent-color;
+        height: 0;
+        width: 0;
+        border-radius: 50%;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 0;
+        transition: height 150ms ease-out, width 150ms ease-out;
+      }
+    }
+  }
+  .desc {
+    margin-right: 52px;
+  }
+}
