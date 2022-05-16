@@ -1,41 +1,31 @@
 aboutShort: Hi 👋, I am a Designer trying to design the digital world. I am also a web developer moving pixels in the www. I have 3 years of experience in building, and sometimes designing, digital experiences. Currently as a Msc student in Digital and Interaction Design @ Politechnico di Milano
 selectedProjects:
-  - title: Fishing Prediction Maps
-    slug: /projects/fishingpredictionmaps
+  - title: Once upon a time away from school - weibo hottrend and emoji
+    image: assets/images/HSY-Portfolio-Export_Page_32.jpg
+    slug: /projects/weibo
     tags:
-      - React
-      - Mapbox
+      - Social network
+      - Data scraping
+      - Data visualization
+  - title: AI mirror
+    slug: /projects/aimirror
+    tags:
+      - Interaction
+      - AI
       - Data-Visualization
-      - PWA
-    image: assets/images/fishing-prediction-map.webp
-  - title: STC - Telcom
-    image: assets/images/stc.webp
-    slug: /projects/stc
+      - ACM
+    image: assets/images/HSY-Portfolio-Export_Page_46.jpg
+  - title: Moving olmipics
+    slug: /projects/movingolmipics
     tags:
-      - React
-      - Design-Language-System
-      - Storybook
-ndaDisclaimer: Unfortunately a lot of the projects that I am most proud of are
-  under NDA. Some of them are about to be published and hopefully I will be able
-  to make this list grow.
-moreWorksDesc: This is a collection of smaller or older projects and code
-  snippets I worked on. Most of them can also be found on my [Github](https://github.com/gottaegbert).
+      - Motion capture
+      - Unity
+      - VFX
+    image: assets/images/HSY-Portfolio-Export_Page_40.jpg
+ndaDisclaimer: Hola. Some of my project are still under protection of company.
+moreWorksDesc: This is a collection of smaller or older projects and codesnippets I worked on. Most of them can also be found on my [Github](https://github.com/gottaegbert).
 moreWorks:
-  - title: Frogdesign
-    description: Implementing the new design with Next.js, Wordpress and a lot of animations.
-    url: https://www.frogdesign.com
+  - title: 3D element generation on web poster editing tool
+    description: Implementing the three.js library in web canvas and let user have 3d font effect and other animation element on their recommendation poster. 
+    url: https://www.nolipix.com/
     image: assets/images/frog.png
-  - title: Knots Analytics
-    image: assets/images/knots.png
-    url: https://knotsanalytics.com/
-    description: Design & development - using Next.js and Figma.
-  - title: Face Blurring Tool
-    description:
-      Uses face recognition to detect faces in pictures and blurs them.
-      Built as a tool for design research.
-    url: https://blur.frogdesign.com/
-    image: assets/images/blur.png
-  - title: RGB Color Displacement
-    description: A starter project for React Three Fiber and Gatsby
-    url: https://rgb-hover-displacement.netlify.app/
-    image: assets/images/rgb.png

@@ -107,7 +107,7 @@ const IndexPage: React.FC<Props> = ({ data }) => {
             </Link> */}
           </div>
         </section>
-        {/* <section className={cn("sectionSpacing", styles.selectedWorkContainer)}>
+        <section className={cn("sectionSpacing", styles.selectedWorkContainer)}>
           <div className="grid">
             <div className={"col-12 "}>
               <StaggeredTitle
@@ -153,7 +153,7 @@ const IndexPage: React.FC<Props> = ({ data }) => {
               <Work {...work} key={"work" + idx} />
             ))}
           </div>
-        </section> */}
+        </section>
       </Layout>
       <Cursor imgArray={moreWorks.map((work) => work.image)} />
     </StoreProvider>
