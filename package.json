@@ -9,7 +9,13 @@
   },
   "dependencies": {
     "@babel/core": "^7.16.0",
+    "@react-three/a11y": "^2.1.0",
+    "@react-three/cannon": "^2.5.0",
+    "@react-three/drei": "7.1.0",
+    "@react-three/fiber": "7.0.4",
+    "@react-three/postprocessing": "2.0.3",
     "@types/js-yaml": "^4.0.5",
+    "@types/three": "^0.130.0",
     "babel-plugin-macros": "^3.1.0",
     "classnames": "^2.3.1",
     "fs": "^0.0.1-security",
@@ -19,7 +25,9 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-markdown": "^7.1.1",
-    "sass": "^1.44.0"
+    "sass": "^1.44.0",
+    "three": "0.130.1",
+    "use-cannon": "^0.5.3"
   },
   "devDependencies": {
     "@netlify/plugin-nextjs": "^4.0.0-beta.13",
