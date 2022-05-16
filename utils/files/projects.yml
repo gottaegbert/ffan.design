@@ -1,68 +1,150 @@
 projects:
-  - title: STC - Telcom
-    slug: stc
-    image: assets/images/stc.webp
-    description: "#### Stc is a leading telecom and technology service provider.
-      They partnered with frog (the company I currently work for) to redesign
-      and implement the entire ecosystem of web and mobile apps. Which was done
-      by creating a whole new Design Language System (DLS)."
-    company: STC
-    link: https://www.stc.com.kw/en
-    date: "2021"
+  - title: weibo hottrend and emoji
+    slug: weibo
+    image: assets/images/HSY-Portfolio-Export_Page_32.jpg
+    description: "social network sentiment analysis"
+    company: personal project
+    link: https://gottaegbert.github.io/webshow1/trendingofschopen.html
+    date: "2020"
     textBlock:
       - category: Objectives
         body:
-          The newly desigend DLS needed to be translated into code and implemented
-          across three different touchpoints. A mobile app and two websites (one B2B and one B2C).
-          To do so we created an extra react component library.
+          Once Upon A Time Away From School Provide Insight Into How Students Felt During The
+          Time Away From School Because Of The Pandemic.
+          The Joy Of Vacation And The Growing Anxiety When The Start Of School Is Nowhere In
+          Sight; People's Psychology Also Fluctuates With Each Hot Trending News. It's A Social
+          Experiment For Every Student. It Also Tests The Family Relationship, Economic
+          Management, Social Relations, Learning Attitude, And Students' Learning Environ-
+          Ment. It Also Tests The System And Culture Of Higher Education In China. Let's See The
+          Data, And It's A Visualization From The Social Network.
       - category: My role
-        body:
-          In a team made mostly of contractors, I was the only in house front-end
-          developer working on the websites. As such I was in charge of
-          enforcing best practices, writing code and code reviews, and be the link between developers and designers.
+        body: >-
+          Topic Define And Web Scraping
+
+
+          Data Mining And Cleaning
+
+
+          Data Visualization
+
+
+          Website Design And Development
+
+
+          Video Making And Poseter Design
       - category: Architecture
         body: >-
-          The mobile app and the websites were built in a monorepo using respectively
-          react native and react.js so that they could share most of the logic,
-          hooks, state management, types, epics etc..
+          Mood overall visualization
 
 
-          In order to also share the components across the websites we built a component library using React and Storybook.
+          Timeline racegraph
 
 
-          Each one of the two website is divided into two main sections: a brochure section and a dashboard section.
-
-
-          The first one is almost entirely stateless, backend driven, and server side rendered. The dashboard is the section of the website where the user can interact with STC services and is client side rendered.
+          Emotions Of Different Type Trending Filter Manually
     stack:
-      - React
-      - Redux
-      - SCSS
-      - Storybook
-      - Typescript
-      - i18n
-  - title: Fishing Prediction Maps
-    slug: fishingpredictionmaps
-    image: assets/images/fishing-prediction-map.webp
-    description: "#### Fishing Prediction Maps is a unique service in the Mediterranean Sea: a reliable fishing forecast powered by artificial intelligence and predictive models."
-    company: Knots
-    date: Feb, 2022
-    link: https://fishingpredictionmaps.com
-    github: https://github.com/knotsanalytics/fishing_prediction_maps_website
+      - html
+      - python
+      - sql
+  - title: aimirror
+    slug: aimirror
+    image: assets/images/HSY-Portfolio-Export_Page_32.jpg
+    description: 
+    company: 
+    link: 
     textBlock:
-      - category: In a nutshell
+      - category:
+        body:
+        
+      - category: My role
         body: >-
-          The interactive map displays the predicted fishing probability (FP) by zone and species for the next week, on a scale from zero to one. This variable represents how easy it will be to fish a species in a precise spot. Zero is assigned to areas where it will be more difficult to find and fish a species, while one to an area where it will be easier on a given day.
-      - body: I worked closely with the data scientists to design and develop the interface of the webapp and its architecture. The goal was to deliver a simple and intuitive way to display their data without crowding the interface with too much information but still being useful to the end user.
-        category: My role
-      - body: "The data produced by the model (running on the company server) get pushed every week on a AWS S3 bucket in the form of .pbf files. These files are then exposed at three different domains to improve performance. The front end then uses mapbox-gl-js to consume and render the .pbf files.
+         
+      - category: 
+        body: >-
+
+    stack:
+  
+  - title: Moving olmipics
+    slug: movingolimipic
+    image: 
+    description: 
+    company: personal project
+    link: 
+    date: "2020"
+    textBlock:
+      - category: Objective
+        body:
+      - category: My role
+        body: >-
+      - category: 
+        body: >-
+    stack:
+      - Unity
+      - VFX graph
+      - python
+  # - title: STC - Telcom
+  #   slug: stc
+  #   image: assets/images/stc.webp
+  #   description: "#### Stc is a leading telecom and technology service provider.
+  #     They partnered with frog (the company I currently work for) to redesign
+  #     and implement the entire ecosystem of web and mobile apps. Which was done
+  #     by creating a whole new Design Language System (DLS)."
+  #   company: STC
+  #   link: https://www.stc.com.kw/en
+  #   date: "2021"
+  #   textBlock:
+  #     - category: Objectives
+  #       body:
+  #         The newly desigend DLS needed to be translated into code and implemented
+  #         across three different touchpoints. A mobile app and two websites (one B2B and one B2C).
+  #         To do so we created an extra react component library.
+  #     - category: My role
+  #       body:
+  #         In a team made mostly of contractors, I was the only in house front-end
+  #         developer working on the websites. As such I was in charge of
+  #         enforcing best practices, writing code and code reviews, and be the link between developers and designers.
+  #     - category: Architecture
+  #       body: >-
+  #         The mobile app and the websites were built in a monorepo using respectively
+  #         react native and react.js so that they could share most of the logic,
+  #         hooks, state management, types, epics etc..
+
+
+  #         In order to also share the components across the websites we built a component library using React and Storybook.
+
+
+  #         Each one of the two website is divided into two main sections: a brochure section and a dashboard section.
+
+
+  #         The first one is almost entirely stateless, backend driven, and server side rendered. The dashboard is the section of the website where the user can interact with STC services and is client side rendered.
+  #   stack:
+  #     - React
+  #     - Redux
+  #     - SCSS
+  #     - Storybook
+  #     - Typescript
+  #     - i18n
+  # - title: Fishing Prediction Maps
+  #   slug: fishingpredictionmaps
+  #   image: assets/images/fishing-prediction-map.webp
+  #   description: "#### Fishing Prediction Maps is a unique service in the Mediterranean Sea: a reliable fishing forecast powered by artificial intelligence and predictive models."
+  #   company: Knots
+  #   date: Feb, 2022
+  #   link: https://fishingpredictionmaps.com
+  #   github: https://github.com/knotsanalytics/fishing_prediction_maps_website
+  #   textBlock:
+  #     - category: In a nutshell
+  #       body: >-
+  #         The interactive map displays the predicted fishing probability (FP) by zone and species for the next week, on a scale from zero to one. This variable represents how easy it will be to fish a species in a precise spot. Zero is assigned to areas where it will be more difficult to find and fish a species, while one to an area where it will be easier on a given day.
+  #     - body: I worked closely with the data scientists to design and develop the interface of the webapp and its architecture. The goal was to deliver a simple and intuitive way to display their data without crowding the interface with too much information but still being useful to the end user.
+  #       category: My role
+  #     - body: "The data produced by the model (running on the company server) get pushed every week on a AWS S3 bucket in the form of .pbf files. These files are then exposed at three different domains to improve performance. The front end then uses mapbox-gl-js to consume and render the .pbf files.
       
 
-      The webapp is developed in the form of a PWA (progressive web app) so that it can be easily installed and accessed."
-        category: Architecture
-    stack:
-      - Typescript
-      - React
-      - Chakra UI
-      - Mapbox
-      - S3
+  #     The webapp is developed in the form of a PWA (progressive web app) so that it can be easily installed and accessed."
+  #       category: Architecture
+  #   stack:
+  #     - Typescript
+  #     - React
+  #     - Chakra UI
+  #     - Mapbox
+  #     - S3

@@ -16,7 +16,7 @@ selectedProjects:
       - ACM
     image: assets/images/HSY-Portfolio-Export_Page_46.jpg
   - title: Moving olmipics
-    slug: /projects/movingolmipics
+    slug: /projects/movingolimipic
     tags:
       - Motion capture
       - Unity
@@ -28,4 +28,4 @@ moreWorks:
   - title: 3D element generation on web poster editing tool
     description: Implementing the three.js library in web canvas and let user have 3d font effect and other animation element on their recommendation poster. 
     url: https://www.nolipix.com/
-    image: assets/images/frog.png
+    image: assets/images/nolipix.png
