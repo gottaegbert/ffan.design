@@ -1,5 +1,6 @@
 import dynamic from "next/dynamic";
 
+
 export function SplineD() {
     const Spline = dynamic(() => import("@splinetool/react-spline"), {
         ssr: false,
