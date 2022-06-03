@@ -104,7 +104,7 @@ const About: React.FC<Props> = ({ data, projData }) => {
           >
             <RoundLink
               label={"Download CV"}
-              url={"/tommaso_laterza-cv.pdf"}
+              url={"/cv.pdf"}
               classname={styles.cvLink}
             />
           </div>
