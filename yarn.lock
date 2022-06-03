@@ -808,6 +808,28 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@splinetool/react-spline@npm:^2.2.1":
+  version: 2.2.1
+  resolution: "@splinetool/react-spline@npm:2.2.1"
+  dependencies:
+    react-merge-refs: ^1.1.0
+  peerDependencies:
+    "@splinetool/runtime": "*"
+    react: ">=17.0.0"
+    react-dom: ">=17.0.0"
+  checksum: 8223318ab0392a45fc8123c14e1d718efdac239d6cd5a04923097d2597fdfc2e0460caba8cb77b268a1911439b4a17f68340321f912d74387c725fab73871f19
+  languageName: node
+  linkType: hard
+
+"@splinetool/runtime@npm:^0.9.64":
+  version: 0.9.64
+  resolution: "@splinetool/runtime@npm:0.9.64"
+  dependencies:
+    on-change: ^4.0.0
+  checksum: abb9f67d3d2a28cfea3b0ded7854c9162a56a136052aa11675b185bbc8bfbdf4d351632bf1dc56163b9c7c0ed02a2ec41c61965addcfe91fc86528849d701ac8
+  languageName: node
+  linkType: hard
+
 "@tootallnate/once@npm:2":
   version: 2.0.0
   resolution: "@tootallnate/once@npm:2.0.0"
@@ -4870,6 +4892,8 @@ __metadata:
     "@react-three/drei": 7.1.0
     "@react-three/fiber": 7.0.4
     "@react-three/postprocessing": 2.0.3
+    "@splinetool/react-spline": ^2.2.1
+    "@splinetool/runtime": ^0.9.64
     "@types/js-yaml": ^4.0.5
     "@types/node": 16.11.11
     "@types/react": 17.0.37
@@ -5248,6 +5272,13 @@ __metadata:
     node-fetch: ^2.6.1
     ufo: ^0.7.9
   checksum: a35277a6db0f3a51f4514c17a58318c1dadd644a6f0dd57be45c40aa34ffe08ef967431d63b923d3144c0d6353a2ab32443282b7801692e9a6fb3b36e986f7d6
+  languageName: node
+  linkType: hard
+
+"on-change@npm:^4.0.0":
+  version: 4.0.1
+  resolution: "on-change@npm:4.0.1"
+  checksum: 23038d603859eafcd8e7ecd7ab682551e2c33c6e12e90dc53c83e453dcb263f5b36c24a945d3e91805273804a2bd6b78f9f91c9bb05dd11771fa626a05d8fb18
   languageName: node
   linkType: hard
 

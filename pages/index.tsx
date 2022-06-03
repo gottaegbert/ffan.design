@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Suspense } from 'react';
 import styles from "./index.module.scss";
 import cn from "classnames";
 import Layout from "../components/Layout/Layout";
@@ -9,6 +10,7 @@ import FloatingLink from "../components/FloatingLink/FloatingLink";
 import StaggeredTitle from "../components/StaggeredTitle/StaggeredTitle";
 import CaseStudy from "../components/CaseStudy/CaseStudy";
 import Work from "../components/Work/Work";
+import { SplineD } from "/Users/hu/Documents/GitHub/egbert/components/SplineD/SplineD"
 import Link from "next/link";
 import { GetStaticProps } from "next";
 import Cursor from "../components/Cursor/Cursor";
@@ -17,6 +19,12 @@ import { gePageData } from "../utils/pages";
 import { StoreProvider } from "../utils/StoreProvider";
 import BasicMeta from "../utils/BasicMeta";
 import { homePageData } from "../utils/customTypes";
+import dynamic from 'next/dynamic';
+import Spline from "@splinetool/react-spline";
+// import Spline from '@splinetool/react-spline';
+
+
+
 
 const floatingLinksData = [
   {
@@ -65,7 +73,10 @@ const IndexPage: React.FC<Props> = ({ data }) => {
 
   return (
     <StoreProvider>
+   
+       
       <Layout>
+        
         <BasicMeta url={"/"} />
         <div className={cn(styles.heroContainer)}>
           <section className={cn("grid")}>
@@ -74,6 +85,7 @@ const IndexPage: React.FC<Props> = ({ data }) => {
                 "col-12 col-start-md-2 col-end-md-11 col-start-lg-2 col-end-lg-11"
               )}
             >
+             
               <h1 className={styles.name}>
                 <span>
                   <span className={"hero-text-line"}>Egbert Hu</span>
@@ -88,13 +100,14 @@ const IndexPage: React.FC<Props> = ({ data }) => {
                 </span>
               </h2>
             </div>
+            
             <div className={styles.heroLinkContainer}>
               {floatingLinksData.map((link, idx) => (
                 <FloatingLink {...link} idx={idx} key={idx} />
               ))}
-              
-
             </div>
+            <SplineD/>
+            {/* <Spline className=".Spline" scene="https://prod.spline.design/9gAl2QkNdQPJbd19/scene.splinecode" /> */}
           </section>
         </div>
         <section className={cn("grid sectionSpacing", styles.aboutSection)}>
