@@ -23,6 +23,10 @@ const Navigation = () => {
       <Link href="/">
         <a className={cn("nav-el")}>Home</a>
       </Link>
+      <label className={styles.switch}>
+        <input type="checkbox" />
+          <span className={styles.slider}></span>
+      </label>
 
       {/* <Link href="/about">
         <a className={cn(styles.aboutLink, styles.navLink, "nav-el")}>About(need to update)</a>

@@ -3,20 +3,13 @@ projects:
     slug: InVisio
     image: assets/images/HSY-Portfolio-Export_Page_32.jpg
     description: "A decision making AI-empowered tool for the Manager of British Museum "
-    company: personal project
+    company: Group project
     link: https://gottaegbert.github.io/webshow1/trendingofschopen.html
-    date: "2020"
+    date: "2022"
     textBlock:
       - category: Objectives
         body:
-          Once Upon A Time Away From School Provide Insight Into How Students Felt During The
-          Time Away From School Because Of The Pandemic.
-          The Joy Of Vacation And The Growing Anxiety When The Start Of School Is Nowhere In
-          Sight; People's Psychology Also Fluctuates With Each Hot Trending News. It's A Social
-          Experiment For Every Student. It Also Tests The Family Relationship, Economic
-          Management, Social Relations, Learning Attitude, And Students' Learning Environ-
-          Ment. It Also Tests The System And Culture Of Higher Education In China. Let's See The
-          Data, And It's A Visualization From The Social Network.
+          This is a project from "Envision A.I through design"
       - category: My role
         body: >-
           Topic Define And Web Scraping

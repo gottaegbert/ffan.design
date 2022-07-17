@@ -78,13 +78,14 @@ const IndexPage: React.FC<Props> = ({ data }) => {
       <Layout>
         
         <BasicMeta url={"/"} />
-        <div className={cn(styles.heroContainer)}>
+        <div className={cn(styles.heroContainer)}>z
           <section className={cn("grid")}>
             <div
               className={cn(
                 "col-12 col-start-md-2 col-end-md-11 col-start-lg-2 col-end-lg-11"
               )}
             >
+
              
               <h1 className={styles.name}>
                 <span>

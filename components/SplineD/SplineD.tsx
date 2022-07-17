@@ -7,7 +7,7 @@ export function SplineD() {
     });
 
     return (
-        <Spline scene="https://prod.spline.design/GHzdi3uELfz37BpW/scene.splinecode"
+        <Spline scene="https://prod.spline.design/QTRXs0fwtg2WHjeV/scene.splinecode"
             className="w-full h-full"
         />
     );
