@@ -1,18 +1,26 @@
 @import "../styles/variables.scss";
 
-.Spline{
-  
-  display: flex;
+.spline{
+  background-color: #870d0d;
+  display:flex;
   align-items: center;
-  /* justify-content: flex-start; */
-  width: 800px;
-  height: 800px;
-  overflow: hidden;
-  border: none;
-  padding-left: 40px;
-  /* padding-right: 40px; */
+  width: 100%;
+  padding: 170 90 0 0;
+  @media only screen and (min-width: $breakpoint-sm) {
+    padding: 200px 0 90px 0;
+  }
+  @media only screen and (min-width: $breakpoint-md) {
+    padding: 280px 0 180px 0;
+  }
+  @media only screen and (min-width: $breakpoint-lg) {
+    padding: 280px 0 180px 0;
+  }
+  @media only screen and (min-width: $breakpoint-xl) {
+    padding: 320px 0 220px 0;
+  }
 
 }
+
 .heroContainer {
   background-color: #000000;
   display: flex;

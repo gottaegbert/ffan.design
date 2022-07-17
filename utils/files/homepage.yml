@@ -1,12 +1,30 @@
 aboutShort: Hi 👋, I am a Designer trying to design the digital world. I am also a web developer moving pixels in the www. I have 3 years of experience in building, and sometimes designing, digital experiences. Currently as a Msc student in Digital and Interaction Design @ Politechnico di Milano
 selectedProjects:
+  - title: InViso
+    image: assets/images/Inviso_cover.png
+    slug: /projects/InVisio
+    tags:
+      - AI
+      - Data Anaysis
+      - British Museum
+      - Data Visualization
+      - Dashboard
+  - title: Mondrian's Mac
+    image: assets/images/MondrianMac.jpg
+    slug: /projects/InVisio
+    tags:
+      - Digital Art
+      - Web Design
+      - Mondrian
+      - Prototype
+      - Unity
   - title: Once upon a time away from school - weibo hottrend and emoji
     image: assets/images/HSY-Portfolio-Export_Page_32.jpg
     slug: /projects/weibo
     tags:
-      - Social network
-      - Data scraping
-      - Data visualization
+      - Social Network
+      - Data Scraping
+      - Data Visualization
   - title: AI mirror
     slug: /projects/aimirror
     tags:
