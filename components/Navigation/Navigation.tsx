@@ -58,12 +58,16 @@ const Navigation = () => {
         </label>
         <em>Enable Dark Mode!</em>
       </div> */}
+      <div className={styles.switchinfo}>
+        <em>🌙</em>
       <label className={styles.switch}>
         <input type="checkbox" checked={darkTheme} onChange={handleToggle} />
           <span className={styles.slider}></span>
-      </label>
+        </label>
+        
+      </div>
       {/* <Link href="/about">
-        <a className={cn(styles.aboutLink, styles.navLink, "nav-el")}>About(need to update)</a>
+        <a className={cn(styles.aboutLink, styles.navLink, "nav-el")}>About</a>
       </Link> */}
 
       {/* <div className={styles.ddContainer}>

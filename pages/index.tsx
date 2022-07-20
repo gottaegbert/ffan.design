@@ -78,7 +78,7 @@ const IndexPage: React.FC<Props> = ({ data }) => {
       <Layout>
         
         <BasicMeta url={"/"} />
-        <div className={cn(styles.heroContainer)}>z
+        <div className={cn(styles.heroContainer)}>
           <section className={cn("grid")}>
             <div
               className={cn(
@@ -116,9 +116,9 @@ const IndexPage: React.FC<Props> = ({ data }) => {
             className={cn("col-12 col-sm-7 col-md-6 col-lg-5", styles.aboutCol)}
           >
             <p className={"fade-in-up description"}>{aboutShort}</p>
-            {/* <Link href="/about">
+            <Link href="/about">
               <a className={"fade-in-up"}>About me</a>
-            </Link> */}
+            </Link>
           </div>
         </section>
         <section className={cn("sectionSpacing", styles.selectedWorkContainer)}>
