@@ -1,30 +1,22 @@
-intro: "#### I am a front-end developer based in Turin, Italy. I am a computer science engineer later graduated as interaction designer.
-Currently working at [frog](https://www.frogdesign.com/)."
+intro:  "#### I am an MSc student in Digital and Interaction Design @ Politecnico di Milano. I have 3D modelling skills from my industrial design background and also web development experience relates to 3D/shader and data visualization. Also, I have Unity project development experience and game design is an interesting area I would like to explore."
+
 description: >-
-  I have 5+ years of experience developing digital products with a big focus on
-  design systems and end-to-end product experience. I enjoy implementing complex UI while keeping an eye on usability and accessibility.
-
-  Over the past few years I developed several web applications for some of the world’s largest Telcom, Fintech and Healthcare companies.
-
-
-  I started my career as a graphic designer to then realise choosing fonts was much harder than writing code. I later worked for [Arduino](https://www.arduino.cc/),
-  where beside doing web dev I would also write [libraries](https://github.com/CasaJasmina/TelegramBot-Library) and tutorials of [questionable taste](https://create.arduino.cc/projecthub/arduino/pavlov-s-cat-7e6577?ref=user&ref_id=65561&offset=3) for thousands of users. The eperience left me
-  with a soft spot for open source projects and well written documentation.
-avatar: assets/images/tommaso_pic.png
+  Designing and Hacking stuff are kind of my things. I enjoy implementing complex ideas and thoughts into my design while keeping an eye on usability and accessibility.
+avatar: assets/images/egbert_pic.jpg
 
 skill:
-  - JS-ES6
-  - React
-  - Angular2+
-  - Next.js
-  - Gatsby
-  - GIT
-  - Storybook
-  - Stencil.js
-  - Three.js
-  - Gsap
-  - D3
-  - Contentful
   - Figma
-  - Sketch
+  - React
+  - Unity
+  - After Effects
+  - Next.js
+  - Git
+  - Lightroom
+  - D3.js
+  - Touchdesigner
+  - SVG
+  - Three.js
+  - VFX
+  - Photoshop
+  - TypeScript
   - Arduino
