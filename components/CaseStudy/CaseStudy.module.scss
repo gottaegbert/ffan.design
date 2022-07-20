@@ -24,7 +24,7 @@
   article {
     margin-bottom: 40px;
     padding-bottom: 32px;
-    border-bottom: 1px solid $light-grey;
+    border-bottom: 1px solid var(--light-grey);
     position: relative;
     @media only screen and (min-width: $breakpoint-md) {
       margin-bottom: 54px;
@@ -55,7 +55,7 @@
         top: 0;
         height: 0;
         width: 100%;
-        background-color: $off-white;
+        background-color: var(--off-white);
       }
     }
 
@@ -83,7 +83,7 @@
         }
 
         .arrowBg {
-          background-color: $accent-color;
+          background-color: var(--accent-color);
           height: 0;
           width: 0;
           border-radius: 50%;

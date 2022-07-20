@@ -1,3 +1,4 @@
+
 // Breakpoints
 $breakpoint-sm: 768px;
 $breakpoint-md: 992px;
@@ -19,15 +20,40 @@ $grid-margins-lg: 60px;
 $grid-columns: 12;
 $grid-max-width: 1520px;
 
-// Colors
-$black: #f1f1f1;
-$white: #ffffff;
-$dark-grey: #555;
-$light-grey: #212121;
-$off-white: #000000;
-$accent-color: #41ce46;
-$border: #ddd;
+// var(--black): #f1f1f1;
+// --white: #ffffff;
+// $dark-grey: #555;
+// $light-grey: #212121;
+// $off-white: #000000;
+// $accent-color: #41ce46;
+// $border: #ddd;
 
+// Colors
+
+
+// @function customLighten($color-variable, $value) {
+//     $color-variable-h: var(#{$color-variable + "-h"});
+//     $color-variable-s: var(#{$color-variable + "-s"});
+//     $color-variable-l: calc(var(#{$color-variable + "-l"}) - #{$value+"%"});
+//     @return hsl($color-variable-h, $color-variable-s, $color-variable-l);
+// }
+
+// @function darkmode($color-variable) {
+//   $color-variable-h: var(#{$color-variable});
+//   @return $color-variable-h;
+// }
+
+
+
+// .light{
+// var(--black): #000000;
+// $white: #ffffff;
+// $dark-grey: #555;
+// $light-grey: #212121;
+// $off-white: #000000;
+// $accent-color: #41ce46;
+// $border: #ddd;
+// }
 // Header
 $nav-h: 70px;
 $nav-h-sm: 70px;

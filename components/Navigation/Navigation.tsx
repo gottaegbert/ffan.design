@@ -3,10 +3,38 @@ import * as React from "react";
 import styles from "./Navigation.module.scss";
 import cn from "classnames";
 import { gsap } from "gsap";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const Navigation = () => {
+  // add type argument
+
   const navigation = React.createRef<HTMLDivElement>();
+  const [darkTheme, setDarkTheme] = useState(undefined);
+  const handleToggle = (event: { target: { checked: any; }; }) => {
+    setDarkTheme(event.target.checked);
+  }
+ 
+
+  useEffect(() => {
+    if (darkTheme !== undefined) {
+      if (darkTheme) {
+        document.documentElement.setAttribute("data-theme", "dark");
+        window.localStorage.setItem('theme', 'dark')
+      } else {
+        document.documentElement.removeAttribute('data-theme');
+        window.localStorage.setItem('theme', 'light');
+      }
+    }
+  }, [darkTheme]);
+
+  useEffect(() => {
+    const root = window.document.documentElement;
+    const initialColorValue = root.style.getPropertyValue(
+      '--initial-color-mode'
+    );
+    // Set initial darkmode to light
+    setDarkTheme(initialColorValue === 'dark');
+  }, []);
 
   useEffect(() => {
     gsap.to(".nav-el", {
@@ -23,11 +51,17 @@ const Navigation = () => {
       <Link href="/">
         <a className={cn("nav-el")}>Home</a>
       </Link>
+      {/* <div class="theme-switch-wrapper">
+        <label class="theme-switch" for="checkbox">
+          <input type="checkbox" id="checkbox" />
+          <div class="slider round"></div>
+        </label>
+        <em>Enable Dark Mode!</em>
+      </div> */}
       <label className={styles.switch}>
-        <input type="checkbox" />
+        <input type="checkbox" checked={darkTheme} onChange={handleToggle} />
           <span className={styles.slider}></span>
       </label>
-
       {/* <Link href="/about">
         <a className={cn(styles.aboutLink, styles.navLink, "nav-el")}>About(need to update)</a>
       </Link> */}

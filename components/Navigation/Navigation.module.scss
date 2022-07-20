@@ -2,6 +2,7 @@
 
 /* swtich taken from W3 schools */
 
+
 .switch {
   position: relative;
   display: inline-block;
@@ -40,11 +41,11 @@
 }
 
 input:checked + .slider {
-  background-color: $accent-color;
+  background-color: var(--accent-color);
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px $accent-color;
+  box-shadow: 0 0 1px var(--accent-color);
 }
 
 input:checked + .slider:before {
@@ -62,7 +63,7 @@ input:checked + .slider:before {
 }
 
 .nav {
-  background-color: #000000;
+  background-color: var(--off-white);
   height: $nav-h;
   width: 100%;
   max-width: $grid-max-width;
@@ -112,9 +113,9 @@ input:checked + .slider:before {
   padding: 20px 0;
   cursor: pointer;
   &:hover p {
-    color: $accent-color;
+    color: var(--accent-color);
     &:after {
-      border-top: 5px solid $accent-color;
+      border-top: 5px solid var(--accent-color);
     }
   }
 }
@@ -130,15 +131,15 @@ p.ddTitle {
     padding-left: 40px;
   }
   &:hover {
-    color: $accent-color;
+    color: var(--accent-color);
     &:after {
-      border-top: 5px solid $accent-color;
+      border-top: 5px solid var(--accent-color);
     }
   }
   &:after {
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
-    border-top: 5px solid $black;
+    border-top: 5px solid var(--black);
     content: "";
     height: 0;
     position: absolute;
@@ -158,8 +159,8 @@ p.ddTitle {
   transition: all 0.5s ease;
   display: none;
   align-items: flex-start;
-  background-color: $white;
-  border: 1px solid $border;
+  background-color: var(--white);
+  border: 1px solid var(--border);
   display: flex;
   flex-direction: column;
 
@@ -184,7 +185,7 @@ p.ddTitle {
     left: 50%;
   }
   &:before {
-    border-bottom: 8px solid $border;
+    border-bottom: 8px solid var(--border);
     border-left: 8px solid transparent;
     border-right: 8px solid transparent;
     content: "";

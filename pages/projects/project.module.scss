@@ -68,7 +68,7 @@
     }
 
     .imgForeground {
-      background-color: $white;
+      background-color: var(--white);
       height: 100%;
       width: 100%;
       z-index: 1;
@@ -91,7 +91,7 @@
   }
 }
 .bottomTitleSection {
-  border-bottom: 1px solid $light-grey;
+  border-bottom: 1px solid var(light-gray);
   padding-bottom: 0;
   @media only screen and (min-width: $breakpoint-sm) {
     padding-bottom: 64px;
@@ -132,7 +132,7 @@
   }
 
   .divider {
-    border-bottom: 1px solid $light-grey;
+    border-bottom: 1px solid var(light-gray);
   }
 }
 

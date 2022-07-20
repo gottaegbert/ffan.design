@@ -12,7 +12,7 @@
   z-index: 9999;
   transition: transform 0.8s ease, all 0.15s, opacity 0.4s;
   transform: translate(-50%, -50%) scale(1);
-  border: 1px solid $accent-color;
+  border: 1px solid var(--accent-color);
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -22,7 +22,7 @@
 }
 
 .cursor_link_hovered {
-  border: 2px solid $accent-color;
+  border: 2px solid var(--accent-color);
   width: 70px;
   height: 70px;
   transition: transform 0.8s ease, all 0.15s, opacity 0.4s;
@@ -37,8 +37,8 @@
   opacity: 1;
   width: 100px;
   height: 100px;
-  border-color: $black;
-  background-color: $black;
+  border-color: var(--black);
+  background-color: var(--black);
 
   &:after {
     content: "Read more";

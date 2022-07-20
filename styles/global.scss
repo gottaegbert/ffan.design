@@ -2,16 +2,37 @@
 @import "variables";
 @import "fonts";
 
+
+:root{
+--black: #f1f1f1;
+--font: #ffffff;
+--dark-grey: #555;
+--light-grey: #212121;
+--off-white: #ffffff;
+--accent-color: #ce4141;
+--border: #ddd;
+}
+
+[data-theme="dark"] {
+--black: #ffffff;
+--font: #e0e0e0;
+--dark-grey: #555;
+--light-grey: #212121;
+--off-white: #000000;
+--accent-color: #41ce46;
+--border: #ddd;
+}
+
 * {
   box-sizing: border-box;
 }
 
 html,
 body {
-  background-color: black;//affect the img？
+  background-color: var(--off-white);//affect the img？
   margin: 0;
   font-family: $font-light;
-  color: $white;
+  color: var(--font);
   font-size: 20px;
   line-height: 1.4;
   overflow-x: hidden;
@@ -120,11 +141,11 @@ p.xsmall {
 }
 
 a {
-  color: $black;
+  color: var(--black);
 }
 a:hover,
 a:active {
-  color: $accent-color;
+  color: var(--accent-color);
 }
 
 label,
@@ -149,7 +170,7 @@ li {
     content: "";
     height: 5px;
     width: 5px;
-    background-color: $accent-color;
+    background-color: var(--accent-color);
     border-radius: 50%;
     position: absolute;
     left: 0;
@@ -158,10 +179,10 @@ li {
 }
 
 ::selection {
-  background: $accent-color; /* WebKit/Blink Browsers */
+  background: var(--accent-color); /* WebKit/Blink Browsers */
 }
 ::-moz-selection {
-  background: $accent-color; /* Gecko Browsers */
+  background: var(--accent-color); /* Gecko Browsers */
 }
 
 .hide {
@@ -207,7 +228,7 @@ li {
     display: inline;
     position: relative;
     margin-right: 24px;
-    color: $dark-grey;
+    color: var(--dark-grey);
     text-decoration: none;
 
     &::after {
@@ -215,7 +236,7 @@ li {
       height: 5px;
       width: 5px;
       border-radius: 50%;
-      background-color: $dark-grey;
+      background-color: var(--dark-grey);
       position: absolute;
       right: -15px;
       top: 49%;
