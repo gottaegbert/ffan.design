@@ -107,7 +107,7 @@ const IndexPage: React.FC<Props> = ({ data }) => {
                 <FloatingLink {...link} idx={idx} key={idx} />
               ))}
             </div>
-            <SplineD/>
+            {/* <SplineD/> */}
             {/* <Spline className=".Spline" scene="https://prod.spline.design/9gAl2QkNdQPJbd19/scene.splinecode" /> */}
           </section>
         </div>

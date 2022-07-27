@@ -1,24 +1,24 @@
-aboutShort: Hi 👋, I am a Designer trying to design the digital world inculding projects in Web and Game building skills. I am also a web developer moving pixels in the www. I have 3 years of experience in building, and sometimes designing, digital experiences. Currently as an Msc student in Digital and Interaction Design @ Politechnico di Milano
+aboutShort: Hi 👋, I am a Designer trying to design the digital world including projects in Web and Game building skills. I am also a web developer moving pixels in the www. I have 3 years of experience in building, and sometimes designing, digital experiences. Currently as an Msc student in Digital and Interaction Design @ Politechnico di Milano
 selectedProjects:
   - title: InViso
     image: assets/images/Inviso_cover.png
     slug: /projects/InVisio
     tags:
       - AI
-      - Data Anaysis
+      - Data Analysis
       - British Museum
       - Data Visualization
       - Dashboard
-  - title: Mondrian's Mac
+  - title: If Mondrian had a Mac
     image: assets/images/MondrianMac.jpg
     slug: /projects/InVisio
     tags:
       - Digital Art
       - Web Design
       - Mondrian
-      - Art Installatin
+      - Art Installation
       - Unity
-  - title: Once upon a time away from school - weibo hottrend and emoji
+  - title: Once upon a time away from school - weibo hot trend and emoji
     image: assets/images/HSY-Portfolio-Export_Page_32.jpg
     slug: /projects/weibo
     tags:
@@ -33,17 +33,17 @@ selectedProjects:
       - Data-Visualization
       - ACM
     image: assets/images/HSY-Portfolio-Export_Page_46.jpg
-  - title: Moving olmipics
+  - title: Moving Olympics
     slug: /projects/movingolimipic
     tags:
       - Motion capture
       - Unity
       - VFX
     image: assets/images/HSY-Portfolio-Export_Page_40.jpg
-ndaDisclaimer: Hola. Some of my project are still under protection of company.
-moreWorksDesc: This is a collection of smaller or older projects and codesnippets I worked on. Most of them can also be found on my [Github](https://github.com/gottaegbert).
+ndaDisclaimer: Designing the digial world! Working on more...
+moreWorksDesc:  Most of them can also be found on my [Github](https://github.com/gottaegbert).
 moreWorks:
   - title: 3D element generation on web poster editing tool
-    description: Implementing the three.js library in web canvas and let user have 3d font effect and other animation element on their recommendation poster. 
+    description: Implementing the three.js library in web canvas and letting users have 3d font effects and another animation element on their recommendation poster. 
     url: https://www.nolipix.com/
     image: assets/images/nolipix.png
