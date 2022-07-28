@@ -1,4 +1,4 @@
-projects: 
+projects:
   - title: InVisio
     slug: InVisio
     image: assets/images/Inviso_cover.png
@@ -40,9 +40,9 @@ projects:
       - Figma
       - UX
       - Service
-    - title: InVisio
-    slug: InVisio
-    image: assets/images/Inviso_cover.png
+  - title: If Mondrain Had a Mac
+    slug: Mondrain
+    image: assets/images/MondrianMac.jpg
     description: "A decision making AI-empowered tool for the Manager of British Museum "
     company: Group project
     link: https://bit.ly/Inviso_prototype
@@ -81,90 +81,6 @@ projects:
       - Figma
       - UX
       - Service
-   - title: InVisio
-    slug: InVisio
-    image: assets/images/Inviso_cover.png
-    description: "A decision making AI-empowered tool for the Manager of British Museum "
-    company: Group project
-    link: https://bit.ly/Inviso_prototype
-    date: "2022"
-    textBlock:
-      - category: Objectives
-        body:
-          This is a project from "Envision A.I. through design" class.The aim of the project was to design a supportive dashboard for the manager of the British Museum to facilitate decision-making with the help of Artificial Intelligence. By combining data from the British Museum, digital initiatives and data concerning the Covid-19 pandemic, the system aims to support the strategic operation of the museum. It assists the Manager, the financial department and the marketing department by predicting future developments of the museum, highlighting potential target groups and giving inspiration for content delivery. Furthermore, by exploiting visitors' reviews from TripAdvisor and Twitter, the system collects and visualises the audience's opinions and demographics – helping the British Museum improve its targeting and provide greater value for a greater audience. 
-      - category: My role
-        body: >-
-          Ideation and reasearch
-
-
-          Data Expert
-
-
-          AI system core define
-
-
-          Prototype
-      - category: Architecture
-        body: >-
-          Visitor Flows
-
-
-          Target Audience
-
-
-          Financial Trends
-
-
-          Content Trends
-    stack:
-      - AI
-      - python
-      - Figma
-      - UX
-      - Service
- 
-  - title: Mondrain's Mac
-    slug: Mondrain's Mac
-    image: assets/images/MondrainMac.jpg
-    description: "A digital art approch on Mondrain's life and work"
-    company: Group project
-    link: https://gottaegbert.github.io/Mondrian-s-Mac/
-    date: "2022"
-    textBlock:
-      - category: Objectives
-        body:
-          This is a project from "Envision A.I. through design" class.The aim of the project was to design a supportive dashboard for the manager of the British Museum to facilitate decision-making with the help of Artificial Intelligence. By combining data from the British Museum, digital initiatives and data concerning the Covid-19 pandemic, the system aims to support the strategic operation of the museum. It assists the Manager, the financial department and the marketing department by predicting future developments of the museum, highlighting potential target groups and giving inspiration for content delivery. Furthermore, by exploiting visitors' reviews from TripAdvisor and Twitter, the system collects and visualises the audience's opinions and demographics – helping the British Museum improve its targeting and provide greater value for a greater audience. 
-      - category: My role
-        body: >-
-          Ideation and reasearch
-
-
-          Data Expert
-
-
-          AI system core define
-
-
-          Prototype
-      - category: Architecture
-        body: >-
-          Visitor Flows
-
-
-          Target Audience
-
-
-          Financial Trends
-
-
-          Content Trends
-    stack:
-      - AI
-      - python
-      - Figma
-      - UX
-      - Service
-
   - title: Weibo hottrend and emoji
     slug: weibo
     image: assets/images/HSY-Portfolio-Export_Page_32.jpg
@@ -211,7 +127,6 @@ projects:
       - html
       - python
       - sql
-  
   - title: Aimirror
     slug: aimirror
     image: assets/images/HSY-Portfolio-Export_Page_46.jpg

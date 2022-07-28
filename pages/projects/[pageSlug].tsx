@@ -58,7 +58,9 @@ const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
                 </span>
               </span>
             </h1>
-            <div className={styles.imageContainer}>
+   
+          </div>
+          <div className={styles.imageContainer}>
               <Image
                 src={`/${data.image}`}
                 alt={data.title}
@@ -70,7 +72,6 @@ const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
               />
               <div ref={imgForeground} className={styles.imgForeground}></div>
             </div>
-          </div>
           <div className={cn("col-12", "description")}>
             <ReactMarkdown className="fade-in-up">
               {data.description}
