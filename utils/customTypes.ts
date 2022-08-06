@@ -35,6 +35,7 @@ export type project = {
   company: string;
   github: string;
   link: string;
+  frame: string;
   date: string;
   stack: string[];
   textBlock: Array<{

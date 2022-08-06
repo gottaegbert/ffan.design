@@ -30,6 +30,7 @@ const Work: React.FC<Props> = ({ description, title, url, slug, tags }) => {
         {description && (
           <p className={cn("small", styles.desc)}>{description}</p>
         )}
+        
         {tags && (
           <div className={"tagContainer"}>
             {tags.map((tag, ix) => (
@@ -39,7 +40,8 @@ const Work: React.FC<Props> = ({ description, title, url, slug, tags }) => {
             ))}
           </div>
         )}
-      </article>
+       </article>
+      
     </a>
   );
 };

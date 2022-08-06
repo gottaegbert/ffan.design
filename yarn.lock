@@ -821,12 +821,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@splinetool/runtime@npm:^0.9.64":
-  version: 0.9.64
-  resolution: "@splinetool/runtime@npm:0.9.64"
+"@splinetool/runtime@npm:^0.9.93":
+  version: 0.9.93
+  resolution: "@splinetool/runtime@npm:0.9.93"
   dependencies:
     on-change: ^4.0.0
-  checksum: abb9f67d3d2a28cfea3b0ded7854c9162a56a136052aa11675b185bbc8bfbdf4d351632bf1dc56163b9c7c0ed02a2ec41c61965addcfe91fc86528849d701ac8
+  checksum: b578b6746f1bbb4c0a8944b72007e4c91cd2a94a7b2333cc36b1d11db2123d3b3593d707b916de0d30d75f2b53d2f40b7a3698f6b33a275aa150e88f6781322d
   languageName: node
   linkType: hard
 
@@ -4893,7 +4893,7 @@ __metadata:
     "@react-three/fiber": 7.0.4
     "@react-three/postprocessing": 2.0.3
     "@splinetool/react-spline": ^2.2.1
-    "@splinetool/runtime": ^0.9.64
+    "@splinetool/runtime": ^0.9.93
     "@types/js-yaml": ^4.0.5
     "@types/node": 16.11.11
     "@types/react": 17.0.37

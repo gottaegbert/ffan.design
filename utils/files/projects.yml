@@ -43,26 +43,28 @@ projects:
   - title: If Mondrain Had a Mac
     slug: Mondrain
     image: assets/images/MondrianMac.jpg
-    description: "A decision making AI-empowered tool for the Manager of British Museum "
-    company: Group project
-    link: https://bit.ly/Inviso_prototype
+    description: "Digital art tell story about Mondrian"
+    company: Group project  
+    link: https://www.figma.com/proto/0gpha2cXCeaMXFwpGu725Z/Digital-Art-Group2-If-Mondrian-had-a-mac-(Copy)?page-id=1031%3A7873&node-id=1031%3A8030&viewport=-647%2C384%2C0.69&scaling=scale-down-width&hide-ui=1
     date: "2022"
     textBlock:
       - category: Objectives
-        body:
-          This is a project from "Envision A.I. through design" class.The aim of the project was to design a supportive dashboard for the manager of the British Museum to facilitate decision-making with the help of Artificial Intelligence. By combining data from the British Museum, digital initiatives and data concerning the Covid-19 pandemic, the system aims to support the strategic operation of the museum. It assists the Manager, the financial department and the marketing department by predicting future developments of the museum, highlighting potential target groups and giving inspiration for content delivery. Furthermore, by exploiting visitors' reviews from TripAdvisor and Twitter, the system collects and visualises the audience's opinions and demographics – helping the British Museum improve its targeting and provide greater value for a greater audience. 
+        body: 
+          This is a project from "Digital Art" class. It has a website demo you can check [here](https://gottaegbert.github.io/Mondrian-s-Mac/). We know that Mondrian’s artwork has gone through tranmandous changes through his life time. We want to explore the contexts of his creation process and his real life behind extraordinary artworks. 
+          We want to seek a mirror that allows us to dip into the life unseen to us. So we can’t help to think
+          if Mondrian has a Mac, what will it be like?
       - category: My role
         body: >-
           Ideation and reasearch
 
-
-          Data Expert
-
-
-          AI system core define
+          
+          Website design and prototype
 
 
-          Prototype
+          Website development
+
+
+          Exhibition design
       - category: Architecture
         body: >-
           Visitor Flows

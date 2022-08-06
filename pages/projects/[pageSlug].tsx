@@ -95,6 +95,7 @@ const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
                   <img src="/assets/icons/link.svg" alt="" />
                 </a>
               </p>
+              
             </div>
             {data.github && (
               <div className={"col-6 col-sm-4 col-lg-3"}>
