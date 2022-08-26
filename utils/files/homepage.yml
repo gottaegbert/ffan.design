@@ -41,7 +41,10 @@ selectedProjects:
       - VFX
     image: assets/images/HSY-Portfolio-Export_Page_40.jpg
 ndaDisclaimer: Designing the digial world! Working on more...
-moreWorksDesc:  Most of them can also be found on my [Github](https://github.com/gottaegbert).
+moreWorksDesc:  Most of them can also be found on my [Github](https://github.com/gottaegbert). 
+                
+                
+                And here you can see some of my [travel photography](https://siyuhu.myportfolio.com/).
 moreWorks:
   - title: 3D element generation on web poster editing tool
     description: Implementing the three.js library in web canvas and letting users have 3d font effects and another animation element on their recommendation poster. 

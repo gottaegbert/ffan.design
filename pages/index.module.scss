@@ -1,25 +1,5 @@
 @import "../styles/variables.scss";
 
-.spline{
-  background-color: #870d0d;
-  display:flex;
-  align-items: center;
-  width: 100%;
-  padding: 170 90 0 0;
-  @media only screen and (min-width: $breakpoint-sm) {
-    padding: 200px 0 90px 0;
-  }
-  @media only screen and (min-width: $breakpoint-md) {
-    padding: 280px 0 180px 0;
-  }
-  @media only screen and (min-width: $breakpoint-lg) {
-    padding: 280px 0 180px 0;
-  }
-  @media only screen and (min-width: $breakpoint-xl) {
-    padding: 320px 0 220px 0;
-  }
-
-}
 
 .heroContainer {
   background-color: var(--off-white);
@@ -97,7 +77,7 @@
   display: flex;
   justify-content: center;
   position: relative;
-  z-index: 0;
+  z-index: 2;
   min-height: 120px;
   @media only screen and (min-width: $breakpoint-md) {
     min-height: unset;

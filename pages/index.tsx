@@ -79,12 +79,13 @@ const IndexPage: React.FC<Props> = ({ data }) => {
         
         <BasicMeta url={"/"} />
         <div className={cn(styles.heroContainer)}>
+            <SplineD/>
           <section className={cn("grid")}>
             <div
               className={cn(
                 "col-12 col-start-md-2 col-end-md-11 col-start-lg-2 col-end-lg-11"
-              )}
-            >
+                )}
+                >
 
              
               <h1 className={styles.name}>
@@ -102,16 +103,15 @@ const IndexPage: React.FC<Props> = ({ data }) => {
               </h2>
             </div>
             
+            {/* <Spline className=".Spline" scene="https://prod.spline.design/9gAl2QkNdQPJbd19/scene.splinecode" /> */}
+          </section>
+        </div>
+        <section className={cn("grid sectionSpacing", styles.aboutSection)}>
             <div className={styles.heroLinkContainer}>
               {floatingLinksData.map((link, idx) => (
                 <FloatingLink {...link} idx={idx} key={idx} />
               ))}
             </div>
-            <SplineD/>
-            {/* <Spline className=".Spline" scene="https://prod.spline.design/9gAl2QkNdQPJbd19/scene.splinecode" /> */}
-          </section>
-        </div>
-        <section className={cn("grid sectionSpacing", styles.aboutSection)}>
           <div
             className={cn("col-12 col-sm-7 col-md-6 col-lg-5", styles.aboutCol)}
           >

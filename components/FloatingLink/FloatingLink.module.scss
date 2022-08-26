@@ -16,8 +16,8 @@
     align-items: center;
     -webkit-justify-content: center;
     -webkit-align-items: center;
-    left: 40px;
-    top: 100%;
+    left:1090px;
+    top: 385px;
     transform: translateX(-50%) translateY(-50%);
 
     position: absolute;
@@ -27,10 +27,10 @@
 
     &::before {
       transform: translate3d(0, 0, -1);
-      height: 600px;
-      width: 600px;
+      height: 400px;
+      width: 400px;
       background-color: transparent;
-      border: 1px solid #6D9B77;
+      border: 2px solid #6D9B77;
       border-radius: 50%;
       content: "";
       pointer-events: none;
@@ -59,16 +59,16 @@
   }
   @media only screen and (min-width: $breakpoint-lg) {
     &.heroLink2 {
-      left: calc(100% - 400px);
-      top: -450px;
+      left: calc(100% - 700px);
+      top: 50px;
       &::before {
-        height: 500px;
-        width: 500px;
+        height: 600px;
+        width: 600px;
       }
     }
     &.heroLink3 {
-      left: calc(100% - 50px);
-      top: calc(100% - 70px);
+      left: calc(100% - 200px);
+      top: calc(100% - 20px);
       &::before {
         height: 400px;
         width: 400px;

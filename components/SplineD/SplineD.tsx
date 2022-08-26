@@ -1,4 +1,5 @@
 import dynamic from "next/dynamic";
+import styles from "./SplineD.module.scss";
 
 
 export function SplineD() {
@@ -8,8 +9,7 @@ export function SplineD() {
 
     return (
         <Spline scene="https://prod.spline.design/8r2ALTn8oQOB0BWt/scene.splinecode"
-            className="w-full h-full"
-        />
+            className={styles.splineD}/>
     );
 }
 
