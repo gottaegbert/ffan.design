@@ -3,8 +3,9 @@ projects:
     slug: InVisio
     image: assets/images/Inviso_cover.png
     description: "A decision making AI-empowered tool for the Manager of British Museum "
-    company: Group project
-    link: https://bit.ly/Inviso_prototype
+    company: Cooperation
+    prototypeLink: https://bit.ly/Inviso_prototype
+    link: https://www.figma.com/proto/TGk4lpRLZdlOXT3qLdeic2/Report%2BPresentation-(Copy)?page-id=6%3A135&node-id=6%3A136&viewport=47%2C569%2C0.02&scaling=scale-down&starting-point-node-id=6%3A136
     date: "2022"
     textBlock:
       - category: Objectives
@@ -36,7 +37,7 @@ projects:
           Content Trends
     stack:
       - AI
-      - python
+      - Python
       - Figma
       - UX
       - Service
@@ -44,7 +45,8 @@ projects:
     slug: Mondrain
     image: assets/images/MondrianMac.jpg
     description: "Digital art tell story about Mondrian"
-    company: Group project  
+    company: Group 
+    prototypeLink: https://gottaegbert.github.io/Mondrian-s-Mac/
     link: https://www.figma.com/proto/0gpha2cXCeaMXFwpGu725Z/Digital-Art-Group2-If-Mondrian-had-a-mac-(Copy)?page-id=1031%3A7873&node-id=1031%3A8030&viewport=-647%2C384%2C0.69&scaling=scale-down-width&hide-ui=1
     date: "2022"
     textBlock:
@@ -79,7 +81,7 @@ projects:
           Content Trends
     stack:
       - AI
-      - python
+      - Python
       - Figma
       - UX
       - Service
@@ -87,8 +89,9 @@ projects:
     slug: weibo
     image: assets/images/HSY-Portfolio-Export_Page_32.jpg
     description: "social network sentiment analysis"
-    company: personal project
-    link: https://gottaegbert.github.io/webshow1/trendingofschopen.html
+    company: Personal
+    prototypeLink: https://gottaegbert.github.io/webshow1/trendingofschopen.html
+    link: https://www.behance.net/gallery/112689801/_?tracking_source=search_projects%7C%E5%BC%80%E5%AD%A6%E5%BE%80%E4%BA%8B
     date: "2020"
     textBlock:
       - category: Objectives
@@ -126,45 +129,97 @@ projects:
 
           Emotions Of Different Type Trending Filter Manually
     stack:
-      - html
-      - python
-      - sql
-  - title: Aimirror
+      - HTML
+      - Data Visualization
+      - Python
+      - SQL
+  - title: A.I. Mirror
     slug: aimirror
     image: assets/images/HSY-Portfolio-Export_Page_46.jpg
-    description: 
-    company: 
-    link: 
+    description: "A Human and AI Generated Multimedia Interactive Art Speculative design thinking about the future AI"
+    company: Cooperation
+    prototype link: https://www.youtube.com/watch?v=xQJhiB0shjg&t=73s&ab_channel=ACMMultimedia2020InteractiveArtsExhibition
+    link: https://dl.acm.org/doi/10.1145/3394171.3416343
+    date: 2020.08
     textBlock:
-      - category:
-        body:
-        
+      - category: Objectives
+        body: >- 
+          If the chameleon-like AI is gradually becoming conscious, how would it think about its history? How do we humans feel about them? “AI mirror”, an interac- tive art, tends to visualize the self-knowledge mechanism from the AI’s perspec- tive and arouses people’s reflection on artificial intelligence.
+          Imagine when you look at yourself, the self image illustration you obtain, is it really complete and divergent enough? Here, with the assistance of artificial intelligence, we look into every pixel sensed from you and find those undiscovered traits of yourself by doing generative art, then have some reflections and write lines of poetry for you.
       - category: My role
         body: >-
-         
-      - category: 
+          Idea and realization
+
+
+          Unity interactive development
+
+
+          VFX design
+
+
+          Video
+
+
+          Paper writing
+      - category: Architecture
         body: >-
+          Think about AI's image
+
+
+          A dialectical view of the relationship between human-self and AI
+
+
+          Moodboard
+
+
+          Interactive process
 
     stack:
+      - Unity
+      - ML
+      - Motion capture
+      - VFX
   
-  - title: Moving olmipics
+  - title: Moving Olmipics
     slug: movingolimipic
     image: assets/images/HSY-Portfolio-Export_Page_40.jpg
-    description: 
-    company: personal project
-    link: 
-    date: "2020"
+    description: An Interactive App and System Design intergrated with motion capture tech for 2022 Beijing Winter Olympics
+    company: Cooperation
+    prototypeLink: https://vimeo.com/489266364
+    link: https://vimeo.com/489266364
+    date: "2020.6"
     textBlock:
       - category: Objective
-        body:
+        body: Moving Olympics adopts Al dynamic capture technology, collects the skeletal movements of figure skating champions in the Winter Olympics from videos from 1992 to 2018, establishes a database, and uses technology to manage the latest movements in real-time maps them to a virtual human motion, analyzes the changes and reasons generated and displays the statistical comparison of previous players' activities on the APP. Thus those who don't know the sports can get knowledge and those knowledgeable can make further exploration.
       - category: My role
         body: >-
-      - category: 
+          Unity development
+
+
+          VFX design
+
+
+          Business plan
+
+
+          Video scrapping
+      - category: Architecture
         body: >-
+          Data Collection
+
+
+          Data Display
+
+          
+          VFX Design
+
+
+          User Experience
     stack:
       - Unity
       - VFX graph
-      - python
+      - Motion Csapture
+      - Python
   # - title: STC - Telcom
   #   slug: stc
   #   image: assets/images/stc.webp

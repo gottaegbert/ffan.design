@@ -90,15 +90,15 @@ const IndexPage: React.FC<Props> = ({ data }) => {
              
               <h1 className={styles.name}>
                 <span>
-                  <span className={"hero-text-line"}>Egbert Hu</span>
+                  <span className={"hero-text-line"}>Siyu Hu</span>
                 </span>
               </h1>
               <h2 className={styles.subTitle}>
                 <span className={styles.offset}>
-                  <span className={"hero-text-line"}>IxD Designer</span>
+                  <span className={"hero-text-line"}>IXD DESINGER</span>
                 </span>
                 <span>
-                  <span className={"hero-text-line"}>Web Developer</span>
+                  <span className={"hero-text-line"}>WEB DEVELOPER</span>
                 </span>
               </h2>
             </div>

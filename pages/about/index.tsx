@@ -58,7 +58,7 @@ const About: React.FC<Props> = ({ data, projData }) => {
               <h1 className={styles.title}>
                 <span>
                   <span ref={refTitle} className="work-proj">
-                    Egbert Hu
+                    Siyu Hu
                   </span>
                 </span>
               </h1>

@@ -89,13 +89,21 @@ const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
               <p className={styles.keyFact}>{data.date}</p>
             </div>
             <div className={"col-6 col-sm-4 col-lg-3"}>
-              <p className={cn("small", styles.label)}>Project Link</p>
+              <p className={cn("small", styles.label)}>Project/Process Link</p>
               <p className={styles.keyFact}>
                 <a href={data.link} rel="noreferrer" target="_blank">
                   <img src="/assets/icons/link.svg" alt="" />
                 </a>
               </p>
-              
+              </div>
+            
+              <div className={"col-6 col-sm-4 col-lg-3"}>
+              <p className={cn("small", styles.label)}>Prototype/Demo Link</p>
+              <p className={styles.keyFact}>
+                <a href={data.prototypeLink} rel="noreferrer" target="_blank">
+                    <img src="/assets/icons/link.svg" alt="" />
+                </a>
+              </p>
             </div>
             {data.github && (
               <div className={"col-6 col-sm-4 col-lg-3"}>

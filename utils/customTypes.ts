@@ -28,6 +28,7 @@ export type aboutPageData = {
 };
 
 export type project = {
+  prototypeLink: string;
   title: string;
   image: string;
   slug: string;
