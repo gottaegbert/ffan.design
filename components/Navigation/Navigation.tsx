@@ -59,12 +59,38 @@ const Navigation = () => {
         <em>Enable Dark Mode!</em>
       </div> */}
       <div className={styles.switchinfo}>
-        <em>🌙</em>
-      <label className={styles.switch}>
-        <input type="checkbox" checked={darkTheme} onChange={handleToggle} />
-          <span className={styles.slider}></span>
+        <label className={styles.switch}>   
+          <input type="checkbox" checked={darkTheme} onChange={handleToggle} />
+          <div className={styles.planet}>
+           </div>
+          <div className={styles.elements}>
+            <svg version="1.1" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="250" cy="250" r="200" />
+            </svg>
+            <svg version="1.1" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="250" cy="250" r="200" />
+            </svg>
+            <svg version="1.1" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="250" cy="250" r="200" />
+            </svg>
+            <svg version="1.1" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="250" cy="250" r="200" />
+            </svg>
+            <svg version="1.1" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="250" cy="250" r="200" />
+            </svg>
+            <svg version="1.1" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="250" cy="250" r="200" />
+            </svg>
+            <svg version="1.1" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="250" cy="250" r="200" />
+            </svg>
+            <svg version="1.1" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="250" cy="250" r="200" />
+            </svg>
+          </div>
+          {/* <span className={styles.slider}></span> */}
         </label>
-        
       </div>
       {/* <Link href="/about">
         <a className={cn(styles.aboutLink, styles.navLink, "nav-el")}>About</a>

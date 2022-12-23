@@ -41,6 +41,49 @@ projects:
       - Figma
       - UX
       - Service
+  - title: Subline
+    slug: Subline
+    image: assets/images/Inviso_cover.png
+    description: "A Multimodel City Subway Book Service System for Beijing Commuters"
+    company: Individual
+    prototypeLink: https://bit.ly/Inviso_prototype
+    link: https://www.figma.com/proto/TGk4lpRLZdlOXT3qLdeic2/Report%2BPresentation-(Copy)?page-id=6%3A135&node-id=6%3A136&viewport=47%2C569%2C0.02&scaling=scale-down&starting-point-node-id=6%3A136
+    date: "2022"
+    textBlock:
+      - category: Objectives
+        body:
+          In the limited space of a metro carriage, books are the link between reality and a better life, between a once-in-a-lifetime life and an infinite parallel universe, between the spiritual exchange of ordinary people and sage. Reading on the metro is the spiritual corner they have built for themselves in the crowd.For most of the young work in Beijing, the subway can be tedious and unbearable.However, there is a desire to seek knowledge and happiness during the time of the underground. Subline is a service system to solve commuters' un-convenient situation to read book underground and provide a future for the printed book by changing the present reading experience, digital or physical.   
+      - category: My role
+        body: >-
+          Observation and Ideation
+          
+
+          User research and analysis
+          
+
+          Service system design thinking
+          
+
+          Design outputs
+      - category: Architecture
+        body: >-
+          User Journey
+
+
+          Problem tree&Needs Map
+
+
+          Offering&Ecology
+
+
+          Content Trends
+    stack:
+      - AI
+      - Python
+      - Figma
+      - UX
+      - Service
+
   - title: If Mondrain Had a Mac
     slug: Mondrain
     image: assets/images/MondrianMac.jpg

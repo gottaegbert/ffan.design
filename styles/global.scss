@@ -11,6 +11,10 @@
 --off-white: #f7f8fb;
 --accent-color: #06c743;
 --border: #ddd;
+--bg-planet-bright: #F2C94C;
+--bg-planet-shadow: #828894;
+--bg-planet-lightshadow: #D7D7D820;
+--dot-size: 0.25rem;
 }
 
 [data-theme="dark"] {
@@ -22,6 +26,8 @@
 --accent-color: #41ce46;
 --border: #ddd;
 }
+
+
 
 * {
   box-sizing: border-box;
