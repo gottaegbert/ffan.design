@@ -28,6 +28,10 @@ export type aboutPageData = {
 };
 
 export type project = {
+  imageContent: Array<{
+    category: string;
+    body: string;
+  }>;
   prototypeLink: string;
   title: string;
   image: string;

@@ -58,20 +58,20 @@ const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
                 </span>
               </span>
             </h1>
-   
+
           </div>
           <div className={styles.imageContainer}>
-              <Image
-                src={`/${data.image}`}
-                alt={data.title}
-                layout="responsive"
-                height={9}
-                width={16}
-                objectFit="cover"
-                className={styles.projImage}
-              />
-              <div ref={imgForeground} className={styles.imgForeground}></div>
-            </div>
+            <Image
+              src={`/${data.image}`}
+              alt={data.title}
+              layout="responsive"
+              height={9}
+              width={16}
+              objectFit="contain"
+              className={styles.projImage}
+            />
+            <div ref={imgForeground} className={styles.imgForeground}></div>
+          </div>
           <div className={cn("col-12", "description")}>
             <ReactMarkdown className="fade-in-up">
               {data.description}
@@ -95,13 +95,13 @@ const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
                   <img src="/assets/icons/link.svg" alt="" />
                 </a>
               </p>
-              </div>
-            
-              <div className={"col-6 col-sm-4 col-lg-3"}>
+            </div>
+
+            <div className={"col-6 col-sm-4 col-lg-3"}>
               <p className={cn("small", styles.label)}>Prototype/Demo Link</p>
               <p className={styles.keyFact}>
                 <a href={data.prototypeLink} rel="noreferrer" target="_blank">
-                    <img src="/assets/icons/link.svg" alt="" />
+                  <img src="/assets/icons/link.svg" alt="" />
                 </a>
               </p>
             </div>
@@ -136,6 +136,37 @@ const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
               </div>
             </React.Fragment>
           ))}
+          {data.imageContent && (
+            <>
+              <div
+                className={cn("col-12 col-md-3 col-lg-4", styles.detailLabel)}
+              >
+                <h5 className="fade-in-up">Content</h5>
+              </div>
+              <div
+                className={styles.imageContainer}>
+                {data.imageContent.map((content, idx: number) => (
+                  <div
+                    className={cn(styles.skillsCell, "fade-in-up")}
+                    key={"stack" + idx}
+                  >
+                    <Image
+                      src={`/${content}`}
+                      alt={data.title}
+                      layout="responsive"
+                      height={1}
+                      width={2.4}
+                      objectFit="contain"
+                      className={styles.projImage}
+                    />
+                  </div>
+
+
+                ))}
+              </div>
+            </>
+          )}
+
           {data.stack && (
             <>
               <div

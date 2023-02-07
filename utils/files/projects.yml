@@ -43,7 +43,20 @@ projects:
       - Service
   - title: Subline
     slug: Subline
-    image: assets/images/Inviso_cover.png
+    image: assets/images/subline/s1.jpg
+    imageContent: 
+      - assets/images/subline/s2.jpg
+      - assets/images/subline/s3.jpg
+      - assets/images/subline/s4.jpg
+      - assets/images/subline/s5.jpg
+      - assets/images/subline/s6.jpg
+      - assets/images/subline/s7.jpg
+      - assets/images/subline/s8.jpg
+      - assets/images/subline/s9.jpg
+      - assets/images/subline/s10.jpg
+      - assets/images/subline/s11.jpg
+      - assets/images/subline/s12.jpg
+      - assets/images/subline/s13.jpg
     description: "A Multimodel City Subway Book Service System for Beijing Commuters"
     company: Individual
     prototypeLink: https://bit.ly/Inviso_prototype
