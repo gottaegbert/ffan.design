@@ -195,7 +195,14 @@ projects:
       - SQL
   - title: A.I. Mirror
     slug: aimirror
-    image: assets/images/HSY-Portfolio-Export_Page_46.jpg
+    image: assets/images/aimirror/ai1.jpg
+    imageContent: 
+      # - assets/images/aimirror/ai1.jpg
+      - assets/images/aimirror/ai2.jpg
+      - assets/images/aimirror/ai3.jpg
+      - assets/images/aimirror/ai4.jpg
+      - assets/images/aimirror/ai5.jpg
+ 
     description: "A Human and AI Generated Multimedia Interactive Art Speculative design thinking about the future AI"
     company: Cooperation
     prototype link: https://www.youtube.com/watch?v=xQJhiB0shjg&t=73s&ab_channel=ACMMultimedia2020InteractiveArtsExhibition
