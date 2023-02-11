@@ -1,11 +1,11 @@
 projects:
   - title: InViso
     slug: InViso
-    image: assets/images/InViso_cover.png
+    image: assets/images/inviso/s1.png
     imageContent: 
-      - assets/images/InViso/s2.jpg
-      - assets/images/InViso/s3.jpg
-      - assets/images/InViso/s4.png
+      - assets/images/inviso/s2.jpg
+      - assets/images/inviso/s3.jpg
+      # - assets/images/inviso/s4.png
     description: "A decision making AI-empowered tool for the Manager of British Museum "
     company: Cooperation
     prototypeLink: https://bit.ly/Inviso_prototype
@@ -148,6 +148,13 @@ projects:
   - title: Weibo hottrend and emoji
     slug: weibo
     image: assets/images/HSY-Portfolio-Export_Page_32.jpg
+    imageContent: 
+      - assets/images/weibo/weibo2.jpg
+      - assets/images/weibo/weibo3.jpg
+      - assets/images/weibo/weibo4.jpg
+      - assets/images/weibo/weibo5.jpg
+      - assets/images/weibo/weibo6.jpg
+      - assets/images/weibo/weibo7.jpg
     description: "social network sentiment analysis"
     company: Personal
     prototypeLink: https://gottaegbert.github.io/webshow1/trendingofschopen.html
@@ -250,6 +257,12 @@ projects:
   - title: Moving Olmipics
     slug: movingolimipic
     image: assets/images/HSY-Portfolio-Export_Page_40.jpg
+    imageContent: 
+      - assets/images/movingo/mv2.jpg
+      - assets/images/movingo/mv3.jpg
+      - assets/images/movingo/mv4.jpg
+      - assets/images/movingo/mv5.jpg
+      - assets/images/movingo/mv6.jpg
     description: An Interactive App and System Design intergrated with motion capture tech for 2022 Beijing Winter Olympics
     company: Cooperation
     prototypeLink: https://vimeo.com/489266364
