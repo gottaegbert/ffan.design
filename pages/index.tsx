@@ -10,7 +10,7 @@ import FloatingLink from "../components/FloatingLink/FloatingLink";
 import StaggeredTitle from "../components/StaggeredTitle/StaggeredTitle";
 import CaseStudy from "../components/CaseStudy/CaseStudy";
 import Work from "../components/Work/Work";
-import { SplineD } from "../components/SplineD/SplineD"
+// import { SplineD } from "../components/SplineD/SplineD"
 import Link from "next/link";
 import { GetStaticProps } from "next";
 import Cursor from "../components/Cursor/Cursor";
@@ -79,7 +79,7 @@ const IndexPage: React.FC<Props> = ({ data }) => {
         
         <BasicMeta url={"/"} />
         <div className={cn(styles.heroContainer)}>
-            <SplineD/>
+            {/* <SplineD/> */}
           <section className={cn("grid")}>
             <div
               className={cn(
