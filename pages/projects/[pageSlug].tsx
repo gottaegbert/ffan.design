@@ -77,6 +77,7 @@ const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
               {data.description}
             </ReactMarkdown>
           </div>
+          {/* date and link 4 category */}
           <div
             className={cn("grid no-pad fade-in-up", styles.bottomTitleSection)}
           >
@@ -116,6 +117,7 @@ const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
               </div>
             )}
           </div>
+
         </section>
         <section
           className={cn("grid sectionSpacing", styles.projDetailsSection)}
@@ -136,37 +138,6 @@ const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
               </div>
             </React.Fragment>
           ))}
-          {data.imageContent && (
-            <>
-              <div
-                className={cn("col-12 col-md-3 col-lg-4", styles.detailLabel)}
-              >
-                <h5 className="fade-in-up">Content</h5>
-              </div>
-              <div
-                className={styles.imageContainer}>
-                {data.imageContent.map((content, idx: number) => (
-                  <div
-                    className={cn(styles.skillsCell, "fade-in-up")}
-                    key={"stack" + idx}
-                  >
-                    <Image
-                      src={`/${content}`}
-                      alt={data.title}
-                      layout="responsive"
-                      height={1}
-                      width={2.4}
-                      objectFit="contain"
-                      className={styles.projImage}
-                    />
-                  </div>
-
-
-                ))}
-              </div>
-            </>
-          )}
-
           {data.stack && (
             <>
               <div
@@ -188,6 +159,39 @@ const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
               </div>
             </>
           )}
+          {/* content */}
+          {data.imageContent && (
+            <>
+              <div
+                className={cn( styles.detailLabel)}
+              >
+                <h5 className="fade-in-up">Content</h5>
+              </div>
+              <div
+                className={styles.imageContainer}>
+                {data.imageContent.map((content, idx: number) => (
+                  <div
+                    className={cn(styles.skillsCell, "fade-in-up")}
+                    key={"stack" + idx}
+                  >
+                    <Image
+                      src={`/${content}`}
+                      alt={data.title}
+                      layout="responsive"
+                      height={1080}
+                      width={1920}
+                      objectFit="contain"
+                      className={styles.projImage}
+                    />
+                  </div>
+
+
+                ))}
+              </div>
+            </>
+          )}
+
+
           <div className={cn("col-12", styles.divider)}></div>
         </section>
         <section className={cn("grid sectionSpacing", styles.moreWorksSection)}>

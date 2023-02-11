@@ -4,6 +4,8 @@ projects:
     image: assets/images/InViso_cover.png
     imageContent: 
       - assets/images/InViso/s2.jpg
+      - assets/images/InViso/s3.jpg
+      - assets/images/InViso/s4.png
     description: "A decision making AI-empowered tool for the Manager of British Museum "
     company: Cooperation
     prototypeLink: https://bit.ly/Inviso_prototype
