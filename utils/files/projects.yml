@@ -5,6 +5,26 @@ projects:
     imageContent: 
       - assets/images/inviso/s2.jpg
       - assets/images/inviso/s3.jpg
+      - assets/images/inviso/s4.png
+      - assets/images/inviso/s5.png
+      - assets/images/inviso/s6.png
+      - assets/images/inviso/s7.png
+      - assets/images/inviso/Ai promise.png
+      - assets/images/inviso/offering map 4.png
+      - assets/images/inviso/s8.png
+      - assets/images/inviso/s9.png
+      - assets/images/inviso/s10.png
+      - assets/images/inviso/s11.png
+      - assets/images/inviso/s12.png
+      - assets/images/inviso/s13.png
+      - assets/images/inviso/s15.png
+      - assets/images/inviso/s16.png
+      - assets/images/inviso/s17.png
+      - assets/images/inviso/s18.png
+      - assets/images/inviso/s19.png
+      - assets/images/inviso/s20.png
+      - assets/images/inviso/s21.png
+      - assets/images/inviso/s23.png
       # - assets/images/inviso/s4.png
     description: "A decision making AI-empowered tool for the Manager of British Museum "
     company: Cooperation
