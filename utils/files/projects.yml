@@ -1,30 +1,30 @@
 projects:
   - title: InViso
     slug: InViso
-    image: assets/images/inviso/s1.png
+    image: assets/images/Inviso/s1.png
     imageContent: 
-      - assets/images/inviso/s2.jpg
-      - assets/images/inviso/s3.jpg
-      - assets/images/inviso/s4.png
-      - assets/images/inviso/s5.png
-      - assets/images/inviso/s6.png
-      - assets/images/inviso/s7.png
-      - assets/images/inviso/Ai promise.png
-      - assets/images/inviso/offering map 4.png
-      - assets/images/inviso/s8.png
-      - assets/images/inviso/s9.png
-      - assets/images/inviso/s10.png
-      - assets/images/inviso/s11.png
-      - assets/images/inviso/s12.png
-      - assets/images/inviso/s13.png
-      - assets/images/inviso/s15.png
-      - assets/images/inviso/s16.png
-      - assets/images/inviso/s17.png
-      - assets/images/inviso/s18.png
-      - assets/images/inviso/s19.png
-      - assets/images/inviso/s20.png
-      - assets/images/inviso/s21.png
-      - assets/images/inviso/s23.png
+      - assets/images/Inviso/s2.jpg
+      - assets/images/Inviso/s3.jpg
+      - assets/images/Inviso/s4.png
+      - assets/images/Inviso/s5.png
+      - assets/images/Inviso/s6.png
+      - assets/images/Inviso/s7.png
+      - assets/images/Inviso/Ai promise.png
+      - assets/images/Inviso/offering map 4.png
+      - assets/images/Inviso/s8.png
+      - assets/images/Inviso/s9.png
+      - assets/images/Inviso/s10.png
+      - assets/images/Inviso/s11.png
+      - assets/images/Inviso/s12.png
+      - assets/images/Inviso/s13.png
+      - assets/images/Inviso/s15.png
+      - assets/images/Inviso/s16.png
+      - assets/images/Inviso/s17.png
+      - assets/images/Inviso/s18.png
+      - assets/images/Inviso/s19.png
+      - assets/images/Inviso/s20.png
+      - assets/images/Inviso/s21.png
+      - assets/images/Inviso/s23.png
       # - assets/images/inviso/s4.png
     description: "A decision making AI-empowered tool for the Manager of British Museum "
     company: Cooperation

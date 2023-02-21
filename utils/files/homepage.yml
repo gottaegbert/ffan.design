@@ -1,7 +1,7 @@
 aboutShort: Hi 👋, I am a designer trying to structure the digital world, projects include UX/UI and web development as well as game design. I am also a web developer moving pixels in the www. I have 3 years of experience in building, and sometimes designing, digital experiences. Currently as an Msc student in Digital and Interaction Design @ Politechnico di Milano
 selectedProjects:
   - title: InViso
-    image: assets/images/inviso/s1.png
+    image: assets/images/Inviso/s1.png
     slug: /projects/InViso
     tags:
       - UX
