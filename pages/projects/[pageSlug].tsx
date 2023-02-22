@@ -35,7 +35,29 @@ type Props = {
 const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
   const title = React.createRef<HTMLDivElement>();
   const imgForeground = React.createRef<HTMLDivElement>();
-
+  const isVideo = data.video;
+  function VIDEO() {
+    return <div className={styles.videoContainer}>
+      <YouTube videoId={data.video} opts={{ width: "100%", height: "720px" }} />
+    </div>
+  }
+  function Picture() {
+    return <div className={styles.imageContainer}>
+      <Image
+        src={`/${data.image}`}
+        alt={data.title}
+        layout="responsive"
+        height={9}
+        width={16}
+        objectFit="contain"
+        className={styles.projImage}
+      />
+      <div ref={imgForeground} className={styles.imgForeground}></div>
+    </div>
+  }
+  
+  // const VIDEO = 
+  const headerComponent = isVideo ? <VIDEO/>:<Picture /> 
   useEffect(() => {
     gsap.set(title.current, { opacity: 1 });
     gsap.from(title.current, {
@@ -69,22 +91,27 @@ const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
             </h1>
 
           </div>
+          {headerComponent}
+          {/* if(data.video){
+            <div className={styles.videoContainer}>
+              <YouTube videoId={data.video} opts={{ width: "100%", height: "720px" }} />
+            </div>
+          }
+          else{
+            <div className={styles.imageContainer}>
+              <Image
+                src={`/${data.image}`}
+                alt={data.title}
+                layout="responsive"
+                height={9}
+                width={16}
+                objectFit="contain"
+                className={styles.projImage}
+              />
+              <div ref={imgForeground} className={styles.imgForeground}></div>
+            </div>
+          } */}
 
-          <div className={styles.videoContainer}>  
-            <YouTube videoId={data.video} opts={{ width: "100%", height:"720px/WindowHeight" }} />
-          </div>
-          <div className={styles.imageContainer}>  
-            <Image
-              src={`/${data.image}`}
-              alt={data.title}
-              layout="responsive"
-              height={9}
-              width={16}
-              objectFit="contain"
-              className={styles.projImage}
-            />
-            <div ref={imgForeground} className={styles.imgForeground}></div>
-          </div>
           <div className={cn("col-12", "description")}>
             <ReactMarkdown className="fade-in-up">
               {data.description}
