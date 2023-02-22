@@ -10,6 +10,15 @@ selectedProjects:
       - British Museum
       - Data Visualization
       - Dashboard
+  - title: Meta-VisEmo
+    image: assets/images/metavisemo/s1.png
+    slug: /projects/Meta-VisEmo
+    tags:
+      - Metaverse
+      - Emotion
+      - Unity Game Development
+      - Avatar
+      - Interaction
   # - title: Subline
   #   image: assets/images/subline/subline1.jpg
   #   slug: /projects/Subline

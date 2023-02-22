@@ -65,6 +65,74 @@ projects:
       - Figma
       - UX
       - Service
+  - title: VisEmo
+    slug: Meta-VisEmo
+    video: https://youtu.be/GWPxOZIoncA
+    image: assets/images/metavisemo/s1.png
+    imageContent: 
+      - assets/images/metavisemo/s2.png
+      - assets/images/metavisemo/s3.png
+      - assets/images/metavisemo/s4.png
+      - assets/images/metavisemo/s5.png
+      - assets/images/metavisemo/s6.png
+      - assets/images/metavisemo/s7.png
+      - assets/images/metavisemo/s8.png
+      - assets/images/metavisemo/s9.png
+
+      # - assets/images/inviso/s4.png
+    description: "An emotion visualization tool in Metaverse"
+    company: Cooperation
+    prototypeLink: https://youtu.be/GWPxOZIoncA
+    link: #
+    date: "2022"
+    textBlock:
+      - category: Objectives
+        body:
+          Meta-VisEmo is an emotion visualization tool in Metaverse. It can reflect players’ emotions through their avatars as well as environment. We put user in formal and informal situation and to discover possibilities of these new emotion expressions.
+          
+          >- Use Emoj to reflect players’ emotions through different kinds of effect on their avatars/environment in the Metaverse. 
+          
+          >- Design Effects for prototyping where we use tools like Unity UI\Shader\VFX etc. 
+          
+          >- These effects can be easily changed in the future by users. (Like NFT). So we would prepare to expose some interfaces of properties in these effects for users to play around with.
+          
+          - Paper accepted:"Empowering virtual humans' emotional expression in the Metaverse" (HCI International 2023 23 - 28 July ® Copenhagen, Denmark)
+      - category: My role
+        body: >-
+          Ideation and reasearch
+
+          
+          Environment Design
+
+
+          C# data sturcture design
+
+
+          UI Development
+
+
+          Product management
+
+
+          Git version control
+      - category: Architecture
+        body: >-
+          Mapping emotion
+
+
+          Intergrate Shder and VFX with Emoj data
+
+
+          UI Design
+
+
+          Content Trends
+    stack:
+      - Unity
+      - C#
+      - Shader
+      - Facial Recognition
+      - Online platform
   # - title: Subline
   #   slug: Subline
   #   image: assets/images/subline/s1.jpg
