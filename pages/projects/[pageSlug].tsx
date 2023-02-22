@@ -17,12 +17,21 @@ import { gePageData } from "../../utils/pages";
 import BasicMeta from "../../utils/BasicMeta";
 import { project, selectedProject } from "../../utils/customTypes";
 import Image from "next/image";
+import YouTube, { YouTubeProps } from 'react-youtube';
 
 type Props = {
   data: project;
   moreProjs: selectedProject[];
   slug: string;
 };
+
+// const onPlayerReady: YouTubeProps['onReady'] = (event) => {
+//   // access to player in all event handlers via event.target
+//   event.target.pauseVideo();
+  
+// }
+
+
 const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
   const title = React.createRef<HTMLDivElement>();
   const imgForeground = React.createRef<HTMLDivElement>();
@@ -60,7 +69,11 @@ const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
             </h1>
 
           </div>
-          <div className={styles.imageContainer}>
+
+          <div className={styles.videoContainer}>  
+            <YouTube videoId={data.video} opts={{ width: "100%", height:"720px/WindowHeight" }} />
+          </div>
+          <div className={styles.imageContainer}>  
             <Image
               src={`/${data.image}`}
               alt={data.title}
@@ -122,6 +135,7 @@ const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
         <section
           className={cn("grid sectionSpacing", styles.projDetailsSection)}
         >
+          
           {data.textBlock.map((block, idx) => (
             <React.Fragment key={idx}>
               <div

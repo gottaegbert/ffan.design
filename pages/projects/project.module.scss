@@ -38,6 +38,25 @@
     }
   }
 
+  .videoContainer{   
+    margin:0px;
+    padding:0px;
+    overflow:hidden;
+    position: relative;
+    display: block;
+    height: 100%;
+    z-index: 0;
+    @media only screen and (min-width: $breakpoint-md) {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      width: 600px;
+      transform: translateY(-50%);
+    }
+    @media only screen and (min-width: $breakpoint-lg) {
+      width: 900px;
+    }
+  }
   .imageContainer {
     position: relative;
     display: block;

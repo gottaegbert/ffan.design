@@ -28,6 +28,7 @@ export type aboutPageData = {
 };
 
 export type project = {
+  video: string;
   imageContent: Array<{
     category: string;
     body: string;

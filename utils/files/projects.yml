@@ -67,7 +67,7 @@ projects:
       - Service
   - title: VisEmo
     slug: Meta-VisEmo
-    video: https://youtu.be/GWPxOZIoncA
+    video: GWPxOZIoncA
     image: assets/images/metavisemo/s1.png
     imageContent: 
       - assets/images/metavisemo/s2.png
