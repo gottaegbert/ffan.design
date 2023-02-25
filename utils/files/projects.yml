@@ -192,7 +192,7 @@ projects:
   - title: If Mondrain Had a Mac
     slug: Mondrain
     video: hfGfzfP35DU
-    image: assets/images/mondrainmac/MondrianMac.jpg
+    image: assets/images/mondrainmac/1s.jpg
     imageContent: 
       - assets/images/mondrainmac/s02.png
       - assets/images/mondrainmac/s03.png
@@ -358,6 +358,7 @@ projects:
   
   - title: Moving Olmipics
     slug: movingolimipic
+    video: zwHCrTvbe9Y
     image: assets/images/HSY-Portfolio-Export_Page_40.jpg
     imageContent: 
       - assets/images/movingo/mv2.jpg
@@ -367,7 +368,7 @@ projects:
       - assets/images/movingo/mv6.jpg
     description: An Interactive App and System Design intergrated with motion capture tech for 2022 Beijing Winter Olympics
     company: Cooperation
-    prototypeLink: https://vimeo.com/489266364
+    # prototypeLink: https://vimeo.com/489266364
     link: https://vimeo.com/489266364
     date: "2020.6"
     textBlock:

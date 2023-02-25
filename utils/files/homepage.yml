@@ -36,7 +36,7 @@ selectedProjects:
   #   - Reading
   #   - Subway
   - title: If Mondrian had a Mac
-    image: assets/images/MondrianMac.jpg
+    image: assets/images/mondrainmac/1s.jpg
     slug: /projects/Mondrain
     tags:
       - Digital Art
