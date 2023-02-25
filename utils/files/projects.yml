@@ -191,8 +191,24 @@ projects:
 
   - title: If Mondrain Had a Mac
     slug: Mondrain
-    image: assets/images/MondrianMac.jpg
-    description: "Digital art tell story about Mondrian"
+    video: hfGfzfP35DU
+    image: assets/images/mondrainmac/MondrianMac.jpg
+    imageContent: 
+      - assets/images/mondrainmac/s02.png
+      - assets/images/mondrainmac/s03.png
+      - assets/images/mondrainmac/s04.png
+      - assets/images/mondrainmac/s05.png
+      - assets/images/mondrainmac/s06.png
+      - assets/images/mondrainmac/s07.png
+      - assets/images/mondrainmac/s08.png
+      - assets/images/mondrainmac/s09.png
+      - assets/images/mondrainmac/s10.png
+      - assets/images/mondrainmac/s11.png
+      - assets/images/mondrainmac/s12.png
+      - assets/images/mondrainmac/s13.png
+      - assets/images/mondrainmac/s14.png
+
+    description: "Digital Art tell story about Mondrian"
     company: Group 
     prototypeLink: https://gottaegbert.github.io/Mondrian-s-Mac/
     link: https://www.figma.com/proto/0gpha2cXCeaMXFwpGu725Z/Digital-Art-Group2-If-Mondrian-had-a-mac-(Copy)?page-id=1031%3A7873&node-id=1031%3A8030&viewport=-647%2C384%2C0.69&scaling=scale-down-width&hide-ui=1
@@ -217,22 +233,19 @@ projects:
           Exhibition design
       - category: Architecture
         body: >-
-          Visitor Flows
+          Social Circle 
 
 
-          Target Audience
+          Situation puzzle
 
 
-          Financial Trends
-
-
-          Content Trends
+          Mondrian in 2021
     stack:
-      - AI
-      - Python
-      - Figma
-      - UX
-      - Service
+      - Digital Art
+      - Exhibition Design
+      - Interaction
+      - Web Design
+      - Visual
   - title: Weibo hottrend and emoji
     slug: weibo
     image: assets/images/HSY-Portfolio-Export_Page_32.jpg
@@ -290,6 +303,7 @@ projects:
       - SQL
   - title: A.I. Mirror
     slug: aimirror
+    video: xQJhiB0shjg
     image: assets/images/aimirror/ai1.jpg
     imageContent: 
       # - assets/images/aimirror/ai1.jpg
