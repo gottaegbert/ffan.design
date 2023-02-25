@@ -15,7 +15,7 @@ const Layout: React.FC = ({ children }) => {
       gsap.from(item, {
         scrollTrigger: {
           trigger: item,
-          start: "top 95%",
+          start: "top 180%",
         },
         y: 40,
         opacity: 0,
