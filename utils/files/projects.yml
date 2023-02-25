@@ -65,6 +65,7 @@ projects:
       - Figma
       - UX
       - Service
+
   - title: VisEmo
     slug: Meta-VisEmo
     video: GWPxOZIoncA
@@ -259,7 +260,7 @@ projects:
     description: "social network sentiment analysis"
     company: Personal
     prototypeLink: https://gottaegbert.github.io/webshow1/trendingofschopen.html
-    link: https://www.behance.net/gallery/112689801/_?tracking_source=search_projects%7C%E5%BC%80%E5%AD%A6%E5%BE%80%E4%BA%8B
+    # link: 
     date: "2020"
     textBlock:
       - category: Objectives
@@ -355,7 +356,6 @@ projects:
       - ML
       - Motion capture
       - VFX
-  
   - title: Moving Olmipics
     slug: movingolimipic
     video: zwHCrTvbe9Y
