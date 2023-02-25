@@ -10,6 +10,16 @@ selectedProjects:
       - British Museum
       - Data Visualization
       - Dashboard
+  - title: Knoise
+    image: assets/images/knoise/1.png
+    slug: /projects/Knoise
+    tags:
+      - Smart City
+      - Noise
+      - Data Analysis
+      - User Experience
+      - Interaction
+      - Dashboard
   - title: Meta-VisEmo
     image: assets/images/metavisemo/s1.png
     slug: /projects/Meta-VisEmo

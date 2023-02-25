@@ -20,7 +20,7 @@ const CaseStudy: React.FC<selectedProject> = ({ image, slug, title, tags }) => {
     gsap.to(ref.current, {
       scrollTrigger: {
         trigger: ref.current,
-        start: "top 90%",
+        start: "top 180%",
       },
       duration: 1.4,
       height: 0,
