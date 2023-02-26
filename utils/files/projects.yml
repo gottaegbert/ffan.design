@@ -67,50 +67,100 @@ projects:
       - Service
   - title: Knoise
     slug: Knoise
+    video: YUdgTCM6heE
     image: assets/images/knoise/1.png
     imageContent: 
-      - assets/images/knoise/2.png
+      - assets/images/knoise/s01.png
+      - assets/images/knoise/s02.png
+      - assets/images/knoise/s03.png
+      - assets/images/knoise/s04.png
+      - assets/images/knoise/s05.png
+      - assets/images/knoise/s06.png
+      - assets/images/knoise/s07.png
+      - assets/images/knoise/s08.png
+      - assets/images/knoise/s09.png
+      - assets/images/knoise/s10.png
+      - assets/images/knoise/s11.png
+      - assets/images/knoise/s12.png
+      - assets/images/knoise/s13.png
+      - assets/images/knoise/s14.png
+      - assets/images/knoise/s15.png
+      - assets/images/knoise/s16.png
   
-    description: "KNOISE addresses all citizens because noise pollution can harm all age groups, from children to mature adults."
+    description: "KNOISE is a co-monitoring sound service for smart cities. On the one hand it helps citizens gain awareness and new behaviours to protect themselves from disturbing sounds. On the other helps the city to map data and act against noise pollution."
     company: Cooperation
     
-    prototypeLink: https://bit.ly/Inviso_prototype
-    link: https://www.figma.com/proto/TGk4lpRLZdlOXT3qLdeic2/Report%2BPresentation-(Copy)?page-id=6%3A135&node-id=6%3A136&viewport=47%2C569%2C0.02&scaling=scale-down&starting-point-node-id=6%3A136
-    date: "2022"
+    prototypeLink: https://www.figma.com/proto/tvPkaE2ATEkMawOuUMqgMQ/Knoise-App-(Copy)?page-id=409%3A22584&node-id=446%3A28605&viewport=427%2C82%2C0.03&scaling=min-zoom&starting-point-node-id=446%3A28605
+    link: https://knoise.framer.website
+    date: "2023"
     textBlock:
       - category: Objectives
         body:
-          This is a project from "Envision A.I. through design" class.The aim of the project was to design a supportive dashboard for the manager of the British Museum to facilitate decision-making with the help of Artificial Intelligence. By combining data from the British Museum, digital initiatives and data concerning the Covid-19 pandemic, the system aims to support the strategic operation of the museum. It assists the Manager, the financial department and the marketing department by predicting future developments of the museum, highlighting potential target groups and giving inspiration for content delivery. Furthermore, by exploiting visitors' reviews from TripAdvisor and Twitter, the system collects and visualises the audience's opinions and demographics – helping the British Museum improve its targeting and provide greater value for a greater audience. 
+          The population density of smart cities is increasing drastically, consequently noise pollution is growing. Citizens have no concrete tools to learn how to protect themselves from the threats that exposure to noise can cause.
+          Knoise is a co-monitoring service that tackles the problem of noise pollution in smart cities, to decrease the health effects that noise can have on citizens. To achieve its goal, it helps citizens gain awareness and adopt new behaviors to protect themselves from disturbing sounds. Simultaneously, it assists the city in mapping data about noise to better act against the problem.
+          
+          
+          [Knoise Website](https://knoise.framer.website/mvp-testing)
+          
+          - **Knoise Awareness**
+
+
+          The first important step is to sensitise citizens with the issue of noise pollution by raising their awareness about the topic.
+          With the Knoise Experience citizens can understand the risks of noise exposure on their health, through an interactive experience based on embodied learning.
+          
+          
+          ![Knosie awareness](../assets/images/knoise/aware.png)
+
+          - **Knoise Smart Feedback**
+
+
+          In order to motivate citizens to behave correctl KNOISE is strategically placed in points where people are sensitive to acoustically healthy environments. Systems are installed in transport vehicles that act on the noise through multisensory feedback, naturally decreasing the noise level.
+          
+          
+          ![Knosie feedback](../assets/images/knoise/feedback.png)
+          
+          - **Knoise App**
+
+          
+          To take concrete action, KNOISE maps city sound data to help citizens and institutions take a stand. Through the app it is possible to track personal noise exposure, find sound safe spaces in the city and contribute with noise reports.
+          
+          
+          ![Knosie app](../assets/images/knoise/app.png)
       - category: My role
         body: >-
-          Ideation and reasearch
+          Ideation
 
 
-          Data Expert
+          Interaction design
 
 
-          AI system core define
+          Awareness Process Design
+
+
+          Usablitiy Testing
 
 
           Prototype
       - category: Architecture
         body: >-
-          Visitor Flows
+          User Awarness
 
 
-          Target Audience
+          Motivation
 
 
-          Financial Trends
+          Adoption
 
 
-          Content Trends
+          Maniteinance
+
+           ![Knosie app](../assets/images/knoise/behaviour.png)
     stack:
-      - AI
-      - Python
-      - Figma
+      - Touchdesigner
+      - Arduino
+      - Behavior Change
       - UX
-      - Service
+      - System
 
   - title: VisEmo
     slug: Meta-VisEmo
