@@ -4,7 +4,7 @@ import Footer from "../Footer/Footer";
 import { gsap } from "gsap/dist/gsap";
 import { useEffect } from "react";
 
-const Layout: React.FC = ({ children }) => {
+const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   useEffect(() => {
     initAnimations();
   }, []);
