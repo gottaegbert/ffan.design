@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Suspense } from 'react';
+import { Suspense, useLayoutEffect } from 'react';
 import styles from "./index.module.scss";
 import cn from "classnames";
 import Layout from "../components/Layout/Layout";
@@ -22,7 +22,6 @@ import { homePageData } from "../utils/customTypes";
 import dynamic from 'next/dynamic';
 import Spline from "@splinetool/react-spline";
 // import Spline from '@splinetool/react-spline';
-
 
 
 
@@ -61,12 +60,12 @@ const IndexPage: React.FC<Props> = ({ data }) => {
   } = data;
 
   useEffect(() => {
-    gsap.set(".hero-text-line", { opacity: 1 });
-    gsap.from(".hero-text-line", {
+    gsap.set(".hero-text-line", { opacity: 1, yPercent:100});
+    gsap.to(".hero-text-line", {
       duration: 1,
-      yPercent: 100,
+      yPercent: 0,
       ease: "power4",
-      stagger: 0.1,
+      stagger: 0.6,
       delay: 0.2,
     });
   }, []);
@@ -116,7 +115,7 @@ const IndexPage: React.FC<Props> = ({ data }) => {
             className={cn("col-12 col-sm-7 col-md-6 col-lg-5", styles.aboutCol)}
           >
             <p className={"fade-in-up description"}>{aboutShort}</p>
-            <Link href="/about">
+            <Link legacyBehavior href="/about">
               <a className={"fade-in-up"}>About me</a>
             </Link>
           </div>

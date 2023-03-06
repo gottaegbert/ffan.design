@@ -59,10 +59,10 @@ const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
   // const VIDEO = 
   const headerComponent = isVideo ? <VIDEO/>:<Picture /> 
   useEffect(() => {
-    gsap.set(title.current, { opacity: 1 });
-    gsap.from(title.current, {
+    gsap.set(title.current, { opacity: 1, yPercent:100});
+    gsap.to(title.current, {
       duration: 1,
-      yPercent: 100,
+      yPercent: 0,
       ease: "power4",
       stagger: 0.1,
       delay: 0.2,
@@ -71,7 +71,7 @@ const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
       duration: 1,
       width: 0,
       ease: "power4",
-      stagger: 0.1,
+      stagger: 0.2,
       delay: 0.2,
     });
   }, []);

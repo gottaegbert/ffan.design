@@ -18,7 +18,7 @@ const Layout: React.FC = ({ children }) => {
           start: "top 180%",
         },
         y: 40,
-        opacity: 0,
+        opacity: 1,
         duration: 1,
         ease: "Power2.easeOut",
       });

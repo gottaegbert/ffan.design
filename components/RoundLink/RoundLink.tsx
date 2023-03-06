@@ -19,7 +19,7 @@ const RoundLink: React.FC<Props> = ({
   return (
     <>
       {internal ? (
-        <Link href={url}>
+        <Link legacyBehavior  href={url}>
           <a className={cn(styles.roundLink, classname, "round-link")}>
             {label}
           </a>

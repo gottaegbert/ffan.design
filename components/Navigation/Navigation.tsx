@@ -48,7 +48,7 @@ const Navigation = () => {
   }, []);
   return (
     <nav className={styles.nav} ref={navigation}>
-      <Link href="/">
+      <Link legacyBehavior href="/">
         <a className={cn("nav-el")}>Home</a>
       </Link>
       {/* <div class="theme-switch-wrapper">
@@ -67,7 +67,7 @@ const Navigation = () => {
           {/* <span className={styles.slider}></span> */}
         </label>
       </div>
-      {/* <Link href="/about">
+      {/* <Link legacyBehavior href="/about">
         <a className={cn(styles.aboutLink, styles.navLink, "nav-el")}>About</a>
       </Link> */}
 

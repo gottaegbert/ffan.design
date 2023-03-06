@@ -27,10 +27,10 @@ const About: React.FC<Props> = ({ data, projData }) => {
 
   useEffect(() => {
     if (refTitle.current) {
-      gsap.set(refTitle.current, { opacity: 1 });
-      gsap.from(refTitle.current, {
+      gsap.set(refTitle.current, { opacity: 1, yPercent: 100 });
+      gsap.to(refTitle.current, {
         duration: 1,
-        yPercent: 100,
+        yPercent: 0,
         ease: "power4",
         delay: 0.2,
       });

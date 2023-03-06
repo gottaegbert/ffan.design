@@ -26,15 +26,15 @@
       display: block;
       overflow: hidden;
       & > span {
-        opacity: 0;
+        opacity: 1;
       }
     }
   }
   .introBio {
-    opacity: 0;
+    opacity: 1;
   }
   .descBio {
-    opacity: 0;
+    opacity: 1;
   }
   h4 {
     line-height: 1.4;

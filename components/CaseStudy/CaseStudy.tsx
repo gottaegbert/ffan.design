@@ -20,7 +20,7 @@ const CaseStudy: React.FC<selectedProject> = ({ image, slug, title, tags }) => {
     gsap.to(ref.current, {
       scrollTrigger: {
         trigger: ref.current,
-        start: "top 180%",
+        start: "top 100%",
       },
       duration: 1.4,
       height: 0,
@@ -28,8 +28,10 @@ const CaseStudy: React.FC<selectedProject> = ({ image, slug, title, tags }) => {
     });
   }, []);
 
+
+
   return (
-    <Link href={slug}>
+    <Link legacyBehavior href={slug}>
       <a className={styles.projWrap}>
         <article>
           <div className={styles.imgContainer}>

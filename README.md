@@ -12,6 +12,8 @@ Live at 👉 [gottaegbert.io](https://gottaegbert.io)
 
 ## 学习
 
+### ISR
+
 Next.js 推出的 ISR(Incremental Static Regeneration) 方案，允许在应用运行时再重新生成每个页面 HTML，而不需要重新构建整个应用。这样即使有海量页面，也能使用上 SSG 的特性。一般来说，使用 ISR 需要 getStaticPaths 和 getStaticProps 同时配合使用。举个例子：
 
 ```javascript
@@ -43,3 +45,7 @@ export async function getStaticProps({ params }) {
   }
 }
 ```
+
+### Fouc
+
+A flash of unstyled content (or flash of unstyled text, FOUC) is an instance where a web page appears briefly with the browser's default styles prior to loading an external CSS stylesheet, due to the web browser engine rendering the page before all ...
