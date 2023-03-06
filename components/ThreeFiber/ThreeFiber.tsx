@@ -1,10 +1,10 @@
 import dynamic from "next/dynamic";
+import * as THREE from 'three'
 import styles from "./ThreeFiber.module.scss";
 import { useRef, useState } from 'react'
-import { Canvas, useFrame } from '@react-three/fiber'
-import { Box } from "@react-three/drei";
+import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { Sphere } from "three";
-
+import { Html } from '@react-three/drei'
 
 // export function ThreeF() {
     
@@ -14,7 +14,18 @@ import { Sphere } from "three";
 //     );
 // }
 
-
+function Box({ text, color, ...props }) {
+    const [hovered, set] = useState(false)
+    return (
+        <mesh {...props} onPointerOver={(e) => set(true)} onPointerOut={(e) => set(false)}>
+            <boxGeometry args={[2, 2, 2]} />
+            <meshStandardMaterial color={hovered ? 'hotpink' : color} />
+            <Html position={[0, 0, 1]} className="label" center>
+                {text}
+            </Html>
+        </mesh>
+    )
+}
 // function Box(props) {
 //     // This reference gives us direct access to the THREE.Mesh object.
 //     const ref = useRef()
@@ -50,7 +61,7 @@ export function ThreeF() {
             <ambientLight intensity={0.5} />
             <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
             <pointLight position={[-10, -10, -10]} />
-            
+            <Box text={<span>This is HTML</span>} color="aquamarine" />
             {/* <Box position={[-1.2, 0, 0]} />
             <Box position={[1.2, 0, 0]} /> */}
         </Canvas>
