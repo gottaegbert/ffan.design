@@ -14,8 +14,6 @@
     "@react-three/drei": "7.27.5",
     "@react-three/fiber": "7.0.29",
     "@react-three/postprocessing": "2.7.0",
-    "@splinetool/react-spline": "^2.2.6",
-    "@splinetool/runtime": "^0.9.252",
     "@types/js-yaml": "^4.0.5",
     "@types/three": "^0.130.2",
     "@vercel/analytics": "^0.1.11",

@@ -1038,30 +1038,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@splinetool/react-spline@npm:^2.2.6":
-  version: 2.2.6
-  resolution: "@splinetool/react-spline@npm:2.2.6"
-  dependencies:
-    lodash.debounce: ^4.0.8
-    react-merge-refs: ^2.0.1
-  peerDependencies:
-    "@splinetool/runtime": "*"
-    react: ">=17.0.0"
-    react-dom: ">=17.0.0"
-  checksum: 2a30aa2a0bdff358b54c77b2e2e5815c44e0bd4fe6492e579854c0a689bcc7a0942e644d641e2fa55f23c3dfac19f57709df4be23f892b39363d6b9fa9565737
-  languageName: node
-  linkType: hard
-
-"@splinetool/runtime@npm:^0.9.252":
-  version: 0.9.252
-  resolution: "@splinetool/runtime@npm:0.9.252"
-  dependencies:
-    on-change: ^4.0.0
-    semver-compare: ^1.0.0
-  checksum: dfa0bed496eb264068f2a63def751a4197f3bf98502c3ac2e457624e00a1e549c242ea8ac5bb4950988320ce81ca17c3d3c3d664f1f3cc8c5af77194371838ea
-  languageName: node
-  linkType: hard
-
 "@swc/helpers@npm:0.4.14":
   version: 0.4.14
   resolution: "@swc/helpers@npm:0.4.14"
@@ -4227,13 +4203,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash.debounce@npm:^4.0.8":
-  version: 4.0.8
-  resolution: "lodash.debounce@npm:4.0.8"
-  checksum: a3f527d22c548f43ae31c861ada88b2637eb48ac6aa3eb56e82d44917971b8aa96fbb37aa60efea674dc4ee8c42074f90f7b1f772e9db375435f6c83a19b3bc6
-  languageName: node
-  linkType: hard
-
 "lodash.defaults@npm:^4.2.0":
   version: 4.2.0
   resolution: "lodash.defaults@npm:4.2.0"
@@ -4908,8 +4877,6 @@ __metadata:
     "@react-three/drei": 7.27.5
     "@react-three/fiber": 7.0.29
     "@react-three/postprocessing": 2.7.0
-    "@splinetool/react-spline": ^2.2.6
-    "@splinetool/runtime": ^0.9.252
     "@types/js-yaml": ^4.0.5
     "@types/node": 16.18.14
     "@types/react": 17.0.53
@@ -5263,13 +5230,6 @@ __metadata:
     ufo: ^0.8.6
     undici: ^5.12.0
   checksum: 28bc6dc507de37d2e818dc48a768716b24ef0d00830ea810f5d3d19e36f93d49281e91fe6a7b323555097fe0079b47c3bff05d736ea30445c3995dd5db43317b
-  languageName: node
-  linkType: hard
-
-"on-change@npm:^4.0.0":
-  version: 4.0.2
-  resolution: "on-change@npm:4.0.2"
-  checksum: 26cfab78a19426fcf45aa4f4e1995fb1a215ef5345a2ab32d98dfaf442e552dd89059bd28d5a07e85a0e7fca4c3f57bcfd37beca99015c653015bc15386a43d2
   languageName: node
   linkType: hard
 
@@ -5636,13 +5596,6 @@ __metadata:
   version: 1.1.0
   resolution: "react-merge-refs@npm:1.1.0"
   checksum: 90884352999002d868ab9f1bcfe3222fb0f2178ed629f1da7e98e5a9b02a2c96b4aa72800db92aabd69d2483211b4be57a2088e89a11a0b660e7ada744d4ddf7
-  languageName: node
-  linkType: hard
-
-"react-merge-refs@npm:^2.0.1":
-  version: 2.0.1
-  resolution: "react-merge-refs@npm:2.0.1"
-  checksum: c0b6fdb384a92e9b2bb7d56128244a2db97b9343c0dcae70f172352c3732312266c078495902707e45f523625afcba78996a22edea3a8e7b2b17fe97347059fe
   languageName: node
   linkType: hard
 
@@ -6016,13 +5969,6 @@ __metadata:
   dependencies:
     node-forge: ^1
   checksum: aa9ce2150a54838978d5c0aee54d7ebe77649a32e4e690eb91775f71fdff773874a4fbafd0ac73d8ec3b702ff8a395c604df4f8e8868528f36fd6c15076fb43a
-  languageName: node
-  linkType: hard
-
-"semver-compare@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "semver-compare@npm:1.0.0"
-  checksum: dd1d7e2909744cf2cf71864ac718efc990297f9de2913b68e41a214319e70174b1d1793ac16e31183b128c2b9812541300cb324db8168e6cf6b570703b171c68
   languageName: node
   linkType: hard
 
