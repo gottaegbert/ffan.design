@@ -18,6 +18,7 @@
     "@splinetool/runtime": "^0.9.252",
     "@types/js-yaml": "^4.0.5",
     "@types/three": "^0.130.2",
+    "@vercel/analytics": "^0.1.11",
     "babel-plugin-macros": "^3.1.0",
     "classnames": "^2.3.2",
     "fs": "^0.0.1-security",
