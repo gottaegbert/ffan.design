@@ -1,5 +1,4 @@
 import * as React from "react";
-import { Suspense, useLayoutEffect } from 'react';
 import styles from "./index.module.scss";
 import cn from "classnames";
 import Layout from "../components/Layout/Layout";
@@ -19,8 +18,7 @@ import { StoreProvider } from "../utils/StoreProvider";
 import BasicMeta from "../utils/BasicMeta";
 import { homePageData } from "../utils/customTypes";
 import dynamic from 'next/dynamic';
-import Spline from "@splinetool/react-spline";
-// import Spline from '@splinetool/react-spline';
+import { ThreeF } from "../components/ThreeFiber/ThreeFiber";
 
 
 
@@ -91,6 +89,7 @@ const IndexPage: React.FC<Props> = ({ data }) => {
                 </span>
               </h1>
               <h2 className={styles.subTitle}>
+              <ThreeF/>
                 <span className={styles.offset}>
                   <span className={"hero-text-line"}>IXD DESIGNER</span>
                 </span>
