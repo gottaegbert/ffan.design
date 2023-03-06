@@ -16,7 +16,7 @@ import { StoreProvider } from "../../utils/StoreProvider";
 import { gePageData } from "../../utils/pages";
 import BasicMeta from "../../utils/BasicMeta";
 import { project, selectedProject } from "../../utils/customTypes";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import YouTube, { YouTubeProps } from 'react-youtube';
 
 type Props = {
