@@ -1,5 +1,6 @@
 import dynamic from "next/dynamic";
 import * as THREE from 'three'
+import * as React from "react";
 import styles from "./ThreeFiber.module.scss";
 import { useRef, useState } from 'react'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
@@ -15,12 +16,24 @@ import { Html } from '@react-three/drei'
 // }
 
 function Box({ text, color, ...props }) {
-    const [hovered, set] = useState(false)
+    // const [hovered, set] = useState(false)
+    const ref = useRef<THREE.Mesh>(null!)
+    const [hovered, hover] = useState(false)
+    const [clicked, click] = useState(false)
+    useFrame((state, delta) => (ref.current.rotation.x += 0.01))
     return (
-        <mesh {...props} onPointerOver={(e) => set(true)} onPointerOut={(e) => set(false)}>
+        <mesh {...props}
+            ref={ref}
+            scale={clicked ? 1.5 : 1}
+            onClick={(event) => click(!clicked)}
+            onPointerOver={(event) => hover(true)}
+            onPointerOut={(event) => hover(false)}>
             <boxGeometry args={[2, 2, 2]} />
-            <meshStandardMaterial color={hovered ? 'hotpink' : color} />
-            <Html position={[0, 0, 1]} className="label" center>
+            <meshStandardMaterial color={hovered ? 'hotpink' : 'orange'} />
+            <Html position={[0, 1, 1]} className="h1" center>
+                {text}
+            </Html>
+            <Html position={[2, -3, 1]} className="h2" center>
                 {text}
             </Html>
         </mesh>
@@ -57,11 +70,12 @@ function Box({ text, color, ...props }) {
 export function ThreeF() {
     return (
         <Canvas>
-            <color attach="background" args={['#fff']} />
+            {/* <color attach="background" args={["transparent"]} /> */}
             <ambientLight intensity={0.5} />
             <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
             <pointLight position={[-10, -10, -10]} />
-            <Box text={<span>This is HTML</span>} color="aquamarine" />
+            <Box text={<span>Siyu HU</span>} color="aquamarine" />
+            
             {/* <Box position={[-1.2, 0, 0]} />
             <Box position={[1.2, 0, 0]} /> */}
         </Canvas>

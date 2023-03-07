@@ -75,6 +75,10 @@ const IndexPage: React.FC<Props> = ({ data }) => {
         
         <BasicMeta url={"/"} />
         <div className={cn(styles.heroContainer)}>
+          {/* <ThreeF /> */}
+        </div>
+        
+        <div className={cn(styles.heroContainer)}>
           <section className={cn("grid")}>
             <div
               className={cn(
@@ -89,7 +93,7 @@ const IndexPage: React.FC<Props> = ({ data }) => {
                 </span>
               </h1>
               <h2 className={styles.subTitle}>
-              <ThreeF/>
+              {/* <ThreeF/> */}
                 <span className={styles.offset}>
                   <span className={"hero-text-line"}>IXD DESIGNER</span>
                 </span>
@@ -98,8 +102,6 @@ const IndexPage: React.FC<Props> = ({ data }) => {
                 </span>
               </h2>
             </div>
-            
-            {/* <Spline className=".Spline" scene="https://prod.spline.design/9gAl2QkNdQPJbd19/scene.splinecode" /> */}
           </section>
         </div>
         <section className={cn("grid sectionSpacing", styles.aboutSection)}>

@@ -7,3 +7,25 @@
   align-items:inherit;
   z-index:1;
 }
+
+.namethree {
+  font-size: 20px;
+  line-height: 1;
+  margin-bottom: 20px;
+  position: flex;
+  z-index: 1;
+  @media only screen and (min-width: $breakpoint-sm) {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+  @media only screen and (min-width: $breakpoint-md) {
+    margin-bottom: 32px;
+  }
+  span {
+    display: block;
+    overflow: hidden;
+    & > span {
+      opacity: 0;
+    }
+  }
+}
