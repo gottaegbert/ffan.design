@@ -17,8 +17,11 @@ import { gePageData } from "../utils/pages";
 import { StoreProvider } from "../utils/StoreProvider";
 import BasicMeta from "../utils/BasicMeta";
 import { homePageData } from "../utils/customTypes";
+import ThreeF from "../components/ThreeFiber/ThreeFiber";
 import dynamic from 'next/dynamic';
-import { ThreeF } from "../components/ThreeFiber/ThreeFiber";
+// import { ThreeF } from "../components/ThreeFiber/ThreeFiber";
+// const Logo = dynamic(() => import('../components/ThreeFiber/ThreeFiber/ThreeF"), { ssr: false })
+
 
 
 
@@ -74,26 +77,45 @@ const IndexPage: React.FC<Props> = ({ data }) => {
       <Layout>
         
         <BasicMeta url={"/"} />
-        {/* <div className={cn(styles.heroContainer)}>
-          <ThreeF />
-        </div> */}
         
-        <div className={cn(styles.heroContainer)}>
+          <div className={cn(styles.heroContainer)}>
+            <section className={cn("grid")}>
+              <div
+                className={cn(
+                  "col-12 col-start-md-2 col-end-md-11 col-start-lg-2 col-end-lg-11"
+              )}>
+                  <h1 className={styles.name}>
+                  <span>
+                    <span className={"hero-text-line"}>Siyu Hu</span>
+                  </span>
+                <ThreeF />
+                </h1>
+                <h2 className={styles.subTitle}>
+
+                  <span className={styles.offset}>
+                    <span className={"hero-text-line"}>IXD DESIGNER</span>
+                  </span>
+                  <span>
+                    <span className={"hero-text-line"}>WEB DEVELOPER</span>
+                  </span>
+                </h2>
+              </div>
+            </section>
+          </div>
+
+        {/* <div className={cn(styles.heroContainer)}>
           <section className={cn("grid")}>
             <div
               className={cn(
                 "col-12 col-start-md-2 col-end-md-11 col-start-lg-2 col-end-lg-11"
                 )}
-                >
-
-             
-              <h1 className={styles.name}>
+>              <h1 className={styles.name}>
                 <span>
                   <span className={"hero-text-line"}>Siyu Hu</span>
                 </span>
               </h1>
               <h2 className={styles.subTitle}>
-              {/* <ThreeF/> */}
+              
                 <span className={styles.offset}>
                   <span className={"hero-text-line"}>IXD DESIGNER</span>
                 </span>
@@ -103,7 +125,8 @@ const IndexPage: React.FC<Props> = ({ data }) => {
               </h2>
             </div>
           </section>
-        </div>
+        </div> */}
+        
         <section className={cn("grid sectionSpacing", styles.aboutSection)}>
             <div className={styles.heroLinkContainer}>
               {floatingLinksData.map((link, idx) => (
