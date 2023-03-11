@@ -1,8 +1,8 @@
+/* eslint-disable react/no-children-prop */
 import * as React from "react";
 import styles from "./index.module.scss";
 import cn from "classnames";
 import Layout from "../components/Layout/Layout";
-
 import { gsap } from "gsap";
 import { useEffect } from "react";
 import FloatingLink from "../components/FloatingLink/FloatingLink";
@@ -21,6 +21,40 @@ import ThreeF from "../components/ThreeFiber/ThreeFiber";
 import dynamic from 'next/dynamic';
 // import { ThreeF } from "../components/ThreeFiber/ThreeFiber";
 // const Logo = dynamic(() => import('../components/ThreeFiber/ThreeFiber/ThreeF"), { ssr: false })
+
+
+
+
+// https://github.com/pmndrs/react-three-next/issues/49
+
+export function Intro(props) {
+  return (
+    <div className={cn(styles.heroContainer)}>
+      <section className={cn("grid")}>
+        <div
+          className={cn(
+            "col-12 col-start-md-2 col-end-md-11 col-start-lg-2 col-end-lg-11"
+          )}>
+          <h1 className={styles.name}>
+            <span>
+              <span className={"hero-text-line"}>Siyu Hu</span>
+            </span>
+            <ThreeF children={undefined} />
+            {/* <ThreeF /> */}
+          </h1>
+          <h2 className={styles.subTitle}>
+            <span className={styles.offset}>
+              <span className={"hero-text-line"}>IXD DESIGNER</span>
+            </span>
+            <span>
+              <span className={"hero-text-line"}>WEB DEVELOPER</span>
+            </span>
+          </h2>
+        </div>
+      </section>
+    </div>
+  )
+}
 
 
 
@@ -73,35 +107,13 @@ const IndexPage: React.FC<Props> = ({ data }) => {
   return (
     <StoreProvider>
    
-       
+     
       <Layout>
-        
-        <BasicMeta url={"/"} />
-        
-          <div className={cn(styles.heroContainer)}>
-            <section className={cn("grid")}>
-              <div
-                className={cn(
-                  "col-12 col-start-md-2 col-end-md-11 col-start-lg-2 col-end-lg-11"
-              )}>
-                  <h1 className={styles.name}>
-                  <span>
-                    <span className={"hero-text-line"}>Siyu Hu</span>
-                  </span>
-                <ThreeF />
-                </h1>
-                <h2 className={styles.subTitle}>
 
-                  <span className={styles.offset}>
-                    <span className={"hero-text-line"}>IXD DESIGNER</span>
-                  </span>
-                  <span>
-                    <span className={"hero-text-line"}>WEB DEVELOPER</span>
-                  </span>
-                </h2>
-              </div>
-            </section>
-          </div>
+        <BasicMeta url={"/"} />
+      
+        <Intro>
+        </Intro>
 
         {/* <div className={cn(styles.heroContainer)}>
           <section className={cn("grid")}>
@@ -192,10 +204,13 @@ const IndexPage: React.FC<Props> = ({ data }) => {
       </Layout>
       <Cursor imgArray={moreWorks.map((work) => work.image)} />
     </StoreProvider>
-  );
-};
+  )
+}
 
 export default IndexPage;
+
+
+
 
 export const getStaticProps: GetStaticProps = async () => {
   const data = gePageData("homepage");
