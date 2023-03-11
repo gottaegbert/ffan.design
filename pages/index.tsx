@@ -30,6 +30,10 @@ import dynamic from 'next/dynamic';
 export function Intro(props) {
   return (
     <div className={cn(styles.heroContainer)}>
+      
+            <div style={{ width: "50vw", height: "50vh" }}>
+              <ThreeF children={undefined} />
+            </div>
       <section className={cn("grid")}>
         <div
           className={cn(
@@ -39,8 +43,6 @@ export function Intro(props) {
             <span>
               <span className={"hero-text-line"}>Siyu Hu</span>
             </span>
-            <ThreeF children={undefined} />
-            {/* <ThreeF /> */}
           </h1>
           <h2 className={styles.subTitle}>
             <span className={styles.offset}>

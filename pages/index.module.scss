@@ -3,7 +3,7 @@
 
 .heroContainer {
   background-color: var(--off-white);
-  display: flex;
+  display:flex;
   align-items: center;
   width: 100%;
   padding: 170px 0 0 0;
@@ -17,7 +17,7 @@
     padding: 280px 0 180px 0;
   }
   @media only screen and (min-width: $breakpoint-xl) {
-    padding: 320px 0 220px 0;
+    padding: 280px 0 220px 0;
   }
 }
 
@@ -55,7 +55,7 @@
     }
 
     &.offset {
-      margin-left: 61px;
+      margin-left: 40px;
       margin-bottom: 32px;
       @media only screen and (min-width: $breakpoint-sm) {
         margin-left: 121px;

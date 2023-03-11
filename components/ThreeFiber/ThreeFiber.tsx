@@ -90,8 +90,10 @@ export default function ThreeF({ children, ...props })
     return (
         <Canvas
             {...props}
+            
             shadows    
             camera={{ position: [20, 0.9, 20], fov: 26 }}>
+            
             <ambientLight intensity={0.5} />
             <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
             <pointLight position={[-10, -10, -10]} />
