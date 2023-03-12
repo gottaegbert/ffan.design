@@ -13,7 +13,7 @@ function Heart({ color,text, ...props }) {
     const ref = useRef<THREE.Mesh>(null!)
     const [hovered, hover] = useState(false)
     const [clicked, click] = useState(false)
-    useFrame((state, delta) => (ref.current.rotation.x += 0.01))
+    useFrame((state, delta) => (ref.current.rotation.y += 0.01))
     return (
         <mesh {...props}
             ref={ref}
@@ -71,15 +71,21 @@ export function HeartGeometry({ radius = 6, depth = 1 }) {
         s.bezierCurveTo(x + 8, y + 3.5, x + 8, y, x + 5, y)
         s.bezierCurveTo(x + 3.5, y, x + 2.5, y + 2.5, x + 2.5, y + 2.5)
         return new THREE.Shape(s.getPoints(10))
-    }, [radius, depth])
+    }, [])
     const config = useMemo(() => ({ depth: depth * 10, bevelEnabled: false }), [depth])
     useLayoutEffect(() => {
+        /* @ts-ignore */
         geometry.current.translate(0, 0, (-depth * 10) / 2)
+        /* @ts-ignore */
         geometry.current.scale(radius / 10, radius / 10, radius / 10)
+        /* @ts-ignore */
         geometry.current.rotateY(Math.PI / 2)
+        /* @ts-ignore */
         geometry.current.rotateZ(Math.PI)
+        /* @ts-ignore */
         geometry.current.computeVertexNormals()
-    }, [shape])
+        
+    }, [depth, radius, shape])
     return <extrudeGeometry ref={geometry} args={[shape, config]} />
 }
 
