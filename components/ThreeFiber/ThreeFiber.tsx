@@ -102,7 +102,7 @@ export default function ThreeF({ children, ...props })
     return (
         <>
             <Canvas dpr={[1, 2]} camera={{ position: [0, 0, 2.5] }} gl={{ alpha: true }}>
-                {/* <Leva   hidden /> */}
+                <Leva   hidden />
                 {/* <color attach="background" args={['#111111']} /> */}
                 <Suspense fallback={null}>
                     <Suzi />
