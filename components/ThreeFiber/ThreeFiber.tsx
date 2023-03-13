@@ -3,10 +3,10 @@ import * as THREE from 'three'
 import * as React from "react";
 import { useRouter } from 'next/router'
 import styles from "./ThreeFiber.module.scss";
-import { useLayoutEffect, useMemo, useRef, useState } from 'react'
+import { Suspense, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import { Canvas, applyProps, extend, useFrame, useThree } from '@react-three/fiber'
-import { Effects, Environment, Html, OrbitControls, Preload, useGLTF } from '@react-three/drei'
-
+import { Effects, Environment, Html, Loader, OrbitControls, Preload, useGLTF } from '@react-three/drei'
+import { useControls,Leva } from 'leva'
 
 function Heart({ color,text, ...props }) {
     // const [hovered, set] = useState(false)
@@ -34,28 +34,28 @@ function Heart({ color,text, ...props }) {
     )
 }
 
-
 function Suzi(props) {
-    const { scene, materials } = useGLTF(
-        'https://market-assets.fra1.cdn.digitaloceanspaces.com/market-assets/models/suzanne-high-poly/model.gltf'
-    ) as any
-    React.useLayoutEffect(() => {
-        scene.traverse((obj) => obj.isMesh && (obj.receiveShadow = obj.castShadow = true))
-        applyProps(materials.default, {
-            color: 'orange',
-            roughness: 0,
-            normalMap: new THREE.CanvasTexture(
-                new FlakesTexture(),
-                THREE.UVMapping,
-                THREE.RepeatWrapping,
-                THREE.RepeatWrapping
-            ),
-            'normalMap-flipY': false,
-            'normalMap-repeat': [40, 40],
-            normalScale: [0.05, 0.05],
-        })
+    const ref = useRef<THREE.Mesh>(null!)
+    const { nodes } = useGLTF('/neon_game_controller.glb')
+    useFrame((state, delta) => (ref.current.rotation.y += 0.01))
+    const materialProps = useControls({
+        thickness: { value: 13.0, min: 0, max: 20 },
+        roughness: { value: 0.6, min: 0, max: 1, step: 0.1 },
+        clearcoat: { value: 0.9, min: 0, max: 1, step: 0.1 },
+        clearcoatRoughness: { value: 0.3, min: 0, max: 1, step: 0.1 },
+        transmission: { value: 1.0, min: 0.9, max: 1, step: 0.01 },
+        ior: { value: 1.2, min: 1, max: 2.3, step: 0.05 },
+        envMapIntensity: { value: 1, min: 0, max: 100, step: 1 },
+        color: '#ffffff',
+        attenuationTint: '#41ce46',
+        attenuationDistance: { value: 0.3, min: 0.1, max: 1 }
     })
-    return <primitive object={scene} {...props} />
+    return (
+        <mesh geometry={nodes.Object_4.geometry} position={[0, 0, 0]} rotation={[0, 0, 0.3]}  scale={[0.1, 0.1, 0.1]} {...props}
+            ref={ref}>
+            <meshPhysicalMaterial {...materialProps} />
+        </mesh>
+    )
 }
 export function HeartGeometry({ radius = 6, depth = 1 }) {
     const geometry = useRef()
@@ -93,22 +93,27 @@ export function HeartGeometry({ radius = 6, depth = 1 }) {
 
 export default function ThreeF({ children, ...props })
     {
+    const envProps = useControls({ background: false })
     return (
-        <Canvas
-            {...props}
-            
-            shadows    
-            camera={{ position: [20, 0.9, 20], fov: 26 }}>
-            
-            <ambientLight intensity={0.5} />
-            <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
-            <pointLight position={[-10, -10, -10]} />
-            <Heart text="Digital" color="aquamarine" />
-   
-            {/* <Suzi rotation={[-0.63, 0, 0]} scale={4} position={[0, 0, 0]} /> */}
-            {/* {children} */}
-            <Preload all />
-            <Environment preset="city" />
-        </Canvas>
+        <>
+            <Canvas dpr={[1, 2]} camera={{ position: [0, 0, 2.5] }} gl={{ alpha: false }}>
+                <Leva   hidden />
+                <color attach="background" args={['#111111']} />
+                <Suspense fallback={null}>
+                    <Suzi />
+                    <Environment {...envProps} files="adams_place_bridge_1k.hdr" />
+                    <group rotation={[0, 0, 0.785]} >
+                        <mesh position={[0, 0, -10]} material-color="#41ce46">
+                            <planeGeometry args={[5, 1]} />
+                        </mesh>
+                        <mesh position={[0, 0, -10]} material-color="#41ce46">
+                            <planeGeometry args={[1, 5]} />
+                        </mesh>
+                    </group>
+                </Suspense>
+    
+            </Canvas>
+            <Loader />
+        </>
     )
 }
