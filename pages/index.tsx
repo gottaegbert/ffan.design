@@ -19,13 +19,6 @@ import BasicMeta from "../utils/BasicMeta";
 import { homePageData } from "../utils/customTypes";
 import ThreeF from "../components/ThreeFiber/ThreeFiber";
 import dynamic from 'next/dynamic';
-// import { ThreeF } from "../components/ThreeFiber/ThreeFiber";
-// const Logo = dynamic(() => import('../components/ThreeFiber/ThreeFiber/ThreeF"), { ssr: false })
-
-
-
-
-// https://github.com/pmndrs/react-three-next/issues/49
 
 export function Intro(props) {
   return (
