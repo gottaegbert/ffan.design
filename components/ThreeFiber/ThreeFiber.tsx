@@ -36,6 +36,7 @@ function Heart({ color,text, ...props }) {
 
 function Suzi(props) {
     const ref = useRef<THREE.Mesh>(null!)
+    /* @ts-ignore */
     const { nodes } = useGLTF('/neon_game_controller.glb')
     useFrame((state, delta) => (ref.current.rotation.y += 0.01))
     const materialProps = useControls({
