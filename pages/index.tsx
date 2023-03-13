@@ -31,9 +31,9 @@ export function Intro(props) {
   return (
     <div className={cn(styles.heroContainer)}>
       
-            <div style={{ width: "50vw", height: "50vh" }}>
-              <ThreeF children={undefined} />
-            </div>
+      <div className={styles.three}>
+          <ThreeF children={undefined} />
+      </div>
       <section className={cn("grid")}>
         <div
           className={cn(

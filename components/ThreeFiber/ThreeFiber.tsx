@@ -4,10 +4,10 @@ import * as React from "react";
 import { useRouter } from 'next/router'
 import styles from "./ThreeFiber.module.scss";
 import { useLayoutEffect, useMemo, useRef, useState } from 'react'
-import { Canvas, applyProps, useFrame, useThree } from '@react-three/fiber'
-import { Sphere } from "three";
-import { Environment, Html, OrbitControls, Preload, useGLTF } from '@react-three/drei'
-import { FlakesTexture } from "three-stdlib";
+import { Canvas, applyProps, extend, useFrame, useThree } from '@react-three/fiber'
+import { Effects, Environment, Html, OrbitControls, Preload, useGLTF } from '@react-three/drei'
+
+
 function Heart({ color,text, ...props }) {
     // const [hovered, set] = useState(false)
     const ref = useRef<THREE.Mesh>(null!)
@@ -109,7 +109,6 @@ export default function ThreeF({ children, ...props })
             {/* {children} */}
             <Preload all />
             <Environment preset="city" />
-            <OrbitControls />
         </Canvas>
     )
 }
