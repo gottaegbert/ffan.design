@@ -6,42 +6,24 @@ import styles from "./ThreeFiber.module.scss";
 import { Suspense, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import { Canvas, applyProps, extend, useFrame, useThree } from '@react-three/fiber'
 import { Effects, Environment, Html, Loader, OrbitControls, Preload, useGLTF } from '@react-three/drei'
+import { useSpring, animated, config } from "@react-spring/three";
 import { useControls, Leva } from 'leva'
 
 
 
-function Heart({ color,text, ...props }) {
-    // const [hovered, set] = useState(false)
+function Logo(props) {
     const ref = useRef<THREE.Mesh>(null!)
-    const [hovered, hover] = useState(false)
-    const [clicked, click] = useState(false)
-    useFrame((state, delta) => (ref.current.rotation.y += 0.01))
-    return (
-        <mesh {...props}
-            ref={ref}
-            scale={clicked ? 1.2 : 1}
-            onClick={(event) => click(!clicked)}
-            onPointerOver={(event) => hover(true)}
-            onPointerOut={(event) => hover(false)}>
-            {/* <boxGeometry args={[5, 5, 5]} /> */}
-            <mesh>
-                <HeartGeometry depth={0.5} />
-                <meshStandardMaterial color={hovered ? '#06c743' : '#4b4b4b'} />
-            </mesh>
-            {/* <Html position={[0, 1, 1]} className="h1">
-                {text}
-            </Html> */}
-            
-        </mesh>
-    )
-}
-
-function Suzi(props) {
-    const ref = useRef<THREE.Mesh>(null!)
+    const [active, setActive] = useState(false);
     /* @ts-ignore */
     const { nodes } = useGLTF('/mylogo.glb')
-    useFrame((state, delta) => (ref.current.rotation.y += 0.004))
-    
+    useFrame(({ clock }) => {
+        const a = clock.getElapsedTime();
+        ref.current.rotation.y = 0.5*a;
+    });
+    const { scale } = useSpring({
+        scale: active ? 1.5 : 1,
+        config: config.wobbly
+    });
     const materialProps = useControls({
         thickness: { value: 2.0, min: 0, max: 20 },
         roughness: { value: 1.0, min: 0, max: 1, step: 0.1 },
@@ -56,45 +38,14 @@ function Suzi(props) {
         rotation: { value: 0.3, min: 0.1, max: 6.24},
     })
     return (
-        <mesh geometry={nodes.Cylinder.geometry} position={[0, 0, 0]} rotation={[-1.4, 4.68,  3]}  scale={[0.15, 0.15, 0.15]} {...props}
+        <mesh geometry={nodes.Cylinder.geometry}
+            onClick={() => setActive(!active)}
+            position={[0, 0, 0]} rotation={[-1.4, 4.68, 3]} scale={[0.15, 0.15, 0.15]} {...props}
             ref={ref}>
             <meshPhysicalMaterial {...materialProps} />
         </mesh>
     )
 }
-export function HeartGeometry({ radius = 6, depth = 1 }) {
-    const geometry = useRef()
-    const shape = useMemo(() => {
-        const s = new THREE.Shape()
-        const x = -2.5
-        const y = -5
-        s.moveTo(x + 2.5, y + 2.5)
-        s.bezierCurveTo(x + 2.5, y + 2.5, x + 2, y, x, y)
-        s.bezierCurveTo(x - 3, y, x - 3, y + 3.5, x - 3, y + 3.5)
-        s.bezierCurveTo(x - 3, y + 5.5, x - 1.0, y + 7.7, x + 2.5, y + 9.5)
-        s.bezierCurveTo(x + 6, y + 7.7, x + 8, y + 5.5, x + 8, y + 3.5)
-        s.bezierCurveTo(x + 8, y + 3.5, x + 8, y, x + 5, y)
-        s.bezierCurveTo(x + 3.5, y, x + 2.5, y + 2.5, x + 2.5, y + 2.5)
-        return new THREE.Shape(s.getPoints(10))
-    }, [])
-    const config = useMemo(() => ({ depth: depth * 10, bevelEnabled: false }), [depth])
-    useLayoutEffect(() => {
-        /* @ts-ignore */
-        geometry.current.translate(0, 0, (-depth * 10) / 2)
-        /* @ts-ignore */
-        geometry.current.scale(radius / 10, radius / 10, radius / 10)
-        /* @ts-ignore */
-        geometry.current.rotateY(Math.PI / 2)
-        /* @ts-ignore */
-        geometry.current.rotateZ(Math.PI)
-        /* @ts-ignore */
-        geometry.current.computeVertexNormals()
-        
-    }, [depth, radius, shape])
-    return <extrudeGeometry ref={geometry} args={[shape, config]} />
-}
-
-
 
 export default function ThreeF({ children, ...props })
     {
@@ -102,10 +53,10 @@ export default function ThreeF({ children, ...props })
     return (
         <>
             <Canvas dpr={[1, 2]} camera={{ position: [0, 0, 2.5] }} gl={{ alpha: true }}>
-                <Leva   hidden />
+                <Leva fill flat collapsed hidden titleBar/>
                 {/* <color attach="background" args={['#111111']} /> */}
                 <Suspense fallback={null}>
-                    <Suzi />
+                    <Logo />
                     <Environment {...envProps} files="adams_place_bridge_1k.hdr" />
                     {/* <group rotation={[0, 0, 0.785]} >
                         <mesh position={[0, 0, -10]} material-color="off">

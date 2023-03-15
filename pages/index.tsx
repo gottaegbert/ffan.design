@@ -89,10 +89,11 @@ const IndexPage: React.FC<Props> = ({ data }) => {
   } = data;
 
   useEffect(() => {
-    gsap.set(".hero-text-line", { opacity: 1, yPercent:100});
+    gsap.set(".hero-text-line", { opacity: 0, yPercent:100});
     gsap.to(".hero-text-line", {
       duration: 1,
       yPercent: 0,
+      opacity: 1,
       ease: "power4",
       stagger: 0.6,
       delay: 0.2,

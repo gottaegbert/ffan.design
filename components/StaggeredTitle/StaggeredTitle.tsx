@@ -17,13 +17,15 @@ const StaggeredTitle: React.FC<Props> = ({ label1, label2, classname }) => {
   const ref2 = React.createRef<HTMLSpanElement>();
 
   useEffect(() => {
-    gsap.from([ref1.current, ref2.current], {
+    gsap.set([ref1.current, ref2.current], { opacity: 0, yPercent:100});
+    gsap.to([ref1.current, ref2.current], {
       scrollTrigger: {
         trigger: ref1.current,
-        start: "top 90%",
+        start: "top 140%",
       },
       duration: 1.2,
-      yPercent: 100,
+      yPercent: 0,
+      opacity:1,
       ease: "power4",
       stagger: 0.2,
     });

@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@babel/core": "^7.21.0",
+    "@react-spring/three": "9.7.1",
     "@react-three/a11y": "3.0.0",
     "@react-three/cannon": "6.5.2",
     "@react-three/drei": "9.57.0",

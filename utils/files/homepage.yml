@@ -10,6 +10,7 @@ selectedProjects:
       - British Museum
       - Data Visualization
       - Dashboard
+  
   - title: Knoise
     image: assets/images/knoise/1.png
     slug: /projects/Knoise
@@ -20,6 +21,25 @@ selectedProjects:
       - User Experience
       - Interaction
       - Dashboard
+  - title: Tillit
+    image: assets/images/trusttillit/01.png
+    slug: /projects/tillit
+    tags:
+      - BoardGame
+      - Speculative
+      - Trust
+      - User Experience
+      - Interaction
+  - title: VisEar
+    image: assets/images/visear/vis9.jpg
+    slug: /projects/visear
+    tags:
+      - Raspberry Pi 
+      - Python
+      - Image to sound 
+      - User Experience
+      - Interaction
+      - Hardware
   - title: Meta-VisEmo
     image: assets/images/metavisemo/s1.png
     slug: /projects/Meta-VisEmo

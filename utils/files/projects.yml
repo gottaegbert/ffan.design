@@ -161,6 +161,125 @@ projects:
       - Behavior Change
       - UX
       - System
+  - title: Tillit
+    slug: tillit
+    image: assets/images/trusttillit/01.png
+    imageContent: 
+      - assets/images/trusttillit/01.png
+      - assets/images/trusttillit/02.png
+      - assets/images/trusttillit/03.png
+      - assets/images/trusttillit/04.png
+      - assets/images/trusttillit/05.png
+      - assets/images/trusttillit/06.png
+      - assets/images/trusttillit/07.png
+      - assets/images/trusttillit/08.png
+      - assets/images/trusttillit/09.png
+      - assets/images/trusttillit/10.png
+      - assets/images/trusttillit/11.png
+      - assets/images/trusttillit/12.png
+      - assets/images/trusttillit/13.png
+      - assets/images/trusttillit/14.png
+      - assets/images/trusttillit/15.png
+      - assets/images/trusttillit/16.png
+      - assets/images/trusttillit/17.png
+  
+    description: "A speculative board game for people who approach voting for the first time (around 17 y.o.) who will experience trust as currency in order to develop their own understanding through tools for critical thought."
+    company: Cooperation
+    date: "2023"
+    textBlock:
+      - category: Objectives
+        body:
+          Play as a Creative Research Methodology is an approach that uses artistic expression and playful interaction to generate, interpret or communicate research knowledge. It can be applied to various disciplines and purposes, such as education, health, social justice and innovation. 
+          This game was inspired by the work of Professor Nancy Nowacek and John Sharp from THE NEW SCHOOL , who advocate for play as a way of engaging with complex social issues and generating new insights.
+      - category: My role 
+        body: >-
+          Ideation
+
+
+          Graphic Design 
+
+
+          Usablitiy Testing
+
+
+          Prototype
+      - category: Architecture
+        body: >-
+          User Awarness
+
+
+          Motivation
+
+
+          Adoption
+
+
+          Maniteinance
+
+    stack:
+      - Boardgame 
+      - User-center 
+      - Emotion 
+      - UX
+
+  - title: VisEar
+    slug: visear
+    image: assets/images/visear/vis1.jpg
+    imageContent: 
+      - assets/images/visear/vis1.jpg
+      - assets/images/visear/vis2.jpg
+      - assets/images/visear/vis3.jpg
+      - assets/images/visear/vis4.jpg
+      - assets/images/visear/vis5.jpg
+      - assets/images/visear/vis6.jpg
+      - assets/images/visear/vis7.jpg
+      - assets/images/visear/vis8.jpg
+      - assets/images/visear/vis9.jpg
+      - assets/images/visear/vis10.jpg
+      - assets/images/visear/vis11.jpg
+      - assets/images/visear/vis12.jpg
+
+  
+    description: "A Computer Graphics Algorithm Applications with User Center Integrated Product Design For Blind Individual"
+    company: Cooperation
+    
+    # prototypeLink: https://www.figma.com/proto/tvPkaE2ATEkMawOuUMqgMQ/Knoise-App-(Copy)?page-id=409%3A22584&node-id=446%3A28605&viewport=427%2C82%2C0.03&scaling=min-zoom&starting-point-node-id=446%3A28605
+    # link: https://knoise.framer.website
+    date: "2021"
+    textBlock:
+      - category: Objectives
+        body:
+          VisEar is a co-creative project with different major students, including CS and Economics students, we aim first to help the later blind individual and people with permanent blindness to overcome the unexpected difficulties. Using sensory substitution techniques and with an innovative algorithm, we can open the market with low cost and change the physics-socially-dying situation of the blind individual in China. At firstly it's a tech-oriented Startup project, but as the research goes further, user-centred method needs to be applied to the project and a whole system needs to be created to develop our product.
+      - category: My role
+        body: >-
+          Algorithm development in the first stage (main-branch) 
+          
+          
+          User research and analysis
+          
+          
+          Use the user-centred design method to lead the team 
+          
+          
+          Product design and hardware prototyping
+      - category: Architecture
+        body: >-
+          Algorithm Development 
+
+
+          Raspberries Pi Implementation 
+
+
+          Model Printing 
+
+
+          User Testing 
+    stack:
+      - Raspberry Pi
+      - Linux
+      - Pyhton 
+      - Computer graphics 
+      - Product design 
 
   - title: VisEmo
     slug: Meta-VisEmo
