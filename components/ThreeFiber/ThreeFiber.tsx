@@ -10,7 +10,6 @@ import { useSpring, animated, config } from "@react-spring/three";
 import { useControls, Leva } from 'leva'
 
 
-
 function Logo(props) {
     const ref = useRef<THREE.Mesh>(null!)
     const [active, setActive] = useState(false);

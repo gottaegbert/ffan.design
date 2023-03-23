@@ -18,6 +18,7 @@ import { StoreProvider } from "../utils/StoreProvider";
 import BasicMeta from "../utils/BasicMeta";
 import { homePageData } from "../utils/customTypes";
 import ThreeF from "../components/ThreeFiber/ThreeFiber";
+import Bananas from "../components/Bannas/Bannas";
 import dynamic from 'next/dynamic';
 
 export function Intro(props) {
@@ -25,7 +26,8 @@ export function Intro(props) {
     <div className={cn(styles.heroContainer)}>
       
       <div className={styles.three}>
-          <ThreeF children={undefined} />
+          <Bananas></Bananas>
+          {/* <ThreeF children={undefined} /> */}
       </div>
       <section className={cn("grid")}>
         <div

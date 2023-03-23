@@ -24,19 +24,19 @@
 .three{
   position: absolute;
   @media only screen and (min-width: $breakpoint-sm) {
-    width:  120vw;
-    height: 20vh;
+    width:  160vw;
+    height: 80vh;
+
   }
   @media only screen and (min-width: $breakpoint-md) {
      width:  160vw;
-    height: 30vh;
+    height: 80vh;
   }
   @media only screen and (min-width: $breakpoint-lg) {
     width:  160vw;
     height: 80vh;
   }
   @media only screen and (min-width: $breakpoint-xl) {
-    padding: 0px 0 0px 0;
     width:  160vw;
     height:  80vh;
   }
