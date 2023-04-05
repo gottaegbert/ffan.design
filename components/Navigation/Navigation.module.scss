@@ -219,6 +219,7 @@
 
 .nav {
   background-color: var(--off-white);
+  backdrop-filter: blur(10px);
   height: $nav-h;
   width: 100%;
   max-width: $grid-max-width;
