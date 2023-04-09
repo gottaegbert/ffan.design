@@ -16,6 +16,33 @@
     padding: 320px 0 100px 0;
   }
 
+ .three{
+  position: absolute;
+  z-index: 0;
+    @media only screen and (max-width: $breakpoint-sm) {
+    width:  100vw;
+    height: 80vh;
+  }
+  @media only screen and (min-width: $breakpoint-sm) {
+    width:  100vw;
+    height: 60vh;
+  }
+  @media only screen and (min-width: $breakpoint-md) {
+     width:  160vw;
+    height: 80vh;
+  }
+  @media only screen and (min-width: $breakpoint-lg) {
+    width:  160vw;
+    height: 80vh;
+  }
+  @media only screen and (min-width: $breakpoint-xl) {
+    width:  160vw;
+    height:  80vh;
+  }
+  // background: linear-gradient(to bottom, var(--accent-color) 0%, var(--off-white) 100%);
+}
+
+
   .title {
     margin-bottom: 80px;
     font-family: $font-regular;

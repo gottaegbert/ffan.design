@@ -57,14 +57,6 @@ export default function ThreeF({ children, ...props })
                 <Suspense fallback={null}>
                     <Logo />
                     <Environment {...envProps} files="adams_place_bridge_1k.hdr" />
-                    {/* <group rotation={[0, 0, 0.785]} >
-                        <mesh position={[0, 0, -10]} material-color="off">
-                            <planeGeometry args={[5, 1]} />
-                        </mesh>
-                        <mesh position={[0, 0, -10]} material-color="#41ce46">
-                            <planeGeometry args={[1, 5]} />
-                        </mesh>
-                    </group> */}
                 </Suspense>
                 <OrbitControls/>
             </Canvas>
