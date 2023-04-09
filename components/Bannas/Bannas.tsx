@@ -4,12 +4,12 @@ import { Canvas, useThree, useFrame, useLoader } from '@react-three/fiber'
 // https://github.com/pmndrs/drei
 import { useGLTF, Detailed, Environment, MeshTransmissionMaterial, Lightformer } from '@react-three/drei'
 import { EffectComposer, DepthOfField } from '@react-three/postprocessing'
-
+import { CanvasTexture } from 'three';
 import { RGBELoader } from 'three-stdlib'
 
 // eslint-disable-next-line react-hooks/rules-of-hooks
-
 function Banana({ index, z, speed }) {
+    
     const ref = useRef()
     // useThree gives you access to the R3F state model
     const { viewport, camera } = useThree()
@@ -84,22 +84,22 @@ function Banana({ index, z, speed }) {
 }
 
 export default function Bananas({ speed = 2, count = 30, depth = 50, easing = (x) => Math.sqrt(1 - Math.pow(x - 1, 2)) }) {
+    
     return (
         // No need for antialias (faster), dpr clamps the resolution to 1.5 (also faster than full resolution)
         <Canvas gl={{  preserveDrawingBuffer: true }} dpr={[1.5, 1.5]} camera={{ position: [0, 0, 10], fov: 35, near: 0.01, far: depth + 15 }}>
          {/* <Canvas shadows orthographic camera={{ position: [10, 20, 20], zoom: 80 }} gl={{ preserveDrawingBuffer: true }}> */}
-    
+          
         {/* <color attach="background" args={['#ffbf40']} /> */ }
             <spotLight position={[10, 20, 10]} penumbra={1} intensity={3} color="orange" />
             {/* Using cubic easing here to spread out objects a little more interestingly, i wanted a sole big object up front ... */}
             {Array.from({ length: count }, (_, i) => <Banana key={i} index={i} z={Math.round(easing(i / count) * depth)} speed={speed} /> /* prettier-ignore */)}
             <Environment preset="sunset" />
-        
-            
             {/* Multisampling (MSAA) is WebGL2 antialeasing, we don't need it (faster) */}
             <EffectComposer multisampling={0}>
                 <DepthOfField target={[0, 0, 65]} focalLength={0.4} bokehScale={14} height={700} />
             </EffectComposer>
         </Canvas>
+        
     )
 }
