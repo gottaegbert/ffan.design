@@ -7,7 +7,7 @@ import { rootNotionPageId } from '../../lib/config'
 import notion from '../../lib/notion'
 import dynamic from 'next/dynamic'
 import { NotionRenderer } from 'react-notion-x'
-import { NotionPages } from '../../components/NotionPages/NotionPages'
+import { NotionPage } from '../../components/NotionPages/NotionPages'
 
 const Code = dynamic(() =>
     import('react-notion-x/build/third-party/code').then((m) => m.Code)
@@ -59,7 +59,7 @@ export const getStaticProps = async () => {
 // )
 
 export default function Page({ recordMap }: { recordMap: ExtendedRecordMap }) {
-    return <NotionPages recordMap={recordMap}
+    return <NotionPage recordMap={recordMap}
         // searchNotion={config.isSearchEnabled ? searchNotion : null}
         rootPageId={rootNotionPageId} />
 }

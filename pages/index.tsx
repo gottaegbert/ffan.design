@@ -18,7 +18,7 @@ import { StoreProvider } from "../utils/StoreProvider";
 import BasicMeta from "../utils/BasicMeta";
 import { homePageData } from "../utils/customTypes";
 import Bananas from "../components/Bannas/Bannas";
-import { NotionPages } from "../components/NotionPages/NotionPages";
+import { NotionPage } from "../components/NotionPages/NotionPages";
 import { ExtendedRecordMap } from 'notion-types'
 
 // import { NotionPages } from '../../components/NotionPages/NotionPages'
@@ -195,7 +195,7 @@ const IndexPage: React.FC<Props> = ({ data, recordMap }) => {
             />
           </div>
           <div className={"col-12 col-sm-8 col-md-8"}>
-            <NotionPages recordMap={recordMap} />
+            <NotionPage recordMap={recordMap} />
             {/* <Link legacyBehavior href="/notionblog">
               <a className={"fade-in-up"}>Check it here</a>
             </Link> */}
