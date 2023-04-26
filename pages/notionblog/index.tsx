@@ -3,8 +3,9 @@ import * as React from 'react'
 import { ExtendedRecordMap } from 'notion-types'
 
 // import { NotionPages } from '../../components/NotionPages/NotionPages'
-import { rootNotionPageId } from '../../lib/config'
-import notion from '../../lib/notion'
+import { domain, rootNotionPageId } from '../../lib/config'
+// import notion from '../../lib/notion'
+import { resolveNotionPage } from '../../lib/resolve-notion-page'
 import dynamic from 'next/dynamic'
 import { NotionRenderer } from 'react-notion-x'
 import { NotionPage } from '../../components/NotionPages/NotionPages'
@@ -35,7 +36,7 @@ const Modal = dynamic(
 
 export const getStaticProps = async () => {
     const pageId = rootNotionPageId
-    const recordMap = await notion.getPage(pageId)
+    const recordMap = await resolveNotionPage(domain)
 
     return {
         props: {

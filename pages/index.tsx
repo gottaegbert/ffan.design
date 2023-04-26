@@ -22,8 +22,8 @@ import { NotionPage } from "../components/NotionPages/NotionPages";
 import { ExtendedRecordMap } from 'notion-types'
 
 // import { NotionPages } from '../../components/NotionPages/NotionPages'
-import { rootNotionPageId } from '../lib/config'
-import notion from '../lib/notion'
+import { domain, rootNotionPageId } from '../lib/config'
+import { resolveNotionPage } from '../lib/resolve-notion-page'
 import dynamic from 'next/dynamic'
 
 
@@ -223,8 +223,9 @@ export default IndexPage;
 
 export const getStaticProps: GetStaticProps = async () => {
   const data = gePageData("homepage");
-  const pageId = rootNotionPageId
-  const recordMap = await notion.getPage(pageId)
+
+  const pageId = rootNotionPageId;
+  const recordMap = await resolveNotionPage(domain)
   return {
     props: {
       data,
