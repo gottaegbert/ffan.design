@@ -1,3 +1,4 @@
+/* eslint-disable react/no-children-prop */
 import * as React from "react";
 import styles from "./about.module.scss";
 import cn from "classnames";
