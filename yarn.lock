@@ -3612,6 +3612,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fflate@npm:^0.4.1":
+  version: 0.4.8
+  resolution: "fflate@npm:0.4.8"
+  checksum: 29d8cbe44d5e7f53e7f5a160ac7f9cc025480c7b3bfd85c5f898cbe20dfa2dad4732daa534982664bf30b35896a90af44ea33ede5d94c5ffd1b8b0c0a0a56ca2
+  languageName: node
+  linkType: hard
+
 "fflate@npm:^0.6.9, fflate@npm:~0.6.9":
   version: 0.6.10
   resolution: "fflate@npm:0.6.10"
@@ -6106,6 +6113,7 @@ __metadata:
     lamina: 1.1.6
     next: 13.1.1
     notion-client: ^6.16.0
+    posthog-js: ^1.54.0
     react: 18.2.0
     react-dom: 18.2.0
     react-markdown: 8.0.5
@@ -6733,6 +6741,16 @@ __metadata:
     picocolors: ^1.0.0
     source-map-js: ^1.0.2
   checksum: fe58766ff32e4becf65a7d57678995cfd239df6deed2fe0557f038b47c94e4132e7e5f68b5aa820c13adfec32e523b693efaeb65798efb995ce49ccd83953816
+  languageName: node
+  linkType: hard
+
+"posthog-js@npm:^1.54.0":
+  version: 1.54.0
+  resolution: "posthog-js@npm:1.54.0"
+  dependencies:
+    fflate: ^0.4.1
+    rrweb-snapshot: ^1.1.14
+  checksum: e6bebc88a0893bd5a4b2b69ad20c4dbde3b2c5ef30327f50fa1b487d7b881669a624049d48d82b50e9982c77848adc1eba409539f3efb7671627b35b642a28a5
   languageName: node
   linkType: hard
 
@@ -7421,6 +7439,13 @@ __metadata:
   bin:
     rimraf: bin.js
   checksum: 87f4164e396f0171b0a3386cc1877a817f572148ee13a7e113b238e48e8a9f2f31d009a92ec38a591ff1567d9662c6b67fd8818a2dbbaed74bc26a87a2a4a9a0
+  languageName: node
+  linkType: hard
+
+"rrweb-snapshot@npm:^1.1.14":
+  version: 1.1.14
+  resolution: "rrweb-snapshot@npm:1.1.14"
+  checksum: 2e9a30233b542824bbca46af5588d1d7c909efafa00b38fb79d59637af17ec0f3fbe60ed37c4195448804a22aea0f47531da25a42af6ac9dc6281c3c6e5693db
   languageName: node
   linkType: hard
 
