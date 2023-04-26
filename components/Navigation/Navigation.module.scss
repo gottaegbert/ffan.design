@@ -8,13 +8,13 @@
         border-radius: 50%;
         overflow: hidden;
         background:
-          radial-gradient(3.75em, 99%, transparent 100%);
+        radial-gradient(3.75em, 99%, transparent 100%);
         background-color: var(--bg-planet-bright);
         background-repeat: no-repeat;
         position: relative;
         will-change: background;
         transition: all 400ms ease;
-
+        opacity: 0.6;
         /* Safari transition issue */
         backface-visibility: hidden;
         transform: translate3d(0, 0, 0);
@@ -81,6 +81,9 @@
         }
       }
     
+   .planet:hover {
+        opacity: 1;
+      }
   
 
     input:checked {

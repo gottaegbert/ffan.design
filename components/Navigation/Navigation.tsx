@@ -14,7 +14,6 @@ const Navigation = () => {
     setDarkTheme(event.target.checked);
   }
  
-
   useEffect(() => {
     if (darkTheme !== undefined) {
       if (darkTheme) {

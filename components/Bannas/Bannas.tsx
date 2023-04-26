@@ -52,8 +52,8 @@ function Banana({ index, z, speed }) {
 
     const materialProps = ({
         backside: false,
-        samples: 8,
-        resolution: 256,
+        samples: 4,
+        resolution: 128,
         transmission: 0.6,
         clearcoat: 0,
         clearcoatRoughness: 0.0,
