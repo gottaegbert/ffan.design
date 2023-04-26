@@ -56,7 +56,7 @@ const About: React.FC<Props> = ({ data, projData }) => {
         <BasicMeta url={"/about"} />
         <div className={cn(styles.heroContainer)}>
                   <div className={styles.three}>
-                  <ThreeF/>
+                  <ThreeF children={undefined}/>
                   </div>
           <div className="grid">
             <div className={"col-12"}>
