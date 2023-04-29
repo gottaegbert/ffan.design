@@ -55,20 +55,20 @@ export const NotionPage = ({
 
             <NotionRenderer
                   components={{
-            // PageLink: (props: {
-            //     href: any;
-            //     children:
-            //     | string
-            //     | number
-            //     | boolean
-            //     | React.ReactElement<any, string | React.JSXElementConstructor<any>>
-            //     | React.ReactFragment
-            //     | React.ReactPortal
-            //     | null
-            //     | undefined;
-            // }) => {
-            //     return <Link href={`/notionblog/${props.href}`}>{props.children}</Link>;
-            // },
+            PageLink: (props: {
+                href: any;
+                children:
+                | string
+                | number
+                | boolean
+                | React.ReactElement<any, string | React.JSXElementConstructor<any>>
+                | React.ReactFragment
+                | React.ReactPortal
+                | null
+                | undefined;
+            }) => {
+                return <Link href={`/notionblog/${props.href}`}>{props.children}</Link>;
+            },
             nextLink: Link,
             Code,
             Collection,
