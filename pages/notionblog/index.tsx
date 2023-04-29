@@ -1,7 +1,12 @@
 import * as React from 'react'
 
 import { ExtendedRecordMap } from 'notion-types'
-import { NotionPage } from '../../components/NotionPages/NotionPages'
+
+// import { NotionPages } from '../../components/NotionPages/NotionPages'
+import { rootNotionPageId } from '../../lib/config'
+import notion from '../../lib/notion'
+import dynamic from 'next/dynamic'
+import { NotionRenderer } from 'react-notion-x'
 
 const Code = dynamic(() =>
     import('react-notion-x/build/third-party/code').then((m) => m.Code)
@@ -29,7 +34,7 @@ const Modal = dynamic(
 
 export const getStaticProps = async () => {
     const pageId = rootNotionPageId
-    const recordMap = await resolveNotionPage(domain)
+    const recordMap = await notion.getPage(pageId)
 
     return {
         props: {
@@ -39,21 +44,16 @@ export const getStaticProps = async () => {
     }
 }
 
-// export default ({ recordMap }) => (
-//     <NotionRenderer
-//         recordMap={recordMap}
-//         components={{
-//             Code,
-//             Collection,
-//             Equation,
-//             Modal,
-//             Pdf
-//         }}
-//     />
-// )
-
 export default function Page({ recordMap }: { recordMap: ExtendedRecordMap }) {
-    return <NotionPage recordMap={recordMap}
+    return <NotionRenderer recordMap={recordMap}
+        components={{
+            Code,
+            Collection,
+            Equation,
+            Modal,
+            Pdf,
+        }}
+        showCollectionViewDropdown={false}
         // searchNotion={config.isSearchEnabled ? searchNotion : null}
         rootPageId={rootNotionPageId} />
 }
