@@ -78,7 +78,9 @@ export const NotionPage = ({
         }}
                 recordMap={recordMap}
                 fullPage={true}
+                showCollectionViewDropdown={false}
                 darkMode={true}
+                
                 rootPageId={rootPageId}
             />
         </>

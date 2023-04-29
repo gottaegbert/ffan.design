@@ -8,6 +8,7 @@ import notion from '../../lib/notion'
 
 import { NotionRenderer } from 'react-notion-x'
 import Link from 'next/link'
+import { NotionPage } from '../../components/NotionPages/NotionPages'
 
 
 
@@ -24,9 +25,6 @@ export const getStaticProps = async () => {
 }
 
 export default function Page({ recordMap }: { recordMap: ExtendedRecordMap }) {
-    return <NotionRenderer recordMap={recordMap}
-        fullPage={true}
-        showCollectionViewDropdown={false}
-        // searchNotion={config.isSearchEnabled ? searchNotion : null}
+    return <NotionPage recordMap={recordMap}       
         rootPageId={rootNotionPageId} />
 }
