@@ -5,6 +5,7 @@ import { ExtendedRecordMap } from 'notion-types'
 import { getPageTitle } from 'notion-utils'
 import { NotionRenderer } from 'react-notion-x'
 import dynamic from 'next/dynamic'
+import Link from 'next/link'
 const Code = dynamic(() =>
     import('react-notion-x/build/third-party/code').then((m) => m.Code)
 )
@@ -53,6 +54,28 @@ export const NotionPage = ({
             </Head>
 
             <NotionRenderer
+                  components={{
+            // PageLink: (props: {
+            //     href: any;
+            //     children:
+            //     | string
+            //     | number
+            //     | boolean
+            //     | React.ReactElement<any, string | React.JSXElementConstructor<any>>
+            //     | React.ReactFragment
+            //     | React.ReactPortal
+            //     | null
+            //     | undefined;
+            // }) => {
+            //     return <Link href={`/notionblog/${props.href}`}>{props.children}</Link>;
+            // },
+            nextLink: Link,
+            Code,
+            Collection,
+            Equation,
+            Modal,
+            Pdf,
+        }}
                 recordMap={recordMap}
                 fullPage={true}
                 darkMode={true}
