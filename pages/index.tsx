@@ -191,7 +191,6 @@ export default IndexPage;
 
 export const getStaticProps: GetStaticProps = async () => {
   const data = gePageData("homepage");
-
   return {
     props: {
       data,

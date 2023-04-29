@@ -1,11 +1,10 @@
 import * as React from 'react'
 import Head from 'next/head'
-
 import { ExtendedRecordMap } from 'notion-types'
 import { getPageTitle } from 'notion-utils'
 import { NotionRenderer } from 'react-notion-x'
 
-export const NotionPages = ({
+export const NotionPage = ({
     recordMap,
     rootPageId
 }: {
