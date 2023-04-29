@@ -7,6 +7,7 @@ import { rootNotionPageId } from '../../lib/config'
 import notion from '../../lib/notion'
 import dynamic from 'next/dynamic'
 import { NotionRenderer } from 'react-notion-x'
+import Link from 'next/link'
 
 const Code = dynamic(() =>
     import('react-notion-x/build/third-party/code').then((m) => m.Code)
@@ -47,6 +48,20 @@ export const getStaticProps = async () => {
 export default function Page({ recordMap }: { recordMap: ExtendedRecordMap }) {
     return <NotionRenderer recordMap={recordMap}
         components={{
+            PageLink: (props: {
+                href: any;
+                children:
+                | string
+                | number
+                | boolean
+                | React.ReactElement<any, string | React.JSXElementConstructor<any>>
+                | React.ReactFragment
+                | React.ReactPortal
+                | null
+                | undefined;
+            }) => {
+                return <Link href={`/notionblog/${props.href}`}>{props.children}</Link>;
+            },
             Code,
             Collection,
             Equation,
