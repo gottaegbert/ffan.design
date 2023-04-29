@@ -18,18 +18,11 @@ import { StoreProvider } from "../utils/StoreProvider";
 import BasicMeta from "../utils/BasicMeta";
 import { homePageData } from "../utils/customTypes";
 import Bananas from "../components/Bannas/Bannas";
-import { NotionPage } from "../components/NotionPages/NotionPages";
-import { ExtendedRecordMap } from 'notion-types'
-
-// import { NotionPages } from '../../components/NotionPages/NotionPages'
-import { domain, rootNotionPageId } from '../lib/config'
-import { resolveNotionPage } from '../lib/resolve-notion-page'
-import dynamic from 'next/dynamic'
-
 
 export function GradientLayer () {
   return <div className={styles.threegradient} />
 };
+
 
 
 export function Intro(props) {
@@ -89,10 +82,9 @@ const floatingLinksData = [
 
 type Props = {
   data: homePageData;
-  recordMap: ExtendedRecordMap;
 };
 
-const IndexPage: React.FC<Props> = ({ data, recordMap }) => {
+const IndexPage: React.FC<Props> = ({ data }) => {
   const {
     aboutShort,
     selectedProjects,
@@ -186,30 +178,6 @@ const IndexPage: React.FC<Props> = ({ data, recordMap }) => {
             ))}
           </div>
         </section>
-        <section className={cn("grid sectionSpacing", styles.moreWorksSection)}>
-          <div className={"col-10 col-sm-5 col-md-4"}>
-            <StaggeredTitle
-              label1="My"
-              label2="Blog"
-              classname={styles.projTitle}
-            />
-          </div>
-          <div className={"col-12 col-sm-8 col-md-8"}>
-            <NotionPage recordMap={recordMap} />
-            {/* <Link legacyBehavior href="/notionblog">
-              <a className={"fade-in-up"}>Check it here</a>
-            </Link> */}
-            {/* <ReactMarkdown
-              linkTarget="_blank"
-              className="description fade-in-up"
-            >
-              {moreWorksDesc}
-            </ReactMarkdown>
-            {moreWorks.map((work, idx: number) => (
-              <Work {...work} key={"work" + idx} />
-            ))} */}
-          </div>
-        </section>
       </Layout>
       <Cursor imgArray={moreWorks.map((work) => work.image)} />
     </StoreProvider>
@@ -223,14 +191,9 @@ export default IndexPage;
 
 export const getStaticProps: GetStaticProps = async () => {
   const data = gePageData("homepage");
-
-  const pageId = rootNotionPageId;
-  const recordMap = await resolveNotionPage(domain)
   return {
     props: {
       data,
-      recordMap,
     },
-    revalidate: 20,
   };
 };
