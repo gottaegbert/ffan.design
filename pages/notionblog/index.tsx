@@ -62,6 +62,7 @@ export default function Page({ recordMap }: { recordMap: ExtendedRecordMap }) {
             }) => {
                 return <Link href={`/notionblog/${props.href}`}>{props.children}</Link>;
             },
+            nextLink: Link,
             Code,
             Collection,
             Equation,
