@@ -18,6 +18,24 @@ import { StoreProvider } from "../utils/StoreProvider";
 import BasicMeta from "../utils/BasicMeta";
 import { homePageData } from "../utils/customTypes";
 import Bananas from "../components/Bannas/Bannas";
+import styled, { keyframes } from "styled-components";
+
+const fade = keyframes`
+  from { opacity: 1; }
+  to { opacity: 0; }
+`
+
+const FadeIn = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: #56bc76;
+  animation: ${fade} 4s normal forwards ease-in-out;
+`
+
 
 export function GradientLayer () {
   return <div className={styles.threegradient} />
@@ -31,6 +49,7 @@ export function Intro(props) {
       <GradientLayer/>
       <div className={styles.three}>
         <Bananas></Bananas>
+        <FadeIn/>
       </div>
       <section className={cn("grid")}>
         <div

@@ -1,3 +1,8 @@
+TODO:
+@gottaegbert use react-spinners for preloading
+
+
+
 ## 🚀 Portfolio
 
 Live at 👉 [gottaegbert.io](https://gottaegbert.io)

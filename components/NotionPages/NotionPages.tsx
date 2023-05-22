@@ -69,7 +69,7 @@ export const NotionPage = ({
             }) => {
                 return <Link href={`/notionblog/${props.href}`}>{props.children}</Link>;
             },
-            nextLink: Link,
+            // nextLink: Link,
             Code,
             Collection,
             Equation,
@@ -79,8 +79,7 @@ export const NotionPage = ({
                 recordMap={recordMap}
                 fullPage={true}
                 showCollectionViewDropdown={false}
-                darkMode={true}
-                
+                // darkMode={true}
                 rootPageId={rootPageId}
             />
         </>
