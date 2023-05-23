@@ -4,6 +4,7 @@ import styles from "./index.module.scss";
 import cn from "classnames";
 import Layout from "../components/Layout/Layout";
 import { gsap } from "gsap";
+
 import { useEffect } from "react";
 import FloatingLink from "../components/FloatingLink/FloatingLink";
 import StaggeredTitle from "../components/StaggeredTitle/StaggeredTitle";
@@ -19,6 +20,8 @@ import BasicMeta from "../utils/BasicMeta";
 import { homePageData } from "../utils/customTypes";
 import Bananas from "../components/Bannas/Bannas";
 import styled, { keyframes } from "styled-components";
+import { waitUntilSymbol } from "next/dist/server/web/spec-extension/fetch-event";
+import { LoopPingPong, LoopRepeat } from "three";
 
 const fade = keyframes`
   from { opacity: 1; }
@@ -37,13 +40,16 @@ const FadeIn = styled.div`
 `
 
 
+
 export function GradientLayer () {
   return <div className={styles.threegradient} />
 };
 
 
 
+
 export function Intro(props) {
+  
   return (
     <div className={cn(styles.heroContainer)}>   
       <GradientLayer/>
@@ -63,11 +69,21 @@ export function Intro(props) {
           </h1>
           <h2 className={styles.subTitle}>
             <span className={styles.offset}>
-              <span className={"hero-text-line"}>IXD DESIGNER</span>
+              <span className={"hero-text-line"}>IXD </span>
+	            {/* <div data-char=".">E</div> */}
             </span>
-            <span>
-              <span className={"hero-text-line"}>WEB DEVELOPER</span>
-            </span>
+              <div data-char=",">-</div>
+              <div data-char=",">D</div>
+	            <div data-char=",">E</div>
+	            <div data-char="VELOPER">SIGNER</div>
+	            {/* <div data-char="E">I</div>
+	            <div data-char="L">N</div>
+	            <div data-char="O">E</div>
+              <div data-char="P">R</div>
+              <div data-char="E">E</div>
+              <div data-char="R">E</div> */}
+            
+           
           </h2>
         </div>
       </section>
@@ -123,6 +139,21 @@ const IndexPage: React.FC<Props> = ({ data }) => {
       delay: 0.2,
     });
   }, []);
+
+  useEffect(() => {
+    const tl = gsap.timeline({})
+    tl.set("h2 div", {yPercent:-103})
+    tl.set("h2", { autoAlpha: 1 })
+    
+    tl.to("h2 div", {duration:2, yPercent:0, stagger:0.05, ease:"expo.in"})
+    tl.to("h2 div:not([data-char=','])", { duration: 1, yPercent: 103, stagger: 0.1, ease: "expo.inOut"})
+    // tl.yoyo(true)
+    tl.to("h2 div", {yPercent:0,duration: 1, stagger: 0.1, ease: "expo.inOut",})
+    tl.to("h2", { autoAlpha: 1 })
+    // GSDevTools.create({ animation: tl })
+  }, []);
+
+
 
   return (
     <StoreProvider>
