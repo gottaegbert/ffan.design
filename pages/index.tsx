@@ -20,24 +20,23 @@ import BasicMeta from "../utils/BasicMeta";
 import { homePageData } from "../utils/customTypes";
 import Bananas from "../components/Bannas/Bannas";
 import styled, { keyframes } from "styled-components";
-import { waitUntilSymbol } from "next/dist/server/web/spec-extension/fetch-event";
-import { LoopPingPong, LoopRepeat } from "three";
 
-const fade = keyframes`
-  from { opacity: 1; }
-  to { opacity: 0; }
-`
 
-const FadeIn = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  background: #56bc76;
-  animation: ${fade} 4s normal forwards ease-in-out;
-`
+// const fade = keyframes`
+//   from { opacity: 1; }
+//   to { opacity: 0; }
+// `
+
+// const FadeIn = styled.div`
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   pointer-events: none;
+//   background: #0ee75242;
+//   animation: ${fade} 4s normal forwards ease-in-out;
+// `
 
 
 
