@@ -69,7 +69,7 @@ export const NotionPage = ({
             }) => {
                 return <Link href={`/notionblog${props.href}`}>{props.children}</Link>;
             },
-            // nextLink: Link,
+            nextLink: Link,
             Code,
             Collection,
             Equation,

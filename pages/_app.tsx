@@ -10,8 +10,13 @@ import './notionblog/notionblog.mudule.scss'
 
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
-  <Analytics />
+  return (
+    <>
+      <Component {...pageProps} />
+      <Analytics />
+    </>
+  );
 }
+
 
 export default MyApp;
