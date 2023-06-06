@@ -1,12 +1,9 @@
 import * as THREE from 'three'
 import { useRef, useState } from 'react'
-import { Canvas, useThree, useFrame, useLoader } from '@react-three/fiber'
+import { Canvas, useThree, useFrame } from '@react-three/fiber'
 // https://github.com/pmndrs/drei
-import { useGLTF, Detailed, Environment, MeshTransmissionMaterial, Lightformer } from '@react-three/drei'
-import { EffectComposer, DepthOfField,Outline } from '@react-three/postprocessing'
-import { CanvasTexture, LineSegments } from 'three';
-import { RGBELoader } from 'three-stdlib'
-import { BlendFunction, KernelSize, Resolution } from 'postprocessing'
+import { useGLTF, Detailed } from '@react-three/drei'
+
 
 // eslint-disable-next-line react-hooks/rules-of-hooks
 function Banana({ index, z, speed }) {
@@ -51,25 +48,25 @@ function Banana({ index, z, speed }) {
     })
    
 
-    const materialProps = ({
-        backside: false,
-        samples: 4,
-        resolution: 128,
-        transmission: 0.6,
-        clearcoat: 0,
-        clearcoatRoughness: 0.0,
-        thickness: 0.55,
-        chromaticAberration: 5,
-        anisotropy: 0.3,
-        roughness: 0.0,
-        distortion: 1,
-        distortionScale: 1,
-        temporalDistortion: 0.4,
-        ior: 0.83,
-        color: '#62da7e',
-        gColor: '#78ff75',
-        shadow: '#0a4816',
-    })
+    // const materialProps = ({
+    //     backside: false,
+    //     samples: 4,
+    //     resolution: 128,
+    //     transmission: 0.6,
+    //     clearcoat: 0,
+    //     clearcoatRoughness: 0.0,
+    //     thickness: 0.55,
+    //     chromaticAberration: 5,
+    //     anisotropy: 0.3,
+    //     roughness: 0.0,
+    //     distortion: 1,
+    //     distortionScale: 1,
+    //     temporalDistortion: 0.4,
+    //     ior: 0.83,
+    //     color: '#62da7e',
+    //     gColor: '#78ff75',
+    //     shadow: '#0a4816',
+    // })
 
     // Using drei's detailed is a nice trick to reduce the vertex count because
     // we don't need high resolution for objects in the distance. The model contains 3 decimated meshes ...
@@ -78,7 +75,7 @@ function Banana({ index, z, speed }) {
         <Detailed ref={ref} distances={[0, 80, 100]}>
             <mesh geometry={nodes.Cylinder.geometry}>
                 {/* <meshPhysicalMaterial {...materialProps} */}
-                <meshToonMaterial color={'#19bc17'} wireframe={false} />
+                <meshToonMaterial color={'#06c743'} wireframe={false} />
                 
                 {/* <MeshTransmissionMaterial reflectivity={0.5} {...materialProps} /> scale={[0.1, 0.1, 0.1]} */}
             </mesh>
@@ -96,23 +93,10 @@ export default function Bananas({ speed = 2, count = 30, depth = 50, easing = (x
          {/* <Canvas shadows orthographic camera={{ position: [10, 20, 20], zoom: 80 }} gl={{ preserveDrawingBuffer: true }}> */}
           
         {/* <color attach="background" args={['#ffbf40']} /> */ }
-            <spotLight position={[10, 20, 10]} penumbra={1} intensity={3} color="orange" />
+            <spotLight position={[10, 20, 10]} penumbra={1} intensity={2} color="white" />
             {/* Using cubic easing here to spread out objects a little more interestingly, i wanted a sole big object up front ... */}
             {Array.from({ length: count }, (_, i) => <Banana key={i} index={i} z={Math.round(easing(i / count) * depth)} speed={speed} /> /* prettier-ignore */)}
-            {/* <Environment preset="sunset" /> */}
-            {/* Multisampling (MSAA) is WebGL2 antialeasing, we don't need it (faster) */}
-            <EffectComposer multisampling={0}>
-                {/* <DepthOfField target={[0, 0, 65]} focalLength={0.4} bokehScale={14} height={700} /> */}
-                <Outline
-                    blendFunction={BlendFunction.SCREEN} // set this to BlendFunction.ALPHA for dark outlines
-                    blur // whether the outline should be blurred
-                    edgeStrength={1}
-                    hiddenEdgeColor='#ffffff' // the color of hidden edges (behind another mesh)
-                    kernelSize={KernelSize.HUGE}
-                    pulseSpeed={0.01}
-                    visibleEdgeColor='#000000' // the color of visible edges
-                />
-            </EffectComposer>
+
         </Canvas>
         
     )
