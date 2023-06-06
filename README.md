@@ -1,11 +1,13 @@
 TODO:
 @gottaegbert use react-spinners for preloading
 
-
+1.Change mouse effect [link](https://www.youtube.com/watch?v=kySGqoU7X-s&ab_channel=Hyperplexed)
+2.Improve stability 
+3.Hacked text generation [link](https://codepen.io/gottaegbert/pen/oNaKEdg)
 
 ## 🚀 Portfolio
 
-Live at 👉 [gottaegbert.io](https://gottaegbert.io)
+Live at 👉 [egbert.vercel.app](https://egbert.vercel.app)
 
 ## ✨ Stack
 
