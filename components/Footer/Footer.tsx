@@ -23,7 +23,7 @@ const Footer: React.FC<Props> = ({}) => {
         </div>
         <div className={cn("col-12", styles.bottom)}>
           <p className={"xsmall"}>gottaegbert [at] gmail.com</p>
-          <p className={"xsmall"}>Portfolio 2022</p>
+          <p className={"xsmall"}>Portfolio 2023/Made by Next.js</p>
         </div>
       </div>
     </footer>
