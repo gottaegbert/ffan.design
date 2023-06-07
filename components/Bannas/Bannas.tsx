@@ -1,18 +1,20 @@
 import * as THREE from 'three'
 import { useRef, useState } from 'react'
-import { Canvas, useThree, useFrame } from '@react-three/fiber'
+import { Canvas, useThree, useFrame, extend } from '@react-three/fiber'
 // https://github.com/pmndrs/drei
-import { useGLTF, Detailed } from '@react-three/drei'
+import { useGLTF, Detailed, Edges } from '@react-three/drei'
 
-
+const black = new THREE.MeshBasicMaterial({ color: 'black', toneMapped: true })
 // eslint-disable-next-line react-hooks/rules-of-hooks
 function Banana({ index, z, speed }) {
-    
+
     const ref = useRef()
     // useThree gives you access to the R3F state model
-    const { viewport, camera } = useThree()
+    const { viewport, camera, gl,scene} = useThree()
     // getCurrentViewport is a helper that calculates the size of the viewport
     const { width, height } = viewport.getCurrentViewport(camera, [0, 0, -z])
+    // const effect = new OutlineEffect(gl);
+   
     // useGLTF is an abstraction around R3F's useLoader(GLTFLoader, url)
     // It can automatically handle draco and meshopt-compressed assets without you having to
     // worry about binaries and such ...
@@ -72,11 +74,13 @@ function Banana({ index, z, speed }) {
     // we don't need high resolution for objects in the distance. The model contains 3 decimated meshes ...
     return (
         /* @ts-ignore */
-        <Detailed ref={ref} distances={[0, 80, 100]}>
-            <mesh geometry={nodes.Cylinder.geometry}>
+        <Detailed ref={ref} distances={[0, 80, 100]} >
+            {/* <effect outlineEffect={effect} /> */}
+            {/* <effect outlineEffect={effect} /> */}
+            <mesh geometry={nodes.Cylinder.geometry} >
                 {/* <meshPhysicalMaterial {...materialProps} */}
                 <meshToonMaterial color={'#06c743'} wireframe={false} />
-                
+                <Edges material={black}  />
                 {/* <MeshTransmissionMaterial reflectivity={0.5} {...materialProps} /> scale={[0.1, 0.1, 0.1]} */}
             </mesh>
      
@@ -91,7 +95,7 @@ export default function Bananas({ speed = 2, count = 30, depth = 50, easing = (x
         // No need for antialias (faster), dpr clamps the resolution to 1.5 (also faster than full resolution)
         <Canvas gl={{  preserveDrawingBuffer: true }} dpr={[1.5, 1.5]} camera={{ position: [0, 0, 10], fov: 35, near: 0.01, far: depth + 15 }}>
          {/* <Canvas shadows orthographic camera={{ position: [10, 20, 20], zoom: 80 }} gl={{ preserveDrawingBuffer: true }}> */}
-          
+            
         {/* <color attach="background" args={['#ffbf40']} /> */ }
             <spotLight position={[10, 20, 10]} penumbra={1} intensity={2} color="white" />
             {/* Using cubic easing here to spread out objects a little more interestingly, i wanted a sole big object up front ... */}
