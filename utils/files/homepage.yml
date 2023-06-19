@@ -49,22 +49,14 @@ selectedProjects:
       - Unity Game Development
       - Avatar
       - Interaction
-  # - title: Subline
-  #   image: assets/images/subline/subline1.jpg
-  #   slug: /projects/Subline
-  #   tags: 
-  #   - Product Service System Design
-  #   - Public Space
-  #   - Reading
-  #   - Subway
-  # - title: VisEar
-  #   image: assets/images/InViso_cover.png
-  #   slug: /projects/VisEar
-  #   tags: 
-  #   - Softaware&Hardware prototyping 
-  #   - Public Space
-  #   - Reading
-  #   - Subway
+  - title: Subline
+    image: assets/images/subline/subline1.png
+    slug: /projects/Subline
+    tags: 
+    - Product Service System Design
+    - Public Space
+    - Reading
+    - Subway
   - title: If Mondrian had a Mac
     image: assets/images/mondrainmac/1s.jpg
     slug: /projects/Mondrain
