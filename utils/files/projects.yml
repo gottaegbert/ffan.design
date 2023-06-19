@@ -475,6 +475,7 @@ projects:
     description: "social network sentiment analysis"
     company: Personal
     prototypeLink: https://gottaegbert.github.io/TrendingVis/index.html
+    link: https://gottaegbert.github.io/weibo-trend/
     # link: 
     date: "2020"
     textBlock:
