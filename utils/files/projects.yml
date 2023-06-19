@@ -474,7 +474,7 @@ projects:
       - assets/images/weibo/weibo7.jpg
     description: "social network sentiment analysis"
     company: Personal
-    prototypeLink: https://gottaegbert.github.io/webshow1/trendingofschopen.html
+    prototypeLink: https://gottaegbert.github.io/TrendingVis/index.html
     # link: 
     date: "2020"
     textBlock:
