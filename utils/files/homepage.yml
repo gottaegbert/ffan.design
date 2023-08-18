@@ -1,5 +1,15 @@
 aboutShort: Hi 👋, I am a designer and a web developer with a passion for creating engaging and user-friendly digital products. I have experience in UX/UI design, web development and game design, and I enjoy applying my skills to various domains and challenges. I am currently pursuing an MSc degree in Digital and Interaction Design at Politecnico di Milano, where I am learning new techniques and tools to enhance my design thinking and practice. My goal is to structure the digital world in a way that makes it more accessible, enjoyable and meaningful for everyone.
 selectedProjects:
+  - title: Knoise
+    image: assets/images/knoise/1.png
+    slug: /projects/Knoise
+    tags:
+      - Smart City
+      - Noise
+      - Data Analysis
+      - User Experience
+      - Interaction
+      - Dashboard
   - title: InViso
     image: assets/images/Inviso/s1.png
     slug: /projects/InViso
@@ -11,16 +21,14 @@ selectedProjects:
       - Data Visualization
       - Dashboard
   
-  - title: Knoise
-    image: assets/images/knoise/1.png
-    slug: /projects/Knoise
+  - title: Weibo Trending
+    image: assets/images/weibotrend/01.jpg
+    slug: /projects/weibotrend
     tags:
-      - Smart City
-      - Noise
+      - Sentiment analysis
+      - Hedonometer
       - Data Analysis
-      - User Experience
-      - Interaction
-      - Dashboard
+      - Scrollytelling
   - title: Tillit
     image: assets/images/trusttillit/01.png
     slug: /projects/tillit
@@ -98,3 +106,9 @@ moreWorks:
     description: Implementing the three.js library in web canvas and letting users have 3d font effects and another animation element on their recommendation poster. 
     url: https://www.nolipix.com/
     image: assets/images/nolipix.png
+
+  - title: Notion CMS blog website for client
+    description: Implementing Notion api and Three.js for easy organize the web content and write daily blog. 
+    url: https://antioch.vercel.app/
+    image: assets/images/notionblog.jpeg
+

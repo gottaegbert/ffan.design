@@ -161,6 +161,84 @@ projects:
       - Behavior Change
       - UX
       - System
+
+  - title: Weibo Trending
+    slug: weibotrend
+    image: assets/images/weibotrend/01.jpg
+    
+    link: https://weibotrend.netlify.app/
+    imageContent: 
+      - assets/images/weibotrend/2 .jpeg
+      - assets/images/weibotrend/3 .jpeg
+      - assets/images/weibotrend/4 .jpeg
+      - assets/images/weibotrend/5 .jpeg
+      - assets/images/weibotrend/6 .jpeg
+      - assets/images/weibotrend/7 .jpeg
+      - assets/images/weibotrend/8 .jpeg
+      - assets/images/weibotrend/9 .jpeg
+      - assets/images/weibotrend/10 .jpeg
+      - assets/images/weibotrend/11 .jpeg
+      - assets/images/weibotrend/12 .jpeg
+      - assets/images/weibotrend/13 .jpeg
+      - assets/images/weibotrend/14 .jpeg
+      - assets/images/weibotrend/15 .jpeg
+      - assets/images/weibotrend/16 .jpeg
+      - assets/images/weibotrend/17 .jpeg
+      - assets/images/weibotrend/18 .jpeg
+      - assets/images/weibotrend/19 .jpeg
+      - assets/images/weibotrend/20 .jpeg
+      - assets/images/weibotrend/21 .jpeg
+      - assets/images/weibotrend/22 .jpeg
+      - assets/images/weibotrend/23 .jpeg
+
+  
+    description: 当用户在社交媒体上对相关新闻、事件发表看法与见解时，他们会留下反映其思想和感受的数字痕迹。对这些数字痕迹进行汇总，就有可能大规模地监测热点时事为推动力所引发的社交网络整体情绪。
+                本项目将社交媒体的话题进行分类与热度统计，并在整个微博层面上进行情感分析，从24小时和星期、月份等方面进行比较。通过实践微博网络数据爬虫和情绪分析过程，制作具有交互性的可视化网站，将互联网的数据整理分类成易于理解的形式，突出趋势和异常值，对比分析得到洞察，从而达到数据的自我叙述，方便用户发现规律。本项目是我的本科毕业设计，由于创新性和数据分析的专业能力以及和数据可视化的交叉运用，拿到了全系最高分94。
+                
+
+                请访问网站： [Weibotrend Website](https://weibotrend.netlify.app/)
+                 
+                 
+                This project involves categorizing and tracking the topics and popularity of social media discussions. It conducts sentiment analysis on a comprehensive level across Weibo, comparing data on a 24-hour, weekly, and monthly basis. Through the practical implementation of web scraping for Weibo data and sentiment analysis, an interactive visual website is developed. It organizes and categorizes internet data into easily understandable formats, highlighting trends and anomalies. Comparative analysis yields insights, allowing data to tell its own story and enabling users to discover patterns effectively.
+    company: Personal
+    date: "2021"
+    textBlock:
+      - category: Objectives
+        body:
+          目前，社会热点传播的途径很广，形式多样。以流行社交媒体为平台传播的社会热点内容下面聚集着海量用户的评论和讨论，其中微博热搜就是一个现象级案例，它以动态更新话题榜单排名的方式推送数亿万用户正在发生的热点事件，涵盖多类别社会热点与讨论，反映出公众实时关注的内容。而这些经用户产生的主观性的带有情感取向的推送与评论内容数据进行情绪的识别后综合起来进行分析，可以成为一个在信息时代以前不可想象的工具——群体性定量的情绪监测。
+          
+          
+          本项目研究大数据时代背景下群体情绪与热点时事的关系。使用情绪词典情绪分析方式和接口型数据爬虫，构建2021上半年热点事件情感数据库，将热搜数据进行分类和情感分析。数据库最终包含Hedonometer情感字典中一万个词的微博指数，和四万带有分类、描述、正负情感概率的热搜数据以及特定媒体用户的微博分析数据。
+          
+          
+          分析上首先从及不同时间维度分析个例，进行分类比较。发现某对象的价值增长速度的绝对值与其微博指数有极高关联度，可以利用情感分析提供正负性产出对象的价值，显示情感分析的社会意义，选择了比特币案例进行展示。之后将微博指数应用到群体监测情绪上，获得了微博世界的情感曲线。
+          构建数字情绪可视化交互系统，结合社会热点的社交媒体用户情感趋势。通过故事性叙述的方式展示数据关联关系，提供一种可持续的监测群体情绪的方法，实现了不同时间细粒度的热度分析，结合热搜的情感数据进行合理性验证。
+
+      - category: My role 
+        body: >-
+          Ideation
+
+
+          Data Scraping/Analysis/Visualization
+
+
+          Web Deploy
+      - category: Architecture
+        body: >-
+          数据爬取与处理
+
+
+
+          可视化构思与产出
+
+
+          网站系统开发
+    stack:
+      - Data Visualization
+      - D3
+      - Node.js
+      - Python
+
   - title: Tillit
     slug: tillit
     image: assets/images/trusttillit/01.png
@@ -474,8 +552,8 @@ projects:
       - assets/images/weibo/weibo7.jpg
     description: "Social network sentiment analysis"
     company: Personal
-    prototypeLink: https://gottaegbert.github.io/TrendingVis/index.html
-    link: https://gottaegbert.github.io/weibo-trend/
+    prototypeLink: https://gottaegbert.github.io/webshow1/trendingofschopen.html
+    link: https://gottaegbert.github.io/webshow1/trendingofschopen.html
     # link: 
     date: "2020"
     textBlock:
@@ -619,70 +697,3 @@ projects:
       - VFX graph
       - Motion Csapture
       - Python
-  # - title: STC - Telcom
-  #   slug: stc
-  #   image: assets/images/stc.webp
-  #   description: "#### Stc is a leading telecom and technology service provider.
-  #     They partnered with frog (the company I currently work for) to redesign
-  #     and implement the entire ecosystem of web and mobile apps. Which was done
-  #     by creating a whole new Design Language System (DLS)."
-  #   company: STC
-  #   link: https://www.stc.com.kw/en
-  #   date: "2021"
-  #   textBlock:
-  #     - category: Objectives
-  #       body:
-  #         The newly desigend DLS needed to be translated into code and implemented
-  #         across three different touchpoints. A mobile app and two websites (one B2B and one B2C).
-  #         To do so we created an extra react component library.
-  #     - category: My role
-  #       body:
-  #         In a team made mostly of contractors, I was the only in house front-end
-  #         developer working on the websites. As such I was in charge of
-  #         enforcing best practices, writing code and code reviews, and be the link between developers and designers.
-  #     - category: Architecture
-  #       body: >-
-  #         The mobile app and the websites were built in a monorepo using respectively
-  #         react native and react.js so that they could share most of the logic,
-  #         hooks, state management, types, epics etc..
-
-
-  #         In order to also share the components across the websites we built a component library using React and Storybook.
-
-
-  #         Each one of the two website is divided into two main sections: a brochure section and a dashboard section.
-
-
-  #         The first one is almost entirely stateless, backend driven, and server side rendered. The dashboard is the section of the website where the user can interact with STC services and is client side rendered.
-  #   stack:
-  #     - React
-  #     - Redux
-  #     - SCSS
-  #     - Storybook
-  #     - Typescript
-  #     - i18n
-  # - title: Fishing Prediction Maps
-  #   slug: fishingpredictionmaps
-  #   image: assets/images/fishing-prediction-map.webp
-  #   description: "#### Fishing Prediction Maps is a unique service in the Mediterranean Sea: a reliable fishing forecast powered by artificial intelligence and predictive models."
-  #   company: Knots
-  #   date: Feb, 2022
-  #   link: https://fishingpredictionmaps.com
-  #   github: https://github.com/knotsanalytics/fishing_prediction_maps_website
-  #   textBlock:
-  #     - category: In a nutshell
-  #       body: >-
-  #         The interactive map displays the predicted fishing probability (FP) by zone and species for the next week, on a scale from zero to one. This variable represents how easy it will be to fish a species in a precise spot. Zero is assigned to areas where it will be more difficult to find and fish a species, while one to an area where it will be easier on a given day.
-  #     - body: I worked closely with the data scientists to design and develop the interface of the webapp and its architecture. The goal was to deliver a simple and intuitive way to display their data without crowding the interface with too much information but still being useful to the end user.
-  #       category: My role
-  #     - body: "The data produced by the model (running on the company server) get pushed every week on a AWS S3 bucket in the form of .pbf files. These files are then exposed at three different domains to improve performance. The front end then uses mapbox-gl-js to consume and render the .pbf files.
-      
-
-  #     The webapp is developed in the form of a PWA (progressive web app) so that it can be easily installed and accessed."
-  #       category: Architecture
-  #   stack:
-  #     - Typescript
-  #     - React
-  #     - Chakra UI
-  #     - Mapbox
-  #     - S3

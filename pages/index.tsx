@@ -177,7 +177,7 @@ const IndexPage: React.FC<Props> = ({ data }) => {
             {selectedProjects.map((proj, idx: number) => (
               <div
                 key={"proj" + idx}
-                className={cn("col-12 col-sm-6", styles.caseStudyCol, {
+                className={cn("col-12 col-sm-4", styles.caseStudyCol, {
                   [styles.offsetCol]: idx === 1,
                 })}
               >
