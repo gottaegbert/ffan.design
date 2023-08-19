@@ -38,6 +38,15 @@ selectedProjects:
       - Trust
       - User Experience
       - Interaction
+  - title: Meta-VisEmo
+    image: assets/images/metavisemo/s1.png
+    slug: /projects/Meta-VisEmo
+    tags:
+      - Metaverse
+      - Emotion
+      - Unity Game Development
+      - Avatar
+      - Interaction
   - title: VisEar
     image: assets/images/visear/vis9.jpg
     slug: /projects/visear
@@ -48,23 +57,6 @@ selectedProjects:
       - User Experience
       - Interaction
       - Hardware
-  - title: Meta-VisEmo
-    image: assets/images/metavisemo/s1.png
-    slug: /projects/Meta-VisEmo
-    tags:
-      - Metaverse
-      - Emotion
-      - Unity Game Development
-      - Avatar
-      - Interaction
-  - title: Subline
-    image: assets/images/subline/subline1.png
-    slug: /projects/Subline
-    tags: 
-    - Product Service System Design
-    - Public Space
-    - Reading
-    - Subway
   - title: If Mondrian had a Mac
     image: assets/images/mondrainmac/1s.jpg
     slug: /projects/Mondrain
@@ -74,6 +66,14 @@ selectedProjects:
       - Mondrian
       - Art Installation
       - Unity
+  - title: Subline
+    image: assets/images/subline/subline1.png
+    slug: /projects/Subline
+    tags: 
+    - Product Service System Design
+    - Public Space
+    - Reading
+    - Subway
   - title: Once upon a time away from school - weibo hot trend and emoji
     image: assets/images/HSY-Portfolio-Export_Page_32.jpg
     slug: /projects/weibo
