@@ -102,13 +102,17 @@ moreWorksDesc:  Most of them can also be found on my [Github](https://github.com
                 
                 And here you can see some of my [travel photography](https://siyuhu.myportfolio.com/).
 moreWorks:
-  - title: 3D element generation on web poster editing tool
-    description: Implementing the three.js library in web canvas and letting users have 3d font effects and another animation element on their recommendation poster. 
-    url: https://www.nolipix.com/
-    image: assets/images/nolipix.png
+  - title: Currently Working at Voiseed
+    description: Responsible for user experience, interaction design, and developing visual effects for front-end development.
+    url: https://www.voiseed.com/
+    image: assets/images/voiseed.jpeg
 
   - title: Notion CMS blog website for client
     description: Implementing Notion api and Three.js for easy organize the web content and write daily blog. 
     url: https://antioch.vercel.app/
     image: assets/images/notionblog.jpeg
+  - title: 3D element generation on web poster editing tool
+    description: Implementing the three.js library in web canvas and letting users have 3d font effects and another animation element on their recommendation poster. 
+    url: https://www.nolibox.com/
+    image: assets/images/nolipix.png
 
