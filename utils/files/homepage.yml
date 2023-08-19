@@ -74,13 +74,6 @@ selectedProjects:
     - Public Space
     - Reading
     - Subway
-  - title: Once upon a time away from school - weibo hot trend and emoji
-    image: assets/images/HSY-Portfolio-Export_Page_32.jpg
-    slug: /projects/weibo
-    tags:
-      - Social Network
-      - Data Scraping
-      - Data Visualization
   - title: AI mirror
     slug: /projects/aimirror
     tags:
@@ -89,6 +82,13 @@ selectedProjects:
       - Data-Visualization
       - ACM
     image: assets/images/HSY-Portfolio-Export_Page_46.jpg
+  - title: Away from school
+    image: assets/images/HSY-Portfolio-Export_Page_32.jpg
+    slug: /projects/weibo
+    tags:
+      - Social Network
+      - Data Scraping
+      - Data Visualization
   - title: Moving Olympics
     slug: /projects/movingolimipic
     tags:
