@@ -128,10 +128,10 @@ const IndexPage: React.FC<Props> = ({ data }) => {
     tl.set("h2 div", {yPercent:-103})
     tl.set("h2", { autoAlpha: 1 })
     
-    tl.to("h2 div", {duration:2, yPercent:0, stagger:0.05, ease:"expo.in"})
-    tl.to("h2 div:not([data-char=','])", { duration: 1, yPercent: 103, stagger: 0.1, ease: "expo.inOut"})
+    tl.to("h2 div", {duration:4, yPercent:0, stagger:0.05, ease:"expo.in"})
+    tl.to("h2 div:not([data-char=','])", { duration: 4, yPercent: 103, stagger: 0.1, ease: "expo.inOut"})
     // tl.yoyo(true)
-    tl.to("h2 div", {yPercent:0,duration: 1, stagger: 0.1, ease: "expo.inOut",})
+    tl.to("h2 div", {yPercent:0,duration: 4, stagger: 0.1, ease: "expo.inOut",})
     tl.to("h2", { autoAlpha: 1 })
     // GSDevTools.create({ animation: tl })
   }, []);
