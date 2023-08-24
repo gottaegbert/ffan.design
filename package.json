@@ -8,9 +8,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@babel/core": "^7.21.0",
-    "@fisch0920/use-dark-mode": "^2.4.0",
-    "@keyvhq/core": "^2.0.0",
     "@keyvhq/redis": "^2.0.0",
     "@react-spring/three": "9.7.1",
     "@react-three/a11y": "3.0.0",

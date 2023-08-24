@@ -1,6 +1,6 @@
 import * as THREE from 'three'
 import { useRef, useState } from 'react'
-import { Canvas, useThree, useFrame, extend } from '@react-three/fiber'
+import { Canvas, useThree, useFrame} from '@react-three/fiber'
 // https://github.com/pmndrs/drei
 import { useGLTF, Detailed, Edges } from '@react-three/drei'
 
@@ -13,11 +13,6 @@ function Banana({ index, z, speed }) {
     const { viewport, camera, gl,scene} = useThree()
     // getCurrentViewport is a helper that calculates the size of the viewport
     const { width, height } = viewport.getCurrentViewport(camera, [0, 0, -z])
-    // const effect = new OutlineEffect(gl);
-   
-    // useGLTF is an abstraction around R3F's useLoader(GLTFLoader, url)
-    // It can automatically handle draco and meshopt-compressed assets without you having to
-    // worry about binaries and such ...
     /* @ts-ignore */
     const { nodes } = useGLTF('/mylogo.glb')
     // By the time we're here the model is loaded, this is possible through React suspense
@@ -48,40 +43,13 @@ function Banana({ index, z, speed }) {
         // If they're too far up, set them back to the bottom
         if (data.y > height * (index === 0 ? 4 : 1)) data.y = -(height * (index === 0 ? 4 : 1))
     })
-   
-
-    // const materialProps = ({
-    //     backside: false,
-    //     samples: 4,
-    //     resolution: 128,
-    //     transmission: 0.6,
-    //     clearcoat: 0,
-    //     clearcoatRoughness: 0.0,
-    //     thickness: 0.55,
-    //     chromaticAberration: 5,
-    //     anisotropy: 0.3,
-    //     roughness: 0.0,
-    //     distortion: 1,
-    //     distortionScale: 1,
-    //     temporalDistortion: 0.4,
-    //     ior: 0.83,
-    //     color: '#62da7e',
-    //     gColor: '#78ff75',
-    //     shadow: '#0a4816',
-    // })
-
-    // Using drei's detailed is a nice trick to reduce the vertex count because
-    // we don't need high resolution for objects in the distance. The model contains 3 decimated meshes ...
-    return (
+     return (
         /* @ts-ignore */
         <Detailed ref={ref} distances={[0, 80, 100]} >
-            {/* <effect outlineEffect={effect} /> */}
-            {/* <effect outlineEffect={effect} /> */}
             <mesh geometry={nodes.Cylinder.geometry} >
-                {/* <meshPhysicalMaterial {...materialProps} */}
                 <meshToonMaterial color={'#06c743'} wireframe={false} />
                 <Edges material={black}  />
-                {/* <MeshTransmissionMaterial reflectivity={0.5} {...materialProps} /> scale={[0.1, 0.1, 0.1]} */}
+            
             </mesh>
      
             
