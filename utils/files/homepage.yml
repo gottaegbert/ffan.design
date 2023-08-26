@@ -114,5 +114,9 @@ moreWorks:
   - title: 3D element generation on web poster editing tool
     description: Implementing the three.js library in web canvas and letting users have 3d font effects and another animation element on their recommendation poster. 
     url: https://www.nolibox.com/
-    image: assets/images/nolipix.png
+  - title: AI*Design Sharing
+    description: Sharing my experience of using AI in design and how to use AI to create a better design.
+    url: https://digital-and-interaction-design.framer.ai/
+    # image: assets/images/voiseed.jpeg
+
 
