@@ -26,7 +26,7 @@ projects:
       - assets/images/Inviso/s21.png
       - assets/images/Inviso/s23.png
       # - assets/images/inviso/s4.png
-    description: "A decision making AI-empowered tool for the Manager of British Museum "
+    description: "A decision making AI-empowered tool for the Manager of British Museum 为大英博物馆经理提供决策支持的AI驱动管理工具" 
     company: Cooperation
     prototypeLink: https://bit.ly/Inviso_prototype
     link: https://www.figma.com/proto/TGk4lpRLZdlOXT3qLdeic2/Report%2BPresentation-(Copy)?page-id=6%3A135&node-id=6%3A136&viewport=47%2C569%2C0.02&scaling=scale-down&starting-point-node-id=6%3A136
@@ -34,7 +34,10 @@ projects:
     textBlock:
       - category: Objectives
         body:
-          This is a project from "Envision A.I. through design" class.The aim of the project was to design a supportive dashboard for the manager of the British Museum to facilitate decision-making with the help of Artificial Intelligence. By combining data from the British Museum, digital initiatives and data concerning the Covid-19 pandemic, the system aims to support the strategic operation of the museum. It assists the Manager, the financial department and the marketing department by predicting future developments of the museum, highlighting potential target groups and giving inspiration for content delivery. Furthermore, by exploiting visitors' reviews from TripAdvisor and Twitter, the system collects and visualises the audience's opinions and demographics – helping the British Museum improve its targeting and provide greater value for a greater audience. 
+          This is a project from "Envision A.I. through design" class. The aim of the project was to design a supportive dashboard for the manager of the British Museum to facilitate decision-making with the help of Artificial Intelligence. By combining data from the British Museum, digital initiatives and data concerning the Covid-19 pandemic, the system aims to support the strategic operation of the museum. It assists the Manager, the financial department and the marketing department by predicting future developments of the museum, highlighting potential target groups and giving inspiration for content delivery. Furthermore, by exploiting visitors' reviews from TripAdvisor and Twitter, the system collects and visualises the audience's opinions and demographics – helping the British Museum improve its targeting and provide greater value for a greater audience. 
+
+
+          该项目的目标是为大英博物馆的经理设计一个支持性管理面板，通过各方面数据与可行的AI算法，帮助促进决策制定。通过整合来自大英博物馆、数字化倡议以及关于 Covid-19 疫情的数据，该系统旨在支持博物馆的战略运营。它通过预测博物馆未来的发展，突显潜在目标群体，并为内容传递提供灵感，来协助经理、财务部门和市场部门。此外，通过利用来自 TripAdvisor 和 Twitter 的游客评论，系统收集并可视化受众的意见和人口统计信息，帮助大英博物馆改进其定位，为更广泛的受众提供更大的价值。
       - category: My role
         body: >-
           Ideation and reasearch
