@@ -47,7 +47,7 @@ function Banana({ index, z, speed }) {
         /* @ts-ignore */
         <Detailed ref={ref} distances={[0, 80, 100]} >
             <mesh geometry={nodes.Cylinder.geometry} >
-                <meshToonMaterial color={'#06c743'} wireframe={false} />
+                <meshToonMaterial color={'#9bd64f'} wireframe={false} />
                 <Edges material={black}  />
             
             </mesh>
