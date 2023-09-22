@@ -57,16 +57,14 @@ function Banana({ index, z, speed }) {
     )
 }
 
-export default function Bananas({ speed = 2, count = 30, depth = 50, easing = (x) => Math.sqrt(1 - Math.pow(x - 1, 2)) }) {
+export default function Bananas({ speed = 2, count = 10, depth = 50, easing = (x) => Math.sqrt(1 - Math.pow(x - 1, 2)) }) {
     
     return (
-        // No need for antialias (faster), dpr clamps the resolution to 1.5 (also faster than full resolution)
+      
         <Canvas gl={{  preserveDrawingBuffer: true }} dpr={[1.5, 1.5]} camera={{ position: [0, 0, 10], fov: 35, near: 0.01, far: depth + 15 }}>
-         {/* <Canvas shadows orthographic camera={{ position: [10, 20, 20], zoom: 80 }} gl={{ preserveDrawingBuffer: true }}> */}
-            
-        {/* <color attach="background" args={['#ffbf40']} /> */ }
+  
             <spotLight position={[10, 20, 10]} penumbra={1} intensity={2} color="white" />
-            {/* Using cubic easing here to spread out objects a little more interestingly, i wanted a sole big object up front ... */}
+       
             {Array.from({ length: count }, (_, i) => <Banana key={i} index={i} z={Math.round(easing(i / count) * depth)} speed={speed} /> /* prettier-ignore */)}
 
         </Canvas>

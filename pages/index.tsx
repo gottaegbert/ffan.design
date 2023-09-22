@@ -18,8 +18,8 @@ import { gePageData } from "../utils/pages";
 import { StoreProvider } from "../utils/StoreProvider";
 import BasicMeta from "../utils/BasicMeta";
 import { homePageData } from "../utils/customTypes";
-import Bananas from "../components/Bannas/Bannas";
-import styled, { keyframes } from "styled-components";
+// import Bananas from "../components/Bannas/Bannas";
+
 
 
 
@@ -37,9 +37,9 @@ export function Intro(props) {
   return (
     <div className={cn(styles.heroContainer)}>   
       <GradientLayer/>
-      <div className={styles.three}>
+      {/* <div className={styles.three}>
         <Bananas></Bananas>
-      </div>
+      </div> */}
       <section className={cn("grid")}>
         <div
           className={cn(
