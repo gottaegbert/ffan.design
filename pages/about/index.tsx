@@ -16,7 +16,7 @@ import { StoreProvider } from "../../utils/StoreProvider";
 import { gePageData } from "../../utils/pages";
 import BasicMeta from "../../utils/BasicMeta";
 import { aboutPageData, selectedProject } from "../../utils/customTypes";
-import ThreeF from "../../components/ThreeFiber/ThreeFiber";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -56,9 +56,7 @@ const About: React.FC<Props> = ({ data, projData }) => {
       <Layout>
         <BasicMeta url={"/about"} />
         <div className={cn(styles.heroContainer)}>
-                  <div className={styles.three}>
-                  <ThreeF children={undefined}/>
-                  </div>
+                 
           <div className="grid">
             <div className={"col-12"}>
               <h1 className={styles.title}>
