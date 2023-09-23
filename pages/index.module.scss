@@ -22,6 +22,7 @@
   }
 }
 
+
 .three{
 
 
@@ -126,7 +127,8 @@
     }
 
     &.offset {
-      margin-left: 61px;
+      margin-left: 10px;
+      margin-top: 60px;
       margin-bottom: 32px;
       @media only screen and (min-width: $breakpoint-sm) {
         margin-left: 121px;

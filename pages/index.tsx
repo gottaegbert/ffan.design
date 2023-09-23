@@ -25,26 +25,22 @@ import { homePageData } from "../utils/customTypes";
 
 
 
-export function GradientLayer () {
-  return <div className={styles.threegradient} />
-};
-
-
-
+// export function GradientLayer () {
+//   return <div className={styles.threegradient} />
 
 export function Intro(props) {
   
   return (
     <div className={cn(styles.heroContainer)}>   
-      <GradientLayer/>
+      {/* <GradientLayer/> */}
       {/* <div className={styles.three}>
-        <Bananas></Bananas>
+  
       </div> */}
       <section className={cn("grid")}>
         <div
           className={cn(
             "col-12 col-start-md-2 col-end-md-11 col-start-lg-2 col-end-lg-11"
-          )}>
+            )}>
           <h1 className={styles.name}>
             <span>
               <span className={"hero-text-line"}>Siyu Hu</span>
@@ -52,21 +48,11 @@ export function Intro(props) {
           </h1>
           <h2 className={styles.subTitle}>
             <span className={styles.offset}>
-              <span className={"hero-text-line"}>IXD </span>
-	            {/* <div data-char=".">E</div> */}
+              <span className={"hero-text-line"}>IXD-</span>
+              <div data-char="DESIGNER" className={"hero-text-line"}>DEVELOPER</div>
             </span>
-              <div data-char=",">-</div>
-              <div data-char=",">D</div>
-	            <div data-char=",">E</div>
-	            <div data-char="VELOPER">SIGNER</div>
-	            {/* <div data-char="E">I</div>
-	            <div data-char="L">N</div>
-	            <div data-char="O">E</div>
-              <div data-char="P">R</div>
-              <div data-char="E">E</div>
-              <div data-char="R">E</div> */}
             
-           
+   
           </h2>
         </div>
       </section>
@@ -125,15 +111,18 @@ const IndexPage: React.FC<Props> = ({ data }) => {
 
   useEffect(() => {
     const tl = gsap.timeline({})
-    tl.set("h2 div", {yPercent:-103})
-    tl.set("h2", { autoAlpha: 1 })
     
-    tl.to("h2 div", {duration:4, yPercent:0, stagger:0.05, ease:"expo.in"})
-    tl.to("h2 div:not([data-char=','])", { duration: 4, yPercent: 103, stagger: 0.1, ease: "expo.inOut"})
-    // tl.yoyo(true)
-    tl.to("h2 div", {yPercent:0,duration: 4, stagger: 0.1, ease: "expo.inOut",})
-    tl.to("h2", { autoAlpha: 1 })
-    // GSDevTools.create({ animation: tl })
+    tl.to("h2 div", { duration: 3, yPercent: 0, stagger: 0, ease: "power4" })
+    tl.delay(2)
+    tl.to("h2 div", { yPercent: 100, duration: 5, stagger: 0, ease: "power4", })
+    tl.delay(2)
+    tl.to("h2 div", { yPercent: 0, duration: 3, stagger: 0, ease: "power4", })
+    // tl.to("h2", { autoAlpha: 1 })
+    
+
+    tl.repeat(-1);
+    tl.repeatDelay(2);
+    
   }, []);
 
 
