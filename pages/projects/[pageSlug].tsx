@@ -221,7 +221,10 @@ const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
                       layout="responsive"
                       height={1080}
                       width={1920}
-                      objectFit="contain"
+                      // quality={100}
+                      objectFit="cover"
+                      placeholder="blur"
+                      blurDataURL={`/${content}`}
                       className={styles.projImage}
                     />
                   </div>
