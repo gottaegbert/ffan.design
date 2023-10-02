@@ -8,6 +8,9 @@ module.exports = {
     locales: ["en"],
     defaultLocale: "en",
   },
+  images: {
+    formats: ['image/avif', 'image/webp']
+  },
   webpack: (config) => {
     config.module.rules.push(
       ...[
