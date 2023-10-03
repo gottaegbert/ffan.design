@@ -5,7 +5,7 @@ import cn from "classnames";
 import Layout from "../components/Layout/Layout";
 import { gsap } from "gsap";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import FloatingLink from "../components/FloatingLink/FloatingLink";
 import StaggeredTitle from "../components/StaggeredTitle/StaggeredTitle";
 import CaseStudy from "../components/CaseStudy/CaseStudy";
@@ -19,9 +19,9 @@ import { StoreProvider } from "../utils/StoreProvider";
 import BasicMeta from "../utils/BasicMeta";
 import { homePageData } from "../utils/customTypes";
 // import Bananas from "../components/Bannas/Bannas";
-
-
-
+import Preloader from '../components/Preloader';
+import { createLocomotive } from '../utils/locomotive';
+import { AnimatePresence } from "framer-motion";
 
 
 
@@ -32,10 +32,12 @@ export function Intro(props) {
   
   return (
     <div className={cn(styles.heroContainer)}>   
+    
       {/* <GradientLayer/> */}
       {/* <div className={styles.three}>
   
       </div> */}
+       
       <section className={cn("grid")}>
         <div
           className={cn(
@@ -96,27 +98,41 @@ const IndexPage: React.FC<Props> = ({ data }) => {
     moreWorks,
     ndaDisclaimer,
   } = data;
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    
+    const locomotiveScroll = createLocomotive();
+    setTimeout(() => {
+      setIsLoading(false);
+      window.scrollTo(0, 0); // Scroll to start (in case page is reloaded)
+    }, 2000);
+  }, []);
 
   useEffect(() => {
-    gsap.set(".hero-text-line", { opacity: 0, yPercent:100});
-    gsap.to(".hero-text-line", {
-      duration: 1,
-      yPercent: 0,
-      opacity: 1,
-      ease: "power4",
-      stagger: 0.6,
-      delay: 0.2,
-    });
-  }, []);
+    if (!isLoading) {
+      gsap.set(".hero-text-line", { opacity: 0, yPercent: 103 });
+      gsap.to(".hero-text-line", {
+        duration: 1,
+        yPercent: 0,
+        opacity: 1,
+        ease: "power4",
+        stagger: 0.5,
+      
+      });
+}
+
+  }, [isLoading]);
+
+
 
   useEffect(() => {
     const tl = gsap.timeline({})
     
-    tl.to("h2 div", { duration: 3, yPercent: 0, stagger: 0, ease: "power4" })
+    tl.to("h2 div", { duration: 3, yPercent: 0, stagger: 0, ease: "sine" })
     tl.delay(2)
-    tl.to("h2 div", { yPercent: 100, duration: 5, stagger: 0, ease: "power4", })
+    tl.to("h2 div", { yPercent: 103, duration: 5, stagger: 0, ease:'sine' })
     tl.delay(2)
-    tl.to("h2 div", { yPercent: 0, duration: 3, stagger: 0, ease: "power4", })
+    tl.to("h2 div", { yPercent: 0, duration: 3, stagger: 0, ease: "sine", })
     // tl.to("h2", { autoAlpha: 1 })
     
 
@@ -130,10 +146,10 @@ const IndexPage: React.FC<Props> = ({ data }) => {
   return (
     <StoreProvider>
    
-     
       <Layout>
 
         <BasicMeta url={"/"} />
+      <AnimatePresence mode="wait">{isLoading && <Preloader />}</AnimatePresence>
       
         <Intro>
         </Intro>

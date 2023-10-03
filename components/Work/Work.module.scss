@@ -33,8 +33,11 @@
       justify-content: center;
       position: relative;
       transition: transition(transform);
+    
 
-      img {
+      svg
+       {
+        fill:var(--arrow);
         z-index: 1;
         width: 60%;
         @media only screen and (min-width: $breakpoint-md) {

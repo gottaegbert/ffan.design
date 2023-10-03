@@ -73,13 +73,15 @@
         justify-content: center;
         position: relative;
         transition: transition(transform);
-
-        img {
+        svg {
           z-index: 1;
-          width: 60%;
+          fill: var(--arrow);
+          width: 100%;
           @media only screen and (min-width: $breakpoint-md) {
             width: unset;
           }
+
+      
         }
 
         .arrowBg {
