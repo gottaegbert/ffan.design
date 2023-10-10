@@ -125,21 +125,21 @@ const IndexPage: React.FC<Props> = ({ data }) => {
 
 
 
-  useEffect(() => {
-    const tl = gsap.timeline({})
+  // useEffect(() => {
+  //   const tl = gsap.timeline({})
     
-    tl.to("h2 div", { duration: 3, yPercent: 0, stagger: 0, ease: "sine" })
-    tl.delay(2)
-    tl.to("h2 div", { yPercent: 103, duration: 5, stagger: 0, ease:'sine' })
-    tl.delay(2)
-    tl.to("h2 div", { yPercent: 0, duration: 3, stagger: 0, ease: "sine", })
-    // tl.to("h2", { autoAlpha: 1 })
+  //   tl.to("h2 div", { duration: 3, yPercent: 0, stagger: 0, ease: "sine" })
+  //   tl.delay(2)
+  //   tl.to("h2 div", { yPercent: 103, duration: 5, stagger: 0, ease:'sine' })
+  //   tl.delay(2)
+  //   tl.to("h2 div", { yPercent: 0, duration: 3, stagger: 0, ease: "sine", })
+  //   // tl.to("h2", { autoAlpha: 1 })
     
 
-    tl.repeat(-1);
-    tl.repeatDelay(2);
+  //   tl.repeat(-1);
+  //   tl.repeatDelay(2);
     
-  }, []);
+  // }, []);
 
 
 
