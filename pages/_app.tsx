@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Component {...pageProps} />
-        <StickyCursor />
+        <StickyCursor stickyElement={undefined} />
       <Analytics />
     </>
   );

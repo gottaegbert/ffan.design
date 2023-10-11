@@ -4,10 +4,8 @@ import cn from "classnames";
 
 import { gsap } from "gsap";
 import { useEffect } from "react";
-
 import { GetStaticPaths, GetStaticProps } from "next";
 import Layout from "../../components/Layout/Layout";
-
 import StaggeredTitle from "../../components/StaggeredTitle/StaggeredTitle";
 import Work from "../../components/Work/Work";
 import ReactMarkdown from "react-markdown";
