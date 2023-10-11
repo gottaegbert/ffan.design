@@ -90,26 +90,6 @@ const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
 
           </div>
           {headerComponent}
-          {/* if(data.video){
-            <div className={styles.videoContainer}>
-              <YouTube videoId={data.video} opts={{ width: "100%", height: "720px" }} />
-            </div>
-          }
-          else{
-            <div className={styles.imageContainer}>
-              <Image
-                src={`/${data.image}`}
-                alt={data.title}
-                layout="responsive"
-                height={9}
-                width={16}
-                objectFit="contain"
-                className={styles.projImage}
-              />
-              <div ref={imgForeground} className={styles.imgForeground}></div>
-            </div>
-          } */}
-
           <div className={cn("col-12", "description")}>
             <ReactMarkdown className="fade-in-up">
               {data.description}

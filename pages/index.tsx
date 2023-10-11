@@ -4,7 +4,6 @@ import styles from "./index.module.scss";
 import cn from "classnames";
 import Layout from "../components/Layout/Layout";
 import { gsap } from "gsap";
-
 import { useEffect, useState } from "react";
 import FloatingLink from "../components/FloatingLink/FloatingLink";
 import StaggeredTitle from "../components/StaggeredTitle/StaggeredTitle";

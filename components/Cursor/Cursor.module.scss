@@ -10,7 +10,7 @@
   left: 50%;
   pointer-events: none;
   z-index: 999;
-  transition: transform 0.8s ease, all 0.15s, opacity 0.4s;
+  transition: transform 0.8s ease-in-out, all 0.15s, opacity 0.4s;
   transform: translate(-50%, -50%) scale(1);
   border: 1px solid var(--accent-color);
   background-repeat: no-repeat;

@@ -50,51 +50,15 @@ const Navigation = () => {
       <Link legacyBehavior href="/">
         <a className={cn("nav-el")}>Home</a>
       </Link>
-      {/* <div class="theme-switch-wrapper">
-        <label class="theme-switch" for="checkbox">
-          <input type="checkbox" id="checkbox" />
-          <div class="slider round"></div>
-        </label>
-        <em>Enable Dark Mode!</em>
-      </div> */}
+
       <div className={styles.switchinfo}>
         <label className={styles.switch}>   
           <input type="checkbox" checked={darkTheme} onChange={handleToggle} />
           <div className={styles.planet}>
            </div>
-          
-          {/* <span className={styles.slider}></span> */}
         </label>
       </div>
-      {/* <Link legacyBehavior href="/about">
-        <a className={cn(styles.aboutLink, styles.navLink, "nav-el")}>About</a>
-      </Link> */}
-
-      {/* <div className={styles.ddContainer}>
-        <p className={cn(styles.ddTitle, "small", "nav-el")}>Connect</p>
-        <ul className={styles.dropdown}>
-          <a href="mailto:gottaegbert@gmail.com">
-            <img src={"/assets/icons/gmail.svg"} alt="Gmail" />
-            <span>Gmail</span>
-          </a>
-          <a
-            href="https://www.linkedin.com/in/tommaso-laterza"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img src={"/assets/icons/linkedin.svg"} alt="Linkedin" />
-            <span>Linkedin</span>
-          </a>
-          <a
-            href="https://github.com/gottaegbert"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img src={"/assets/icons/github.svg"} alt="Github" />
-            <span>Github</span>
-          </a>
-        </ul>
-      </div> */}
+    
     </nav>
   );
 };
