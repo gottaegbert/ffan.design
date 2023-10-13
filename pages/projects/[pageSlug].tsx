@@ -15,7 +15,7 @@ import { gePageData } from "../../utils/pages";
 import BasicMeta from "../../utils/BasicMeta";
 import { project, selectedProject } from "../../utils/customTypes";
 import Image from "next/legacy/image";
-import YouTube, { YouTubeProps } from 'react-youtube';
+import YouTube from 'react-youtube';
 
 type Props = {
   data: project;
@@ -23,11 +23,6 @@ type Props = {
   slug: string;
 };
 
-// const onPlayerReady: YouTubeProps['onReady'] = (event) => {
-//   // access to player in all event handlers via event.target
-//   event.target.pauseVideo();
-  
-// }
 
 
 const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
@@ -54,7 +49,6 @@ const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
     </div>
   }
   
-  // const VIDEO = 
   const headerComponent = isVideo ? <VIDEO/>:<Picture /> 
   useEffect(() => {
     gsap.set(title.current, { opacity: 1, yPercent:100});

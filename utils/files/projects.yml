@@ -164,11 +164,10 @@ projects:
       - Behavior Change
       - UX
       - System
-
   - title: Weibo Trending
     slug: weibotrend
     image: assets/images/weibotrend/01.jpg
-    
+    code: > 
     link: https://weibotrend.netlify.app/
     imageContent: 
       - assets/images/weibotrend/2 .jpeg
@@ -261,7 +260,6 @@ projects:
       - D3
       - Node.js
       - Python
-
   - title: Tillit
     slug: tillit
     image: assets/images/trusttillit/01.png
@@ -381,7 +379,6 @@ projects:
       - Pyhton 
       - Computer graphics 
       - Product design 
-
   - title: VisEmo
     slug: Meta-VisEmo
     video: GWPxOZIoncA
@@ -505,7 +502,6 @@ projects:
       - Figma
       - UX
       - Service
-
   - title: If Mondrain Had a Mac
     slug: Mondrain
     video: hfGfzfP35DU
