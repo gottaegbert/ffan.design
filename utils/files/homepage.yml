@@ -1,6 +1,38 @@
 
 aboutShort: Hi 👋, I am a UX engineer with a passion for creating engaging and user-friendly digital products. I have strong design sensibilities with technical know-how. Experience in UX/UI design, web development and game design, and enjoy applying my skills to interesting domains. Currently pursuing an MSc degree in Digital and Interaction Design at Politecnico di Milano. My goal is to structure the digital world in a way that makes it more accessible, enjoyable and meaningful for everyone.
 selectedProjects:
+  - title: Subline
+    image: assets/images/subline/subline1.png
+    slug: /projects/Subline
+    tags: 
+    - Product Service System Design
+    - Public Space
+    - Reading
+    - Subway
+  - title: VisEar
+    image: assets/images/visear/vis9.jpg
+    slug: /projects/visear
+    tags:
+      - Raspberry Pi 
+      - Python
+      - Image to sound 
+      - User Experience
+      - Interaction
+      - Hardware
+  - title: Moving Olympics
+    slug: /projects/movingolimipic
+    tags:
+      - Motion capture
+      - Unity
+      - VFX
+    image: assets/images/HSY-Portfolio-Export_Page_40.jpg
+  - title: Away from school
+    image: assets/images/HSY-Portfolio-Export_Page_32.jpg
+    slug: /projects/weibo
+    tags:
+      - Social Network
+      - Data Scraping
+      - Data Visualization
   - title: Knoise
     image: assets/images/knoise/1.png
     slug: /projects/Knoise
@@ -48,16 +80,14 @@ selectedProjects:
       - Unity Game Development
       - Avatar
       - Interaction
-  - title: VisEar
-    image: assets/images/visear/vis9.jpg
-    slug: /projects/visear
+  - title: AI mirror
+    slug: /projects/aimirror
     tags:
-      - Raspberry Pi 
-      - Python
-      - Image to sound 
-      - User Experience
       - Interaction
-      - Hardware
+      - AI
+      - Data-Visualization
+      - ACM
+    image: assets/images/HSY-Portfolio-Export_Page_46.jpg
   - title: If Mondrian had a Mac
     image: assets/images/mondrainmac/1s.jpg
     slug: /projects/Mondrain
@@ -67,36 +97,9 @@ selectedProjects:
       - Mondrian
       - Art Installation
       - Unity
-  - title: Subline
-    image: assets/images/subline/subline1.png
-    slug: /projects/Subline
-    tags: 
-    - Product Service System Design
-    - Public Space
-    - Reading
-    - Subway
-  - title: AI mirror
-    slug: /projects/aimirror
-    tags:
-      - Interaction
-      - AI
-      - Data-Visualization
-      - ACM
-    image: assets/images/HSY-Portfolio-Export_Page_46.jpg
-  - title: Away from school
-    image: assets/images/HSY-Portfolio-Export_Page_32.jpg
-    slug: /projects/weibo
-    tags:
-      - Social Network
-      - Data Scraping
-      - Data Visualization
-  - title: Moving Olympics
-    slug: /projects/movingolimipic
-    tags:
-      - Motion capture
-      - Unity
-      - VFX
-    image: assets/images/HSY-Portfolio-Export_Page_40.jpg
+
+
+
 ndaDisclaimer: Designing the digial world! Working on more...
 moreWorksDesc:  Most of them can also be found on my [Github](https://github.com/gottaegbert). 
                 

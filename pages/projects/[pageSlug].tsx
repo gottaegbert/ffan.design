@@ -97,10 +97,10 @@ const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
               <p className={cn("small ", styles.label)}>Client</p>
               <p className={styles.keyFact}>{data.company}</p>
             </div>
-            <div className={"col-6 col-sm-4 col-lg-3"}>
+            {/* <div className={"col-6 col-sm-4 col-lg-3"}>
               <p className={cn("small", styles.label)}>Project date</p>
               <p className={styles.keyFact}>{data.date}</p>
-            </div>
+            </div> */}
             <div className={"col-6 col-sm-4 col-lg-3"}>
               <p className={cn("small", styles.label)}>Project/Process Link</p>
               <p className={styles.keyFact}>
@@ -151,27 +151,7 @@ const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
               </div>
             </React.Fragment>
           ))}
-          {data.stack && (
-            <>
-              <div
-                className={cn("col-12 col-md-3 col-lg-4", styles.detailLabel)}
-              >
-                <h5 className="fade-in-up">Stack</h5>
-              </div>
-              <div
-                className={cn("col-12 col-md-9 col-lg-8", styles.skillsGrid)}
-              >
-                {data.stack.map((tool, idx: number) => (
-                  <div
-                    className={cn(styles.skillsCell, "fade-in-up")}
-                    key={"stack" + idx}
-                  >
-                    <p>{tool}</p>
-                  </div>
-                ))}
-              </div>
-            </>
-          )}
+       
           {/* content */}
           {data.imageContent && (
             <>
@@ -207,6 +187,27 @@ const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
             </>
           )}
 
+             {data.stack && (
+            <>
+              <div
+                className={cn("col-12 col-md-3 col-lg-4", styles.detailLabel)}
+              >
+                <h5 className="fade-in-up">Stack</h5>
+              </div>
+              <div
+                className={cn("col-12 col-md-9 col-lg-8", styles.skillsGrid)}
+              >
+                {data.stack.map((tool, idx: number) => (
+                  <div
+                    className={cn(styles.skillsCell, "fade-in-up")}
+                    key={"stack" + idx}
+                  >
+                    <p>{tool}</p>
+                  </div>
+                ))}
+              </div>
+            </>
+          )}
 
           <div className={cn("col-12", styles.divider)}></div>
         </section>
