@@ -160,7 +160,7 @@ const IndexPage: React.FC<Props> = ({ data }) => {
               ))}
             </div>
           <div
-            className={cn("col-12 col-sm-7 col-md-6 col-lg-5", styles.aboutCol)}
+            className={cn("col-12 col-sm-12 col-md-12 col-lg-12", styles.aboutCol)}
           >
             <p className={"fade-in-up description"}>{aboutShort}</p>
             <Link legacyBehavior href="/about">
