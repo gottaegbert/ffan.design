@@ -3,7 +3,7 @@ import styles from "./FloatingLink.module.scss";
 import cn from "classnames";
 
 import { gsap } from "gsap";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 
 type Props = {
   name: string;

@@ -7,57 +7,57 @@
   @media only screen and (min-width: $breakpoint-sm) {
     margin: 20px;
   }
-  @media only screen and (min-width: $breakpoint-md) {
-    align-items: center;
+  @media only screen and (min-width: $breakpoint-sm) {
+    align-items: left;
     display: -webkit-flex;
     display: flex;
 
-    justify-content: center;
-    align-items: center;
-    -webkit-justify-content: center;
-    -webkit-align-items: center;
-    left:1090px;
-    top: 385px;
-    transform: translateX(-50%) translateY(-50%);
+    // justify-content: center;
+    // align-items: center;
+    // -webkit-justify-content: center;
+    // -webkit-align-items: center;
+    // left:1090px;
+    // top: 385px;
+    // transform: translateX(-50%) translateY(-50%);
 
-    position: absolute;
-    animation: 2000ms ease-in-out 3s infinite alternate none running
-      move-up-down;
-    animation-delay: 200ms;
+    // position: absolute;
+    // animation: 2000ms ease-in-out 3s infinite alternate none running
+    //   move-up-down;
+    // animation-delay: 200ms;
 
-    &::before {
-      transform: translate3d(0, 0, -1);
-      height: 400px;
-      width: 400px;
-      background-color: transparent;
-      border: 2px solid var(--accent-color);
-      border-radius: 50%;
-      content: "";
-      pointer-events: none;
-      position: absolute;
-      transition: 0.3s cubic-bezier(0.23, 1, 0.32, 1);
-    }
-    &.heroLink2 {
-      left: calc(100% - 300px);
-      top: -350px;
-      animation-delay: -666ms;
-      &::before {
-        height: 800px;
-        width: 800px;
-      }
-    }
-    &.heroLink3 {
-      left: calc(100% - 80px);
-      top: calc(100% - 70px);
-      animation-delay: -1333ms;
+    // &::before {
+    //   transform: translate3d(0, 0, -1);
+    //   height: 400px;
+    //   width: 400px;
+    //   background-color: transparent;
+    //   border: 2px solid var(--accent-color);
+    //   border-radius: 50%;
+    //   content: "";
+    //   pointer-events: none;
+    //   position: absolute;
+    //   transition: 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    // }
+    // &.heroLink2 {
+    //   left: calc(100% - 300px);
+    //   top: -350px;
+    //   animation-delay: -666ms;
+    //   &::before {
+    //     height: 800px;
+    //     width: 800px;
+    //   }
+    // }
+    // &.heroLink3 {
+    //   left: calc(100% - 80px);
+    //   top: calc(100% - 70px);
+    //   animation-delay: -1333ms;
 
-      &::before {
-        height: 400px;
-        width: 400px;
-      }
-    }
+    //   &::before {
+    //     height: 400px;
+    //     width: 400px;
+    //   }
+    // }
   }
-  @media only screen and (min-width: $breakpoint-lg) {
+  @media only screen and (min-width: $breakpoint-sm) {
     &.heroLink2 {
       left: calc(100% - 700px);
       top: 50px;
