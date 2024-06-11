@@ -1,5 +1,5 @@
 import * as THREE from 'three'
-import { useRef, useState } from 'react'
+import { useRef, useState,useEffect } from 'react'
 import { Canvas, useThree, useFrame} from '@react-three/fiber'
 // https://github.com/pmndrs/drei
 import { useGLTF, Detailed, Edges } from '@react-three/drei'
@@ -7,7 +7,14 @@ import { useGLTF, Detailed, Edges } from '@react-three/drei'
 const black = new THREE.MeshBasicMaterial({ color: 'black', toneMapped: true })
 // eslint-disable-next-line react-hooks/rules-of-hooks
 function Banana({ index, z, speed }) {
-
+    const [color, setColor] = useState('#9bd64f'); // 默认颜色
+  useEffect(() => {
+    // 只有在浏览器环境中才获取 CSS 变量的值
+    if (typeof window !== 'undefined') {
+      const newColor = getComputedStyle(document.documentElement).getPropertyValue('--accent-color').trim();
+      setColor(newColor);
+    }
+  }, []);
     const ref = useRef()
     // useThree gives you access to the R3F state model
     const { viewport, camera, gl,scene} = useThree()
@@ -47,7 +54,7 @@ function Banana({ index, z, speed }) {
         /* @ts-ignore */
         <Detailed ref={ref} distances={[0, 80, 100]} >
             <mesh geometry={nodes.Cylinder.geometry} >
-                <meshToonMaterial color={'#9bd64f'} wireframe={false} />
+                <meshToonMaterial color={color} wireframe={false} />
                 <Edges material={black}  />
             
             </mesh>
@@ -64,7 +71,7 @@ export default function Bananas({ speed = 2, count = 10, depth = 50, easing = (x
         <Canvas gl={{  preserveDrawingBuffer: true }} dpr={[1.5, 1.5]} camera={{ position: [0, 0, 10], fov: 35, near: 0.01, far: depth + 15 }}>
   
             <spotLight position={[10, 20, 10]} penumbra={1} intensity={2} color="white" />
-       
+       i
             {Array.from({ length: count }, (_, i) => <Banana key={i} index={i} z={Math.round(easing(i / count) * depth)} speed={speed} /> /* prettier-ignore */)}
 
         </Canvas>
