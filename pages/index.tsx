@@ -5,11 +5,9 @@ import cn from "classnames";
 import Layout from "../components/Layout/Layout";
 import { gsap } from "gsap";
 import { useEffect, useState } from "react";
-import FloatingLink from "../components/FloatingLink/FloatingLink";
 import StaggeredTitle from "../components/StaggeredTitle/StaggeredTitle";
 import CaseStudy from "../components/CaseStudy/CaseStudy";
-import Work from "../components/Work/Work";
-import Link from "next/link";
+
 import { GetStaticProps } from "next";
 import Cursor from "../components/Cursor/Cursor";
 import ReactMarkdown from "react-markdown";
@@ -17,68 +15,11 @@ import { gePageData } from "../utils/pages";
 import { StoreProvider } from "../utils/StoreProvider";
 import BasicMeta from "../utils/BasicMeta";
 import { homePageData } from "../utils/customTypes";
-import Bananas from "../components/Bannas/Bannas";
-import Preloader from '../components/Preloader';
 import { createLocomotive } from '../utils/locomotive';
-import { AnimatePresence } from "framer-motion";
 
-export function Intro(props) {
-  
-  return (
-    <div className={cn(styles.heroContainer)}>   
-    
-      <div className={styles.threegradient} />
-    <div className={styles.three}>
-    <Bananas  />
-      </div> 
-       
-      <section className={cn("grid")}>
-        <div
-          className={cn(
-            "col-12 col-start-md-2 col-end-md-11 col-start-lg-2 col-end-lg-11"
-            )}>
-          <h1 className={styles.name}>
-            <span>
-              <span className={"hero-text-line"}>Siyu Hu</span>
-            </span>
-          </h1>
-          <h2 className={styles.subTitle}>
-            <span className={styles.offset}>
-              <span className={"hero-text-line"}>IXD-</span>
-              <div data-char="DESIGNER" className={"hero-text-line"}>DEVELOPER</div>
-            </span>
-            
-   
-          </h2>
-        </div>
-      </section>
-    </div>
-  )
-}
+import ProjectNav from "../components/ProjectNav/ProjectNav";
 
 
-
-
-const floatingLinksData = [
-  {
-    name: "Linkedin",
-    imgUrl: "../assets/icons/linkedin.svg",
-    bgColor: "#E7F1F7",
-    url: "https://www.linkedin.com/in/siyu-hu-838755151/",
-  },
-  {
-    name: "Gmail",
-    imgUrl: "../assets/icons/gmail.svg",
-    bgColor: "#FBEDEA",
-    url: "mailto:gottaegbert@gmail.com",
-  },
-  {
-    name: "Github",
-    imgUrl: "../assets/icons/github.svg",
-    bgColor: "#E7E7E7",
-    url: "https://github.com/gottaegbert",
-  },
-];
 
 type Props = {
   data: homePageData;
@@ -86,9 +27,8 @@ type Props = {
 
 const IndexPage: React.FC<Props> = ({ data }) => {
   const {
-    aboutShort,
+
     selectedProjects,
-    moreWorksDesc,
     moreWorks,
     ndaDisclaimer,
   } = data;
@@ -143,26 +83,20 @@ const IndexPage: React.FC<Props> = ({ data }) => {
       <Layout>
 
         <BasicMeta url={"/"} />
-      <AnimatePresence mode="wait">{isLoading && <Preloader />}</AnimatePresence>
-      
-        <Intro>
-        </Intro>
-        
-        <section className={cn("grid sectionSpacing", styles.aboutSection)}>
-            <div className={styles.heroLinkContainer}>
-              {floatingLinksData.map((link, idx) => (
-                <FloatingLink {...link} idx={idx} key={idx} />
-              ))}
-            </div>
-          <div
-            className={cn("col-12 col-sm-12 col-md-12 col-lg-12", styles.aboutCol)}
-          >
-            <p className={"fade-in-up description"}>{aboutShort}</p>
-            <Link legacyBehavior href="/about">
-              <a className={"fade-in-up"}>About me</a>
-            </Link>
-          </div>
+
+
+            <section className={cn("sectionSpacing", styles.selectedWorkContainer)}>
+          <div className={cn("hero-text", styles.heroText)}>
+            <h1 className={cn("hero-text-line", styles.heroTextLine)}>
+           
+                    <section className={styles.projectNavSection}>
+   
+             <ProjectNav projects={selectedProjects} onSelect={undefined}  />
         </section>
+            </h1>
+          </div>
+          </section>
+      {/* <AnimatePresence mode="wait">{isLoading && <Preloader />}</AnimatePresence> */}
         <section className={cn("sectionSpacing", styles.selectedWorkContainer)}>
           <div className="grid">
             <div className={"col-12 "}>
@@ -190,26 +124,7 @@ const IndexPage: React.FC<Props> = ({ data }) => {
             </div>
           </div>
         </section>
-        <section className={cn("grid sectionSpacing", styles.moreWorksSection)}>
-          <div className={"col-12 col-sm-6 col-md-5"}>
-            <StaggeredTitle
-              label1="More"
-              label2="Works"
-              classname={styles.projTitle}
-            />
-          </div>
-          <div className={"col-12 col-sm-6 col-md-7"}>
-            <ReactMarkdown
-              linkTarget="_blank"
-              className="description fade-in-up"
-            >
-              {moreWorksDesc}
-            </ReactMarkdown>
-            {moreWorks.map((work, idx: number) => (
-              <Work {...work} key={"work" + idx} />
-            ))}
-          </div>
-        </section>
+     
       </Layout>
       <Cursor imgArray={moreWorks.map((work) => work.image)} />
     </StoreProvider>

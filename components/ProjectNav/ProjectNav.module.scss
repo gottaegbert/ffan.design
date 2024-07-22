@@ -1,0 +1,26 @@
+// Assuming ProjectNav.module.scss already exists
+.projectNav li {
+  position: relative;
+}
+
+.projectNav li:hover {
+  background-color: #949494; // Light grey background for selected item
+  color: #333; // Darker text color for contrast
+  font-weight: bold; // Make the text bold
+  cursor: pointer; // Change cursor to indicate clickable
+}
+
+.projectImage {
+  display: none;
+  position: fixed; // Changed from absolute to fixed
+  top: 20px; // Example position, adjust as needed
+  right: 20px; // Example position, adjust as needed
+  width: 1200px; // Example width, adjust as needed
+  height: fit-content; // Adjust height as needed, auto keeps aspect ratio
+  // Add more styles as needed (border, etc.)
+}
+
+
+.projectNav li:hover .projectImage {
+  display: block;
+}

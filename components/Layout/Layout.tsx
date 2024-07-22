@@ -1,5 +1,5 @@
 import * as React from "react";
-import Navigation from "../Navigation/Navigation";
+// import Navigation from "../Navigation/Navigation";
 import Footer from "../Footer/Footer";
 import { gsap } from "gsap/dist/gsap";
 import { useEffect } from "react";
@@ -27,7 +27,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
   return (
     <>
-      <Navigation />
+      {/* <Navigation /> */}
       <main>{children}</main>
       <Footer />
     </>
