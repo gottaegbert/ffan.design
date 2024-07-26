@@ -24,3 +24,11 @@
 .projectNav li:hover .projectImage {
   display: block;
 }
+
+.hidden {
+  display: none; /* 隐藏不活动的列表 */
+}
+
+.visible {
+  display: block; /* 显示活动的列表 */
+}
