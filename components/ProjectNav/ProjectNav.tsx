@@ -8,7 +8,7 @@ const ProjectNav = ({ projects, onSelect }) => {
 
   // Handler to update selected project and call onSelect
   const handleSelect = (index) => {
-     console.log("Selecting index:", index); // Debugging: Check if this logs correctly
+    //  console.log("Selecting index:", index); // Debugging: Check if this logs correctly
     setSelectedProjectIndex(index); // Update state
     onSelect(index); // Call onSelect prop function
   };
@@ -18,9 +18,12 @@ const ProjectNav = ({ projects, onSelect }) => {
       <ul>
         {projects.map((project, index) => (
           <li key={project.slug} className={selectedProjectIndex === index ? styles.selected : ''}>
-            <p onClick={() => handleSelect(index)}>
-              {project.title}
+            <p>
+              {project.types}
             </p>
+            <h6 onClick={() => handleSelect(index)}>
+              {project.title}
+            </h6>
             <Image
               src={"/" + project.image}
               alt={`main image for ${project.title}`}

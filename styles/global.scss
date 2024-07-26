@@ -10,7 +10,7 @@
 --light-grey: #e3e3e3;
 --off-white: #f7f8fb;
 --off-white-trans: #f7f8fb91;
---accent-color: #9bd64f;
+--accent-color: #494949;
 --arrow:#b9e8b1;
 --border: #ddd;
 --bg-planet-bright: #F2C94C;
@@ -29,7 +29,7 @@
 --light-grey: #585858;
 --off-white: #192928;
 --off-white-trans: #19292891;
---accent-color: #bfea88;
+--accent-color: #ffffff;
 --border: #ddd;
 --gradient-color: #19292831;
 
@@ -126,6 +126,14 @@ h4 {
 }
 h5 {
   font-size: 20px;
+  line-height: 1;
+  font-family: $font-regular;
+  @media only screen and (min-width: $breakpoint-md) {
+    font-size: 24px;
+  }
+}
+h6 {
+  font-size: 14px;
   line-height: 1;
   font-family: $font-regular;
   @media only screen and (min-width: $breakpoint-md) {

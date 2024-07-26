@@ -9,6 +9,7 @@ export type homePageData = {
 export type selectedProject = {
   image: string;
   slug: string;
+  types: string;
   tags: string[];
   title: string;
 };

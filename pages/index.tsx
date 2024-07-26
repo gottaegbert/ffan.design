@@ -9,7 +9,7 @@ import StaggeredTitle from "../components/StaggeredTitle/StaggeredTitle";
 import CaseStudy from "../components/CaseStudy/CaseStudy";
 
 import { GetStaticProps } from "next";
-import Cursor from "../components/Cursor/Cursor";
+// import Cursor from "../components/Cursor/Cursor";
 import ReactMarkdown from "react-markdown";
 import { gePageData } from "../utils/pages";
 import { StoreProvider } from "../utils/StoreProvider";
@@ -29,7 +29,6 @@ const IndexPage: React.FC<Props> = ({ data }) => {
   const {
 
     selectedProjects,
-    moreWorks,
     ndaDisclaimer,
   } = data;
   const [isLoading, setIsLoading] = useState(true);
@@ -126,7 +125,7 @@ const IndexPage: React.FC<Props> = ({ data }) => {
         </section>
      
       </Layout>
-      <Cursor imgArray={moreWorks.map((work) => work.image)} />
+      {/* <Cursor imgArray={moreWorks.map((work) => work.image)} /> */}
     </StoreProvider>
   )
 }

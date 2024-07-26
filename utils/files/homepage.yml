@@ -4,6 +4,7 @@ selectedProjects:
   - title: Subline
     image: assets/images/subline/subline1.png
     slug: /projects/Subline
+    types: Industrial Design
     tags: 
     - Product Service System Design
     - Public Space
@@ -12,6 +13,7 @@ selectedProjects:
   - title: VisEar
     image: assets/images/visear/vis9.jpg
     slug: /projects/visear
+    types: Industrial Design
     tags:
       - Raspberry Pi 
       - Python
@@ -21,6 +23,7 @@ selectedProjects:
       - Hardware
   - title: Moving Olympics
     slug: /projects/movingolimipic
+    types: Industrial Design
     tags:
       - Motion capture
       - Unity
@@ -29,6 +32,7 @@ selectedProjects:
   - title: Away from school
     image: assets/images/HSY-Portfolio-Export_Page_32.jpg
     slug: /projects/weibo
+    types: Industrial Design
     tags:
       - Social Network
       - Data Scraping
@@ -36,6 +40,7 @@ selectedProjects:
   - title: Knoise
     image: assets/images/knoise/1.png
     slug: /projects/Knoise
+    types: Graphic Design
     tags:
       - Smart City
       - Noise
@@ -46,6 +51,7 @@ selectedProjects:
   - title: InViso
     image: assets/images/Inviso/s1.png
     slug: /projects/InViso
+    types: Graphic Design
     tags:
       - UX
       - AI
@@ -57,6 +63,7 @@ selectedProjects:
   - title: Weibo Trending
     image: assets/images/weibotrend/01.jpg
     slug: /projects/weibotrend
+    types: Graphic Design
     tags:
       - Sentiment analysis
       - Hedonometer
@@ -65,6 +72,7 @@ selectedProjects:
   - title: Tillit
     image: assets/images/trusttillit/01.png
     slug: /projects/tillit
+    types: Graphic Design
     tags:
       - BoardGame
       - Speculative
@@ -74,6 +82,7 @@ selectedProjects:
   - title: Meta-VisEmo
     image: assets/images/metavisemo/s1.png
     slug: /projects/Meta-VisEmo
+    types: Graphic Design
     tags:
       - Metaverse
       - Emotion
@@ -82,6 +91,7 @@ selectedProjects:
       - Interaction
   - title: AI mirror
     slug: /projects/aimirror
+    types: Graphic Design
     tags:
       - Interaction
       - AI
@@ -91,6 +101,7 @@ selectedProjects:
   - title: If Mondrian had a Mac
     image: assets/images/mondrainmac/1s.jpg
     slug: /projects/Mondrain
+    types: Graphic Design
     tags:
       - Digital Art
       - Web Design
