@@ -20,14 +20,15 @@ const ProjectNav = ({ projects, onSelect }) => {
   };
   console.log(filteredProjectsByType(typeTwo));
 
-  // 展开/折叠处理函数
-  const handleToggleSection = (type) => {
-    if (type === typeOne) {
-      setTypeOneExpanded(!typeOneExpanded);
-    } else if (type === typeTwo) {
-      setTypeTwoExpanded(!typeTwoExpanded);
-    }
-  };
+const handleToggleSection = (type) => {
+  if (type === typeOne) {
+    setTypeOneExpanded(true);       // 当点击类型1时，展开类型1的列表
+    setTypeTwoExpanded(false);      // 并折叠类型2的列表
+  } else if (type === typeTwo) {
+    setTypeTwoExpanded(true);       // 当点击类型2时，展开类型2的列表
+    setTypeOneExpanded(false);      // 并折叠类型1的列表
+  }
+};
 
 
   // Handler to update selected project and call onSelect
@@ -94,7 +95,7 @@ return (
         </ul>
         )}
 
-        {/* 选中项目的图像 */}
+    
         {selectedProjectIndex !== null && (
           <div className={styles.selected}>
             <Image

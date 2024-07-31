@@ -1,6 +1,35 @@
-// Assuming ProjectNav.module.scss already exists
+.projectNavContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  background-color: #f5f5f5; // Light grey background
+}
+
+.projectNav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.projectYear {
+  margin-bottom: 20px;
+}
+
+.year {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.projectList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 .projectNav li {
   position: relative;
+  margin-bottom: 10px;
 }
 
 .projectNav li:hover {
@@ -15,11 +44,11 @@
   position: fixed; // Changed from absolute to fixed
   top: 20px; // Example position, adjust as needed
   right: 20px; // Example position, adjust as needed
-  width: 1200px; // Example width, adjust as needed
-  height: fit-content; // Adjust height as needed, auto keeps aspect ratio
-  // Add more styles as needed (border, etc.)
+  width: 600px; // Example width, adjust as needed
+  height: auto; // Adjust height as needed, auto keeps aspect ratio
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
 
 .projectNav li:hover .projectImage {
   display: block;
@@ -31,4 +60,18 @@
 
 .visible {
   display: block; /* 显示活动的列表 */
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.navbar {
+  width: 200px; // 可以根据实际需要调整宽度
+  flex-shrink: 0; // 防止导航栏缩小
+}
+
+.content {
+  flex-grow: 1; // 填充剩余空间
 }
