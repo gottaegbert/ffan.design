@@ -1,6 +1,83 @@
 @import "../styles/variables.scss";
 
 
+.pageWrapper {
+  display: flex;
+  min-height: 100vh;
+
+}
+
+.leftNav {
+  width: 250px;
+  padding-right: 48px;
+  background-color: var(--dark-gray); /* Dark background for contrast */
+  
+  .navItem {
+    font-size: 18px;
+    color: var(--light-gray); /* or white for more contrast */
+    margin-bottom: 20px;
+    cursor: pointer;
+    
+    &:hover {
+      text-decoration: underline;
+      color: var(--primary-color); /* Accent color on hover */
+    }
+  }
+
+  .year {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 30px;
+    color: var(--light-gray);
+  }
+}
+
+.content {
+  flex-grow: 1;
+  background-color: var(--off-white); /* Same as current design */
+  padding-left: 48px;
+}
+
+.projectList {
+  display: flex;
+  flex-direction: column;
+  
+  .projectItem {
+    margin-bottom: 20px;
+    font-size: 16px;
+    
+    &:hover {
+      color: var(--accent-color);
+      text-decoration: underline;
+    }
+  }
+}
+
+.heroTextLine {
+  font-size: 32px; /* Adjust this size based on the visual */
+  margin-bottom: 40px;
+  color: var(--dark-gray);
+}
+
+.heroTextLine {
+  opacity: 0;
+  transform: translateY(100%);
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+
+  &.animate {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+
+.projTitle {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+
 
 .heroContainer {
   background-color: var(--off-white);
@@ -22,6 +99,29 @@
   }
 }
 
+
+
+.bottomSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 48px 0;
+  background-color: var(--light-gray);
+  
+  button {
+    font-size: 18px;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    
+    &:hover {
+      background-color: var(--accent-color);
+    }
+  }
+}
 
 .three{
 
@@ -184,5 +284,22 @@
   a {
     display: block;
     width: fit-content;
+  }
+}
+
+@media (max-width: 768px) {
+  .pageWrapper {
+    flex-direction: column;
+    padding: 24px;
+  }
+
+  .leftNav {
+    width: 100%;
+    padding-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .content {
+    padding-left: 0;
   }
 }

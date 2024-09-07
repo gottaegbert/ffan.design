@@ -1,15 +1,21 @@
-.projectNavContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 20px;
-  background-color: #f5f5f5; // Light grey background
-}
+// .projectNavContainer {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: flex-start;
+//   padding: 20px;
+//   background-color: #f5f5f5; // Light grey background
+// }
 
 .projectNav {
   list-style: none;
   padding: 0;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 48px;
+  color: #ffffff; // Dark text color
+  background-color: #313030;; // Light grey background
 }
 
 .projectYear {
@@ -30,48 +36,51 @@
 .projectNav li {
   position: relative;
   margin-bottom: 10px;
+  padding: 10px;
+  transition: background-color 0.3s ease, font-weight 0.3s ease;
 }
 
 .projectNav li:hover {
-  background-color: #949494; // Light grey background for selected item
+  background-color: #949494; // Light grey background for hovered item
   color: #333; // Darker text color for contrast
   font-weight: bold; // Make the text bold
-  cursor: pointer; // Change cursor to indicate clickable
+  cursor: pointer; // Change cursor to indicate clickable item
 }
 
 .projectImage {
   display: none;
-  position: fixed; // Changed from absolute to fixed
-  top: 20px; // Example position, adjust as needed
-  right: 20px; // Example position, adjust as needed
+  position: fixed; // Keep the image in a fixed position on hover
+  top: 20px; // Adjusted position
+  right: 20px; // Adjusted position
   width: 600px; // Example width, adjust as needed
-  height: auto; // Adjust height as needed, auto keeps aspect ratio
+  height: auto; // Auto height for maintaining aspect ratio
   border: 1px solid #ccc;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .projectNav li:hover .projectImage {
-  display: block;
+  display: block; // Display the image when hovering over a project item
 }
 
 .hidden {
-  display: none; /* 隐藏不活动的列表 */
+  
+  display: none; // Hide inactive sections or lists
 }
 
 .visible {
-  display: block; /* 显示活动的列表 */
+  display: block; // Show active sections or lists
 }
 
 .container {
   display: flex;
-  flex-direction: row;
+  flex-direction: row; // For side-by-side layout with nav and content
 }
 
 .navbar {
-  width: 200px; // 可以根据实际需要调整宽度
-  flex-shrink: 0; // 防止导航栏缩小
+  width: 200px; // Adjust navbar width as needed
+  flex-shrink: 0; // Prevent navbar from shrinking when the page resizes
 }
 
 .content {
-  flex-grow: 1; // 填充剩余空间
+  flex-grow: 1; // Allow content to take up the remaining space
 }

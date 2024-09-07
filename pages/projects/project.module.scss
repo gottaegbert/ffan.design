@@ -109,6 +109,11 @@
     margin-bottom: 64px;
   }
 }
+
+.projImage { 
+  width: 100%; /* or any preferred dimension */
+  height: auto; /* or any preferred dimension */
+}
 .bottomTitleSection {
   border-bottom: 1px solid var(light-gray);
   padding-bottom: 0;

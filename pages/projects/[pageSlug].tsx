@@ -29,11 +29,19 @@ const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
   const title = React.createRef<HTMLDivElement>();
   const imgForeground = React.createRef<HTMLDivElement>();
   const isVideo = data.video;
-  function VIDEO() {
-    return <div className={styles.videoContainer}>
-      <YouTube videoId={data.video} opts={{ width: "100%", height: "720px" }} />
+function VIDEO() {
+  return (
+    <div className={styles.videoContainer}>
+      <video
+        src={`/${data.video}`}
+        controls
+        width="100%" 
+        height="720px"
+      />
     </div>
-  }
+  );
+}
+
   function Picture() {
     return <div className={styles.imageContainer}>
       <Image
@@ -173,39 +181,49 @@ const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
             </>
           )}
           {/* content */}
-          {data.imageContent && (
-            <>
-              <div
-                className={cn( styles.detailLabel)}
-              >
-                <h5 className="fade-in-up">Content</h5>
-              </div>
-              <div
-                className={styles.imageContainer}>
-                {data.imageContent.map((content, idx: number) => (
-                  <div
-                    className={cn(styles.skillsCell, "fade-in-up")}
-                    key={"stack" + idx}
-                  >
-                    <Image
-                      src={`/${content}`}
-                      alt={data.title}
-                      layout="responsive"
-                      height={1080}
-                      width={1920}
-                      // quality={100}
-                      objectFit="cover"
-                      placeholder="blur"
-                      blurDataURL={`/${content}`}
-                      className={styles.projImage}
-                    />
-                  </div>
+       
+{data.imageContent && (
+  <>
+    <div className={cn(styles.detailLabel)}>
+      <h5 className="fade-in-up">Content</h5>
+    </div>
+    <div className={styles.imageContainer}>
+      {data.imageContent.map((content, idx: number) => {
+        const isVideo = content.endsWith('.mp4');
 
+        return (
+          <div
+            className={cn(styles.skillsCell, "fade-in-up")}
+            key={"stack" + idx}
+          >
+            {isVideo ? (
+             <video 
+                src={`/${content}`} 
+                controls 
+                className={styles.projImage}
+                // your video css styles
+              />
+            ) : (
+              <Image
+                src={`/${content}`}
+                alt={data.title}
+                layout="responsive"
+                height={1080}
+                width={1920}
+                quality={100}
+                objectFit="cover"
+                placeholder="blur"
+                blurDataURL={`/${content}`}
+                className={styles.projImage}
+              />
+            )}
+          </div>
+        );
+      })}
+    </div>
+  </>
+)}
 
-                ))}
-              </div>
-            </>
-          )}
 
 
           <div className={cn("col-12", styles.divider)}></div>

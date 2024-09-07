@@ -13,8 +13,8 @@ collections:
         fields:
           - { label: "About short", name: "aboutShort", widget: "markdown" }
           - {
-              label: Selected Projects,
-              name: selectedProjects,
+              label: All Works,
+              name: allworks,
               widget: "list",
               allow_add: true,
               collapsed: true,

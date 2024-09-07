@@ -44,7 +44,7 @@ return (
       <div>
 
         {/* 类型1项目的section */}
-      <h5 onClick={() => handleToggleSection(typeOne)}>{typeOne}</h5>
+      <div onClick={() => handleToggleSection(typeOne)}>{typeOne}</div>
         { typeOneExpanded && (
             <ul className={typeOneExpanded ? '' : styles.hidden}>
             {filteredProjectsByType(typeOne).map((project, index) => (

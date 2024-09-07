@@ -1,19 +1,19 @@
 
 aboutShort: UX Designer and Developer with strong design sensibilities and technical know-how. Experience in UX/UI design, Web Development and Game Design. The goal is to structure the digital world in a way that makes it more accessible, meaningful and enjoyable for everyone.
 selectedProjects:
-  - title: Subline
-    image: assets/images/subline/subline1.png
-    slug: /projects/Subline
-    types: Industrial Design
+  - title: Brew Town
+    image: assets/images/graphic/brew town/brew_1.jpg
+    slug: /projects/brewtown
+    types: Graphic Design
     tags: 
     - Product Service System Design
     - Public Space
     - Reading
     - Subway
-  - title: VisEar
-    image: assets/images/visear/vis9.jpg
-    slug: /projects/visear
-    types: Industrial Design
+  - title: Glassfrog
+    image: assets/images/graphic/glassfrog/glassfrog_2.jpg
+    slug: /projects/glassfrog
+    types: Graphic Design
     tags:
       - Raspberry Pi 
       - Python
@@ -37,80 +37,7 @@ selectedProjects:
       - Social Network
       - Data Scraping
       - Data Visualization
-  - title: Knoise
-    image: assets/images/knoise/1.png
-    slug: /projects/Knoise
-    types: Graphic Design
-    tags:
-      - Smart City
-      - Noise
-      - Data Analysis
-      - User Experience
-      - Interaction
-      - Dashboard
-  - title: InViso
-    image: assets/images/Inviso/s1.png
-    slug: /projects/InViso
-    types: Graphic Design
-    tags:
-      - UX
-      - AI
-      - Data Analysis
-      - British Museum
-      - Data Visualization
-      - Dashboard
-  
-  - title: Weibo Trending
-    image: assets/images/weibotrend/01.jpg
-    slug: /projects/weibotrend
-    types: Graphic Design
-    tags:
-      - Sentiment analysis
-      - Hedonometer
-      - Data Analysis
-      - Scrollytelling
-  - title: Tillit
-    image: assets/images/trusttillit/01.png
-    slug: /projects/tillit
-    types: Graphic Design
-    tags:
-      - BoardGame
-      - Speculative
-      - Trust
-      - User Experience
-      - Interaction
-  - title: Meta-VisEmo
-    image: assets/images/metavisemo/s1.png
-    slug: /projects/Meta-VisEmo
-    types: Graphic Design
-    tags:
-      - Metaverse
-      - Emotion
-      - Unity Game Development
-      - Avatar
-      - Interaction
-  - title: AI mirror
-    slug: /projects/aimirror
-    types: Graphic Design
-    tags:
-      - Interaction
-      - AI
-      - Data-Visualization
-      - ACM
-    image: assets/images/HSY-Portfolio-Export_Page_46.jpg
-  - title: If Mondrian had a Mac
-    image: assets/images/mondrainmac/1s.jpg
-    slug: /projects/Mondrain
-    types: Graphic Design
-    tags:
-      - Digital Art
-      - Web Design
-      - Mondrian
-      - Art Installation
-      - Unity
-
-
-
+ 
 ndaDisclaimer: Designing the digial world! Working on more...
 moreWorksDesc:  Most of them can also be found on my [Github](https://github.com/gottaegbert). 
                 

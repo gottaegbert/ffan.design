@@ -1,719 +1,122 @@
 projects:
-  - title: Subline
-    slug: Subline
-    image: assets/images/subline/subline1.png
+  - title: Brew Town
+    slug: brewtown
+    image: assets/images/graphic/brew town/brew_11.gif
     imageContent: 
-      - assets/images/subline/subline2.png
-      - assets/images/subline/subline3.png
-      - assets/images/subline/subline4.png
-      - assets/images/subline/subline5.png
-      - assets/images/subline/subline6.png
-      - assets/images/subline/subline7.png
-      - assets/images/subline/subline8.png
-      - assets/images/subline/subline9.png
-      - assets/images/subline/subline10.png
-      - assets/images/subline/subline11.png
-      - assets/images/subline/subline12.png
-      - assets/images/subline/subline13.png
-    description: "A Multimodel City Subway Book Service System for Beijing Commuters"
+      - assets/images/graphic/brew town/brew_1.jpg
+      - assets/images/graphic/brew town/brew_2.jpg
+      - assets/images/graphic/brew town/brew_3.jpg
+      - assets/images/graphic/brew town/brew_4.jpg
+      - assets/images/graphic/brew town/brew_5.jpg
+      - assets/images/graphic/brew town/brew_6.jpg
+      - assets/images/graphic/brew town/brew_7.png
+      - assets/images/graphic/brew town/brew_8.png
+      - assets/images/graphic/brew town/brew_10.png
+      - assets/images/graphic/brew town/brew_11.gif
+      - assets/images/graphic/brew town/brew_12.png
+ 
+    description: "啤酒小镇描述"
     company: Individual
-    video: LNnQgmkYNOU
-    prototypeLink: 
-    link: https://www.figma.com/proto/TGk4lpRLZdlOXT3qLdeic2/Report%2BPresentation-(Copy)?page-id=6%3A135&node-id=6%3A136&viewport=47%2C569%2C0.02&scaling=scale-down&starting-point-node-id=6%3A136
-    date: "2022"
-    textBlock:
-      - category: Objectives
-        body:
-          In the limited space of a metro carriage, books are the link between reality and a better life, between a once-in-a-lifetime life and an infinite parallel universe, between the spiritual exchange of ordinary people and sage. Reading on the metro is the spiritual corner they have built for themselves in the crowd.For most of the young work in Beijing, the subway can be tedious and unbearable.However, there is a desire to seek knowledge and happiness during the time of the underground. Subline is a service system to solve commuters' un-convenient situation to read book underground and provide a future for the printed book by changing the present reading experience, digital or physical.   
-      - category: My role
-        body: >-
-          Observation and Ideation
-          
-
-          User research and analysis
-          
-
-          Service system design thinking
-          
-
-          Design outputs
-      - category: Architecture
-        body: >-
-          User Journey
-
-
-          Problem tree&Needs Map
-
-
-          Offering&Ecology
-
-
-          Content Trends
-    stack:
-      - AI
-      - Figma
-      - UX
-      - Service
-  - title: InViso
-    slug: InViso
-    image: assets/images/Inviso/s1.png
-    imageContent: 
-      - assets/images/Inviso/s2.jpg
-      - assets/images/Inviso/s3.jpg
-      - assets/images/Inviso/s4.png
-      - assets/images/Inviso/s5.png
-      - assets/images/Inviso/s6.png
-      - assets/images/Inviso/s7.png
-      - assets/images/Inviso/Ai promise.png
-      - assets/images/Inviso/offering map 4.png
-      - assets/images/Inviso/s8.png
-      - assets/images/Inviso/s9.png
-      - assets/images/Inviso/s10.png
-      - assets/images/Inviso/s11.png
-      - assets/images/Inviso/s12.png
-      - assets/images/Inviso/s13.png
-      - assets/images/Inviso/s15.png
-      - assets/images/Inviso/s16.png
-      - assets/images/Inviso/s17.png
-      - assets/images/Inviso/s18.png
-      - assets/images/Inviso/s19.png
-      - assets/images/Inviso/s20.png
-      - assets/images/Inviso/s21.png
-      - assets/images/Inviso/s23.png
-      # - assets/images/inviso/s4.png
-    description: "A decision making AI-empowered tool for the Manager of British Museum" 
-    company: Cooperation
-    prototypeLink: https://bit.ly/Inviso_prototype
-    link: https://www.figma.com/proto/TGk4lpRLZdlOXT3qLdeic2/Report%2BPresentation-(Copy)?page-id=6%3A135&node-id=6%3A136&viewport=47%2C569%2C0.02&scaling=scale-down&starting-point-node-id=6%3A136
-    date: "2022"
-    textBlock:
-      - category: Objectives
-        body:
-          This is a project from "Envision A.I. through design" class. The aim of the project was to design a supportive dashboard for the manager of the British Museum to facilitate decision-making with the help of Artificial Intelligence. By combining data from the British Museum, digital initiatives and data concerning the Covid-19 pandemic, the system aims to support the strategic operation of the museum. It assists the Manager, the financial department and the marketing department by predicting future developments of the museum, highlighting potential target groups and giving inspiration for content delivery. Furthermore, by exploiting visitors' reviews from TripAdvisor and Twitter, the system collects and visualises the audience's opinions and demographics – helping the British Museum improve its targeting and provide greater value for a greater audience. 
-
-          # 该项目的目标是为大英博物馆的经理设计一个支持性管理面板，通过各方面数据与可行的AI算法，帮助促进决策制定。通过整合来自大英博物馆、数字化倡议以及关于 Covid-19 疫情的数据，该系统旨在支持博物馆的战略运营。它通过预测博物馆未来的发展，突显潜在目标群体，并为内容传递提供灵感，来协助经理、财务部门和市场部门。此外，通过利用来自 TripAdvisor 和 Twitter 的游客评论，系统收集并可视化受众的意见和人口统计信息，帮助大英博物馆改进其定位，为更广泛的受众提供更大的价值。
-      - category: My role
-        body: >-
-          Ideation and reasearch
-
-
-          Data Expert
-
-
-          AI system core define
-
-
-          Prototype
-      - category: Architecture
-        body: >-
-          Visitor Flows
-
-
-          Target Audience
-
-
-          Financial Trends
-
-
-          Content Trends
-    stack:
-      - AI
-      - Python
-      - Figma
-      - UX
-      - Service
-  - title: Knoise
-    slug: Knoise
-    video: YUdgTCM6heE
-    image: assets/images/knoise/1.png
-    imageContent: 
-      - assets/images/knoise/s01.png
-      - assets/images/knoise/s02.png
-      - assets/images/knoise/s03.png
-      - assets/images/knoise/s04.png
-      - assets/images/knoise/s05.png
-      - assets/images/knoise/s06.png
-      - assets/images/knoise/s07.png
-      - assets/images/knoise/s08.png
-      - assets/images/knoise/s09.png
-      - assets/images/knoise/s10.png
-      - assets/images/knoise/s11.png
-      - assets/images/knoise/s12.png
-      - assets/images/knoise/s13.png
-      - assets/images/knoise/s14.png
-      - assets/images/knoise/s15.png
-      - assets/images/knoise/s16.png
-  
-    description: "KNOISE is a co-monitoring sound service for smart cities. On the one hand it helps citizens gain awareness and new behaviours to protect themselves from disturbing sounds. On the other helps the city to map data and act against noise pollution."
-    company: Cooperation
     
-    prototypeLink: https://www.figma.com/proto/tvPkaE2ATEkMawOuUMqgMQ/Knoise-App-(Copy)?page-id=409%3A22584&node-id=446%3A28605&viewport=427%2C82%2C0.03&scaling=min-zoom&starting-point-node-id=446%3A28605
-    link: https://knoise.framer.website
-    date: "2023"
+    # link: 链接
+    date: "2022"
     textBlock:
       - category: Objectives
         body:
-          The population density of smart cities is increasing drastically, consequently noise pollution is growing. Citizens have no concrete tools to learn how to protect themselves from the threats that exposure to noise can cause.
-          Knoise is a co-monitoring service that tackles the problem of noise pollution in smart cities, to decrease the health effects that noise can have on citizens. To achieve its goal, it helps citizens gain awareness and adopt new behaviors to protect themselves from disturbing sounds. Simultaneously, it assists the city in mapping data about noise to better act against the problem.
-          
-          
-          [Knoise Website](https://knoise.framer.website/mvp-testing)
-          
-          - **Knoise Awareness**
+          详细描述
 
-
-          The first important step is to sensitise citizens with the issue of noise pollution by raising their awareness about the topic.
-          With the Knoise Experience citizens can understand the risks of noise exposure on their health, through an interactive experience based on embodied learning.
-          
-          
-          ![Knosie awareness](../assets/images/knoise/aware.png)
-
-          - **Knoise Smart Feedback**
-
-
-          In order to motivate citizens to behave correctl KNOISE is strategically placed in points where people are sensitive to acoustically healthy environments. Systems are installed in transport vehicles that act on the noise through multisensory feedback, naturally decreasing the noise level.
-          
-          
-          ![Knosie feedback](../assets/images/knoise/feedback.png)
-          
-          - **Knoise App**
-
-          
-          To take concrete action, KNOISE maps city sound data to help citizens and institutions take a stand. Through the app it is possible to track personal noise exposure, find sound safe spaces in the city and contribute with noise reports.
-          
-          
-          ![Knosie app](../assets/images/knoise/app.png)
-      - category: My role
-        body: >-
-          Ideation
-
-
-          Interaction design
-
-
-          Awareness Process Design
-
-
-          Usablitiy Testing
-
-
-          Prototype
-      - category: Architecture
-        body: >-
-          User Awarness
-
-
-          Motivation
-
-
-          Adoption
-
-
-          Maniteinance
-
-           ![Knosie app](../assets/images/knoise/behaviour.png)
-    stack:
-      - Touchdesigner
-      - Arduino
-      - Behavior Change
-      - UX
-      - System
-  - title: Weibo Trending
-    slug: weibotrend
-    image: assets/images/weibotrend/01.jpg
-    code: > 
-    link: https://weibotrend.netlify.app/
+  - title: glassfrog
+    slug: glassfrog
+    video: assets/images/graphic/glassfrog/glassfrog_1.mp4 
     imageContent: 
-      - assets/images/weibotrend/2 .jpeg
-      - assets/images/weibotrend/3 .jpeg
-      - assets/images/weibotrend/4 .jpeg
-      - assets/images/weibotrend/5 .jpeg
-      - assets/images/weibotrend/6 .jpeg
-      - assets/images/weibotrend/7 .jpeg
-      - assets/images/weibotrend/8 .jpeg
-      - assets/images/weibotrend/9 .jpeg
-      - assets/images/weibotrend/10 .jpeg
-      - assets/images/weibotrend/11 .jpeg
-      - assets/images/weibotrend/12 .jpeg
-      - assets/images/weibotrend/13 .jpeg
-      - assets/images/weibotrend/14 .jpeg
-      - assets/images/weibotrend/15 .jpeg
-      - assets/images/weibotrend/16 .jpeg
-      - assets/images/weibotrend/17 .jpeg
-      - assets/images/weibotrend/18 .jpeg
-      - assets/images/weibotrend/19 .jpeg
-      - assets/images/weibotrend/20 .jpeg
-      - assets/images/weibotrend/21 .jpeg
-      - assets/images/weibotrend/22 .jpeg
-      - assets/images/weibotrend/23 .jpeg
+      - assets/images/graphic/glassfrog/glassfrog_1.mp4
+      - assets/images/graphic/glassfrog/glassfrog_2.jpg
+      - assets/images/graphic/glassfrog/glassfrog_3.jpg
+      - assets/images/graphic/glassfrog/glassfrog_4.jpg
+      - assets/images/graphic/glassfrog/glassfrog_5.gif
+      - assets/images/graphic/glassfrog/glassfrog_6.gif
+      - assets/images/graphic/glassfrog/glassfrog_7.gif
+      - assets/images/graphic/glassfrog/glassfrog_8.jpg
 
-  
-    description:
-                当用户在社交媒体上对相关新闻、事件发表看法与见解时，他们会留下反映其思想和感受的数字痕迹。对这些数字痕迹进行汇总，就有可能大规模地监测热点时事为推动力所引发的社交网络整体情绪。
-                本项目将社交媒体的话题进行分类与热度统计，并在整个微博层面上进行情感分析，从24小时和星期、月份等方面进行比较。通过实践微博网络数据爬虫和情绪分析过程，制作具有交互性的可视化网站，将互联网的数据整理分类成易于理解的形式，突出趋势和异常值，对比分析得到洞察，从而达到数据的自我叙述，方便用户发现规律。本项目是我的本科毕业设计，由于创新性和数据分析的专业能力以及和数据可视化的交叉运用，拿到了全系最高分94。
-                
-
-                请访问网站： (Please Visit the Website) [Weibotrend Website](https://weibotrend.netlify.app/)
-                 
-                 
-                This project involves categorizing and tracking the topics and popularity of social media discussions. It conducts sentiment analysis on a comprehensive level across Weibo, comparing data on a 24-hour, weekly, and monthly basis. Through the practical implementation of web scraping for Weibo data and sentiment analysis, an interactive visual website is developed. It organizes and categorizes internet data into easily understandable formats, highlighting trends and anomalies. Comparative analysis yields insights, allowing data to tell its own story and enabling users to discover patterns effectively.
-    company: Personal
-    date: "2021"
-    textBlock:
-      - category: Objectives
-        body:
-          目前，社会热点传播的途径很广，形式多样。以流行社交媒体为平台传播的社会热点内容下面聚集着海量用户的评论和讨论，其中微博热搜就是一个现象级案例，它以动态更新话题榜单排名的方式推送数亿万用户正在发生的热点事件，涵盖多类别社会热点与讨论，反映出公众实时关注的内容。而这些经用户产生的主观性的带有情感取向的推送与评论内容数据进行情绪的识别后综合起来进行分析，可以成为一个在信息时代以前不可想象的工具——群体性定量的情绪监测。
-          
-          
-          本项目研究大数据时代背景下群体情绪与热点时事的关系。使用情绪词典情绪分析方式和接口型数据爬虫，构建2021上半年热点事件情感数据库，将热搜数据进行分类和情感分析。数据库最终包含Hedonometer情感字典中一万个词的微博指数，和四万带有分类、描述、正负情感概率的热搜数据以及特定媒体用户的微博分析数据。
-          
-          
-          分析上首先从及不同时间维度分析个例，进行分类比较。发现某对象的价值增长速度的绝对值与其微博指数有极高关联度，可以利用情感分析提供正负性产出对象的价值，显示情感分析的社会意义，选择了比特币案例进行展示。之后将微博指数应用到群体监测情绪上，获得了微博世界的情感曲线。
-          构建数字情绪可视化交互系统，结合社会热点的社交媒体用户情感趋势。通过故事性叙述的方式展示数据关联关系，提供一种可持续的监测群体情绪的方法，实现了不同时间细粒度的热度分析，结合热搜的情感数据进行合理性验证。
-
-
-          Currently, there are diverse and widespread ways in which societal hot topics are disseminated. Social media platforms, particularly those that are widely used, aggregate vast amounts of user comments and discussions around these hot topics. A notable case is Weibo's trending topics, which dynamically updates a list of trending topics, pushing these events to millions of users. This covers various categories of social discussions, reflecting content that the public is currently interested in. By identifying and analyzing the subjective, emotion-oriented content generated by users, this project aims to create an unprecedented tool in the pre-information age era – quantitative group sentiment monitoring.
-
-
-          This project examines the relationship between group sentiment and current events in the context of the big data era. It utilizes sentiment analysis methods with emotional dictionaries and an interface-based web scraper. The project constructs an emotional database for trending events during the first half of 2021, categorizing trending data and conducting sentiment analysis. The database includes Weibo sentiment indices for ten thousand words from the Hedonometer emotional dictionary, forty thousand trending data entries with classifications, descriptions, and positive/negative sentiment probabilities, as well as Weibo analysis data from specific media users.
-
-          
-          The analysis begins by examining individual cases from different temporal dimensions and conducting comparative classification. It's observed that the absolute value of an object's rate of value growth is highly correlated with its Weibo sentiment index. This suggests that sentiment analysis can provide insight into the value of positive or negative outcomes, highlighting the societal significance of sentiment analysis. A Bitcoin case is selected for demonstration. The Weibo sentiment index is then applied to monitor group sentiment, revealing the emotional curve of the Weibo world.
-
-          
-          The project also constructs a digital emotion visualization interactive system, integrating the emotional trends of social media users with ongoing social hot topics. Through narrative storytelling, the project showcases data relationships and provides a sustainable method for monitoring group sentiment, achieving fine-grained analysis over time and validating it through the emotional data of trending topics.
-      - category: My role 
-        body: >-
-          Ideation
-
-
-          Data Scraping/Analysis/Visualization
-
-
-          Web Deploy
-      - category: Architecture
-        body: >-
-          数据爬取与处理
-
-
-
-          可视化构思与产出
-
-
-          网站系统开发
-
-
-          Data Collection and Processing
-
-
-          Visualization Conceptualization and Output
-          
-
-          Website System Development
-    stack:
-      - Data Visualization
-      - D3
-      - Node.js
-      - Python
-  - title: Tillit
-    slug: tillit
-    image: assets/images/trusttillit/01.png
-    imageContent: 
-      - assets/images/trusttillit/01.png
-      - assets/images/trusttillit/02.png
-      - assets/images/trusttillit/03.png
-      - assets/images/trusttillit/04.png
-      - assets/images/trusttillit/05.png
-      - assets/images/trusttillit/06.png
-      - assets/images/trusttillit/07.png
-      - assets/images/trusttillit/08.png
-      - assets/images/trusttillit/09.png
-      - assets/images/trusttillit/10.png
-      - assets/images/trusttillit/11.png
-      - assets/images/trusttillit/12.png
-      - assets/images/trusttillit/13.png
-      - assets/images/trusttillit/14.png
-      - assets/images/trusttillit/15.png
-      - assets/images/trusttillit/16.png
-      - assets/images/trusttillit/17.png
-  
-    description: "A speculative board game for people who approach voting for the first time (around 17 y.o.) who will experience trust as currency in order to develop their own understanding through tools for critical thought."
-    company: Cooperation
-    date: "2023"
-    textBlock:
-      - category: Objectives
-        body:
-          Play as a Creative Research Methodology is an approach that uses artistic expression and playful interaction to generate, interpret or communicate research knowledge. It can be applied to various disciplines and purposes, such as education, health, social justice and innovation. 
-          This game was inspired by the work of Professor Nancy Nowacek and John Sharp from THE NEW SCHOOL , who advocate for play as a way of engaging with complex social issues and generating new insights.
-      - category: My role 
-        body: >-
-          Ideation
-
-
-          Graphic Design 
-
-
-          Usablitiy Testing
-
-
-          Prototype
-      - category: Architecture
-        body: >-
-          User Awarness
-
-
-          Motivation
-
-
-          Adoption
-
-
-          Maniteinance
-
-    stack:
-      - Boardgame 
-      - User-center 
-      - Emotion 
-      - UX
-
-  - title: VisEar
-    slug: visear
-    image: assets/images/visear/vis1.jpg
-    imageContent: 
-      - assets/images/visear/vis1.jpg
-      - assets/images/visear/vis2.jpg
-      - assets/images/visear/vis3.jpg
-      - assets/images/visear/vis4.jpg
-      - assets/images/visear/vis5.jpg
-      - assets/images/visear/vis6.jpg
-      - assets/images/visear/vis7.jpg
-      - assets/images/visear/vis8.jpg
-      - assets/images/visear/vis9.jpg
-      - assets/images/visear/vis10.jpg
-      - assets/images/visear/vis11.jpg
-      - assets/images/visear/vis12.jpg
-
-  
-    description: "A Computer Graphics Algorithm Applications with User Center Integrated Product Design For Blind Individual"
-    company: Cooperation
+ 
+    description: "glassfrog描述"
+    # company: Individual
     
-    # prototypeLink: https://www.figma.com/proto/tvPkaE2ATEkMawOuUMqgMQ/Knoise-App-(Copy)?page-id=409%3A22584&node-id=446%3A28605&viewport=427%2C82%2C0.03&scaling=min-zoom&starting-point-node-id=446%3A28605
-    # link: https://knoise.framer.website
-    date: "2021"
-    textBlock:
-      - category: Objectives
-        body:
-          VisEar is a co-creative project with different major students, including CS and Economics students, we aim first to help the later blind individual and people with permanent blindness to overcome the unexpected difficulties. Using sensory substitution techniques and with an innovative algorithm, we can open the market with low cost and change the physics-socially-dying situation of the blind individual in China. At firstly it's a tech-oriented Startup project, but as the research goes further, user-centred method needs to be applied to the project and a whole system needs to be created to develop our product.
-      - category: My role
-        body: >-
-          Algorithm development in the first stage (main-branch) 
-          
-          
-          User research and analysis
-          
-          
-          Use the user-centred design method to lead the team 
-          
-          
-          Product design and hardware prototyping
-      - category: Architecture
-        body: >-
-          Algorithm Development 
-
-
-          Raspberries Pi Implementation 
-
-
-          Model Printing 
-
-
-          User Testing 
-    stack:
-      - Raspberry Pi
-      - Linux
-      - Pyhton 
-      - Computer graphics 
-      - Product design 
-  - title: VisEmo
-    slug: Meta-VisEmo
-    video: GWPxOZIoncA
-    image: assets/images/metavisemo/s1.png
-    imageContent: 
-      - assets/images/metavisemo/s2.png
-      - assets/images/metavisemo/s3.png
-      - assets/images/metavisemo/s4.png
-      - assets/images/metavisemo/s5.png
-      - assets/images/metavisemo/s6.png
-      - assets/images/metavisemo/s7.png
-      - assets/images/metavisemo/s8.png
-      - assets/images/metavisemo/s9.png
-
-      # - assets/images/inviso/s4.png
-    description: "An emotion visualization tool in Metaverse"
-    company: Cooperation
-    prototypeLink: https://youtu.be/GWPxOZIoncA
-    link: #
+    # link: 链接
     date: "2022"
     textBlock:
       - category: Objectives
         body:
-          Meta-VisEmo is an emotion visualization tool in Metaverse. It can reflect players’ emotions through their avatars as well as the environment. We put users in formal and informal situations to discover the possibilities of these new emotion expressions.
-          
-          >- Use Emoj to reflect players’ emotions through different kinds of effect on their avatars/environment in the Metaverse. 
-          
-          >- Design Effects for prototyping where we use tools like Unity UI\Shader\VFX etc. 
-          
-          >- These effects can be easily changed in the future by users. (Like NFT). So we would prepare to expose some interfaces of properties in these effects for users to play around with.
-          
-          - Paper accepted:"Empowering virtual humans' emotional expression in the Metaverse" (HCI International 2023 23 - 28 July ® Copenhagen, Denmark)
-      - category: My role
-        body: >-
-          Ideation and reasearch
-
-          
-          Environment Design
+          详细描述
 
 
-          C# data sturcture design
+    #   
+  # - title: InViso
+  #   slug: InViso
+  #   image: assets/images/Inviso/s1.png
+  #   imageContent: 
+  #     - assets/images/Inviso/s2.jpg
+  #     - assets/images/Inviso/s3.jpg
+  #     - assets/images/Inviso/s4.png
+  #     - assets/images/Inviso/s5.png
+  #     - assets/images/Inviso/s6.png
+  #     - assets/images/Inviso/s7.png
+  #     - assets/images/Inviso/Ai promise.png
+  #     - assets/images/Inviso/offering map 4.png
+  #     - assets/images/Inviso/s8.png
+  #     - assets/images/Inviso/s9.png
+  #     - assets/images/Inviso/s10.png
+  #     - assets/images/Inviso/s11.png
+  #     - assets/images/Inviso/s12.png
+  #     - assets/images/Inviso/s13.png
+  #     - assets/images/Inviso/s15.png
+  #     - assets/images/Inviso/s16.png
+  #     - assets/images/Inviso/s17.png
+  #     - assets/images/Inviso/s18.png
+  #     - assets/images/Inviso/s19.png
+  #     - assets/images/Inviso/s20.png
+  #     - assets/images/Inviso/s21.png
+  #     - assets/images/Inviso/s23.png
+  #     # - assets/images/inviso/s4.png
+  #   description: "A decision making AI-empowered tool for the Manager of British Museum" 
+  #   company: Cooperation
+  #   prototypeLink: https://bit.ly/Inviso_prototype
+  #   link: https://www.figma.com/proto/TGk4lpRLZdlOXT3qLdeic2/Report%2BPresentation-(Copy)?page-id=6%3A135&node-id=6%3A136&viewport=47%2C569%2C0.02&scaling=scale-down&starting-point-node-id=6%3A136
+  #   date: "2022"
+  #   textBlock:
+  #     - category: Objectives
+  #       body:
+  #         This is a project from "Envision A.I. through design" class. The aim of the project was to design a supportive dashboard for the manager of the British Museum to facilitate decision-making with the help of Artificial Intelligence. By combining data from the British Museum, digital initiatives and data concerning the Covid-19 pandemic, the system aims to support the strategic operation of the museum. It assists the Manager, the financial department and the marketing department by predicting future developments of the museum, highlighting potential target groups and giving inspiration for content delivery. Furthermore, by exploiting visitors' reviews from TripAdvisor and Twitter, the system collects and visualises the audience's opinions and demographics – helping the British Museum improve its targeting and provide greater value for a greater audience. 
+
+  #         # 该项目的目标是为大英博物馆的经理设计一个支持性管理面板，通过各方面数据与可行的AI算法，帮助促进决策制定。通过整合来自大英博物馆、数字化倡议以及关于 Covid-19 疫情的数据，该系统旨在支持博物馆的战略运营。它通过预测博物馆未来的发展，突显潜在目标群体，并为内容传递提供灵感，来协助经理、财务部门和市场部门。此外，通过利用来自 TripAdvisor 和 Twitter 的游客评论，系统收集并可视化受众的意见和人口统计信息，帮助大英博物馆改进其定位，为更广泛的受众提供更大的价值。
+  #     - category: My role
+  #       body: >-
+  #         Ideation and reasearch
 
 
-          UI Development
+  #         Data Expert
 
 
-          Product management
+  #         AI system core define
 
 
-          Git version control
-      - category: Architecture
-        body: >-
-          Mapping emotion
+  #         Prototype
+  #     - category: Architecture
+  #       body: >-
+  #         Visitor Flows
 
 
-          Intergrate Shder and VFX with Emoj data
+  #         Target Audience
 
 
-          UI Design
+  #         Financial Trends
 
 
-          Content Trends
-    stack:
-      - Unity
-      - C#
-      - Shader
-      - Facial Recognition
-      - Online platform
- 
-  - title: If Mondrain Had a Mac
-    slug: Mondrain
-    video: hfGfzfP35DU
-    image: assets/images/mondrainmac/1s.jpg
-    imageContent: 
-      - assets/images/mondrainmac/s02.png
-      - assets/images/mondrainmac/s03.png
-      - assets/images/mondrainmac/s04.png
-      - assets/images/mondrainmac/s05.png
-      - assets/images/mondrainmac/s06.png
-      - assets/images/mondrainmac/s07.png
-      - assets/images/mondrainmac/s08.png
-      - assets/images/mondrainmac/s09.png
-      - assets/images/mondrainmac/s10.png
-      - assets/images/mondrainmac/s11.png
-      - assets/images/mondrainmac/s12.png
-      - assets/images/mondrainmac/s13.png
-      - assets/images/mondrainmac/s14.png
+  #         Content Trends
+  #   stack:
+  #     - AI
+  #     - Python
+  #     - Figma
+  #     - UX
+  #     - Service
 
-    description: "Digital Art tell story about Mondrian"
-    company: Group 
-    prototypeLink: https://gottaegbert.github.io/Mondrian-s-Mac/
-    link: https://www.figma.com/proto/0gpha2cXCeaMXFwpGu725Z/Digital-Art-Group2-If-Mondrian-had-a-mac-(Copy)?page-id=1031%3A7873&node-id=1031%3A8030&viewport=-647%2C384%2C0.69&scaling=scale-down-width&hide-ui=1
-    date: "2022"
-    textBlock:
-      - category: Objectives
-        body: 
-          This is a project from "Digital Art" class. It has a website demo you can check [here](https://gottaegbert.github.io/Mondrian-s-Mac/). We know that Mondrian’s artwork has gone through tranmandous changes through his life time. We want to explore the contexts of his creation process and his real life behind extraordinary artworks. 
-          We want to seek a mirror that allows us to dip into the life unseen to us. So we can’t help to think
-          if Mondrian has a Mac, what will it be like?
-      - category: My role
-        body: >-
-          Ideation and reasearch
-
-          
-          Website design and prototype
-
-
-          Website development
-
-
-          Exhibition design
-      - category: Architecture
-        body: >-
-          Social Circle 
-
-
-          Situation puzzle
-
-
-          Mondrian in 2021
-    stack:
-      - Digital Art
-      - Exhibition Design
-      - Interaction
-      - Web Design
-      - Visual
-  - title: Once upon a time away from school
-    slug: weibo
-    image: assets/images/HSY-Portfolio-Export_Page_32.jpg
-    imageContent: 
-      - assets/images/weibo/weibo2.jpg
-      - assets/images/weibo/weibo3.jpg
-      - assets/images/weibo/weibo4.jpg
-      - assets/images/weibo/weibo5.jpg
-      - assets/images/weibo/weibo6.jpg
-      - assets/images/weibo/weibo7.jpg
-    description: "Social network sentiment analysis"
-    company: Personal
-    prototypeLink: https://gottaegbert.github.io/webshow1/trendingofschopen.html
-    link: https://gottaegbert.github.io/webshow1/trendingofschopen.html
-    # link: 
-    date: "2020"
-    textBlock:
-      - category: Objectives
-        body:
-          Once Upon A Time Away From School Provide Insight Into How Students Felt During The
-          Time Away From School Because Of The Pandemic.
-          The Joy Of Vacation And The Growing Anxiety When The Start Of School Is Nowhere In
-          Sight; People's Psychology Also Fluctuates With Each Hot Trending News. It's A Social
-          Experiment For Every Student. It Also Tests The Family Relationship, Economic
-          Management, Social Relations, Learning Attitude, And Students' Learning Environ-
-          Ment. It Also Tests The System And Culture Of Higher Education In China. Let's See The
-          Data, And It's A Visualization From The Social Network.
-      - category: My role
-        body: >-
-          Topic Define And Web Scraping
-
-
-          Data Mining And Cleaning
-
-
-          Data Visualization
-
-
-          Website Design And Development
-
-
-          Video Making And Poseter Design
-      - category: Architecture
-        body: >-
-          Mood overall visualization
-
-
-          Timeline racegraph
-
-
-          Emotions Of Different Type Trending Filter Manually
-    stack:
-      - HTML
-      - Data Visualization
-      - Python
-      - SQL
-  - title: A.I. Mirror
-    slug: aimirror
-    video: xQJhiB0shjg
-    image: assets/images/aimirror/ai1.jpg
-    imageContent: 
-      # - assets/images/aimirror/ai1.jpg
-      - assets/images/aimirror/ai2.jpg
-      - assets/images/aimirror/ai3.jpg
-      - assets/images/aimirror/ai4.jpg
-      - assets/images/aimirror/ai5.jpg
- 
-    description: "A Human and AI Generated Multimedia Interactive Art Speculative design thinking about the future AI"
-    company: Cooperation
-    prototype link: https://www.youtube.com/watch?v=xQJhiB0shjg&t=73s&ab_channel=ACMMultimedia2020InteractiveArtsExhibition
-    link: https://dl.acm.org/doi/10.1145/3394171.3416343
-    date: 2020.08
-    textBlock:
-      - category: Objectives
-        body: >- 
-          If the chameleon-like AI is gradually becoming conscious, how would it think about its history? How do we humans feel about them? “AI mirror”, an interac- tive art, tends to visualize the self-knowledge mechanism from the AI’s perspec- tive and arouses people’s reflection on artificial intelligence.
-          Imagine when you look at yourself, the self image illustration you obtain, is it really complete and divergent enough? Here, with the assistance of artificial intelligence, we look into every pixel sensed from you and find those undiscovered traits of yourself by doing generative art, then have some reflections and write lines of poetry for you.
-      - category: My role
-        body: >-
-          Idea and realization
-
-
-          Unity interactive development
-
-
-          VFX design
-
-
-          Video
-
-
-          Paper writing
-      - category: Architecture
-        body: >-
-          Think about AI's image
-
-
-          A dialectical view of the relationship between human-self and AI
-
-
-          Moodboard
-
-
-          Interactive process
-
-    stack:
-      - Unity
-      - ML
-      - Motion capture
-      - VFX
-  - title: Moving Olmipics
-    slug: movingolimipic
-    video: zwHCrTvbe9Y
-    image: assets/images/HSY-Portfolio-Export_Page_40.jpg
-    imageContent: 
-      - assets/images/movingo/mv2.jpg
-      - assets/images/movingo/mv3.jpg
-      - assets/images/movingo/mv4.jpg
-      - assets/images/movingo/mv5.jpg
-      - assets/images/movingo/mv6.jpg
-    description: An Interactive App and System Design intergrated with motion capture tech for 2022 Beijing Winter Olympics
-    company: Cooperation
-    # prototypeLink: https://vimeo.com/489266364
-    link: https://vimeo.com/489266364
-    date: "2020.6"
-    textBlock:
-      - category: Objective
-        body: Moving Olympics adopts Al dynamic capture technology, collects the skeletal movements of figure skating champions in the Winter Olympics from videos from 1992 to 2018, establishes a database, and uses technology to manage the latest movements in real-time maps them to a virtual human motion, analyzes the changes and reasons generated and displays the statistical comparison of previous players' activities on the APP. Thus those who don't know the sports can get knowledge and those knowledgeable can make further exploration.
-      - category: My role
-        body: >-
-          Unity development
-
-
-          VFX design
-
-
-          Business plan
-
-
-          Video scrapping
-      - category: Architecture
-        body: >-
-          Data Collection
-
-
-          Data Display
-
-          
-          VFX Design
-
-
-          User Experience
-    stack:
-      - Unity
-      - VFX graph
-      - Motion Csapture
-      - Python
