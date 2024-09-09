@@ -1,78 +1,102 @@
-@import "../../styles/variables.scss";
 
 .projectNav {
-  // padding: 48px;
-  // background-color: hsl(0, 1%, 19%);
-  color:var(--font);
-
-
+  color: var(--font);
+  height: 100vh; // Make the entire navigation take the full viewport height
+  display: flex;
+  flex-direction: column;
 }
 
-// Style for "Industrial Design" section
-.typeOneSection {
-  background-color: var(--dark-grey); // Darker background
-  color: var(--font);
-  padding-left: 48px;
-    padding-top: 48px;
-    padding-bottom: 20px;
+.navContainer {
+  height: 100%; // Make sure the container takes full height
+  display: flex;
+  flex-direction: column;
+}
+
+
+.section {
   cursor: pointer;
+  transition: width 0.3s ease;
+  width: 100vw;
 }
 
-.typeOneProjectList {
-  background-color: #313030; // Same color as the section
-  color: var(--font);
-}
+// .expanded {
+//   width: 80%; // Expanded section takes up 80% of the width
+// }
 
-.typeOneProjectList li:hover {
-  background-color: #4a4a4a; // Slightly lighter hover background
-  font-weight: bold;
-}
+// .collapsed {
+//   width: 48px; // Collapsed section has a fixed width of 48px
+// }
 
-// Style for "Graphic Design" section
-.typeTwoSection {
-  background-color: var(--light-grey); // Lighter grey background
-  color: var(--font);
-  padding-left: 48px;
-    padding-top: 48px;
-    padding-bottom: 20px;
+
+.sectionButton {
+  height:105px;
+  width: 100%;
+  padding: 20px 48px;
+  font-size: 1.5rem;
+  background-color: transparent;
+  border: none;
+  text-align: left;
   cursor: pointer;
+  color: var(--font);
+  transition: color 0.3s ease;
+  // border-bottom: 1px solid #ccc;
 }
 
-.typeTwoProjectList {
-  background-color: #d3d3d3;
-  color:var(--font);
+
+
+
+.sectionButton:hover {
+  color: var(--highlight); // Highlight text on hover
+  text-decoration: underline; // Underline text on hover
 }
 
-.typeTwoProjectList li:hover {
-  background-color: #b0b0b0; // Lighter grey on hover
-  font-weight: bold;
+/* Section-specific background colors */
+.sectionOne {
+  background-color: var(--dark-grey); // Darker grey background for Industrial Design
 }
 
-.projectNav li {
-  margin-bottom: 10px;
-  padding-left: 48px;
-  transition: background-color 0.3s ease, font-weight 0.3s ease;
+.sectionTwo {
+  background-color: var(--light-grey); // Lighter grey background for Graphic Design
+}
+
+/* Project list styling */
+.projectListDark {
+  flex-grow: 1;
+  overflow-y: auto;
+  background-color: var(--dark-grey); // Darker grey background for Industrial Design
+  padding: 20px;
+}
+
+.projectListDark li {
+  padding: 20px 48px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.projectListDark li:hover {
+  color: var(--highlight); // Highlight text color on hover
+  text-decoration: underline; // Add underline on hover
+}
+
+/* Project list styling */
+.projectListLight {
+  flex-grow: 1;
+  overflow-y: auto;
+  background-color: var(--light-grey); // light grey background for Graphic Design
+  padding: 20px;
+}
+
+.projectListLight li {
+  padding: 20px 48px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.projectListLight li:hover {
+  color: var(--highlight); // Highlight text color on hover
+  text-decoration: underline; // Add underline on hover
 }
 
 .selected {
-  background-color: #ffb30035; // Highlight selected project with a unique color
-}
-
-.projectImage {
-  display: none;
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  width: 600px;
-  height: auto;
-  border: 1px solid #ccc;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.projectNav li:hover .projectImage {
-  display: block;
-}
-
-.hidden {
-  display: none;
+  background-color: #ffb30035; // Highlight selected project
 }
