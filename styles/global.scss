@@ -3,11 +3,12 @@
 @import "fonts";
 
 :root{
+--dark-grey: #313030;
+--font: #797979;
+--light-grey: #D9D9D9;
+
 --preloader:#ffffff;
 --black: #111111;
---font: #000000;
---dark-grey: #555;
---light-grey: #e3e3e3;
 --off-white: #f7f8fb;
 --off-white-trans: #f7f8fb91;
 --accent-color: #494949;
@@ -17,7 +18,7 @@
 --bg-planet-shadow: #828894;
 --bg-planet-lightshadow: #D7D7D820;
 --dot-size: 0.25rem;
---gradient-color: #ffffff31;
+
 }
 
 [data-theme="dark"] {
@@ -47,7 +48,7 @@ body {
   margin: 0;
   font-family: $font-light;
   color: var(--font);
-  font-size: 20px;
+  font-size: 23px;
   line-height: 1.4;
   overflow-x: hidden;
 }
@@ -189,7 +190,7 @@ li {
   font-family: monospace;
 
   &:before {
-    content: "";
+    
     height: 5px;
     width: 5px;
     background-color: var(--accent-color);

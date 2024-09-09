@@ -3,7 +3,7 @@ import * as React from "react";
 import styles from "./index.module.scss";
 import Layout from "../components/Layout/Layout";
 import cn from "classnames";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import StaggeredTitle from "../components/StaggeredTitle/StaggeredTitle";
 import CaseStudy from "../components/CaseStudy/CaseStudy";
 import { GetStaticProps } from "next";
