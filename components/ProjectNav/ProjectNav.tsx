@@ -34,7 +34,7 @@ const ProjectNav = ({ projects, onSelect }) => {
       <div className={styles.navContainer}>
         {/* Section 1: Industrial Design */}
         <div 
-          className={`${styles.section} ${styles.sectionOne}`} 
+                   className={`${styles.section} ${styles.sectionOne} ${typeOneExpanded ? styles.expanded : ''}`}
           onClick={() => handleToggleSection(typeOne)}
         >
           <button className={styles.sectionButton}>{typeOne}</button>
@@ -58,7 +58,7 @@ const ProjectNav = ({ projects, onSelect }) => {
   
         {/* Section 2: Graphic Design */}
         <div 
-          className={`${styles.section} ${styles.sectionTwo}`} 
+          className={`${styles.section} ${styles.sectionTwo} ${typeTwoExpanded ? styles.expanded : ''}`} 
           onClick={() => handleToggleSection(typeTwo)}
         >
           <button className={styles.sectionButton}>{typeTwo}</button>
