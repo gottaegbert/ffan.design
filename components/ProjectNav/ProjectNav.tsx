@@ -31,13 +31,21 @@ const ProjectNav = ({ projects, onSelect }) => {
   return (
     <nav className={styles.projectNav}>
       {/* Container that holds both sections */}
+      
       <div className={styles.navContainer}>
         {/* Section 1: Industrial Design */}
+        
         <div 
-                   className={`${styles.section} ${styles.sectionOne} ${typeOneExpanded ? styles.expanded : ''}`}
+          className={`${styles.section} ${styles.sectionOne} ${typeOneExpanded ? styles.expanded : ''}`}
           onClick={() => handleToggleSection(typeOne)}
         >
-          <button className={styles.sectionButton}>{typeOne}</button>
+          
+      <button className={`${styles.sectionButton} ${typeOneExpanded ? styles.expanded : ''}`}>
+            {typeOne}
+          </button>
+        
+           
+                 
         </div>
 
         {typeOneExpanded && (
@@ -50,7 +58,6 @@ const ProjectNav = ({ projects, onSelect }) => {
               >
                 <p>{project.types}</p>
                 <h6>{project.title}</h6>
-                 
               </li>
             ))}
           </ul>
@@ -61,7 +68,9 @@ const ProjectNav = ({ projects, onSelect }) => {
           className={`${styles.section} ${styles.sectionTwo} ${typeTwoExpanded ? styles.expanded : ''}`} 
           onClick={() => handleToggleSection(typeTwo)}
         >
-          <button className={styles.sectionButton}>{typeTwo}</button>
+          <button className={`${styles.sectionButton} ${typeTwoExpanded ? styles.expanded : ''}`}>
+            {typeTwo}
+          </button>
         </div>
 
         {typeTwoExpanded && (
@@ -83,7 +92,25 @@ const ProjectNav = ({ projects, onSelect }) => {
         
 
        
+     
       </div>
+
+         {filteredProjectsByType(typeOne).map((project, index) => (
+           <div key={project.slug} className={styles.projectImage} >
+             
+                 <div className={styles.imageContainer}>
+                      <Image
+                  src={"/" + project.image}
+                  alt={`main image for ${project.title}`}
+                  className={styles.projectImage}
+                  height={project.height || '900'}
+                  width={project.width || '1600'}
+                />
+            </div>
+              </div>
+            ))}
+
+      
     </nav>
     
   );
