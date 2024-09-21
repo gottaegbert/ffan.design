@@ -19,10 +19,25 @@
 
 .imageContainer {
   display: flex;
-  height: 100%;
-  z-index: -9;
 }
 
+.projectImage{
+  object-fit: cover;
+}
+
+.imageTop {
+  width: 75vw; // 设置图片容器的宽度为75vw
+  display: flex;
+  height: 90vh;
+}
+
+
+.imageBottom {
+  transform: translateY(calc(100vh - 95vh)); // 使图片容器贴到窗口底部
+  width: 75vw; // 设置图片容器的宽度为75vw
+  display: flex;
+  height: 90vh; // 设置图片容器的高度为90vh
+}
 
 
 
@@ -42,7 +57,7 @@
 
 
 .sectionButton {
-  height:105px;
+  height:10vh;
   width: 100%;
   padding: 20px 48px;
   font-size: 1.5rem;
