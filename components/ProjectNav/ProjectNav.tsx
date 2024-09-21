@@ -60,13 +60,13 @@ const ProjectNav = ({ projects, onSelect }) => {
             {filteredProjectsByType(typeOne).map((project, index) => (
               <li
                 key={project.slug}
-                className={selectedProjectIndex === index ? styles.selected : ''}
+                className={selectedProjectIndex === index ? styles.selectedsection1 : ''}
                 onClick={() => handleSelect(index)}
                 onMouseEnter={() => handleMouseEnter(index)} // Set hover state on mouse enter
                 onMouseLeave={handleMouseLeave} // Reset hover state on mouse leave
               >
-                <p>{project.types}</p>
-                <h6>{project.title}</h6>
+                <p>[{project.types}]</p>
+                <h6 className={styles.titleIndented}>{project.title}</h6>
               </li>
             ))}
           </ul>
@@ -77,7 +77,7 @@ const ProjectNav = ({ projects, onSelect }) => {
           className={`${styles.section} ${styles.sectionTwo} ${typeTwoExpanded ? styles.expanded : ''}`}
           onClick={() => handleToggleSection(typeTwo)}
         >
-          <button className={`${styles.sectionButton} ${typeTwoExpanded ? styles.expanded : ''}`}>
+          <button className={`${styles.sectionButton} ${styles.sectionButtonSectionTwo} ${typeTwoExpanded ? styles.expanded : ''}`}>
             {typeTwo}
           </button>
         </div>
@@ -87,13 +87,13 @@ const ProjectNav = ({ projects, onSelect }) => {
             {filteredProjectsByType(typeTwo).map((project, index) => (
               <li
                 key={project.slug}
-                className={selectedProjectIndex === index ? styles.selected : ''}
+                className={selectedProjectIndex === index ? styles.selectedsection2 : ''}
                 onClick={() => handleSelect(index)}
                 onMouseEnter={() => handleMouseEnter(index)} // Set hover state on mouse enter
                 onMouseLeave={handleMouseLeave} // Reset hover state on mouse leave
               >
-                <p>{project.types}</p>
-                <h6>{project.title}</h6>
+                <p>[{project.types}]</p>
+                <h6 className={styles.titleIndented}>{project.title}</h6>
               </li>
             ))}
           </ul>

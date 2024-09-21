@@ -47,15 +47,6 @@
   width: 100vw;
 }
 
-// .expanded {
-//   width: 80%; // Expanded section takes up 80% of the width
-// }
-
-// .collapsed {
-//   width: 48px; // Collapsed section has a fixed width of 48px
-// }
-
-
 .sectionButton {
   height:10vh;
   width: 100%;
@@ -73,17 +64,18 @@
 
 .sectionButton.expanded {
   font-size: 1rem;
+  text-transform: uppercase; // 将文本转换为大写
+  color:var(--white);
 }
 
-.sectionButton:hover {
-  color: var(--highlight); // Highlight text on hover
-  text-decoration: underline; // Underline text on hover
-}
 
+
+.sectionButtonSectionTwo.expanded {
+   color: var(--black);
+}
 /* Section-specific background colors */
 .sectionOne {
   background-color: var(--dark-grey); 
-
 }
 
 .sectionOne.expanded {
@@ -104,7 +96,6 @@
   flex-grow: 1;
   overflow-y: auto;
   background-color: var(--dark-grey); // Darker grey background for Industrial Design
-  padding: 20px;
   width: 25vw;
 }
 
@@ -125,7 +116,7 @@
     width: 25vw;
   overflow-y: auto;
   background-color: var(--light-grey); // light grey background for Graphic Design
-  padding: 20px;
+
 }
 
 .projectListLight li {
@@ -135,10 +126,17 @@
 }
 
 .projectListLight li:hover {
-  color: var(--highlight); // Highlight text color on hover
   text-decoration: underline; // Add underline on hover
 }
 
-.selected {
-  background-color: #ffb30035; // Highlight selected project
+.selectedsection1 {
+  color:var(--white);
+}
+.selectedsection2 {
+  color:var(--black);
+}
+
+
+.titleIndented {
+  padding-left: 2em; // 增加两格缩进
 }

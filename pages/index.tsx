@@ -21,8 +21,6 @@ type Props = {
 const IndexPage: React.FC<Props> = ({ data }) => {
   const { selectedProjects, ndaDisclaimer } = data;
   const [selectedProjectIndex, setSelectedProjectIndex] = useState<number | null>(null);
-
-  // Handler to update selected project based on ProjectNav component
   const handleProjectSelect = (index: number) => {
     setSelectedProjectIndex(index);
   };
@@ -58,7 +56,7 @@ const IndexPage: React.FC<Props> = ({ data }) => {
             {selectedProjects.map((proj, idx: number) => (
               <div
                 key={"proj" + idx}
-                className={cn("col-12 col-sm-4", styles.caseStudyCol, {
+                className={cn("col-12 col-sm-6", styles.caseStudyCol, {
                   [styles.offsetCol]: idx === 1,
                 })}
               >
@@ -74,7 +72,6 @@ const IndexPage: React.FC<Props> = ({ data }) => {
         </section>
      
       </Layout>
-      {/* <Cursor imgArray={moreWorks.map((work) => work.image)} /> */}
     </StoreProvider>
   );
 };
