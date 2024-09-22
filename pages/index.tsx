@@ -65,12 +65,6 @@ const IndexPage: React.FC<Props> = ({ data }) => {
                 onLabelClick={handleLabelClick} // 传递回调函数
               />
             </div>
-            {/* <StaggeredTitle
-                label1="ALL"
-                label2="WORKS"
-                classname={styles.projTitle}
-              /> */}
-
             {filteredProjects.map((proj, idx: number) => (
               <div
                 key={"proj" + idx}

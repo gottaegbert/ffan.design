@@ -156,7 +156,7 @@ const ProjectNav = ({ projects, onSelect }) => {
         className={`${styles.rightNav} ${isRightNavVisible ? styles.visible : ""}`}
       >
         <ul>
-          <li>Home</li>
+          <li>ffan Home</li>
           <li>Works</li>
           <li>Awards</li>
           <li>Team</li>

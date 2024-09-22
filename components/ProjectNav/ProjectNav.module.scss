@@ -147,7 +147,7 @@
 
 
 .hamburgerMenu {
-  position: absolute;
+  position: fixed;
   top: 30px;
   right: 48px;
   background: none;
@@ -180,6 +180,7 @@
   flex-direction: column;
   padding: 48px;
   color: var(--white);
+  z-index: 5;
 }
 
 .rightNav.visible {
@@ -192,6 +193,7 @@
 }
 
 .rightNav li {
+  border-bottom: 1px solid #ccc; /* 添加底部边框作为分割线 */
   margin-bottom: 20px;
   font-size: 1.5rem;
   cursor: pointer;
