@@ -11,15 +11,7 @@
   &:hover {
     color: inherit;
   }
-  &:hover .arrowContainer {
-    transform: rotate(-30deg);
-    transition: transition(transform);
-  }
-  &:hover .bottom .arrowContainer .arrowBg {
-    height: 60px;
-    width: 60px;
-    transition: height 150ms ease-out, width 150ms ease-out;
-  }
+
 
   article {
     margin-bottom: 40px;
@@ -59,44 +51,9 @@
       }
     }
 
-    .bottom {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      h4 {
-        margin-bottom: 8px;
-        text-decoration: none;
-      }
-      .arrowContainer {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        transition: transition(transform);
-        svg {
-          z-index: 1;
-          fill: var(--arrow);
-          width: 100%;
-          @media only screen and (min-width: $breakpoint-md) {
-            width: unset;
-          }
-
+  
       
-        }
-
-        .arrowBg {
-          background-color: var(--accent-color);
-          height: 0;
-          width: 0;
-          border-radius:100%;
-          position: absolute;
-          left: 50%;
-          top: 50%;
-          transform: translate(-50%, -50%);
-          z-index: 0;
-          transition: height 150ms ease-out, width 150ms ease-out;
-        }
       }
     }
-  }
-}
+  
+

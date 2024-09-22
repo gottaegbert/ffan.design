@@ -3,12 +3,12 @@ import * as React from "react";
 import styles from "./index.module.scss";
 import Layout from "../components/Layout/Layout";
 import cn from "classnames";
-import {  useState } from "react";
+import { useState } from "react";
 import StaggeredTitle from "../components/StaggeredTitle/StaggeredTitle";
 import CaseStudy from "../components/CaseStudy/CaseStudy";
 import { GetStaticProps } from "next";
 import ReactMarkdown from "react-markdown";
-import { gePageData } from "../utils/pages";  // Corrected typo from gePageData to getPageData
+import { gePageData } from "../utils/pages"; // Corrected typo from gePageData to getPageData
 import { StoreProvider } from "../utils/StoreProvider";
 import BasicMeta from "../utils/BasicMeta";
 import { homePageData } from "../utils/customTypes";
@@ -20,10 +20,22 @@ type Props = {
 
 const IndexPage: React.FC<Props> = ({ data }) => {
   const { selectedProjects, ndaDisclaimer } = data;
-  const [selectedProjectIndex, setSelectedProjectIndex] = useState<number | null>(null);
+  const [selectedProjectIndex, setSelectedProjectIndex] = useState<
+    number | null
+  >(null);
   const handleProjectSelect = (index: number) => {
     setSelectedProjectIndex(index);
   };
+
+  const [filter, setFilter] = useState("All Works"); // 添加过滤状态
+
+  const handleLabelClick = (label) => {
+    setFilter(label);
+  };
+  const filteredProjects = selectedProjects.filter((project) => {
+    if (filter === "All Works") return true;
+    return project.types === filter;
+  });
 
   return (
     <StoreProvider>
@@ -32,7 +44,6 @@ const IndexPage: React.FC<Props> = ({ data }) => {
 
         {/* Page wrapper for two-column layout */}
         <div className={styles.pageWrapper}>
-          
           {/* Left-side Navigation */}
           <div className={styles.leftNav}>
             <ProjectNav
@@ -40,20 +51,27 @@ const IndexPage: React.FC<Props> = ({ data }) => {
               onSelect={handleProjectSelect} // Pass handler for project selection
             />
           </div>
-          </div>
+        </div>
 
         {/* <AnimatePresence mode="wait">{isLoading && <Preloader />}</AnimatePresence> */}
         <section className={cn("sectionSpacing", styles.selectedWorkContainer)}>
           <div className="grid">
-            <div className={"col-12 "}>
+            <div>
               <StaggeredTitle
-                label1="Selected"
-                label2="Projects"
+                label1="All Works"
+                label2="Industrial Design"
+                label3="Graphic Design"
                 classname={styles.projTitle}
+                onLabelClick={handleLabelClick} // 传递回调函数
               />
             </div>
+            {/* <StaggeredTitle
+                label1="ALL"
+                label2="WORKS"
+                classname={styles.projTitle}
+              /> */}
 
-            {selectedProjects.map((proj, idx: number) => (
+            {filteredProjects.map((proj, idx: number) => (
               <div
                 key={"proj" + idx}
                 className={cn("col-12 col-sm-6", styles.caseStudyCol, {
@@ -70,7 +88,6 @@ const IndexPage: React.FC<Props> = ({ data }) => {
             </div>
           </div>
         </section>
-     
       </Layout>
     </StoreProvider>
   );
@@ -79,7 +96,7 @@ const IndexPage: React.FC<Props> = ({ data }) => {
 export default IndexPage;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const data = gePageData("homepage");  // Corrected typo
+  const data = gePageData("homepage"); // Corrected typo
   return {
     props: {
       data,

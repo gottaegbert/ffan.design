@@ -2,16 +2,31 @@
 
 .title {
   position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: 20em;
+  font-weight:normal;
+  font-size: 1rem;
+  display: inline-block;;
   span {
     overflow: hidden;
 
     @media only screen and (min-width: $breakpoint-sm) {
-      display: block;
+      display: flex;
+      overflow: hidden;
+        gap: 3em;
     }
   }
 }
 
+.selected {
+  color: black; // 选中时的字体颜色
+  text-decoration: underline; // 选中时的下划线
+}
+
 .offset {
+  display: inline-block;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
   &:before {
     content: " ";
     @media only screen and (min-width: $breakpoint-sm) {
@@ -19,6 +34,6 @@
     }
   }
   @media only screen and (min-width: $breakpoint-sm) {
-    margin-left: 70px;
+    margin-left: 0px;
   }
 }
