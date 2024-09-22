@@ -12,6 +12,7 @@ export type selectedProject = {
   types: string;
   tags: string[];
   title: string;
+  time: string;
 };
 
 export type moreWork = {

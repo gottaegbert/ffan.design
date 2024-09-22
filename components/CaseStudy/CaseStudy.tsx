@@ -11,7 +11,13 @@ import { selectedProject } from "../../utils/customTypes";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const CaseStudy: React.FC<selectedProject> = ({ image, slug, title, tags }) => {
+const CaseStudy: React.FC<selectedProject> = ({
+  image,
+  slug,
+  title,
+  tags,
+  time,
+}) => {
   const ref = React.createRef<HTMLDivElement>();
   useEffect(() => {
     // 设置初始状态
@@ -51,15 +57,18 @@ const CaseStudy: React.FC<selectedProject> = ({ image, slug, title, tags }) => {
             <div className={styles.imgForeground} ref={ref}></div>
           </div>
 
-          <div className={cn(styles.bottom, "fade-in-up")}>
-            <h4>{title}</h4>
-          </div>
-          <div className={"tagContainer"}>
-            {tags.map((tag, ix) => (
-              <p className={"small fade-in-up"} key={"tag" + ix}>
-                {tag}
-              </p>
-            ))}
+          <div className={cn(styles.bottom)}>
+            <div className={"tagContainer"}>
+              {tags.map((tag, ix) => (
+                <>
+                  <p className={"small"} key={"tag" + ix}>
+                    [{tag}]
+                  </p>
+                  <p className={"small indentbig"}> {time}</p>
+                </>
+              ))}
+            </div>
+            <p className="small indent">{title}</p>
           </div>
         </article>
       </a>

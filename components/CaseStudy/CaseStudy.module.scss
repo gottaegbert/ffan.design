@@ -3,10 +3,10 @@
 .projWrap {
   text-decoration: none;
   @media only screen and (min-width: $breakpoint-sm) {
-    margin-bottom: 60px;
+    margin-bottom:30px;
   }
   @media only screen and (min-width: $breakpoint-lg) {
-    margin-bottom: 90px;
+    margin-bottom: 60px;
   }
   &:hover {
     color: inherit;
@@ -14,25 +14,22 @@
 
 
   article {
-    margin-bottom: 40px;
-    padding-bottom: 42px;
-    border-bottom: 1px solid var(--light-grey);
     position: relative;
     @media only screen and (min-width: $breakpoint-md) {
-      margin-bottom: 54px;
+      margin-bottom: 0px;
     }
     .imgContainer {
       position: relative;
       display: block;
-      margin-bottom: 24px;
       width: 100%;
       @media only screen and (min-width: $breakpoint-md) {
-        margin-bottom: 32px;
+        margin-bottom: 10px;
       }
 
       > span {
         position: unset !important;
       }
+      
 
       .pgImage {
         object-fit: contain;
@@ -50,9 +47,6 @@
         background-color: var(--off-white);
       }
     }
-
-  
-      
       }
     }
   
