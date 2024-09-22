@@ -148,7 +148,7 @@
 
 .hamburgerMenu {
   position: absolute;
-  top: 20px;
+  top: 30px;
   right: 48px;
   background: none;
   border: none;
@@ -156,6 +156,15 @@
   cursor: pointer;
   z-index: 10;
 }
+
+.hamburgerMenu:hover {
+  color: var(--highlight);
+}
+
+.hamburgerMenu.graphicDesignExpanded {
+  color: var(--light-grey); // Graphic Design 展开时文字颜色为黑色
+}
+
 
 
 

@@ -144,7 +144,10 @@ const ProjectNav = ({ projects, onSelect }) => {
       </nav>
 
       {/* 汉堡菜单按钮 */}
-      <button className={styles.hamburgerMenu} onClick={toggleRightNav}>
+      <button
+        className={`${styles.hamburgerMenu} ${typeTwoExpanded ? styles.graphicDesignExpanded : ""}`}
+        onClick={toggleRightNav}
+      >
         &#9776; {/* Unicode for hamburger icon */}
       </button>
 
