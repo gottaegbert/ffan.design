@@ -1,0 +1,67 @@
+
+// 导航栏右侧
+
+
+.hamburgerMenu {
+  position: fixed;
+  top: 30px;
+  right: 48px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 10;
+  color: var(--accent-color);
+}
+
+.hamburgerMenu:hover {
+  color: var(--highlight);
+}
+
+.hamburgerMenu.graphicDesignExpanded {
+  color: var(--light-grey); // Graphic Design 展开时文字颜色为黑色
+}
+
+
+
+
+.rightNav {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 360px;
+  height: 100%;
+  background-color: var(--dark-grey);
+  transition: right 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  padding: 48px;
+  color: var(--white);
+  z-index: 5;
+}
+
+.rightNav.visible {
+  right: 148px; /* 显示导航栏 */
+}
+
+.rightNav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.rightNav li {
+  border-bottom: 1px solid #ccc; /* 添加底部边框作为分割线 */
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.contactInfo {
+  margin-top: auto; /* 放在底部 */
+  color: #aaa;
+}
+
+.contactInfo p {
+  margin: 5px 0;
+   font-size: clamp(0.5rem, 2vw, 0.75rem); 
+}

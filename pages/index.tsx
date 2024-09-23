@@ -13,7 +13,7 @@ import { StoreProvider } from "../utils/StoreProvider";
 import BasicMeta from "../utils/BasicMeta";
 import { homePageData } from "../utils/customTypes";
 import ProjectNav from "../components/ProjectNav/ProjectNav";
-
+import RightNav from "../components/RightNav/RightNav";
 type Props = {
   data: homePageData;
 };
@@ -41,7 +41,6 @@ const IndexPage: React.FC<Props> = ({ data }) => {
     <StoreProvider>
       <Layout>
         <BasicMeta url={"/"} />
-
         {/* Page wrapper for two-column layout */}
         <div className={styles.pageWrapper}>
           {/* Left-side Navigation */}
@@ -50,6 +49,7 @@ const IndexPage: React.FC<Props> = ({ data }) => {
               projects={selectedProjects} // Pass the selectedProjects from data
               onSelect={handleProjectSelect} // Pass handler for project selection
             />
+            <RightNav />
           </div>
         </div>
 

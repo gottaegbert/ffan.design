@@ -15,7 +15,7 @@ import { gePageData } from "../../utils/pages";
 import BasicMeta from "../../utils/BasicMeta";
 import { project, selectedProject } from "../../utils/customTypes";
 import Image from "next/legacy/image";
-import YouTube from 'react-youtube';
+import RightNav from "../../components/RightNav/RightNav";
 
 type Props = {
   data: project;
@@ -23,43 +23,38 @@ type Props = {
   slug: string;
 };
 
-
-
 const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
   const title = React.createRef<HTMLDivElement>();
   const imgForeground = React.createRef<HTMLDivElement>();
   const isVideo = data.video;
-function VIDEO() {
-  return (
-    <div className={styles.videoContainer}>
-      <video
-        src={`/${data.video}`}
-        controls
-        width="100%" 
-        height="720px"
-      />
-    </div>
-  );
-}
+  function VIDEO() {
+    return (
+      <div className={styles.videoContainer}>
+        <video src={`/${data.video}`} controls width="100%" height="720px" />
+      </div>
+    );
+  }
 
   function Picture() {
-    return <div className={styles.imageContainer}>
-      <Image
-        src={`/${data.image}`}
-        alt={data.title}
-        layout="responsive"
-        height={9}
-        width={16}
-        objectFit="contain"
-        className={styles.projImage}
-      />
-      <div ref={imgForeground} className={styles.imgForeground}></div>
-    </div>
+    return (
+      <div className={styles.imageContainer}>
+        <Image
+          src={`/${data.image}`}
+          alt={data.title}
+          layout="responsive"
+          height={9}
+          width={16}
+          objectFit="contain"
+          className={styles.projImage}
+        />
+        <div ref={imgForeground} className={styles.imgForeground}></div>
+      </div>
+    );
   }
-  
-  const headerComponent = isVideo ? <VIDEO/>:<Picture /> 
+
+  const headerComponent = isVideo ? <VIDEO /> : <Picture />;
   useEffect(() => {
-    gsap.set(title.current, { opacity: 1, yPercent:100});
+    gsap.set(title.current, { opacity: 1, yPercent: 100 });
     gsap.to(title.current, {
       duration: 1,
       yPercent: 0,
@@ -80,6 +75,7 @@ function VIDEO() {
     <StoreProvider>
       <Layout>
         <BasicMeta url={slug} />
+        <RightNav />
         <section className={cn("grid", styles.prjTitleSection)}>
           <div className={styles.prjTitleContainer}>
             <h1 className={styles.title}>
@@ -89,7 +85,6 @@ function VIDEO() {
                 </span>
               </span>
             </h1>
-
           </div>
           {headerComponent}
           <div className={cn("col-12", "description")}>
@@ -137,12 +132,10 @@ function VIDEO() {
               </div>
             )}
           </div>
-
         </section>
         <section
           className={cn("grid sectionSpacing", styles.projDetailsSection)}
         >
-          
           {data.textBlock.map((block, idx) => (
             <React.Fragment key={idx}>
               <div
@@ -181,61 +174,52 @@ function VIDEO() {
             </>
           )}
           {/* content */}
-       
-{data.imageContent && (
-  <>
-    <div className={cn(styles.detailLabel)}>
-      <h5 className="fade-in-up">Content</h5>
-    </div>
-    <div className={styles.imageContainer}>
-      {data.imageContent.map((content, idx: number) => {
-        const isVideo = content.endsWith('.mp4');
 
-        return (
-          <div
-            className={cn(styles.skillsCell, "fade-in-up")}
-            key={"stack" + idx}
-          >
-            {isVideo ? (
-             <video 
-                src={`/${content}`} 
-                controls 
-                className={styles.projImage}
-                // your video css styles
-              />
-            ) : (
-              <Image
-                src={`/${content}`}
-                alt={data.title}
-                layout="responsive"
-                height={1080}
-                width={1920}
-                quality={100}
-                objectFit="cover"
-                placeholder="blur"
-                blurDataURL={`/${content}`}
-                className={styles.projImage}
-              />
-            )}
-          </div>
-        );
-      })}
-    </div>
-  </>
-)}
+          {data.imageContent && (
+            <>
+              <div className={cn(styles.detailLabel)}>
+                <h5 className="fade-in-up">Content</h5>
+              </div>
+              <div className={styles.imageContainer}>
+                {data.imageContent.map((content, idx: number) => {
+                  const isVideo = content.endsWith(".mp4");
 
-
+                  return (
+                    <div
+                      className={cn(styles.skillsCell, "fade-in-up")}
+                      key={"stack" + idx}
+                    >
+                      {isVideo ? (
+                        <video
+                          src={`/${content}`}
+                          controls
+                          className={styles.projImage}
+                          // your video css styles
+                        />
+                      ) : (
+                        <Image
+                          src={`/${content}`}
+                          alt={data.title}
+                          layout="responsive"
+                          height={1080}
+                          width={1920}
+                          quality={100}
+                          objectFit="cover"
+                          placeholder="blur"
+                          blurDataURL={`/${content}`}
+                          className={styles.projImage}
+                        />
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </>
+          )}
 
           <div className={cn("col-12", styles.divider)}></div>
         </section>
         <section className={cn("grid sectionSpacing", styles.moreWorksSection)}>
-          <div className={"col-12 col-sm-6 col-md-5"}>
-            <StaggeredTitle
-              label1="More"
-              label2="Projects"
-              classname={styles.projTitle}
-            />
-          </div>
           <div className={"col-12 col-sm-6 col-md-7"}>
             {moreProjs.map((work, idx: number) => (
               <Work {...work} key={"work" + idx} />
@@ -253,12 +237,12 @@ export default ProjectPage;
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const data = await gePageData("projects").projects.filter(
     // @ts-ignore
-    (el: project) => el.slug.toLowerCase() == params?.pageSlug?.toLowerCase()
+    (el: project) => el.slug.toLowerCase() == params?.pageSlug?.toLowerCase(),
   )[0];
 
   const homeData = await gePageData("homepage");
   const selectedPjs = homeData.selectedProjects.filter(
-    (el: selectedProject) => el.slug !== `/projects/${params?.pageSlug}`
+    (el: selectedProject) => el.slug !== `/projects/${params?.pageSlug}`,
   );
   const works = homeData.moreWorks;
   const moreProjs = [...selectedPjs, ...works];
