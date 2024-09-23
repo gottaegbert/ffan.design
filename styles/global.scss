@@ -230,6 +230,7 @@ li {
   transform: translate(0%, -100%);
 }
 
+
 .sectionSpacing {
   position: relative;
   padding-top: 70px;
@@ -243,6 +244,20 @@ li {
     padding-bottom: 120px;
   }
 }
+
+.moreWorksSection {
+  padding-top: 700px;
+  padding-bottom: 70px;
+  @media only screen and (min-width: $breakpoint-sm) {
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
+  @media only screen and (min-width: $breakpoint-md) {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+}
+
 
 .description {
   margin-bottom: 48px;

@@ -157,12 +157,12 @@ const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
           <div className={cn("col-12", styles.divider)}></div>
         </section>
         <section className={cn("grid sectionSpacing", styles.moreWorksSection)}>
-          <div className={"col-12 col-sm-6 col-md-7"}>
-            {moreProjs.map((work, idx: number) => (
-              <Work {...work} key={"work" + idx} />
-            ))}
-          </div>
-        </section>
+      <div className={styles.horizontalScrollContainer}>
+        {moreProjs.map((work, idx: number) => (
+          <Work {...work} key={"work" + idx} />
+        ))}
+      </div>
+    </section>
       </Layout>
      
     </StoreProvider>
