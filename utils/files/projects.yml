@@ -19,7 +19,6 @@ projects:
     types: Graphic Design
     tags:
       - Graphic Design
-    
     # link: 链接
     date: "2022"
     textBlock:
@@ -45,7 +44,7 @@ projects:
     types: Graphic Design
     tags:
       - Graphic Design
-    # link: 链接
+    designer: Yutang Huang
     date: "2022"
     textBlock:
       - category: Objectives

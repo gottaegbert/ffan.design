@@ -162,8 +162,8 @@ p.small {
 
 
 p.indentbig {
- text-indent: 16em; // 缩进两格
- 
+  padding-right: 4em;
+  text-align: right;
 }
 
 p.indent {
@@ -275,6 +275,7 @@ li {
 .tagContainer {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   p {
     display: inline;
     position: relative;
