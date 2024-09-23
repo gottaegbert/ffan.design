@@ -76,13 +76,10 @@ const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
         <BasicMeta url={slug} />
         <RightNav />
         <div className={styles.container}>
-          <div className={styles.typeHeader}>
+          <section className={cn("grid")}>
+            <div className={styles.typeHeader}>
             <div>{data.types}</div>
-            <div>
-             [{data.tags}]
-            </div>
-        </div>
-       
+            <div>[{data.tags}]</div></div></section>
           </div>
 
         <section className={cn("grid")}>
@@ -93,101 +90,32 @@ const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
                 <span ref={title} className={styles.titleSpan}>
                   {data.title}
                 </span>
+             <div className={styles.inlineContainer}>
+              <span ref={title} className={styles.titleSpan}>
+                  {data.date}
+                </span>
+               <span ref={title} className={styles.titleSpan}>
+                 DESIGNER: {data.designer}
+                </span>
+                </div>
               </span>
+              {/* :TODO: 字体大小统一 */}
+     
             </h1>
           </div>
-          <div className={cn("col-12", "description")}>
+          <div className={cn("col-8", "description")}>
             <ReactMarkdown className="fade-in-up">
               {data.description}
             </ReactMarkdown>
           </div>
-          {/* date and link 4 category */}
-          <div
-            className={cn("grid no-pad fade-in-up", styles.bottomTitleSection)}
-          >
-            <div className={"col-6 col-sm-4 col-lg-3"}>
-              <p className={cn("small ", styles.label)}>Client</p>
-              <p className={styles.keyFact}>{data.company}</p>
-            </div>
-            {/* <div className={"col-6 col-sm-4 col-lg-3"}>
-              <p className={cn("small", styles.label)}>Project date</p>
-              <p className={styles.keyFact}>{data.date}</p>
-            </div> */}
-            <div className={"col-6 col-sm-4 col-lg-3"}>
-              <p className={cn("small", styles.label)}>Project/Process Link</p>
-              <p className={styles.keyFact}>
-                <a href={data.link} rel="noreferrer" target="_blank">
-                  <img src="/assets/icons/link.svg" alt="" />
-                </a>
-              </p>
-            </div>
 
-            <div className={"col-6 col-sm-4 col-lg-3"}>
-              <p className={cn("small", styles.label)}>Prototype/Demo Link</p>
-              <p className={styles.keyFact}>
-                <a href={data.prototypeLink} rel="noreferrer" target="_blank">
-                  <img src="/assets/icons/link.svg" alt="" />
-                </a>
-              </p>
-            </div>
-            {data.github && (
-              <div className={"col-6 col-sm-4 col-lg-3"}>
-                <p className={cn("small", styles.label)}>Code</p>
-                <p className={styles.keyFact}>
-                  <a href={data.github} rel="noreferrer" target="_blank">
-                    <img src="/assets/icons/github.svg" alt="" />
-                  </a>
-                </p>
-              </div>
-            )}
-          </div>
-        </section>
-        <section
-          className={cn("grid sectionSpacing", styles.projDetailsSection)}
-        >
-          {data.textBlock.map((block, idx) => (
-            <React.Fragment key={idx}>
-              <div
-                className={cn("col-12 col-md-3 col-lg-4", styles.detailLabel)}
-              >
-                <h5 className="fade-in-up">{block.category}</h5>
-              </div>
-              <div
-                className={cn("col-12 col-md-9 col-lg-8", styles.detailBody)}
-              >
-                <ReactMarkdown className="fade-in-up">
-                  {block.body}
-                </ReactMarkdown>
-              </div>
-            </React.Fragment>
-          ))}
-          {data.stack && (
-            <>
-              <div
-                className={cn("col-12 col-md-3 col-lg-4", styles.detailLabel)}
-              >
-                <h5 className="fade-in-up">Stack</h5>
-              </div>
-              <div
-                className={cn("col-12 col-md-9 col-lg-8", styles.skillsGrid)}
-              >
-                {data.stack.map((tool, idx: number) => (
-                  <div
-                    className={cn(styles.skillsCell, "fade-in-up")}
-                    key={"stack" + idx}
-                  >
-                    <p>{tool}</p>
-                  </div>
-                ))}
-              </div>
-            </>
-          )}
+        
           {/* content */}
 
           {data.imageContent && (
             <>
               <div className={cn(styles.detailLabel)}>
-                <h5 className="fade-in-up">Content</h5>
+        
               </div>
               <div className={styles.imageContainer}>
                 {data.imageContent.map((content, idx: number) => {

@@ -42,7 +42,7 @@ export type project = {
   types: string;
   tags: string[];
   description: string;
-  company: string;
+  designer: string;
   github: string;
   link: string;
   frame: string;

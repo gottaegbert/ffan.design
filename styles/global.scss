@@ -76,16 +76,17 @@ li {
 }
 
 h1 {
-  font-size: 34px;
+  font-size: 24px;
+  font-weight: bold;
   line-height: 1.2;
   @media only screen and (min-width: $breakpoint-sm) {
-    font-size: 64px;
+    font-size: 24px;
   }
   @media only screen and (min-width: $breakpoint-md) {
-    font-size: 80px;
+    font-size: 30px;
   }
   @media only screen and (min-width: $breakpoint-lg) {
-    font-size: 112px;
+    font-size: 45px;
   }
 }
 
@@ -244,15 +245,15 @@ li {
 }
 
 .description {
-  margin-bottom: 35px;
-  margin-top: 35px;
+  margin-bottom: 48px;
+  margin-top: 0px;
   @media only screen and (min-width: $breakpoint-sm) {
-    margin-bottom: 45px;
-    margin-top: 45px;
+    // margin-bottom: 45px;
+    margin-top: 0px;
   }
   @media only screen and (min-width: $breakpoint-md) {
-    margin-bottom: 60px;
-    margin-top: 60px;
+    // margin-bottom: 60px;
+    margin-top: 0px;
   }
 }
 

@@ -9,10 +9,19 @@
 .typeHeader{
   display: flex;
   padding-top: 45px;
-  padding-left: 48px;
+
   align-items: center; /* Vertically center the items */
   gap: 10px; 
 }
+
+.inlineContainer {
+  display: flex;
+  justify-content: space-between; /* Distribute items evenly */
+  width: 100%; /* Ensure it takes full width */
+ 
+}
+
+
 .prjTitleContainer {
   display: flex;
   width: 100%;
@@ -20,7 +29,7 @@
   flex-direction: column;
   justify-content: center;
   @media only screen and (min-width: $breakpoint-sm) {
-    padding: 0 0 90px 0;
+    padding: 0 0 0px 0;
   }
   @media only screen and (min-width: $breakpoint-md) {
     // padding: 180px 0 180px 0;
