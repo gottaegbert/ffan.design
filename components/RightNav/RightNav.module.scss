@@ -37,7 +37,9 @@
   flex-direction: column;
   padding: 48px;
   color: var(--white);
-  z-index: 5;
+  pointer-events: auto; 
+  z-index: 999;
+    overflow-y: auto; 
 }
 
 .rightNav.visible {

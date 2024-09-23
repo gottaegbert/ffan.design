@@ -39,6 +39,7 @@ const IndexPage: React.FC<Props> = ({ data }) => {
 
   return (
     <StoreProvider>
+            <RightNav />
       <Layout>
         <BasicMeta url={"/"} />
         {/* Page wrapper for two-column layout */}
@@ -49,7 +50,6 @@ const IndexPage: React.FC<Props> = ({ data }) => {
               projects={selectedProjects} // Pass the selectedProjects from data
               onSelect={handleProjectSelect} // Pass handler for project selection
             />
-            <RightNav />
           </div>
         </div>
 
