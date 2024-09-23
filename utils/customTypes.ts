@@ -39,6 +39,8 @@ export type project = {
   title: string;
   image: string;
   slug: string;
+  types: string;
+  tags: string[];
   description: string;
   company: string;
   github: string;

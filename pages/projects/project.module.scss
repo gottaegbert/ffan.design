@@ -1,32 +1,43 @@
 @import "../../styles/variables.scss";
 
+
+.container {
+  display: flex;
+  justify-content: flex-start; /* Align to the right */
+  padding-bottom: 48px;
+}
+.typeHeader{
+  display: flex;
+  padding-top: 45px;
+  padding-left: 48px;
+  align-items: center; /* Vertically center the items */
+  gap: 10px; 
+}
 .prjTitleContainer {
   display: flex;
   width: 100%;
-  padding: 70px 0 70px 0;
-  margin-top: 100px;
   position: relative;
   flex-direction: column;
   justify-content: center;
   @media only screen and (min-width: $breakpoint-sm) {
-    padding: 120px 0 90px 0;
+    padding: 0 0 90px 0;
   }
   @media only screen and (min-width: $breakpoint-md) {
     // padding: 180px 0 180px 0;
-    min-height: 500px;
+    min-height: 0;
   }
   @media only screen and (min-width: $breakpoint-lg) {
-    min-height: 650px;
+    min-height: 0;
   }
   @media only screen and (min-width: $breakpoint-xl) {
     // padding: 220px 0 220px 0;
   }
   .title {
-    margin-bottom: 32px;
+    margin-bottom: 0;
 
     @media only screen and (min-width: $breakpoint-md) {
       margin-bottom: 0;
-      max-width: 70%;
+      max-width: 100%;
     }
 
     span {
@@ -59,7 +70,7 @@
   }
   .imageContainer {
     position: relative;
-    display: block;
+    display:flexbox;
     height: 100%;
     z-index: 0;
     @media only screen and (min-width: $breakpoint-md) {
@@ -73,9 +84,7 @@
       width: 900px;
     }
 
-    > span {
-      // position: unset !important;
-    }
+  
 
     .projImage {
       // object-fit: contain;

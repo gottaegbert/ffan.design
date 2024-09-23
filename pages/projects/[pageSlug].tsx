@@ -6,10 +6,9 @@ import { gsap } from "gsap";
 import { useEffect } from "react";
 import { GetStaticPaths, GetStaticProps } from "next";
 import Layout from "../../components/Layout/Layout";
-import StaggeredTitle from "../../components/StaggeredTitle/StaggeredTitle";
 import Work from "../../components/Work/Work";
 import ReactMarkdown from "react-markdown";
-import Cursor from "../../components/Cursor/Cursor";
+// import Cursor from "../../components/Cursor/Cursor";
 import { StoreProvider } from "../../utils/StoreProvider";
 import { gePageData } from "../../utils/pages";
 import BasicMeta from "../../utils/BasicMeta";
@@ -76,7 +75,18 @@ const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
       <Layout>
         <BasicMeta url={slug} />
         <RightNav />
-        <section className={cn("grid", styles.prjTitleSection)}>
+        <div className={styles.container}>
+          <div className={styles.typeHeader}>
+            <div>{data.types}</div>
+            <div>
+             [{data.tags}]
+            </div>
+        </div>
+       
+          </div>
+
+        <section className={cn("grid")}>
+          {headerComponent}
           <div className={styles.prjTitleContainer}>
             <h1 className={styles.title}>
               <span>
@@ -86,7 +96,6 @@ const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
               </span>
             </h1>
           </div>
-          {headerComponent}
           <div className={cn("col-12", "description")}>
             <ReactMarkdown className="fade-in-up">
               {data.description}
@@ -227,7 +236,7 @@ const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
           </div>
         </section>
       </Layout>
-      <Cursor imgArray={moreProjs.map((work) => work.image)} />
+     
     </StoreProvider>
   );
 };

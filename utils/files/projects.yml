@@ -14,9 +14,11 @@ projects:
       - assets/images/graphic/brew town/brew_10.png
       - assets/images/graphic/brew town/brew_11.gif
       - assets/images/graphic/brew town/brew_12.png
- 
     description: "啤酒小镇描述"
     company: Individual
+    types: Graphic Design
+    tags:
+      - Graphic Design
     
     # link: 链接
     date: "2022"
@@ -38,10 +40,11 @@ projects:
       - assets/images/graphic/glassfrog/glassfrog_7.gif
       - assets/images/graphic/glassfrog/glassfrog_8.jpg
 
- 
     description: "glassfrog描述"
     # company: Individual
-    
+    types: Graphic Design
+    tags:
+      - Graphic Design
     # link: 链接
     date: "2022"
     textBlock:
