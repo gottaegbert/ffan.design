@@ -99,7 +99,7 @@ const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
                 </span>
                 </div>
               </span>
-              {/* :TODO: 字体大小统一 */}
+            
      
             </h1>
           </div>
@@ -181,8 +181,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const selectedPjs = homeData.selectedProjects.filter(
     (el: selectedProject) => el.slug !== `/projects/${params?.pageSlug}`,
   );
-  const works = homeData.moreWorks;
-  const moreProjs = [...selectedPjs, ...works];
+  // const works = homeData.moreWorks;
+  const moreProjs = [...selectedPjs];
   const slug = params?.pageSlug;
 
   return {

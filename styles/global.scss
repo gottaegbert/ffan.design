@@ -76,17 +76,17 @@ li {
 }
 
 h1 {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
   line-height: 1.2;
   @media only screen and (min-width: $breakpoint-sm) {
-    font-size: 24px;
+    font-size: 20px;
   }
   @media only screen and (min-width: $breakpoint-md) {
-    font-size: 30px;
+    font-size: 20px;
   }
   @media only screen and (min-width: $breakpoint-lg) {
-    font-size: 45px;
+    font-size: 20px;
   }
 }
 
