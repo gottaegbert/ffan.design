@@ -1,0 +1,118 @@
+@import "../../styles/variables.scss";
+
+.heroContainer {
+  width: 100%;
+  padding: 0px 0 32px 0;
+  @media only screen and (min-width: $breakpoint-sm) {
+    padding: 0px 0 32px 0;
+  }
+  @media only screen and (min-width: $breakpoint-md) {
+    padding: 0px 0 70px 0;
+  }
+  @media only screen and (min-width: $breakpoint-lg) {
+    padding: 0px 0 70px 0;
+  }
+  @media only screen and (min-width: $breakpoint-xl) {
+    padding: 0px 0 100px 0;
+  }
+
+
+
+.logoContainer {
+  position:fixed;/* Fix the logo at the top */
+  top: 0px;
+  padding: 48px;
+  width: 100%; /* Fill the entire width of the viewport */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // z-index: 9; /* Ensure it is above other elements */
+}
+
+.logo{
+
+
+  width: 100%;
+  height: 100%;
+
+  svg {
+
+    width: 100%; /* Ensure the SVG fills the container */
+    height: auto; /* Maintain aspect ratio */
+    
+  }
+}
+
+
+
+
+.contentContainer{
+  margin-top:50vh; /* Add margin to push content below the fixed logo */
+  transition: padding-top 0.5s ease-out; // 为 scroll 动画增加过渡效果
+}
+
+  .title {
+      margin-top: 24px;
+    margin-bottom: 12px;
+    font-family: $font-regular;
+    @media only screen and (min-width: $breakpoint-md) {
+      margin-bottom: 12px;
+    }
+    span {
+      display: block;
+      overflow: hidden;
+      & > span {
+        opacity: 1;
+      }
+    }
+  }
+  .introBio {
+    opacity: 1;
+  }
+  .descBio {
+    opacity: 1;
+  }
+  h4 {
+    line-height: 1.4;
+    margin-bottom: 32px;
+  }
+  p {
+    margin-bottom: 32px;
+  }
+}
+
+// .cvLink {
+//   margin: 0 auto 0 auto;
+//   @media only screen and (min-width: $breakpoint-sm) {
+//     margin: 0 0 0 0;
+//   }
+// }
+
+// .skillsGrid {
+//   display: flex;
+//   flex-wrap: wrap;
+//   margin-top: 50px;
+//   @media only screen and (min-width: $breakpoint-sm) {
+//     margin-top: 45px;
+//   }
+//   @media only screen and (min-width: $breakpoint-md) {
+//     margin-top: 60px;
+//   }
+
+//   .skillsCell {
+//     height: 50px;
+//     display: flex;
+//     align-items: center;
+//     width: 50%;
+//     @media only screen and (min-width: $breakpoint-sm) {
+//       width: 50%;
+//     }
+//     @media only screen and (min-width: $breakpoint-md) {
+//       width: 33%;
+//       height: 70px;
+//     }
+//     p {
+//       font-family: $font-extra-light;
+//     }
+//   }
+// }
