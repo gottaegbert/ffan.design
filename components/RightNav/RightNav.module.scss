@@ -51,11 +51,19 @@
   padding: 0;
 }
 
-.rightNav li {
+.rightNav li  {
   border-bottom: 1px solid #ccc; /* 添加底部边框作为分割线 */
   margin-bottom: 20px;
   font-size: 1.5rem;
   cursor: pointer;
+}
+
+.navLink {
+  color: var(--white);
+  text-decoration: none; /* 移除下划线 */
+  &:hover {
+    color: var(--accent-color) /* 悬停时的颜色 */
+  }
 }
 
 .contactInfo {

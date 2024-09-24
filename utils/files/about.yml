@@ -1,21 +1,33 @@
-intro:  "#### Design is more than just aesthetics; it is the creation of meaningful and memorable experiences that resonate with the users. Designers draw inspiration from the nuances and insights of everyday life and translate them into their work and user interactions. The impact of design is not only visual, but also emotional, cognitive and behavioral. It depends on how well the designers craft their stories and how deeply they connect with the users' memories and choices."
+intro: >-
+    We excel as a team with members from the world’s
+    top design institutes, bringing rich commercial
+    project experience. Our design process is
+    globally recognized with accolades from IF, Red
+    Dot, Muse, and more. Combining professionalism,
+    efficiency, and transparent pricing, we offer
+    unparalleled design solutions, blend- ing
+    talent, global exposure, and award-winning
+    expertise to swiftly bring your ideas into
+    reality.
 description: >-
- I am an MSc student in Digital and Interaction Design at Politecnico di Milano, where I explore the intersection of technology, creativity and human-centered design. My skills include 3D modelling, web development, data visualization and Unity project development. I have a background in industrial design and a passion for game design. I love designing and hacking stuff that can bring complex ideas and thoughts to life while ensuring usability and accessibility.
+    Our business encompasses product design, advertising design, and overall creative works. Our team is dedicated to staying abreast of emerging trends and technologies to deliver innovative solutions.
+    Our clients are great companies from all over the world and we have worked with them to create many exciting products. We seek to provide our customers with creative solutions and efficient solutions.
+
 avatar: assets/images/egbert_pic.jpg
 
 skill:
-  - Figma
-  - React
-  - Unity
-  - After Effects
-  - Next.js
-  - Git
-  - Lightroom
-  - D3.js
-  - Touchdesigner
-  - SVG
-  - Three.js
-  - VFX
-  - Photoshop
-  - TypeScript
-  - Arduino
+    - Figma
+    - React
+    - Unity
+    - After Effects
+    - Next.js
+    - Git
+    - Lightroom
+    - D3.js
+    - Touchdesigner
+    - SVG
+    - Three.js
+    - VFX
+    - Photoshop
+    - TypeScript
+    - Arduino
