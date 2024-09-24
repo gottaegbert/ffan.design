@@ -15,6 +15,7 @@ import { aboutPageData, selectedProject } from '../../utils/customTypes'
 import RightNav from '../../components/RightNav/RightNav'
 import logoSrc from '../../public/assets/images/ffandesign.svg'
 import Image from 'next/image'
+import Footer from '../../components/Footer/Footer'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -35,7 +36,6 @@ const Team: React.FC<Props> = ({ data }) => {
             //     ease: 'power4',
             //     delay: 0.2,
             // })
-
             // gsap.set('.fade-in-up-bio', { opacity: 1 })
             // gsap.fromTo(
             //     '.fade-in-up-bio',
@@ -47,13 +47,23 @@ const Team: React.FC<Props> = ({ data }) => {
             //         y: 0,
             //     }
             // )
+            // ScrollTrigger.create({
+            //     trigger: '.logo-container', // 目标触发元素
+            //     start: 'top top', // 在滚动到 contentContainer 的顶部触发动画
+            //     end: 'bottom 100px', // 结束位置
+            //     scrub: true, // 允许平滑滚动
+            //     pin: '.logo', // 固定 lo
+            //     pinSpacing: false, // 禁用 pinSpacing 以避免额外的空白
+            // })
             ScrollTrigger.create({
-                trigger: '.contentContainer', // 目标触发元素
-                start: 'top top', // 在滚动到 contentContainer 的顶部触发动画
-                end: 'bottom top', // 滚动到页面顶部时结束
+                trigger: 'content-container',
+                start: 'top top+=15vh', // 在滚动到 contentContainer 的顶部触发动画
+                end: 'bottom bottom+1vh', // 滚动到页面底部时结束
                 scrub: true, // 允许平滑滚动
-                pin: '.logoContainer', // 固定 logoContainer
-                pinSpacing: false, // 禁用 pinSpacing 以避免额外的空白
+                pin: '.logo-container', // 固定 logo
+
+                //    onLeaveBack: () =>
+                //         gsap.to('.logo-container', { yPercent: -300 }), // 向下滚动时恢复 logo 位置
             })
         }
     }, [])
@@ -61,15 +71,16 @@ const Team: React.FC<Props> = ({ data }) => {
         <StoreProvider>
             <Layout>
                 <BasicMeta url={'/team'} />
+
+                <RightNav />
                 <div className={cn(styles.heroContainer)}>
-                    <div className={styles.logoContainer}>
+                    <div className={cn('logo-container', styles.logoContainer)}>
                         <Image
                             src={logoSrc}
                             alt="FFAN Design Logo"
-                            className={styles.logo}
+                            className={cn('logo', styles.logo)}
                         />
                     </div>
-                    <RightNav />
                     <div
                         className={cn(
                             'content-container',
@@ -161,6 +172,7 @@ const Team: React.FC<Props> = ({ data }) => {
                         ))}
                     </div>
                 </section> */}
+                <Footer />
             </Layout>
         </StoreProvider>
     )
