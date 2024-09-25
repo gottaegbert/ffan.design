@@ -10,7 +10,7 @@
   @media only screen and (min-width: $breakpoint-sm) {
     margin-top: 200px;
   }
-  @media only screen and (min-width: $breakpoint-md) {
+  @media only screen and (min-width: $breakpoint-lg) {
     margin-top: 200px;
     padding: 90px 0;
   }
@@ -41,8 +41,8 @@
 .bottom {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  border-top: 2px solid rgb(198, 240, 201);
+  align-items: flex-start;
+  border-top: 2px solid #1E1E1E;
   padding-top: 40px;
   @media only screen and (min-width: $breakpoint-sm) {
     flex-direction: row;
@@ -52,6 +52,9 @@
   @media only screen and (min-width: $breakpoint-md) {
     padding-top: 60px;
   }
+
+
+
 
   p {
     text-align: center;

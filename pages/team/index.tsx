@@ -47,23 +47,14 @@ const Team: React.FC<Props> = ({ data }) => {
             //         y: 0,
             //     }
             // )
-            // ScrollTrigger.create({
-            //     trigger: '.logo-container', // 目标触发元素
-            //     start: 'top top', // 在滚动到 contentContainer 的顶部触发动画
-            //     end: 'bottom 100px', // 结束位置
-            //     scrub: true, // 允许平滑滚动
-            //     pin: '.logo', // 固定 lo
-            //     pinSpacing: false, // 禁用 pinSpacing 以避免额外的空白
-            // })
+
+            //TODO:还是有点迷糊，不知道怎么用，先注
             ScrollTrigger.create({
                 trigger: 'content-container',
-                start: 'top top+=15vh', // 在滚动到 contentContainer 的顶部触发动画
+                start: 'top top+=1vh', // 在滚动到 contentContainer 的顶部触发动画
                 end: 'bottom bottom+1vh', // 滚动到页面底部时结束
                 scrub: true, // 允许平滑滚动
                 pin: '.logo-container', // 固定 logo
-
-                //    onLeaveBack: () =>
-                //         gsap.to('.logo-container', { yPercent: -300 }), // 向下滚动时恢复 logo 位置
             })
         }
     }, [])
