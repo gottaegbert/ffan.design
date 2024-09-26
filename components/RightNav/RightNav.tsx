@@ -28,14 +28,22 @@ const RightNav = () => {
                             ffan Home
                         </Link>
                     </li>
-                    <li>Works</li>
+                    <li>
+                        <Link href="/#work" className={styles.navLink}>
+                            Work
+                        </Link>
+                    </li>
                     <li>Awards</li>
                     <li>
                         <Link href="/team" className={styles.navLink}>
                             Team
                         </Link>
                     </li>
-                    <li>Contact</li>
+                    <li>
+                        <Link href="/contact" className={styles.navLink}>
+                            Contact
+                        </Link>
+                    </li>
                 </ul>
                 <div className={styles.contactInfo}>
                     <p>Based in Brooklyn & Beijing</p>

@@ -1,55 +1,16 @@
 aboutShort: UX Designer and Developer with strong design sensibilities and technical know-how. Experience in UX/UI design, Web Development and Game Design. The goal is to structure the digital world in a way that makes it more accessible, meaningful and enjoyable for everyone.
 selectedProjects:
-  - title: Brew Town
-    image: assets/images/graphic/brew town/brew_1.jpg
-    slug: /projects/brewtown
-    types: Graphic Design
-    tags:
-      - Interactive Design
-    time: 2023
-  - title: Glassfrog
-    image: assets/images/graphic/glassfrog/glassfrog_2.jpg
-    slug: /projects/glassfrog
-    types: Graphic Design
-    tags:
-      - Graphic Design
-    time: 2024
-  - title: Moving Olympics
-    slug: /projects/movingolimipic
-    types: Industrial Design
-    tags:
-      - Motion capture
-    image: assets/images/HSY-Portfolio-Export_Page_40.jpg
-    time: 2024
-  - title: Away from school
-    image: assets/images/HSY-Portfolio-Export_Page_32.jpg
-    slug: /projects/weibo
-    types: Industrial Design
-    tags:
-      - Social Network
-    time: 2024
-
-# # ndaDisclaimer: Designing the digial world! Working on more...
-# moreWorksDesc:
-#   Most of them can also be found on my [Github](https://github.com/gottaegbert).
-
-
-#   And here you can see some of my [travel photography](https://siyuhu.myportfolio.com/).
-moreWorks:
-  - title: Currently Working at Voiseed
-    description: Responsible for user experience, interaction design, and developing visual effects for front-end development.
-    url: https://www.voiseed.com/
-    image: assets/images/voiseed.jpeg
-
-#   - title: Notion CMS blog website for client
-#     description: Implementing Notion api and Three.js for easy organize the web content and write daily blog.
-#     url: https://antioch.vercel.app/
-#     image: assets/images/notionblog.jpeg
-#   - title: 3D element generation on web poster editing tool
-#     description: Implementing the three.js library in web canvas and letting users have 3d font effects and another animation element on their recommendation poster.
-#     url: https://www.nolibox.com/
-#     image: assets/images/nolipix.jpeg
-#   - title: AI*Design Sharing
-#     description: Sharing my experience of using AI in design and how to use AI to create a better design.
-#     url: https://digital-and-interaction-design.framer.ai/
-#     image: assets/images/aidesign.jpeg
+    - title: Brew Town
+      image: assets/images/graphic/brew town/brew_1.jpg
+      slug: /projects/brewtown
+      types: Graphic Design
+      tags:
+          - Interactive Design
+      time: 2023
+    - title: Glassfrog
+      image: assets/images/graphic/glassfrog/glassfrog_2.jpg
+      slug: /projects/glassfrog
+      types: Graphic Design
+      tags:
+          - Graphic Design
+      time: 2024

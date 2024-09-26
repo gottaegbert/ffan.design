@@ -4,7 +4,14 @@
 .pageWrapper {
   display: flex;
   height: 100vh;
+    scroll-snap-align: start;
+  scroll-snap-stop: always;
 
+}
+.container{
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
 }
 
 .leftNav {
@@ -80,6 +87,8 @@
 
 
 .heroContainer {
+    scroll-snap-align: start;
+  scroll-snap-stop: always;
   background-color: var(--off-white);
   display:flex;
   align-items: center;
@@ -260,6 +269,8 @@
 
 .selectedWorkContainer {
   background-color: var(--off-white);
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 
   .projTitle {
     margin-bottom: 40px;
