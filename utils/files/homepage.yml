@@ -14,3 +14,17 @@ selectedProjects:
       tags:
           - Graphic Design
       time: 2024
+    - title: Moving Olympics
+      slug: /projects/movingolimipic
+      types: Industrial Design
+      tags:
+          - Motion capture
+      image: assets/images/HSY-Portfolio-Export_Page_40.jpg
+      time: 2024
+    - title: Away from school
+      image: assets/images/HSY-Portfolio-Export_Page_32.jpg
+      slug: /projects/weibo
+      types: Industrial Design
+      tags:
+          - Social Network
+      time: 2024

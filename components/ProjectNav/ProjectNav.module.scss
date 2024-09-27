@@ -45,7 +45,6 @@
 
 .section {
   cursor: pointer;
-  transition: width 3s ease;
   width: 100vw;
 }
 
@@ -82,6 +81,7 @@
 
 .sectionOne.expanded {
   width: 25vw; // 展开时占窗口宽度的25%
+  height: 90vh;
 }
 
 .sectionTwo {
@@ -91,13 +91,13 @@
 
 .sectionTwo.expanded {
   width: 25vw; // 展开时占窗口宽度的25%
+    height: 90vh;
 }
 
 /* Project list styling */
 .projectListDark {
   flex-grow: 1;
   overflow-y: auto;
-  background-color: var(--dark-grey); // Darker grey background for Industrial Design
   width: 25vw;
 }
 
@@ -117,7 +117,6 @@
   flex-grow: 1;
     width: 25vw;
   overflow-y: auto;
-  background-color: var(--light-grey); // light grey background for Graphic Design
 
 }
 
