@@ -9,6 +9,7 @@ const ProjectNav = ({ projects, onSelect }) => {
     const [hoveredProjectIndex, setHoveredProjectIndex] = useState(null) // New state for hover
     const [typeOneExpanded, setTypeOneExpanded] = useState(true)
     const [typeTwoExpanded, setTypeTwoExpanded] = useState(false)
+    const [imageLoaded, setImageLoaded] = useState(false)
 
     const typeOne = 'Industrial Design'
     const typeTwo = 'Graphic Design'
@@ -17,6 +18,7 @@ const ProjectNav = ({ projects, onSelect }) => {
     const filteredProjectsByType = (type) => {
         return projects.filter((project) => project.types === type)
     }
+
     const handleToggleSection = (type) => {
         if (type === typeOne) {
             setTypeOneExpanded(true)
@@ -33,6 +35,14 @@ const ProjectNav = ({ projects, onSelect }) => {
                 height: '10vh',
                 duration: 0.5,
             })
+
+            // Set selected project to the first project of typeOne
+            const firstProjectIndex = projects.findIndex(
+                (project) => project.types === typeOne
+            )
+            setSelectedProjectIndex(firstProjectIndex)
+            onSelect(firstProjectIndex)
+            setImageLoaded(true)
         } else if (type === typeTwo) {
             setTypeOneExpanded(false)
             setTypeTwoExpanded(true)
@@ -48,26 +58,54 @@ const ProjectNav = ({ projects, onSelect }) => {
                 height: '90vh',
                 duration: 0.5,
             })
+
+            // Set selected project to the first project of typeTwo
+            const firstProjectIndex = projects.findIndex(
+                (project) => project.types === typeTwo
+            )
+            setSelectedProjectIndex(firstProjectIndex)
+            onSelect(firstProjectIndex)
+            setImageLoaded(true)
         }
     }
-    const handleSelect = (index) => {
-        setSelectedProjectIndex(index)
-        onSelect(index)
+    const handleSelect = (index, type) => {
+        const filteredProjects = filteredProjectsByType(type)
+        const projectIndex = projects.findIndex(
+            (project) => project.slug === filteredProjects[index].slug
+        )
+        setSelectedProjectIndex(projectIndex)
+        onSelect(projectIndex)
     }
 
-    const handleMouseEnter = (index) => {
-        setHoveredProjectIndex(index) // Set hovered project index
+    const handleMouseEnter = (index, type) => {
+        const filteredProjects = filteredProjectsByType(type)
+        const projectIndex = projects.findIndex(
+            (project) => project.slug === filteredProjects[index].slug
+        )
+        setHoveredProjectIndex(projectIndex)
+        setImageLoaded(true)
     }
 
     const handleMouseLeave = () => {
         setHoveredProjectIndex(null) // Reset hovered project index on leave
     }
 
-    // Determine which project image to display (hovered or selected)
     const displayedProjectIndex =
         hoveredProjectIndex !== null
             ? hoveredProjectIndex
-            : selectedProjectIndex
+            : selectedProjectIndex !== null
+              ? selectedProjectIndex
+              : typeOneExpanded
+                ? projects.findIndex(
+                      (project) =>
+                          project.slug ===
+                          filteredProjectsByType(typeOne)[0].slug
+                  )
+                : projects.findIndex(
+                      (project) =>
+                          project.slug ===
+                          filteredProjectsByType(typeTwo)[0].slug
+                  )
 
     useEffect(() => {
         // If no project is selected, default to the first project
@@ -102,13 +140,19 @@ const ProjectNav = ({ projects, onSelect }) => {
                                         <li
                                             key={project.slug}
                                             className={
-                                                selectedProjectIndex === index
+                                                selectedProjectIndex ===
+                                                projects.findIndex(
+                                                    (p) =>
+                                                        p.slug === project.slug
+                                                )
                                                     ? styles.selectedsection1
                                                     : ''
                                             }
-                                            onClick={() => handleSelect(index)}
+                                            onClick={() =>
+                                                handleSelect(index, typeOne)
+                                            }
                                             onMouseEnter={() =>
-                                                handleMouseEnter(index)
+                                                handleMouseEnter(index, typeOne)
                                             } // Set hover state on mouse enter
                                             onMouseLeave={handleMouseLeave} // Reset hover state on mouse leave
                                         >
@@ -145,13 +189,19 @@ const ProjectNav = ({ projects, onSelect }) => {
                                         <li
                                             key={project.slug}
                                             className={
-                                                selectedProjectIndex === index
+                                                selectedProjectIndex ===
+                                                projects.findIndex(
+                                                    (p) =>
+                                                        p.slug === project.slug
+                                                )
                                                     ? styles.selectedsection2
                                                     : ''
                                             }
-                                            onClick={() => handleSelect(index)}
+                                            onClick={() =>
+                                                handleSelect(index, typeTwo)
+                                            }
                                             onMouseEnter={() =>
-                                                handleMouseEnter(index)
+                                                handleMouseEnter(index, typeTwo)
                                             } // Set hover state on mouse enter
                                             onMouseLeave={handleMouseLeave} // Reset hover state on mouse leave
                                         >
