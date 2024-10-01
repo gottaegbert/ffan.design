@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import styles from './ProjectNav.module.scss'
 import Image from 'next/image'
 import { gsap } from 'gsap/dist/gsap'
@@ -10,64 +10,68 @@ const ProjectNav = ({ projects, onSelect }) => {
     const [typeOneExpanded, setTypeOneExpanded] = useState(true)
     const [typeTwoExpanded, setTypeTwoExpanded] = useState(false)
     const [imageLoaded, setImageLoaded] = useState(false)
+    const [isSlidingOut, setIsSlidingOut] = useState(false)
+
+    const imageRef = useRef<HTMLDivElement | null>(null) // Image container ref
 
     const typeOne = 'Industrial Design'
     const typeTwo = 'Graphic Design'
-    //导航栏
 
     const filteredProjectsByType = (type) => {
         return projects.filter((project) => project.types === type)
     }
 
     const handleToggleSection = (type) => {
-        if (type === typeOne) {
-            setTypeOneExpanded(true)
-            setTypeTwoExpanded(false)
+        setIsSlidingOut(true)
+        setTimeout(() => {
+            if (type === typeOne) {
+                setTypeOneExpanded(true)
+                setTypeTwoExpanded(false)
 
-            // GSAP animation to expand typeOne and collapse typeTwo
-            gsap.to('.sectionOne', {
-                width: '25vw',
-                height: '90vh',
-                duration: 0.5,
-            })
-            gsap.to('.sectionTwo', {
-                width: '100vw',
-                height: '10vh',
-                duration: 0.5,
-            })
+                // GSAP animation to expand typeOne and collapse typeTwo
+                gsap.to('.sectionOne', {
+                    width: '25vw',
+                    height: '90vh',
+                    duration: 0.5,
+                })
+                gsap.to('.sectionTwo', {
+                    width: '100vw',
+                    height: '10vh',
+                    duration: 0.5,
+                })
 
-            // Set selected project to the first project of typeOne
-            const firstProjectIndex = projects.findIndex(
-                (project) => project.types === typeOne
-            )
-            setSelectedProjectIndex(firstProjectIndex)
-            onSelect(firstProjectIndex)
-            setImageLoaded(true)
-        } else if (type === typeTwo) {
-            setTypeOneExpanded(false)
-            setTypeTwoExpanded(true)
+                const firstProjectIndex = projects.findIndex(
+                    (project) => project.types === typeOne
+                )
+                setSelectedProjectIndex(firstProjectIndex)
+                onSelect(firstProjectIndex)
+                setImageLoaded(true)
+            } else if (type === typeTwo) {
+                setTypeOneExpanded(false)
+                setTypeTwoExpanded(true)
 
-            // GSAP animation to expand typeTwo and collapse typeOne
-            gsap.to('.sectionOne', {
-                width: '100vw',
-                height: '10vh',
-                duration: 0.5,
-            })
-            gsap.to('.sectionTwo', {
-                width: '25vw',
-                height: '90vh',
-                duration: 0.5,
-            })
+                gsap.to('.sectionOne', {
+                    width: '100vw',
+                    height: '10vh',
+                    duration: 0.5,
+                })
+                gsap.to('.sectionTwo', {
+                    width: '25vw',
+                    height: '90vh',
+                    duration: 0.5,
+                })
 
-            // Set selected project to the first project of typeTwo
-            const firstProjectIndex = projects.findIndex(
-                (project) => project.types === typeTwo
-            )
-            setSelectedProjectIndex(firstProjectIndex)
-            onSelect(firstProjectIndex)
-            setImageLoaded(true)
-        }
+                const firstProjectIndex = projects.findIndex(
+                    (project) => project.types === typeTwo
+                )
+                setSelectedProjectIndex(firstProjectIndex)
+                onSelect(firstProjectIndex)
+                setImageLoaded(true)
+            }
+            setIsSlidingOut(false)
+        }, 200) // Duration of the slide-out animation
     }
+
     const handleSelect = (index, type) => {
         const filteredProjects = filteredProjectsByType(type)
         const projectIndex = projects.findIndex(
@@ -114,6 +118,29 @@ const ProjectNav = ({ projects, onSelect }) => {
         }
     }, [projects, selectedProjectIndex])
 
+    useEffect(() => {
+        // If no project is selected, default to the first project of typeOne
+        if (selectedProjectIndex === null && projects.length > 0) {
+            const firstTypeOneProjectIndex = projects.findIndex(
+                (project) => project.types === typeOne
+            )
+            setSelectedProjectIndex(firstTypeOneProjectIndex)
+            onSelect(firstTypeOneProjectIndex)
+        }
+    }, [projects, selectedProjectIndex, onSelect])
+
+    // Trigger GSAP animation on image change
+    useEffect(() => {
+        if (imageRef.current) {
+            // Fade out the current image
+            gsap.fromTo(
+                imageRef.current,
+                { opacity: 0.3 },
+                { opacity: 1, duration: 0.4 }
+            )
+        }
+    }, [displayedProjectIndex]) // When displayedProjectIndex changes, animate the new image
+
     return (
         <div className={styles.layoutContainer}>
             <nav className={styles.projectNav}>
@@ -153,7 +180,7 @@ const ProjectNav = ({ projects, onSelect }) => {
                                             }
                                             onMouseEnter={() =>
                                                 handleMouseEnter(index, typeOne)
-                                            } // Set hover state on mouse enter
+                                            }
                                             onMouseLeave={handleMouseLeave} // Reset hover state on mouse leave
                                         >
                                             <p>[{project.types}]</p>
@@ -220,10 +247,10 @@ const ProjectNav = ({ projects, onSelect }) => {
                 </div>
 
                 {/* Image display for hovered or selected project */}
-
                 {projects[displayedProjectIndex] && (
                     <div
                         className={`${styles.imageContainer} ${typeOneExpanded ? styles.imageTop : styles.imageBottom}`}
+                        ref={imageRef} // Reference to the image container
                     >
                         <Image
                             src={'/' + projects[displayedProjectIndex].image} // Show image based on hovered or selected index
