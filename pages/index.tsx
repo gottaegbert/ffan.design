@@ -73,7 +73,7 @@ const IndexPage: React.FC<Props> = ({ data }) => {
                             </div>
                             {filteredProjects.map((proj, idx: number) => (
                                 <div
-                                    key={'proj' + idx}
+                                    key={idx}
                                     className={cn(
                                         'col-12 col-sm-6',
                                         styles.caseStudyCol,
