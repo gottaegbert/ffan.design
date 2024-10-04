@@ -4,6 +4,7 @@
 }
 
 .projectNav {
+  
   list-style: none;
   padding: 0;
   margin: 0;
@@ -23,6 +24,7 @@
 
 .imageContainer {
   display: flex;
+  z-index: -1;
 }
 
 .projectImage{
