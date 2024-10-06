@@ -17,9 +17,32 @@ const ProjectNav = ({ projects, onSelect }) => {
     const typeOne = 'Industrial Design'
     const typeTwo = 'Graphic Design'
 
+    
     const filteredProjectsByType = (type) => {
-        return projects.filter((project) => project.types === type)
+        return projects
+            .filter((project) => project.types === type)
+            .sort((a, b) => b.time - a.time); // 从新到旧排序
     }
+
+    // 首先，创建一个函数来根据年份对项目进行分组
+    const groupProjectsByYear = (projects) => {
+    return projects.reduce((groups, project) => {
+        const year = project.time; // 假设time属性是年份
+        if (!groups[year]) {
+            groups[year] = [];
+        }
+        groups[year].push(project);
+        return groups;
+    }, {});
+};
+
+    // 然后，在你的组件中使用这个函数
+    const groupedProjects = groupProjectsByYear(
+        filteredProjectsByType(typeOne)
+    )
+    // 在你的组件中使用这个函数
+const groupedProjectsTypeTwo = groupProjectsByYear(filteredProjectsByType(typeTwo));
+
 
     const handleToggleSection = (type) => {
         setIsSlidingOut(true)
@@ -161,39 +184,45 @@ const ProjectNav = ({ projects, onSelect }) => {
                         </button>
 
                         {typeOneExpanded && (
-                            <ul className={styles.projectListDark}>
-                                {filteredProjectsByType(typeOne).map(
-                                    (project, index) => (
-                                        <li
-                                            key={project.slug}
-                                            className={
-                                                selectedProjectIndex ===
-                                                projects.findIndex(
-                                                    (p) =>
-                                                        p.slug === project.slug
-                                                )
-                                                    ? styles.selectedsection1
-                                                    : ''
-                                            }
-                                            onClick={() =>
-                                                handleSelect(index, typeOne)
-                                            }
-                                            onMouseEnter={() =>
-                                                handleMouseEnter(index, typeOne)
-                                            }
-                                            onMouseLeave={handleMouseLeave} // Reset hover state on mouse leave
-                                        >
-                                            <p>[{project.types}]</p>
-                                            <h6
-                                                className={styles.titleIndented}
-                                            >
-                                                {project.title}
-                                            </h6>
-                                        </li>
-                                    )
-                                )}
-                            </ul>
-                        )}
+    <div className={styles.projectListDark}>
+        {Object.keys(groupedProjects).sort().reverse().map(year => (
+            <div key={year}>
+                <p className={styles.time}>{year}</p>
+                <ul>
+                    {groupedProjects[year].map((project, index) => (
+                        <li
+                            key={project.slug}
+                            className={
+                                selectedProjectIndex ===
+                                projects.findIndex(
+                                    (p) =>
+                                        p.slug === project.slug
+                                )
+                                    ? styles.selectedsection1
+                                    : ''
+                            }
+                            onClick={() =>
+                                handleSelect(index, typeOne)
+                            }
+                            onMouseEnter={() =>
+                                handleMouseEnter(index, typeOne)
+                            }
+                            onMouseLeave={handleMouseLeave} // Reset hover state on mouse leave
+                        >
+                            <p>[{project.tags}]</p>
+                            <h6
+                                className={styles.titleIndented}
+                            >
+                                {project.title}
+                            </h6>
+                        </li>
+                    ))}
+                </ul>
+                <div style={{ marginTop: '20px' }}></div> 
+            </div>
+        ))}
+    </div>
+)}
                     </div>
 
                     {/* Section 2: Graphic Design */}
@@ -210,39 +239,45 @@ const ProjectNav = ({ projects, onSelect }) => {
                             {typeTwo}
                         </button>
                         {typeTwoExpanded && (
-                            <ul className={styles.projectListLight}>
-                                {filteredProjectsByType(typeTwo).map(
-                                    (project, index) => (
-                                        <li
-                                            key={project.slug}
-                                            className={
-                                                selectedProjectIndex ===
-                                                projects.findIndex(
-                                                    (p) =>
-                                                        p.slug === project.slug
-                                                )
-                                                    ? styles.selectedsection2
-                                                    : ''
-                                            }
-                                            onClick={() =>
-                                                handleSelect(index, typeTwo)
-                                            }
-                                            onMouseEnter={() =>
-                                                handleMouseEnter(index, typeTwo)
-                                            } // Set hover state on mouse enter
-                                            onMouseLeave={handleMouseLeave} // Reset hover state on mouse leave
-                                        >
-                                            <p>[{project.types}]</p>
-                                            <h6
-                                                className={styles.titleIndented}
-                                            >
-                                                {project.title}
-                                            </h6>
-                                        </li>
-                                    )
-                                )}
-                            </ul>
-                        )}
+    <div className={styles.projectListLight}>
+        {Object.keys(groupedProjectsTypeTwo).sort().reverse().map(year => (
+            <div key={year}>
+                <p className={styles.time}>{year}</p>
+                <ul>
+                    {groupedProjectsTypeTwo[year].map((project, index) => (
+                        <li
+                            key={project.slug}
+                            className={
+                                selectedProjectIndex ===
+                                projects.findIndex(
+                                    (p) =>
+                                        p.slug === project.slug
+                                )
+                                    ? styles.selectedsection2
+                                    : ''
+                            }
+                            onClick={() =>
+                                handleSelect(index, typeTwo)
+                            }
+                            onMouseEnter={() =>
+                                handleMouseEnter(index, typeTwo)
+                            }
+                            onMouseLeave={handleMouseLeave} // Reset hover state on mouse leave
+                        >
+                            <p>[{project.tags}]</p>
+                            <h6
+                                className={styles.titleIndented}
+                            >
+                                {project.title}
+                            </h6>
+                        </li>
+                    ))}
+                </ul>
+                <div style={{ marginTop: '20px' }}></div> 
+            </div>
+        ))}
+    </div>
+)}
                     </div>
                 </div>
 

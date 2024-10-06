@@ -1,30 +1,128 @@
 aboutShort: UX Designer and Developer with strong design sensibilities and technical know-how. Experience in UX/UI design, Web Development and Game Design. The goal is to structure the digital world in a way that makes it more accessible, meaningful and enjoyable for everyone.
 selectedProjects:
-    - title: Brew Town
-      image: assets/images/graphic/brew town/brew_1.jpg
-      slug: /projects/brewtown
+    - title: Cellularine Series Earbuds
+      image: assets/images/industrial/earbuds/earbuds_0.jpg
+      slug: /projects/earbuds
+      types: Industrial Design
+      tags:
+          - Product Design
+      time: 2024
+    - title: Buoyant
+      image: assets/images/industrial/buoyant/buoyant_0.jpg
+      slug: /projects/buoyant
+      types: Industrial Design
+      tags:
+          - Product Design and Packaging
+      time: 2024
+    - title: Yasile Electronic Wind Instrument
+      image: assets/images/industrial/yasile/yasile_0.jpg
+      slug: /projects/yasile
+      types: Industrial Design
+      tags:
+          - Product Design
+      time: 2024    
+    - title: Barisen Instrument
+      image: assets/images/industrial/barisen/barisen_0.jpg
+      slug: /projects/barisen
+      types: Industrial Design
+      tags:
+          - Product Design
+      time: 2024
+    - title: Color Coded Ping Pong Shoes
+      image: assets/images/industrial/shoes/shoes_0.jpg
+      slug: /projects/shoes
+      types: Industrial Design
+      tags:
+          - Product Design
+      time: 2024
+    - title: Memory Ring
+      image: assets/images/industrial/memory/memory_0.png
+      slug: /projects/memory
+      types: Industrial Design
+      tags:
+          - Concept Design
+      time: 2023
+    - title: Yan-Rice Cooker
+      image: assets/images/industrial/cooker/yan_0.png
+      slug: /projects/cooker
+      types: Industrial Design
+      tags:
+          - Product Design
+      time: 2023
+    - title: Gvda Portable Rangefinder
+      image: assets/images/industrial/ranger/ranger_0.jpg
+      slug: /projects/ranger
+      types: Industrial Design
+      tags:
+          - Product Design
+      time: 2022
+    - title: Shenzhen Brew Town Identity System
+      image: assets/images/graphic/brew/brew_0.png
+      slug: /projects/brew
+      types: Graphic Design
+      tags:
+          - Branding
+      time: 2024
+    - title: Unembellished Narrative
+      image: assets/images/graphic/unembellished/unembellished_0.jpg
+      slug: /projects/unembellished
+      types: Graphic Design
+      tags:
+          - Book Design
+      time: 2024
+    - title: Other Island Bookfair
+      image: assets/images/graphic/islands/islands_0.jpg
+      slug: /projects/islands
+      types: Graphic Design
+      tags:
+          - Branding
+      time: 2024
+    - title: Liquid Society
+      video: assets/images/graphic/liquid/liquid_0.mp4
+      slug: /projects/liquid
+      types: Graphic Design
+      tags:
+          - Speculative Design
+      time: 2024
+    - title: The Way We Unfold
+      image: assets/images/graphic/identity/identity_0.jpg
+      slug: /projects/identity
+      types: Graphic Design
+      tags:
+          - Space and Narration
+      time: 2024
+    - title: Hyborg Forest
+      image: assets/images/graphic/hyborg/hyborg_0.png
+      slug: /projects/hyborg
+      types: Graphic Design
+      tags:
+          - Motion
+      time: 2023
+    - title: Libido Identity System
+      image: assets/images/graphic/libido/libido_0.png
+      slug: /projects/libido
+      types: Branding and Product Design
+      tags:
+          - Branding
+      time: 2023
+    - title: Raven
+      video: assets/images/graphic/raven/raven_0.mp4
+      slug: /projects/raven
+      types: Graphic Design
+      tags:
+          - Cooperate with AI
+      time: 2023
+    - title: Glassfrog
+      image: assets/images/graphic/glassfrog/glassfrog_0.jpg
+      slug: /projects/glassfrog
       types: Graphic Design
       tags:
           - Interactive Design
       time: 2023
-    - title: Glassfrog
-      image: assets/images/graphic/glassfrog/glassfrog_2.jpg
-      slug: /projects/glassfrog
+    - title: Mascot Presence
+      image: assets/images/graphic/mascot/mascot_0.png
+      slug: /projects/mascot
       types: Graphic Design
       tags:
-          - Graphic Design
-      time: 2024
-    - title: Moving Olympics
-      slug: /projects/movingolimipic
-      types: Industrial Design
-      tags:
-          - Motion capture
-      image: assets/images/HSY-Portfolio-Export_Page_40.jpg
-      time: 2024
-    - title: Away from school
-      image: assets/images/HSY-Portfolio-Export_Page_32.jpg
-      slug: /projects/weibo
-      types: Industrial Design
-      tags:
-          - Social Network
-      time: 2024
+          - Speculative Design
+      time: 2022

@@ -97,15 +97,21 @@
     height: 90vh;
 }
 
+
 /* Project list styling */
+.time{
+  padding-top: 0px;
+}
 .projectListDark {
+  padding: 0px 48px;
   flex-grow: 1;
   overflow-y: auto;
   width: 25vw;
 }
 
+。
+
 .projectListDark li {
-  padding: 20px 48px;
   cursor: pointer;
   transition: color 0.3s ease;
 }
@@ -117,6 +123,7 @@
 
 /* Project list styling */
 .projectListLight {
+  padding: 0px 48px;
   flex-grow: 1;
     width: 25vw;
   overflow-y: auto;
@@ -124,7 +131,7 @@
 }
 
 .projectListLight li {
-  padding: 20px 48px;
+
   cursor: pointer;
   transition: color 0.3s ease;
 }
