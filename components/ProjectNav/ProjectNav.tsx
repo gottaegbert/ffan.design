@@ -14,13 +14,15 @@ const ProjectNav = ({ projects, onSelect }) => {
     const imageRef = useRef<HTMLDivElement | null>(null) // Image container ref
     const [intervalId, setIntervalId] = useState(null);
     const [isUserInteracting, setIsUserInteracting] = useState(false);
+    const sectionOneRef = useRef(null);
+    const sectionTwoRef = useRef(null);
 
     const typeOne = 'Industrial Design'
     const typeTwo = 'Graphic Design'
 
     //轮播
     const goToNextProject = () => {
-        if (isUserInteracting) return; // 如果用户正在交互，不进行自动轮播
+        if (isUserInteracting) return; // 如果用户正在交���，不进行自动轮播
         const nextIndex = selectedProjectIndex < projects.length - 1 ? selectedProjectIndex + 1 : 0;
         const nextProjectType = projects[nextIndex].types;
 
@@ -85,62 +87,61 @@ const groupedProjectsTypeTwo = groupProjectsByYear(filteredProjectsByType(typeTw
 
     const handleToggleSection = (type) => {
         setIsUserInteracting(true);
-        setIsSlidingOut(true)
-        setTimeout(() => {
-            if (type === typeOne) {
-                setTypeOneExpanded(true)
-                setTypeTwoExpanded(false)
+        setIsSlidingOut(true);
 
-                // GSAP animation to expand typeOne and collapse typeTwo
-                gsap.to('.sectionOne', {
-                    width: '25vw',
-                    height: '90vh',
-                    duration: 0.5,
-                })
-                gsap.to('.sectionTwo', {
-                    width: '100vw',
-                    height: '10vh',
-                    duration: 0.5,
-                })
-
-                // Only change selectedProjectIndex if the current project's type is not typeOne
-                if (projects[selectedProjectIndex].types !== typeOne && isUserInteracting) {
-                    const firstProjectIndex = projects.findIndex(
-                        (project) => project.types === typeOne
-                    )
-                    setSelectedProjectIndex(firstProjectIndex)
-                    onSelect(firstProjectIndex)
-                }
-                setImageLoaded(true)
-            } else if (type === typeTwo) {
-                setTypeOneExpanded(false)
-                setTypeTwoExpanded(true)
-
-                gsap.to('.sectionOne', {
-                    width: '100vw',
-                    height: '10vh',
-                    duration: 0.5,
-                })
-                gsap.to('.sectionTwo', {
-                    width: '25vw',
-                    height: '90vh',
-                    duration: 0.5,
-                })
-
-                // Only change selectedProjectIndex if the current project's type is not typeTwo
-                if (projects[selectedProjectIndex].types !== typeTwo && isUserInteracting) {
-                    const firstProjectIndex = projects.findIndex(
-                        (project) => project.types === typeTwo
-                    )
-                    setSelectedProjectIndex(firstProjectIndex)
-                    onSelect(firstProjectIndex)
-                }
-                setImageLoaded(true)
+        const tl = gsap.timeline({
+            onComplete: () => {
+                setIsSlidingOut(false);
+                setIsUserInteracting(false);
             }
-            setIsSlidingOut(false)
-            setIsUserInteracting(false);
-        }, 200) // Duration of the slide-out animation
-    }
+        });
+
+        if (type === typeOne && !typeOneExpanded) {
+            setTypeOneExpanded(true);
+            setTypeTwoExpanded(false);
+
+            tl.to(sectionOneRef.current, {
+                width: '25vw',
+                height: '90vh',
+                duration: 0.5,
+            }).to(sectionTwoRef.current, {
+                width: '100vw',
+                height: '10vh',
+                duration: 0.5,
+            }, "-=0.5");
+
+            if (projects[selectedProjectIndex]?.types !== typeOne) {
+                const firstProjectIndex = projects.findIndex(
+                    (project) => project.types === typeOne
+                );
+                setSelectedProjectIndex(firstProjectIndex);
+                onSelect(firstProjectIndex);
+            }
+        } else if (type === typeTwo && !typeTwoExpanded) {
+            setTypeOneExpanded(false);
+            setTypeTwoExpanded(true);
+
+            tl.to(sectionOneRef.current, {
+                width: '100vw',
+                height: '10vh',
+                duration: 0.5,
+            }).to(sectionTwoRef.current, {
+                width: '25vw',
+                height: '90vh',
+                duration: 0.5,
+            }, "-=0.5");
+
+            if (projects[selectedProjectIndex]?.types !== typeTwo) {
+                const firstProjectIndex = projects.findIndex(
+                    (project) => project.types === typeTwo
+                );
+                setSelectedProjectIndex(firstProjectIndex);
+                onSelect(firstProjectIndex);
+            }
+        }
+
+        setImageLoaded(true);
+    };
 // 修改handleSelect和handleMouseEnter函数，使它们接收一个slug参数，然后使用这个slug来查找项目的索引
 const handleSelect = (slug, type) => {
     setIsUserInteracting(true);
@@ -221,6 +222,7 @@ const handleMouseEnter = (slug, type) => {
                 <div className={styles.navContainer}>
                     {/* Section 1: Industrial Design */}
                     <div
+                        ref={sectionOneRef}
                         className={cn(
                             'sectionOne',
                             `${styles.section} ${styles.sectionOne} ${typeOneExpanded ? styles.expanded : ''}`
@@ -277,6 +279,7 @@ const handleMouseEnter = (slug, type) => {
 
                     {/* Section 2: Graphic Design */}
                     <div
+                        ref={sectionTwoRef}
                         className={cn(
                             'sectionTwo',
                             `${styles.section} ${styles.sectionTwo} ${typeTwoExpanded ? styles.expanded : ''}`
