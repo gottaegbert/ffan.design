@@ -11,6 +11,7 @@ const ProjectNav = ({ projects, onSelect }) => {
     const [typeTwoExpanded, setTypeTwoExpanded] = useState(false)
     const [imageLoaded, setImageLoaded] = useState(false)
     const [isSlidingOut, setIsSlidingOut] = useState(false)
+    const [isTypeSwitching, setIsTypeSwitching] = useState(false);
     const imageRef = useRef<HTMLDivElement | null>(null) // Image container ref
     const [intervalId, setIntervalId] = useState(null);
     const [isUserInteracting, setIsUserInteracting] = useState(false);
@@ -22,7 +23,7 @@ const ProjectNav = ({ projects, onSelect }) => {
 
     //轮播
     const goToNextProject = () => {
-        if (isUserInteracting) return; // 如果用户正在交���，不进行自动轮播
+        if (isUserInteracting) return; // 如果用户正在交，不进行自动轮播
         const nextIndex = selectedProjectIndex < projects.length - 1 ? selectedProjectIndex + 1 : 0;
         const nextProjectType = projects[nextIndex].types;
 
@@ -88,15 +89,17 @@ const groupedProjectsTypeTwo = groupProjectsByYear(filteredProjectsByType(typeTw
     const handleToggleSection = (type) => {
         setIsUserInteracting(true);
         setIsSlidingOut(true);
+        setIsTypeSwitching(true);
 
         const tl = gsap.timeline({
             onComplete: () => {
                 setIsSlidingOut(false);
                 setIsUserInteracting(false);
+                setIsTypeSwitching(false);
             }
         });
 
-        if (type === typeOne && !typeOneExpanded) {
+        if (type === typeOne) {
             setTypeOneExpanded(true);
             setTypeTwoExpanded(false);
 
@@ -117,7 +120,7 @@ const groupedProjectsTypeTwo = groupProjectsByYear(filteredProjectsByType(typeTw
                 setSelectedProjectIndex(firstProjectIndex);
                 onSelect(firstProjectIndex);
             }
-        } else if (type === typeTwo && !typeTwoExpanded) {
+        } else if (type === typeTwo) {
             setTypeOneExpanded(false);
             setTypeTwoExpanded(true);
 
@@ -154,6 +157,7 @@ const handleSelect = (slug, type) => {
 };
 
 const handleMouseEnter = (slug, type) => {
+    if (isTypeSwitching) return; // 如果正在切换类型，不触发 hover 效果
     clearInterval(intervalId);
     const projectIndex = projects.findIndex(
         (project) => project.slug === slug
@@ -169,7 +173,7 @@ const handleMouseEnter = (slug, type) => {
     }
 
     const displayedProjectIndex =
-        hoveredProjectIndex !== null
+        !isTypeSwitching && hoveredProjectIndex !== null
             ? hoveredProjectIndex
             : selectedProjectIndex !== null
               ? selectedProjectIndex
