@@ -71,14 +71,14 @@ selectedProjects:
           - Book Design
       time: 2024
     - title: Other Island Bookfair
-      image: assets/images/graphic/islands/islands_0.jpg
+      image: assets/images/graphic/islands/islands_0.png
       slug: /projects/islands
       types: Graphic Design
       tags:
           - Branding
       time: 2024
     - title: Liquid Society
-      video: assets/images/graphic/liquid/liquid_0.mp4
+      image: assets/images/graphic/liquid/liquid_0.mp4
       slug: /projects/liquid
       types: Graphic Design
       tags:
@@ -106,7 +106,7 @@ selectedProjects:
           - Branding
       time: 2023
     - title: Raven
-      video: assets/images/graphic/raven/raven_0.mp4
+      image: assets/images/graphic/raven/raven_0.mp4
       slug: /projects/raven
       types: Graphic Design
       tags:

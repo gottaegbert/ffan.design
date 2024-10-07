@@ -11,7 +11,6 @@ const ProjectNav = ({ projects, onSelect }) => {
     const [typeTwoExpanded, setTypeTwoExpanded] = useState(false)
     const [imageLoaded, setImageLoaded] = useState(false)
     const [isSlidingOut, setIsSlidingOut] = useState(false)
-
     const imageRef = useRef<HTMLDivElement | null>(null) // Image container ref
 
     const typeOne = 'Industrial Design'
@@ -94,24 +93,22 @@ const groupedProjectsTypeTwo = groupProjectsByYear(filteredProjectsByType(typeTw
             setIsSlidingOut(false)
         }, 200) // Duration of the slide-out animation
     }
+// 修改handleSelect和handleMouseEnter函数，使它们接收一个slug参数，然后使用这个slug来查找项目的索引
+const handleSelect = (slug, type) => {
+    const projectIndex = projects.findIndex(
+        (project) => project.slug === slug
+    );
+    setSelectedProjectIndex(projectIndex);
+    onSelect(projectIndex);
+};
 
-    const handleSelect = (index, type) => {
-        const filteredProjects = filteredProjectsByType(type)
-        const projectIndex = projects.findIndex(
-            (project) => project.slug === filteredProjects[index].slug
-        )
-        setSelectedProjectIndex(projectIndex)
-        onSelect(projectIndex)
-    }
-
-    const handleMouseEnter = (index, type) => {
-        const filteredProjects = filteredProjectsByType(type)
-        const projectIndex = projects.findIndex(
-            (project) => project.slug === filteredProjects[index].slug
-        )
-        setHoveredProjectIndex(projectIndex)
-        setImageLoaded(true)
-    }
+const handleMouseEnter = (slug, type) => {
+    const projectIndex = projects.findIndex(
+        (project) => project.slug === slug
+    );
+    setHoveredProjectIndex(projectIndex);
+    setImageLoaded(true);
+};
 
     const handleMouseLeave = () => {
         setHoveredProjectIndex(null) // Reset hovered project index on leave
@@ -185,11 +182,11 @@ const groupedProjectsTypeTwo = groupProjectsByYear(filteredProjectsByType(typeTw
 
                         {typeOneExpanded && (
     <div className={styles.projectListDark}>
-        {Object.keys(groupedProjects).sort().reverse().map(year => (
+        {Object.keys(groupedProjects).sort().reverse().map((year: string) => (
             <div key={year}>
                 <p className={styles.time}>{year}</p>
                 <ul>
-                    {groupedProjects[year].map((project, index) => (
+                    {groupedProjects[year].map((project: any, index: number) => (
                         <li
                             key={project.slug}
                             className={
@@ -202,10 +199,10 @@ const groupedProjectsTypeTwo = groupProjectsByYear(filteredProjectsByType(typeTw
                                     : ''
                             }
                             onClick={() =>
-                                handleSelect(index, typeOne)
+                                handleSelect(project.slug, typeOne)
                             }
                             onMouseEnter={() =>
-                                handleMouseEnter(index, typeOne)
+                                handleMouseEnter(project.slug, typeOne)
                             }
                             onMouseLeave={handleMouseLeave} // Reset hover state on mouse leave
                         >
@@ -257,10 +254,10 @@ const groupedProjectsTypeTwo = groupProjectsByYear(filteredProjectsByType(typeTw
                                     : ''
                             }
                             onClick={() =>
-                                handleSelect(index, typeTwo)
+                                handleSelect(project.slug, typeTwo)
                             }
                             onMouseEnter={() =>
-                                handleMouseEnter(index, typeTwo)
+                                handleMouseEnter(project.slug, typeTwo)
                             }
                             onMouseLeave={handleMouseLeave} // Reset hover state on mouse leave
                         >
@@ -287,17 +284,27 @@ const groupedProjectsTypeTwo = groupProjectsByYear(filteredProjectsByType(typeTw
                         className={`${styles.imageContainer} ${typeOneExpanded ? styles.imageTop : styles.imageBottom}`}
                         ref={imageRef} // Reference to the image container
                     >
-                        <Image
-                            src={'/' + projects[displayedProjectIndex].image} // Show image based on hovered or selected index
-                            alt={`Main image for ${projects[displayedProjectIndex].title}`}
-                            className={`${styles.projectImage} ${typeOneExpanded ? styles.imageTop : styles.imageBottom}`}
-                            height={
-                                projects[displayedProjectIndex].height || '720'
-                            }
-                            width={
-                                projects[displayedProjectIndex].width || '1280'
-                            }
-                        />
+                          {projects[displayedProjectIndex].image.endsWith('.mp4') ? (
+                            <video
+                                src={'/' + projects[displayedProjectIndex].image} // Show video based on hovered or selected index
+                                autoPlay
+                                loop
+                                muted
+                                className={`${styles.projectImage} ${typeOneExpanded ? styles.imageTop : styles.imageBottom}`}
+                            />
+                        ) : (
+                            <Image
+                                src={'/' + projects[displayedProjectIndex].image} // Show image based on hovered or selected index
+                                alt={`Main image for ${projects[displayedProjectIndex].title}`}
+                                className={`${styles.projectImage} ${typeOneExpanded ? styles.imageTop : styles.imageBottom}`}
+                                height={
+                                    projects[displayedProjectIndex].height || '720'
+                                }
+                                width={
+                                    projects[displayedProjectIndex].width || '1280'
+                                }
+                            />
+                        )}
                     </div>
                 )}
             </nav>
