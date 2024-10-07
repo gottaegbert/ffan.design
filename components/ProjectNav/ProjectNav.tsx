@@ -12,11 +12,51 @@ const ProjectNav = ({ projects, onSelect }) => {
     const [imageLoaded, setImageLoaded] = useState(false)
     const [isSlidingOut, setIsSlidingOut] = useState(false)
     const imageRef = useRef<HTMLDivElement | null>(null) // Image container ref
+    const [intervalId, setIntervalId] = useState(null);
+    const [isUserInteracting, setIsUserInteracting] = useState(false);
 
     const typeOne = 'Industrial Design'
     const typeTwo = 'Graphic Design'
 
+    //轮播
+    const goToNextProject = () => {
+        if (isUserInteracting) return; // 如果用户正在交互，不进行自动轮播
+        const nextIndex = selectedProjectIndex < projects.length - 1 ? selectedProjectIndex + 1 : 0;
+        const nextProjectType = projects[nextIndex].types;
+
+        // Check if the next project is of the same type as the current one
+        if (projects[selectedProjectIndex].types === nextProjectType) {
+            setSelectedProjectIndex(nextIndex);
+        } else {
+            // If the next project is of a different type, go to the first project of the current type
+            const firstProjectIndex = projects.findIndex(
+                (project) => project.types === projects[selectedProjectIndex].types
+            );
+            setSelectedProjectIndex(firstProjectIndex);
+        }
+
+        // Check the type of the next project and switch the expanded section if necessary
+        if (nextProjectType === typeOne ) {
+            handleToggleSection(typeOne);
+        } else if (nextProjectType === typeTwo) {
+            handleToggleSection(typeTwo);
+        }
+    };
+
+    useEffect(() => {
+        const id = setInterval(goToNextProject, 5000); // 将间隔改为 5 秒
+        setIntervalId(id);
+        return () => clearInterval(id);
+    }, [selectedProjectIndex, isUserInteracting]);
+
+    // Clear the interval when the component unmounts
+    useEffect(() => {
+        return () => {
+            clearInterval(intervalId);
+        };
+    }, [intervalId]);
     
+    //分类
     const filteredProjectsByType = (type) => {
         return projects
             .filter((project) => project.types === type)
@@ -44,6 +84,7 @@ const groupedProjectsTypeTwo = groupProjectsByYear(filteredProjectsByType(typeTw
 
 
     const handleToggleSection = (type) => {
+        setIsUserInteracting(true);
         setIsSlidingOut(true)
         setTimeout(() => {
             if (type === typeOne) {
@@ -62,11 +103,14 @@ const groupedProjectsTypeTwo = groupProjectsByYear(filteredProjectsByType(typeTw
                     duration: 0.5,
                 })
 
-                const firstProjectIndex = projects.findIndex(
-                    (project) => project.types === typeOne
-                )
-                setSelectedProjectIndex(firstProjectIndex)
-                onSelect(firstProjectIndex)
+                // Only change selectedProjectIndex if the current project's type is not typeOne
+                if (projects[selectedProjectIndex].types !== typeOne && isUserInteracting) {
+                    const firstProjectIndex = projects.findIndex(
+                        (project) => project.types === typeOne
+                    )
+                    setSelectedProjectIndex(firstProjectIndex)
+                    onSelect(firstProjectIndex)
+                }
                 setImageLoaded(true)
             } else if (type === typeTwo) {
                 setTypeOneExpanded(false)
@@ -83,26 +127,33 @@ const groupedProjectsTypeTwo = groupProjectsByYear(filteredProjectsByType(typeTw
                     duration: 0.5,
                 })
 
-                const firstProjectIndex = projects.findIndex(
-                    (project) => project.types === typeTwo
-                )
-                setSelectedProjectIndex(firstProjectIndex)
-                onSelect(firstProjectIndex)
+                // Only change selectedProjectIndex if the current project's type is not typeTwo
+                if (projects[selectedProjectIndex].types !== typeTwo && isUserInteracting) {
+                    const firstProjectIndex = projects.findIndex(
+                        (project) => project.types === typeTwo
+                    )
+                    setSelectedProjectIndex(firstProjectIndex)
+                    onSelect(firstProjectIndex)
+                }
                 setImageLoaded(true)
             }
             setIsSlidingOut(false)
+            setIsUserInteracting(false);
         }, 200) // Duration of the slide-out animation
     }
 // 修改handleSelect和handleMouseEnter函数，使它们接收一个slug参数，然后使用这个slug来查找项目的索引
 const handleSelect = (slug, type) => {
+    setIsUserInteracting(true);
     const projectIndex = projects.findIndex(
         (project) => project.slug === slug
     );
     setSelectedProjectIndex(projectIndex);
     onSelect(projectIndex);
+    setTimeout(() => setIsUserInteracting(false), 200);
 };
 
 const handleMouseEnter = (slug, type) => {
+    clearInterval(intervalId);
     const projectIndex = projects.findIndex(
         (project) => project.slug === slug
     );
@@ -111,7 +162,9 @@ const handleMouseEnter = (slug, type) => {
 };
 
     const handleMouseLeave = () => {
-        setHoveredProjectIndex(null) // Reset hovered project index on leave
+        setHoveredProjectIndex(null);
+        const id = setInterval(goToNextProject, 5000);
+        setIntervalId(id);
     }
 
     const displayedProjectIndex =
@@ -241,7 +294,7 @@ const handleMouseEnter = (slug, type) => {
             <div key={year}>
                 <p className={styles.time}>{year}</p>
                 <ul>
-                    {groupedProjectsTypeTwo[year].map((project, index) => (
+                    {groupedProjectsTypeTwo[year].map((project) => (
                         <li
                             key={project.slug}
                             className={
