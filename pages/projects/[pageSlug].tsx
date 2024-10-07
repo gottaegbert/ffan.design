@@ -1,14 +1,12 @@
 import * as React from "react";
 import styles from "./project.module.scss";
 import cn from "classnames";
-
 import { gsap } from "gsap";
 import { useEffect } from "react";
 import { GetStaticPaths, GetStaticProps } from "next";
 import Layout from "../../components/Layout/Layout";
 import Work from "../../components/Work/Work";
 import ReactMarkdown from "react-markdown";
-// import Cursor from "../../components/Cursor/Cursor";
 import { StoreProvider } from "../../utils/StoreProvider";
 import { gePageData } from "../../utils/pages";
 import BasicMeta from "../../utils/BasicMeta";
@@ -122,32 +120,37 @@ const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
                   const isVideo = content.endsWith(".mp4");
 
                   return (
-                    <div
-                      className={cn(styles.skillsCell, "fade-in-up")}
-                      key={"stack" + idx}
-                    >
-                      {isVideo ? (
-                        <video
-                          src={`/${content}`}
-                          controls
-                          className={styles.projImage}
-                          // your video css styles
-                        />
-                      ) : (
-                        <Image
-                          src={`/${content}`}
-                          alt={data.title}
-                          layout="responsive"
-                          height={1080}
-                          width={1920}
-                          quality={100}
-                          objectFit="cover"
-                          placeholder="blur"
-                          blurDataURL={`/${content}`}
-                          className={styles.projImage}
-                        />
+                    <React.Fragment key={"stack" + idx}>
+                      <div className={cn(styles.skillsCell, "fade-in-up")}>
+                        {isVideo ? (
+                          <video
+                            src={`/${content}`}
+                            controls
+                            className={styles.projImage}
+                            // your video css styles
+                          />
+                        ) : (
+                          <Image
+                            src={`/${content}`}
+                            alt={data.title}
+                            layout="responsive"
+                            height={1080}
+                            width={1920}
+                            quality={100}
+                            objectFit="cover"
+                            placeholder="blur"
+                            blurDataURL={`/${content}`}
+                            className={styles.projImage}
+                          />
+                        )}
+                      </div>
+                      {idx === 0 && data.designconcept && (
+                        <div className={styles.designConcept}>
+                          <p>Design Concept</p>
+                          <ReactMarkdown>{data.designconcept}</ReactMarkdown>
+                        </div>
                       )}
-                    </div>
+                    </React.Fragment>
                   );
                 })}
               </div>
