@@ -10,12 +10,12 @@
 
   // Gutters
   column-gap: $gutters;
-  @media only screen and (min-width: $breakpoint-sm) {
-    column-gap: $gutters-sm;
-  }
-  @media only screen and (min-width: $breakpoint-lg) {
-    column-gap: $gutters-lg;
-  }
+  // @media only screen and (min-width: $breakpoint-sm) {
+  //   column-gap: $gutters-sm;
+  // }
+  // @media only screen and (min-width: $breakpoint-lg) {
+  //   column-gap: $gutters-lg;
+  // }
 
   &.no-gutters {
     column-gap: 0;

@@ -7,10 +7,13 @@
   gap: 20em;
   font-weight:normal;
   font-size: 1rem;
+  color: var(--font-color);
   display: inline-block;;
   span {
     overflow: hidden;
-
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: -0.25px;
     @media only screen and (min-width: $breakpoint-sm) {
       display: flex;
       overflow: hidden;
@@ -20,7 +23,7 @@
 }
 
 .selected {
-  color: black; // 选中时的字体颜色
+  color: var(--dark-grey);
   text-decoration: underline; // 选中时的下划线
 }
 

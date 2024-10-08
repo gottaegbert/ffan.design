@@ -1,11 +1,31 @@
 import React, { useState } from 'react'
 import styles from './RightNav.module.scss'
 import Link from 'next/link'
-//:TODO: add link to homepage 等的
+import { useRouter } from 'next/router'  // 添加这行
+
 const RightNav = () => {
+    const router = useRouter()  // 添加这行
     const [isRightNavVisible, setIsRightNavVisible] = useState(false) // 控制右侧导航栏是否可见
     const toggleRightNav = () => {
         setIsRightNavVisible(!isRightNavVisible)
+    }
+
+    const handleHomeClick = (e) => {
+        e.preventDefault()
+        router.push('/')
+        setIsRightNavVisible(false)  // 关闭导航栏
+    }
+
+    const handleWorkClick = (e) => {
+        e.preventDefault()
+        if (router.pathname === '/') {
+            // 如果已经在主页，直接滚动到 Work 部分
+            document.getElementById('work-section')?.scrollIntoView({ behavior: 'smooth' })
+        } else {
+            // 如果不在主页，先导航到主页，然后滚动到 Work 部分
+            router.push('/#work-section')
+        }
+        setIsRightNavVisible(false)  // 关闭导航栏
     }
 
     return (
@@ -24,12 +44,12 @@ const RightNav = () => {
             >
                 <ul>
                     <li>
-                        <Link href="/" className={styles.navLink}>
+                        <Link href="/" onClick={handleHomeClick} className={styles.navLink}>
                             ffan Home
                         </Link>
                     </li>
                     <li>
-                        <Link href="/#work" className={styles.navLink}>
+                        <Link href="/#work-section" onClick={handleWorkClick} className={styles.navLink}>
                             Work
                         </Link>
                     </li>

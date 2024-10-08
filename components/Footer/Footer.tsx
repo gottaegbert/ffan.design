@@ -1,6 +1,5 @@
 import * as React from 'react'
 import styles from './Footer.module.scss'
-import cn from 'classnames'
 import logo from '../../public/assets/images/logo.svg'
 import Image from 'next/image'
 
@@ -23,32 +22,34 @@ const Footer: React.FC<Props> = ({}) => {
                 <div className={'col-3'}>
                     <p>Contact Us</p>
                     <br />
-                    <div className={styles.twop}>
-                        <p>Email</p>
-                        <p>info@ffandesign.com</p>
-                    </div>
-
-                    <div className={styles.twop}>
-                        <p>Instagram</p>
-                        <p>@ffan.design</p>
-                    </div>
-                    <div className={styles.twop}>
-                        <p>Phone</p>
-                        <p>+86 13260458928</p>
+                    <div className={styles.contactInfo}>
+                        <div className={styles.labels}>
+                            <p>Email</p>
+                            <p>Instagram</p>
+                            <p>Phone</p>
+                        </div>
+                        <div className={styles.details}>
+                            <p>info@ffandesign.com</p>
+                            <p>@ffan.design</p>
+                            <p>+86 13260458928</p>
+                        </div>
                     </div>
                 </div>
 
                 <div className={'col-4'}>
                     <p>Address</p>
                     <br />
-                    <div className={styles.twop}>
-                        <p>China</p>
+                    <div className={styles.contactInfo}>
+                    <div className={styles.labels}>
+                    <p>China</p>
+                    <p>US</p>
+                        </div>
+                        <div className={styles.details}>
                         <p>Wangjingyuan D-602, Beijing. 100102</p>
-                    </div>
-                    <div className={styles.twop}>
-                        <p>US</p>
-                        <p>100 Steuben 4D, Brooklyn, NY 11205</p>
-                    </div>
+                            <p>100 Steuben 4D, Brooklyn, NY 11205</p>
+                        </div>
+                        </div>
+                  
                 </div>
             </div>
         </footer>

@@ -176,7 +176,7 @@ p.xsmall {
 }
 
 a {
-  color: var(--black);
+  color: var(--dark-grey);
 }
 a:hover,
 a:active {
@@ -232,16 +232,16 @@ li {
 
 .sectionSpacing {
   position: relative;
-  padding-top: 70px;
-  padding-bottom: 70px;
-  @media only screen and (min-width: $breakpoint-sm) {
-    padding-top: 90px;
-    padding-bottom: 90px;
-  }
-  @media only screen and (min-width: $breakpoint-md) {
-    padding-top: 120px;
-    padding-bottom: 120px;
-  }
+  padding-top: 36px;
+  padding-bottom: 36px;
+  // @media only screen and (min-width: $breakpoint-sm) {
+  //   padding-top: 90px;
+  //   padding-bottom: 90px;
+  // }
+  // @media only screen and (min-width: $breakpoint-md) {
+  //   padding-top: 120px;
+  //   padding-bottom: 120px;
+  // }
 }
 
 .moreWorksSection {

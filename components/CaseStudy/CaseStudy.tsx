@@ -29,6 +29,7 @@ const CaseStudy: React.FC<selectedProject> = ({
                                 src={'/' + image}
                                 autoPlay
                                 loop
+                            
                                 muted
                                 className={cn(
                                     styles.pgImage,

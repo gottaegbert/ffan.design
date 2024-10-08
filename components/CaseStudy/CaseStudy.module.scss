@@ -3,10 +3,10 @@
 .projWrap {
   text-decoration: none;
   @media only screen and (min-width: $breakpoint-sm) {
-    margin-bottom:30px;
+    margin-bottom:20px;
   }
   @media only screen and (min-width: $breakpoint-lg) {
-    margin-bottom: 60px;
+    margin-bottom: 20px;
   }
   &:hover {
     color: inherit;

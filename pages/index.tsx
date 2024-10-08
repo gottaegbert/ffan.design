@@ -14,6 +14,10 @@ import BasicMeta from '../utils/BasicMeta'
 import { homePageData } from '../utils/customTypes'
 import ProjectNav from '../components/ProjectNav/ProjectNav'
 import RightNav from '../components/RightNav/RightNav'
+import { useEffect } from 'react'
+import { useRouter } from 'next/router'
+import Footer from '../components/Footer/Footer'
+
 type Props = {
     data: homePageData
 }
@@ -37,6 +41,16 @@ const IndexPage: React.FC<Props> = ({ data }) => {
         return project.types === filter
     })
 
+    const router = useRouter()
+
+    useEffect(() => {
+        // 检查 URL 中是否有 #work-section
+        if (router.asPath === '/#work-section') {
+            // 如果有，滚动到 Work 部分
+            document.getElementById('work-section')?.scrollIntoView({ behavior: 'smooth' })
+        }
+    }, [router.asPath])
+
     return (
         <StoreProvider>
             <RightNav />
@@ -54,8 +68,10 @@ const IndexPage: React.FC<Props> = ({ data }) => {
                         </div>
                     </div>
 
+                    <BasicMeta url={'/work'} />
                     {/* <AnimatePresence mode="wait">{isLoading && <Preloader />}</AnimatePresence> */}
                     <section
+                        id="work-section"  // 添加这个 ID
                         className={cn(
                             'sectionSpacing',
                             styles.selectedWorkContainer
@@ -93,6 +109,7 @@ const IndexPage: React.FC<Props> = ({ data }) => {
                                 </ReactMarkdown>
                             </div>
                         </div>
+                <Footer />
                     </section>
                 </div>
             </Layout>
