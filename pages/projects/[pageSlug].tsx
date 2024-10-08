@@ -11,7 +11,7 @@ import { StoreProvider } from "../../utils/StoreProvider";
 import { gePageData } from "../../utils/pages";
 import BasicMeta from "../../utils/BasicMeta";
 import { project, selectedProject } from "../../utils/customTypes";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import RightNav from "../../components/RightNav/RightNav";
 
 type Props = {
@@ -38,10 +38,13 @@ const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
         <Image
           src={`/${data.image}`}
           alt={data.title}
-          layout="responsive"
-          height={9}
-          width={16}
-          objectFit="contain"
+          height={900}
+          width={1600}
+          style={{
+            width: '100%',
+            height: 'auto',
+            objectFit: 'contain',
+          }}
           className={styles.projImage}
         />
         <div ref={imgForeground} className={styles.imgForeground}></div>
@@ -101,10 +104,12 @@ const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
      
             </h1>
           </div>
-          <div className={cn("col-8", "description")}>
-            <ReactMarkdown className="fade-in-up">
+          <div className={cn("col-8", styles.description)}>
+
+            <ReactMarkdown >
               {data.description}
             </ReactMarkdown>
+           
           </div>
 
         
@@ -133,11 +138,11 @@ const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
                           <Image
                             src={`/${content}`}
                             alt={data.title}
-                            layout="responsive"
+                          
                             height={1080}
                             width={1920}
-                            quality={100}
-                            objectFit="cover"
+                  
+                            
                             placeholder="blur"
                             blurDataURL={`/${content}`}
                             className={styles.projImage}
@@ -145,10 +150,12 @@ const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
                         )}
                       </div>
                       {idx === 0 && data.designconcept && (
-                        <div className={styles.designConcept}>
-                          <p>Design Concept</p>
-                          <ReactMarkdown>{data.designconcept}</ReactMarkdown>
+                   
+                        <div className={cn("grid",styles.designConcept)}>
+                          <p className={cn("col-3")}>Design Concept</p>
+                          <ReactMarkdown className={cn("col-9")}>{data.designconcept}</ReactMarkdown>
                         </div>
+                     
                       )}
                     </React.Fragment>
                   );
