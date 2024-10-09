@@ -22,11 +22,16 @@ export type moreWork = {
   title: string;
 };
 
+type TeamMember = {
+  Name: string;
+  Role: string;
+  Description: string;
+};
+
 export type aboutPageData = {
-  avatar: string;
-  intro: string;
-  description: string;
-  skill: string[];
+  aboutus: string;
+  ourwork: string;
+  teams: TeamMember[];
 };
 
 export type project = {

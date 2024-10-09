@@ -5,7 +5,7 @@ import cn from 'classnames'
 import Layout from '../../components/Layout/Layout'
 import { gsap } from 'gsap/dist/gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { GetStaticProps } from 'next'
 import ReactMarkdown from 'react-markdown'
 import { StoreProvider } from '../../utils/StoreProvider'
@@ -24,30 +24,21 @@ type Props = {
     projData: selectedProject[]
 }
 const Team: React.FC<Props> = ({ data }) => {
-    const { intro, description } = data
+    const [expandedDescriptions, setExpandedDescriptions] = useState<{ [key: number]: boolean }>({});
+
+    const toggleDescription = (idx: number) => {
+        setExpandedDescriptions(prev => ({
+            ...prev,
+            [idx]: !prev[idx]
+        }));
+    };
+
+    const { aboutus, ourwork } = data
     const refTitle = React.createRef<HTMLSpanElement>()
 
     useEffect(() => {
         if (refTitle.current) {
-            // gsap.set(refTitle.current, { opacity: 1, yPercent: 100 })
-            // gsap.to(refTitle.current, {
-            //     duration: 1,
-            //     yPercent: 0,
-            //     ease: 'power4',
-            //     delay: 0.2,
-            // })
-            // gsap.set('.fade-in-up-bio', { opacity: 1 })
-            // gsap.fromTo(
-            //     '.fade-in-up-bio',
-            //     { opacity: 0, y: 40 },
-            //     {
-            //         delay: 0.5,
-            //         opacity: 1,
-            //         duration: 0.6,
-            //         y: 0,
-            //     }
-            // )
-
+           
             //TODO:还是有点迷糊，不知道怎么用，先注
             ScrollTrigger.create({
                 trigger: 'content-container',
@@ -95,7 +86,7 @@ const Team: React.FC<Props> = ({ data }) => {
                                         styles.descBio
                                     )}
                                 >
-                                    {intro}
+                                    {aboutus}
                                 </ReactMarkdown>
                             </div>
                             <div></div>
@@ -115,7 +106,7 @@ const Team: React.FC<Props> = ({ data }) => {
                                         styles.descBio
                                     )}
                                 >
-                                    {description}
+                                    {ourwork}
                                 </ReactMarkdown>
                             </div>
                         </div>
@@ -135,39 +126,72 @@ const Team: React.FC<Props> = ({ data }) => {
                     ></div>
                 </section>
 
-                {/* <section
-                    className={cn('grid sectionSpacing', styles.cvSection)}
-                >
-                    <div
-                        className="col-12 col-start-sm-7 col-end-sm-12 col-start-md-6 col-end-md-12
-              col-start-lg-6
-              col-end-lg-12"
-                    >
-                        <RoundLink
-                            label={'My CV'}
-                            url={'https://gottaegbert.github.io/Siyu-hu-CV/'}
-                            classname={styles.cvLink}
-                        />
-                    </div>
-                </section>
-
-                <section
-                    className={cn(
-                        'grid sectionSpacing',
-                        styles.moreWorksSection
-                    )}
-                >
-                    <div className={'col-12 col-sm-6 col-md-7'}>
-                        {projData.map((work, idx: number) => (
-                            <Work {...work} key={'work' + idx} />
+                <section>
+                    <div className={cn(styles.teamGrid)}>
+                        {data.teams.map((team, idx: number) => (
+                            <div 
+                                className={cn(styles.teamMember, { [styles.expanded]: expandedDescriptions[idx] })} 
+                                key={'team' + idx}
+                                onClick={() => toggleDescription(idx)}
+                            >
+                                <div className={cn('grid', styles.teamMemberHeader)}>
+                                   
+                                        <h4 className={cn('col-12 col-start-sm-1 col-end-sm-2 col-start-md-1 col-end-md-2 col-start-lg-1 col-end-lg-2')}>
+                                            {team.Role}
+                                            </h4>
+                                        <h4 className={cn('col-12 col-start-sm-11 col-end-sm-12 col-start-md-11 col-end-md-12 col-start-lg-11 col-end-lg-12')}>{team.Name}</h4>
+                               
+                                </div>
+                                <div className={cn('grid',styles.descriptionContainer)}>
+                                    <rect className={cn('col-12 col-start-3 col-end-7',styles.image)}>
+                                    </rect>
+                                    <div className={cn('col-12 col-start-9 col-end-12',styles.description)}>
+                                    <ReactMarkdown
+                                        components={{
+                                            p: ({ children }) => {
+                                                const content = children
+                                                    .map(child => (typeof child === 'string' ? child : ''))
+                                                    .join('');
+                                                
+                                                if (content.includes('[TIME]')) {
+                                                    return <CustomRenderer value={content} />;
+                                                }
+                                                return <p>{children}</p>;
+                                            },
+                                        }}
+                                    >
+                                        {team.Description}
+                                        </ReactMarkdown>
+                                    </div>
+                                </div>
+                            </div>
                         ))}
                     </div>
-                </section> */}
+                </section>
                 <Footer />
+
+            
             </Layout>
         </StoreProvider>
     )
 }
+
+const CustomRenderer = ({ value }: { value: string }) => {
+    const parts = value.split(/\[TIME\](.*?)\[\/TIME\]/g);
+    return (
+        <div className={styles.workExperiences}>
+            {parts.map((part, index) => {
+                if (index % 2 === 0) return null; // 跳过空字符串
+                return (
+                    <div key={index} className={styles.experienceItem}>
+                        <div className={styles.timeColumn}>{part}</div>
+                        <div className={styles.descriptionColumn}>{parts[index + 1]?.trim()}</div>
+                    </div>
+                );
+            })}
+        </div>
+    );
+};
 
 export default Team
 

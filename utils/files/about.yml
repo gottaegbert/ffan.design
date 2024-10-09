@@ -1,33 +1,129 @@
-intro: >-
-    We excel as a team with members from the world’s
-    top design institutes, bringing rich commercial
-    project experience. Our design process is
-    globally recognized with accolades from IF, Red
-    Dot, Muse, and more. Combining professionalism,
-    efficiency, and transparent pricing, we offer
-    unparalleled design solutions, blend- ing
-    talent, global exposure, and award-winning
-    expertise to swiftly bring your ideas into
-    reality.
-description: >-
-    Our business encompasses product design, advertising design, and overall creative works. Our team is dedicated to staying abreast of emerging trends and technologies to deliver innovative solutions.
-    Our clients are great companies from all over the world and we have worked with them to create many exciting products. We seek to provide our customers with creative solutions and efficient solutions.
+aboutus: >-
+  We excel as a team with members from the world's
+  top design institutes, bringing rich commercial
+  project experience. Our design process is
+  globally recognized with accolades from IF, Red
+  Dot, Muse, and more. Combining professionalism,
+  efficiency, and transparent pricing, we offer
+  unparalleled design solutions, blending
+  talent, global exposure, and award-winning
+  expertise to swiftly bring your ideas into
+  reality.
 
-avatar: assets/images/egbert_pic.jpg
+ourwork: >-
+  Our business encompasses product design, advertising design, and overall creative works. Our team is dedicated to staying abreast of emerging trends and technologies to deliver innovative solutions.
+  Our clients are great companies from all over the world and we have worked with them to create many exciting products. We seek to provide our customers with creative solutions and efficient solutions.
 
-skill:
-    - Figma
-    - React
-    - Unity
-    - After Effects
-    - Next.js
-    - Git
-    - Lightroom
-    - D3.js
-    - Touchdesigner
-    - SVG
-    - Three.js
-    - VFX
-    - Photoshop
-    - TypeScript
-    - Arduino
+teams:
+  - Name: YUNTANG HUANG
+    Role: CO-FOUNDER
+    Description: >-
+      Educated in Psychology at Tsinghua University and Communication Design at Pratt Institute, I blend academic rigor with practical expertise in design. My career advanced from a senior graphic designer in Beijing to refining skills in New York's dynamic design scene.
+      
+      
+      At ffan, I advocate for design as a transformative tool—enhancing order, efficiency, and joy. We focus on creating captivating, functional designs that enrich lives.
+
+
+      **Work Experiences:**
+
+
+      [TIME]2019-2021[/TIME]
+      Served as a Graphic Designer at loof.design, where I specialized in visual communication and design aesthetics.
+
+      [TIME]2021[/TIME]
+      Collaborated on the animation production for "Hyborg Forest," which was featured in a continuous exhibition at the Seoul 2022 Showreel.
+
+      [TIME]2022[/TIME]
+      Participated in a creative project with New York fashion designer and artist Jacob_eye, contributing to innovative apparel design.
+
+      [TIME]2023[/TIME]
+      Worked alongside musician Alex Liebergesell and Boeing airplane model designer Hyukjae Henry Yoo on the animation music video for the kimo-kawaii 3023 spring summer collection.
+
+  - Name: FAN
+    Role: CO-FOUNDER
+    Description: >-
+      Trained in Industrial Design at Hunan University and holding a Master's from Pratt Institute in New York, my design philosophy marries simplicity with functionality. My professional journey across Germany and New York, where I served as a senior industrial designer, has infused my work with a blend of international perspectives and a commitment to honest, practical, and elegant design. 
+      
+      
+      At ffan, we craft designs that are not just visually striking but also deeply meaningful.
+
+
+      **Work Experiences:**
+
+
+      [TIME]2019-2021[/TIME]
+      Engaged as a freelance Industrial Designer for Germany's Settelight GmbH, tasked with designing bicycle lights.
+      
+      [TIME]2021[/TIME]
+      Worked as an Industrial Designer at Sany Heavy Industry, responsible for designing off-road cranes, excavators, and other heavy machinery.
+      
+      [TIME]2022[/TIME]
+      Served as an Industrial Designer at Kurz Kurz Design in Germany, providing industrial design services for Midea's premium brand, Colmo.
+
+      [TIME]2023[/TIME]
+      Collaborated with John-Michael, former creative director at IKEA in New York, on the "Re-Ritual" project, which reimagines traditional Chinese incense burning through a modern design lens.
+
+  - Name: Feng Zheng
+    Role: Art Consultant
+    Description: >-
+      Feng Zheng holds a Master of Fine Arts degree from the Printmaking Department of Guangzhou Academy of Fine Arts and is currently a professor at the School of Design at South China University of Technology. His work Andromeda won the Best Artwork Award at the China Miniature Print Exhibition, and his series Night Poppies, Looking for Peach Blossom Spring, and Candlelit Journey received the Best Artwork Award at the 5th Guangdong Printmaking Exhibition, among other accolades.
+
+  - Name: Ye Lee
+    Role: Creative Director
+    Description: >-
+      Ye Lee is a graphic and spatial exhibition designer, as well as the founder of the brand libido. He holds degrees from Tsinghua University and Politecnico di Milano and has received prestigious awards such as TDC, GDC, and Design 360.
+
+  - Name: Ella Huang
+    Role: Design Director
+    Description: >-
+      Ella is a graphic designer, independent artist, and book designer. She has worked as a graphic designer at several leading design studios and holds a degree from Pratt Institute.
+
+  - Name: Yuxi Mei
+    Role: Art Director
+    Description: >-
+      Yuxi Mei is a graphic designer and independent artist. She has held several solo art exhibitions in Manhattan and graduated from Pratt Institute.
+
+  - Name: Can Jie
+    Role: Chief of Industrial Design staff
+    Description: >-
+      An industrial designer with over 10 years of experience, he has provided design services for renowned companies such as Midea, Zwilling Germany, and Tencent. His home appliance designs have received multiple prestigious awards, including the iF Design Award and the Red Dot Award.
+
+  - Name: Zhonghao Tian
+    Role: Industrial Design Manager
+    Description: >-
+      Zhonghao Tian is an industrial designer and senior industrial designer at Midea. He has won multiple prestigious awards, including the Red Dot and iF Design Awards. Graduated from Hunan University.
+
+  - Name: Seal Luo
+    Role: Graphic Design Manager
+    Description: >-
+      Seal Luo is a graphic and motion designer who has worked with renowned companies such as Tencent, ByteDance, and NetEase. Seal graduated from Tsinghua University and Pratt Institute.
+
+  - Name: Ye Jin
+    Role: Industrial Designer
+    Description: >-
+      Ye Jin is an industrial and automotive designer who has worked with IBM. He holds degrees from MIT and Pratt Institute.
+
+  - Name: Wen Yao
+    Role: Industrial Design Consultant
+    Description: >-
+      An industrial and furniture designer, he has provided design services for several renowned companies in the U.S. Wenyao hold degrees from Georgia Tech and Pratt Institute.
+
+  - Name: Wei Lu
+    Role: UI/UX Designer
+    Description: >-
+      Wei Lu is a graphic designer, UI/UX designer, web engineer, and software engineer. She graduted from Carnegie Mellon University.
+
+  - Name: Qing
+    Role: Industrial Design Manager
+    Description: >-
+      Qing is an industrial designer who has worked with leading industrial design companies such as Midea and KKD. With extensive experience, he excels at facilitating collaboration between clients, designers, and manufacturers.
+
+  - Name: Wei Yang
+    Role: Space Narrative Designer
+    Description: >-
+      Wei Yang is a spatial exhibition designer who graduated from the Central Academy of Fine Arts and has several years of experience in spatial exhibition-related work.
+
+  - Name: Haoyang Lee
+    Role: Industrial Designer
+    Description: >-
+      Haoyang Lee is an industrial and automotive designer who has worked with SANY and NIO. He graduated from Hunan University and Hong Kong Polytechnic University.
