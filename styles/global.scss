@@ -9,6 +9,7 @@
 --white:#ffffff;
 --black: #1e1e1e;
 
+
 // --preloader:#ffffff;
 --off-white: #f7f8fb;
 --off-white-trans: #f7f8fb91;
@@ -137,11 +138,12 @@ h5 {
   }
 }
 h6 {
-  font-size: 14px;
-  line-height: 1;
+  font-size: calc(1vh + 0.2vw + 10px);
+  line-height: 1.2;
   font-family: $font-regular;
+  
   @media only screen and (min-width: $breakpoint-md) {
-    font-size: 24px;
+    font-size: calc(1vh + 0.2vw + 8px);
   }
 }
 

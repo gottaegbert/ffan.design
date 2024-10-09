@@ -265,7 +265,7 @@ const handleMouseEnter = (slug, type) => {
                             }
                             onMouseLeave={handleMouseLeave} // Reset hover state on mouse leave
                         >
-                            <p>[{project.tags}]</p>
+                            <h6>[{project.tags}]</h6>
                             <h6
                                 className={styles.titleIndented}
                             >
@@ -321,7 +321,7 @@ const handleMouseEnter = (slug, type) => {
                             }
                             onMouseLeave={handleMouseLeave} // Reset hover state on mouse leave
                         >
-                            <p>[{project.tags}]</p>
+                            <h6>[{project.tags}]</h6>
                             <h6
                                 className={styles.titleIndented}
                             >
