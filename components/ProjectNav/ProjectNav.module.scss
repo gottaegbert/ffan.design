@@ -52,9 +52,9 @@
 }
 
 .sectionButton {
-  height:10vh;
+  height: 10vh;
   width: 100%;
-  padding: 20px 48px;
+  padding: 0 48px; // 修改这一行
   font-size: 1.5rem;
   background-color: transparent;
   border: none;
@@ -62,9 +62,9 @@
   cursor: pointer;
   color: var(--font);
   transition: color 0.3s ease;
-  // border-bottom: 1px solid #ccc;
+  display: flex; // 添加这一行
+  align-items: center; // 添加这一行
 }
-
 
 .sectionButton.expanded {
   font-size: 1rem;

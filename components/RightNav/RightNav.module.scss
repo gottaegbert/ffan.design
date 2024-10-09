@@ -1,11 +1,13 @@
-
 // 导航栏右侧
 
 
 .hamburgerMenu {
   position: fixed;
-  top: 23px;
+  top: 0; // 改为 0
   right: 48px;
+  height: 10vh; // 添加这一行
+  display: flex; // 添加这一行
+  align-items: center; // 添加这一行
   background: none;
   border: none;
   font-size: 2rem;
