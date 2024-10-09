@@ -64,6 +64,7 @@
   transition: color 0.3s ease;
   display: flex; // 添加这一行
   align-items: center; // 添加这一行
+  justify-content: space-between;
 }
 
 .sectionButton.expanded {
@@ -71,6 +72,25 @@
   text-transform: uppercase; // 将文本转换为大写
   color:var(--white);
 }
+
+.sectionButtonContent {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+
+  @media (max-width: 768px) {
+    gap: 16px; // 在小屏幕上减小间隔
+  }
+
+  @media (min-width: 1200px) {
+    gap: 32px; // 在大屏幕上增加间隔
+  }
+}
+
+.plusIcon {
+  transition: transform 0.3s ease; // 添加过渡效果
+}
+
 
 
 .sectionButtonSectionTwo{

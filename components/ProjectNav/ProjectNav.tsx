@@ -3,6 +3,7 @@ import styles from './ProjectNav.module.scss'
 import Image from 'next/image'
 import { gsap } from 'gsap/dist/gsap'
 import cn from 'classnames'
+import PlusIcon from '../../public/assets/images/+.svg';
 
 const ProjectNav = ({ projects, onSelect }) => {
     const [selectedProjectIndex, setSelectedProjectIndex] = useState(null)
@@ -236,7 +237,12 @@ const handleMouseEnter = (slug, type) => {
                         <button
                             className={`${styles.sectionButton} ${typeOneExpanded ? styles.expanded : ''}`}
                         >
+                            <div className={styles.sectionButtonContent}>
                             {typeOne}
+                            {!typeOneExpanded && (
+      <Image src={PlusIcon} alt="Expand" className={styles.plusIcon} />
+    )}
+                            </div>
                         </button>
 
                         {typeOneExpanded && (
@@ -293,7 +299,12 @@ const handleMouseEnter = (slug, type) => {
                         <button
                             className={`${styles.sectionButton} ${styles.sectionButtonSectionTwo} ${typeTwoExpanded ? styles.expanded : ''}`}
                         >
+                          <div className={styles.sectionButtonContent}>
                             {typeTwo}
+                            {!typeTwoExpanded && (
+      <Image src={PlusIcon} alt="Expand" className={styles.plusIcon} />
+    )}
+                            </div>
                         </button>
                         {typeTwoExpanded && (
     <div className={styles.projectListLight}>
