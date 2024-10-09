@@ -5,7 +5,7 @@ import cn from 'classnames'
 import Layout from '../../components/Layout/Layout'
 import { gsap } from 'gsap/dist/gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { GetStaticProps } from 'next'
 import ReactMarkdown from 'react-markdown'
 import { StoreProvider } from '../../utils/StoreProvider'
@@ -25,6 +25,8 @@ type Props = {
 }
 const Team: React.FC<Props> = ({ data }) => {
     const [expandedDescriptions, setExpandedDescriptions] = useState<{ [key: number]: boolean }>({});
+    const spaceRef = useRef<HTMLDivElement>(null)
+    const containerRef = useRef<HTMLDivElement>(null)
 
     const toggleDescription = (idx: number) => {
         setExpandedDescriptions(prev => ({
@@ -33,29 +35,34 @@ const Team: React.FC<Props> = ({ data }) => {
         }));
     };
 
+    useEffect(() => {
+        if (spaceRef.current && containerRef.current) {
+            gsap.fromTo(spaceRef.current, 
+                { height: '20vh' },
+                {
+                    height: '0vh',
+                    ease: 'none',
+                    scrollTrigger: {
+                        trigger: containerRef.current,
+                        start: 'top top',
+                        end: '+=20%',
+                        scrub: true,
+                    }
+                }
+            )
+        }
+    }, [])
+
     const { aboutus, ourwork } = data
     const refTitle = React.createRef<HTMLSpanElement>()
 
-    useEffect(() => {
-        if (refTitle.current) {
-           
-            //TODO:还是有点迷糊，不知道怎么用，先注
-            ScrollTrigger.create({
-                trigger: 'content-container',
-                start: 'top top+=1vh', // 在滚动到 contentContainer 的顶部触发动画
-                end: 'bottom bottom+1vh', // 滚动到页面底部时结束
-                scrub: true, // 允许平滑滚动
-                pin: '.logo-container', // 固定 logo
-            })
-        }
-    }, [])
     return (
         <StoreProvider>
             <Layout>
                 <BasicMeta url={'/team'} />
 
                 <RightNav />
-                <div className={cn(styles.heroContainer)}>
+                <div ref={containerRef} className={cn(styles.heroContainer)}>
                     <div className={cn('logo-container', styles.logoContainer)}>
                         <Image
                             src={logoSrc}
@@ -63,6 +70,10 @@ const Team: React.FC<Props> = ({ data }) => {
                             className={cn('logo', styles.logo)}
                         />
                     </div>
+                    <div 
+                        ref={spaceRef}
+                        className={styles.space}
+                    ></div>
                     <div
                         className={cn(
                             'content-container',

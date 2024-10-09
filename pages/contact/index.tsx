@@ -1,110 +1,133 @@
-// import React, { useRef, useEffect } from 'react'
-// import { gsap } from 'gsap/dist/gsap'
-// import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
-// import { aboutPageData, selectedProject } from '../../utils/customTypes'
-// import { GetStaticProps } from 'next'
-// import { gePageData } from '../../utils/pages'
+/* eslint-disable react/no-children-prop */
+import * as React from 'react'
+import styles from './contact.module.scss'
+import cn from 'classnames'
+import Layout from '../../components/Layout/Layout'
+import { gsap } from 'gsap/dist/gsap'
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+import { GetStaticProps } from 'next'
+import ReactMarkdown from 'react-markdown'
+import { StoreProvider } from '../../utils/StoreProvider'
+import { gePageData } from '../../utils/pages'
+import BasicMeta from '../../utils/BasicMeta'
+import { aboutPageData, selectedProject } from '../../utils/customTypes'
+import RightNav from '../../components/RightNav/RightNav'
+import Link from 'next/link';
 
-// gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger)
 
-// type Props = {
-//     data: aboutPageData
-//     projData: selectedProject[]
-// }
+type Props = {
+    data: aboutPageData
+    projData: selectedProject[]
+}
+const Contact: React.FC<Props> = ({ data }) => {
 
-// const Contact: React.FC<Props> = ({ data }) => {
-//     const mainRef = useRef<HTMLElement | null>(null) // main container reference
-//     const snapTriggers = useRef<ScrollTrigger[]>([]) // store triggers for each panel
+    const { ourservice1, ourservice2 } = data
 
-//     useEffect(() => {
-//         // Ensure the panels are properly typed as HTML elements
-//         const panels = gsap.utils.toArray('.panel') as HTMLElement[] // get all panels as HTMLElement[]
-//         let scrollPositions: number[] = []
+    return (
+        <StoreProvider>
+            <Layout>
+                <BasicMeta url={'/team'} />
+                <RightNav />
 
-//         // Create ScrollTriggers for each panel
-//         panels.forEach((panel, i) => {
-//             snapTriggers.current[i] = ScrollTrigger.create({
-//                 trigger: panel,
-//                 start: 'top top',
-//             })
-//         })
+                <div className={cn(styles.heroContainer)}>
+                    <div
+                        className={cn(
+                            'content-container',
+                            styles.contentContainer
+                        )}
+                        >
+        
+                        <div className="grid">
+                        <div className={styles.intro}></div>
+                        <h1>
+                        We are ffan.design.
+                        </h1>
+                        <h1>
+                        Our business encompasses industrial design, graphic design, and overall creative design solutions.
+                        </h1>
 
-//         // Calculate snap points when ScrollTrigger is refreshed
-//         ScrollTrigger.addEventListener('refresh', () => {
-//             scrollPositions = snapTriggers.current.map(
-//                 (trigger) => trigger.start || 0
-//             )
-//         })
+                        <div className={styles.value}>
+                        Creative · Reliable · Professional · Fast · Affordable
+                        </div>
+                            <div
+                                className={
+                                    'col-12 col-start-sm-1 col-end-sm-6 col-start-md-1 col-end-md-6 col-start-lg-1 col-end-lg-6'
+                                }
+                            >
+                          
+                                <ReactMarkdown
+                                    className={cn(
+                                        'fade-in-up-bio',
+                                        styles.descBio
+                                    )}
+                                >
+                                    {ourservice1}
+                                </ReactMarkdown>
+                            </div>
+                            <div></div>
+                            <div
+                                className={
+                                    'col-12 col-start-sm-7 col-end-sm-12 col-start-md-7 col-end-md-12 col-start-lg-7 col-end-lg-12'
+                                }
+                            >
+                                <h1 className={styles.title}>
+                                   
+                                </h1>
+                                <ReactMarkdown
+                                    className={cn(
+                                        'fade-in-up-bio',
+                                        styles.descBio
+                                    )}
+                                >
+                                    {ourservice2}
+                                </ReactMarkdown>
+                            </div>
+                                    
+                                    <div className={styles.contactblock}>
+                        
+                          
+                           <div className={styles.contact}>
+                        Contact Us
+                        </div>
+                        <div className={styles.contact}>
+                        We welcome you to leave message to us to make our ideas come true
+                        </div>
+                        <br/>
 
-//         // Add scroll snapping functionality
-//         ScrollTrigger.observe({
-//             type: 'wheel,touch',
-//             onChangeY(self) {
-//                 let scrollY = window.scrollY + self.deltaY
-//                 // Ensure closest is a number
-//                 let closest = gsap.utils.snap(
-//                     scrollPositions,
-//                     scrollY
-//                 ) as number
+                        <div className={styles.contactlinkContainer}>
+                            <Link href="https://www.instagram.com/ffan.design/" target="_blank" rel="noopener noreferrer" className={styles.contactlink}>
+                                Instagram: ffan.design
+                            </Link>
+                            <a href="mailto:info@ffandesign.com" className={styles.contactlink}>
+                                Email: info@ffandesign.com
+                            </a>
+                            <div className={styles.contactlink}>Phone: +86 13260458928</div>
+                        </div>
+                        </div>
 
-//                 // Check that closest is  valid number before proceeding
-//                 if (!isNaN(closest)) {
-//                     gsap.to(window, {
-//                         scrollTo: { y: closest, autoKill: false },
-//                         duration: 0.8,
-//                         ease: 'power1.inOut',
-//                     })
-//                 }
-//             },
-//         })
+                        </div>
+                    </div>
+                </div>
+         
 
-//         ScrollTrigger.refresh() // Refresh triggers to calculate positions
+            
+            </Layout>
+        </StoreProvider>
+    )
+}
 
-//         return () => {
-//             ScrollTrigger.getAll().forEach((trigger) => trigger.kill()) // Clean up
-//         }
-//     }, [])
 
-//     return (
-//         <main ref={mainRef}>
-//             <section
-//                 className="panel"
-//                 style={{ height: '100vh', background: '#ffadad' }}
-//             >
-//                 <h1>Panel 1</h1>
-//             </section>
-//             <section
-//                 className="panel"
-//                 style={{ height: '100vh', background: '#ffd6a5' }}
-//             >
-//                 <h1>Panel 2</h1>
-//             </section>
-//             <section
-//                 className="panel"
-//                 style={{ height: '100vh', background: '#fdffb6' }}
-//             >
-//                 <h1>Panel 3</h1>
-//             </section>
-//             <section
-//                 className="panel"
-//                 style={{ height: '100vh', background: '#caffbf' }}
-//             >
-//                 <h1>Panel 4</h1>
-//             </section>
-//         </main>
-//     )
-// }
+export default Contact
 
-// export default Contact
+export const getStaticProps: GetStaticProps = async () => {
+    const data = gePageData('about')
+    const projData = gePageData('homepage').selectedProjects
 
-// export const getStaticProps: GetStaticProps = async () => {
-//     const data = gePageData('about')
-//     const projData = gePageData('homepage').selectedProjects
-
-//     return {
-//         props: {
-//             data,
-//             projData,
-//         },
-//     }
-// }
+    return {
+        props: {
+            data,
+            projData,
+        },
+    }
+}

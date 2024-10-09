@@ -31,6 +31,8 @@ type TeamMember = {
 export type aboutPageData = {
   aboutus: string;
   ourwork: string;
+  ourservice1:string;
+  ourservice2: string;
   teams: TeamMember[];
 };
 
