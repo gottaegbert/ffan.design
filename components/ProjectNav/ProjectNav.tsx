@@ -361,6 +361,8 @@ const handleMouseEnter = (slug, type) => {
                                 autoPlay
                                 loop
                                 muted
+                                playsInline
+                                controls={false}    
                                 className={`${styles.projectImage} ${typeOneExpanded ? styles.imageTop : styles.imageBottom}`}
                             />
                         ) : (

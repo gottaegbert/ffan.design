@@ -14,10 +14,7 @@
 
 
   article {
-    position: relative;
-    @media only screen and (min-width: $breakpoint-md) {
-      margin-bottom: 0px;
-    }
+  
     .imgContainer {
       position: relative;
       display: block;
@@ -36,6 +33,11 @@
         width: 100% !important;
         position: relative !important;
         height: unset !important;
+      }
+
+      video.pgImage {
+
+        display: block; // 添加 display: block;。这会移除图片下方可能存在的小空隙。
       }
 
       .imgForeground {

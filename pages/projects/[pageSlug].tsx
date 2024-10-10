@@ -23,53 +23,13 @@ type Props = {
 const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
   const title = React.createRef<HTMLDivElement>();
   const imgForeground = React.createRef<HTMLDivElement>();
-  const isVideo = data.video;
-  function VIDEO() {
-    return (
-      <div className={styles.videoContainer}>
-        <video src={`/${data.video}`} controls width="100%" height="720px" />
-      </div>
-    );
-  }
-
-  function Picture() {
-    return (
-      <div className={styles.imageContainer}>
-        <Image
-          src={`/${data.image}`}
-          alt={data.title}
-          height={900}
-          width={1600}
-          style={{
-            width: '100%',
-            height: 'auto',
-            objectFit: 'contain',
-          }}
-          className={styles.projImage}
-        />
-        <div ref={imgForeground} className={styles.imgForeground}></div>
-      </div>
-    );
-  }
-
-  const headerComponent = isVideo ? <VIDEO /> : <Picture />;
-  useEffect(() => {
-    gsap.set(title.current, { opacity: 1, yPercent: 100 });
-    gsap.to(title.current, {
-      duration: 1,
-      yPercent: 0,
-      ease: "power4",
-      stagger: 0.1,
-      delay: 0.2,
-    });
-    gsap.to(imgForeground.current, {
-      duration: 1,
-      width: 0,
-      ease: "power4",
-      stagger: 0.2,
-      delay: 0.2,
-    });
-  }, []);
+  const hasVideo = data.video && data.video.length > 0;
+  const isBilibiliVideo = hasVideo && data.video.includes('bilibili.com');
+  
+  const getBilibiliVideoId = (url) => {
+    const match = url.match(/\/BV(\w+)/);
+    return match ? match[1] : null;
+  };
 
   return (
     <StoreProvider>
@@ -84,7 +44,44 @@ const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
           </div>
 
         <section className={cn("grid")}>
-          {headerComponent}
+          {hasVideo ? (
+            isBilibiliVideo ? (
+              <div style={{ position: 'relative', paddingTop: '56.25%', width: '100%' }}>
+                <iframe
+                  src={`https://player.bilibili.com/player.html?bvid=${getBilibiliVideoId(data.video)}&page=1&high_quality=1&danmaku=0`}
+                  allowFullScreen={true}
+                  style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%',
+                  }}
+                  frameBorder="0"
+                  sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts"
+                ></iframe>
+              </div>
+            ) : (
+              <video 
+                src={`/${data.video}`} 
+                autoPlay
+                loop
+                muted
+                playsInline
+                controls={false} 
+                width="100%" 
+              />
+            )
+          ) : data.image ? (
+            <Image
+              src={`/${data.image}`}
+              alt={data.title}
+              width={1920}
+              height={1080}
+              className={styles.projImage}
+            />
+          ) : null}
+
           <div className={styles.prjTitleContainer}>
             <h1 className={styles.title}>
               <span>

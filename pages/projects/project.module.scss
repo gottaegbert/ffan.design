@@ -114,16 +114,16 @@
     & > * {
       margin: 0;
     }
-    @media only screen and (min-width: $breakpoint-md) {
-      position: absolute;
-      right: 0;
-      top: 50%;
-      width: 600px;
-      transform: translateY(-50%);
-    }
-    @media only screen and (min-width: $breakpoint-lg) {
-      width: 900px;
-    }
+    // @media only screen and (min-width: $breakpoint-md) {
+    //   position: absolute;
+    //   right: 0;
+    //   top: 50%;
+    //   width: 600px;
+    //   transform: translateY(-50%);
+    // }
+    // @media only screen and (min-width: $breakpoint-lg) {
+    //   width: 900px;
+    // }
 
   
 

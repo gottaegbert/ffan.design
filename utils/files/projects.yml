@@ -89,3 +89,357 @@ projects:
     tags:
         - Product Design
     date: '2024'
+
+  - title: Unembellished Narrative
+    slug: unembellished
+    # （首图）
+    image: assets/images/graphic/unembellished/unembellished_1.jpg
+    #具体内容图片
+    imageContent:
+        - assets/images/graphic/unembellished/unembellished_2.jpg
+        - assets/images/graphic/unembellished/unembellished_3.jpg
+        - assets/images/graphic/unembellished/unembellished_4.jpg
+        - assets/images/graphic/unembellished/unembellished_5.jpg
+        - assets/images/graphic/unembellished/unembellished_6.jpg
+        - assets/images/graphic/unembellished/unembellished_7.jpg
+        - assets/images/graphic/unembellished/unembellished_8.jpg
+        - assets/images/graphic/unembellished/unembellished_9.jpg
+    description: "Unembellished Narrative: Exploring Identity and Surrounding Through Data is a collection of eight projects that investigate data-driven storytelling as a method in visual communication. The projects follow a process of data collection, organization, and analysis, culminating in visually compelling presentations. The book’s index is arranged in a ladder-like format, simulating the look of folders, which is a physical object closely tied to the concept of data."
+    designer: Ella Huang
+    designconcept: "The design of the book emphasizes a minimalistic approach, focusing on the structure and presentation of data rather than its medium. The ladder-like arrangement of the index not only makes the theme of data more tangible but also enhances the narrative flow, offering a systematic exploration of identity and environment through data. The choice to prioritize the listed form of data presentation underscores the book's intent to strip away embellishments, allowing the raw organization of information to become the core aesthetic."
+    types: Graphic Design
+    tags:
+        - Book Design
+    date: '2024'
+  
+  - title: Other Island Bookfair
+    slug: islands
+    video: assets/images/graphic/islands/islands_1.mp4
+    imageContent:
+        - assets/images/graphic/islands/islands_2.png
+        - assets/images/graphic/islands/islands_3.png
+        - assets/images/graphic/islands/islands_4.png
+        - assets/images/graphic/islands/islands_5.png
+        - assets/images/graphic/islands/islands_6.png
+        - assets/images/graphic/islands/islands_7.png
+        - assets/images/graphic/islands/islands_8.gif
+
+    description: "Other Islands Book Fair celebrates independent publishing, cultivating communities, and the many activities in between. The event brings together the work of local publishers, community builders, designers and artists on Pratt’s historic Brooklyn campus. As the branding designer for the book fair, I designed the main visual and all promotional materials."
+    designer: Seal Luo
+    designconcept: "'Independent yet Shining.' In designing the visual identity for the Other Islands Book Fair, I envisioned a fusion of distinct yet interconnected islands within the familiar form of a book, symbolizing the vibrant and resilient spirit of independent publishing. This concept, 'Independent yet Shining,' highlights the uniqueness of each element - be it a book, author, or publisher - and their collective brilliance within the community. The diverse islands, varying in content and form yet united in purpose, reflect the fair's dedication to showcasing a spectrum of voices and perspectives. This poster is not just a visual representation but a vivid narrative in itself. Every part matters and we together make it happen."
+    types: Graphic Design
+    tags:
+        - Branding
+
+    date: '2024'
+
+  - title: Liquid Society
+    slug: liquid
+    #liquid society的首图视频【点击播放】
+    video: assets/images/graphic/liquid/liquid_1.mp4
+    #具体内容图片
+    imageContent:
+        - assets/images/graphic/liquid/liquid_2.mp4
+        - assets/images/graphic/liquid/liquid_3.jpg
+        - assets/images/graphic/liquid/liquid_4.jpg
+        - assets/images/graphic/liquid/liquid_5.jpg
+        - assets/images/graphic/liquid/liquid_6.png
+        - assets/images/graphic/liquid/liquid_7.png
+        - assets/images/graphic/liquid/liquid_8.png
+        - assets/images/graphic/liquid/liquid_9.jpg
+    description: 'Liquid Society: Fluidity, Connectivity, and the Evolution of Global Identity is a multifaceted project encompassing multimedia, interactive programming, performance, and a book. It explores the concept of a "Liquid Society," a term that captures the fluid and ever-changing nature of modern life, where individuals constantly transform as they traverse diverse geographical and social spaces. This idea of "Fluidity" highlights the shifting identities, relationships, and systems that define global economic and cultural exchanges in today’s interconnected world.'
+    designer: Yuxi Mei
+    designconcept: 'The project examines how globalization, technological advancements, and the omnipresence of social media enable individuals to transcend traditional borders, cultural barriers, and language obstacles. Through various media, it immerses the audience in the experience of fluidity, allowing them to explore the evolving nature of global identity. The visual and interactive elements mirror the themes of connectivity and transformation, emphasizing the dissolution of fixed boundaries in favor of dynamic, adaptable systems. This project serves as both a reflection on and a celebration of the flexibility and openness that define contemporary global existence.'
+    types: Graphic Design
+    tags:
+        - Speculative Design
+    date: '2024'
+
+
+  - title: The Way We Unfold
+    slug: identity
+    #the way we unfold的首图视频【点击播放】
+    video: assets/images/graphic/identity/identity_1.mp4
+    #具体内容图片
+    imageContent:
+        - assets/images/graphic/identity/identity_2.jpg
+        - assets/images/graphic/identity/identity_3.jpg
+        - assets/images/graphic/identity/identity_4.jpg
+        - assets/images/graphic/identity/identity_5.jpg
+        - assets/images/graphic/identity/identity_6.jpg
+        - assets/images/graphic/identity/identity_7.mp4
+        - assets/images/graphic/identity/identity_8.jpg
+        - assets/images/graphic/identity/identity_9.jpg
+        - assets/images/graphic/identity/identity_10.jpg
+    description: "Identity: The Way We Unfold is a cooperative project which worked together by artist Yuxi Mei and ffan space narration team. This project includes experimental film, pamphlet, wearable art, and exhibition.
+"
+    designer: Yuxi Mei
+    designconcept: "Identity is not a fixed marker, 
+
+
+                    it is dynamically constructed through time. 
+
+
+                    Identity is the way we place ourselves in the world.
+
+
+                    Identity is radical juxtaposition.
+
+
+                    Identity is our constant capture of social material conditions. 
+
+
+                    Identity is the regulation of the emotional and psychological self.
+
+
+                    Identity is an attempt to construct a sense of our past and present. 
+
+
+                    Identity is always fluid. 
+
+
+                    I am pink, a pillow, the grass.
+
+
+                    I am female, a candidate for motherhood.
+
+
+                    I am bound in blood
+
+
+                    Am I free?"
+
+
+    types: Graphic Design
+    tags:
+         - Space and Narration
+
+    date: '2024'
+
+
+  - title: Barisen Instrument
+    slug: barisen
+    # （首图）
+    image: assets/images/industrial/barisen/barisen_1.jpg
+    #具体内容图片
+    imageContent:
+        - assets/images/industrial/barisen/barisen_2.jpg
+        - assets/images/industrial/barisen/barisen_3.jpg
+        - assets/images/industrial/barisen/barisen_4.jpg
+        - assets/images/industrial/barisen/barisen_5.jpg
+        - assets/images/industrial/barisen/barisen_6.jpg
+        - assets/images/industrial/barisen/barisen_7.jpg
+        - assets/images/industrial/barisen/barisen_8.jpg
+        - assets/images/industrial/barisen/barisen_9.jpg
+        - assets/images/industrial/barisen/barisen_10.jpg
+    description: "The Barisen is a handcrafted acoustic string instrument designed for a classified client. Drawing inspiration from the Japanese shamisen and the American banjo, this instrument was developed to enrich the tonal range of East Asian music, particularly in the lower registers, while also providing more variation in the mid and low-frequency range for Western music."
+    designer: Wenyao
+    designconcept: "The design focuses on producing warm, resonant tones in the mid to low-frequency range. By blending the traditional elements of the shamisen and banjo, the Barisen introduces a unique sound that enhances the richness of East Asian music's bass notes and expands the tonal possibilities in Western compositions. This balance between cultures is reflected in both the instrument's form and its acoustic characteristics."
+    types: Industrial Design
+    tags:
+        - Product Design
+    date: '2024'
+
+
+  - title: Color Coded Ping Pong Shoes
+    slug: shoes
+    # （首图）
+    image: assets/images/industrial/shoes/shoes_1.jpg
+    #具体内容图片
+    imageContent:
+        - assets/images/industrial/shoes/shoes_2.jpg
+        - assets/images/industrial/shoes/shoes_3.jpg
+        - assets/images/industrial/shoes/shoes_4.jpg
+        - assets/images/industrial/shoes/shoes_5.jpg
+        - assets/images/industrial/shoes/shoes_6.jpg
+
+    description: 'The Color Coded Ping Pong Shoes were designed for ffan.sports to cater to the specific needs of professional table tennis players. Since players adjust their strategies based on their opponents, they require shoes with different characteristics for optimal performance. We designed four pairs of shoes, each emphasizing a unique advantage to ensure peak performance in various matches.'
+    designer: FAN
+    designconcept: 'Each pair of shoes is color-coded to represent its primary feature, making the design both functional and intuitive. Orange symbolizes lateral support, red highlights grip, green represents ankle protection, and yellow denotes flexibility. This novel approach integrates a color-coding system to help professional athletes easily choose the right shoes for different game scenarios, enhancing their comfort and performance during competitions.'
+    types: Industrial Design
+    tags:
+        - Product Design
+
+    date: '2024'
+
+
+  - title: Hyborg Forest
+    slug: hyborg
+    video: https://www.bilibili.com/video/BV1ie4ceXEyo/
+    #具体内容图片
+    imageContent:
+        - assets/images/graphic/hyborg/hyborg_2.png
+        - assets/images/graphic/hyborg/hyborg_3.mp4
+        - assets/images/graphic/hyborg/hyborg_4.png
+        - assets/images/graphic/hyborg/hyborg_5.png
+        - assets/images/graphic/hyborg/hyborg_6.mp4
+        - assets/images/graphic/hyborg/hyborg_7.png
+
+    description: 'The animated short film Hyborg Forest was created for the Yuqian Sun Team. Set in a post-electronic era, the story unfolds in a forest where discarded electronic products gradually develop self-awareness. These devices observe the living creatures in the forest, drawing inspiration from them to recompile their own identities. Eventually, a group of "desktop deer" begins emitting signals to the forest, seeking a form of communication.'
+    designer: Yuntang Huang
+    designconcept: 'The animation explores the intersection between technology and nature, portraying a surreal world where obsolete electronics merge with organic life. The concept of self-reprogramming devices reflects the idea of adaptation and evolution, while the "desktop deer" serve as metaphors for a new kind of hybrid existence, bridging the digital and natural realms. The visual style emphasizes the juxtaposition of mechanical and organic elements, creating a thought-provoking and imaginative narrative.'
+    types: Graphic Design
+    tags:
+        - Motion
+
+    date: '2024'
+
+
+  - title: Libido Identity System
+    slug: libido
+    # （首图）
+    image: assets/images/graphic/libido/libido_1.png
+    #具体内容图片
+    imageContent:
+        - assets/images/graphic/libido/libido_2.png
+        - assets/images/graphic/libido/libido_3.png
+        - assets/images/graphic/libido/libido_4.png
+        - assets/images/graphic/libido/libido_5.png
+        - assets/images/graphic/libido/libido_6.png
+        - assets/images/graphic/libido/libido_7.png
+        - assets/images/graphic/libido/libido_8.png
+    description: "Libido is a pet furniture and lifestyle brand, with its best-selling product line being modular cat trees. The brand identity for Libido was crafted to reflect the playful and dynamic nature of cats, capturing their spirit in both form and function."
+    designer: Ye Lee
+    designconcept: "The design was inspired by the graceful leaps of cats, their ever-changing moods, and the warm moments shared between pets and their owners. These elements of bounce, rhythm, and affection were subtly integrated into the brand’s symbol and typography, evoking the lively and affectionate relationship between cats and humans. The result is a visual identity that feels both energetic and heartwarming, aligning with Libido’s vision of enhancing the pet-owning lifestyle."
+    types: Graphic Design
+    tags:
+        - Branding
+    date: '2023'
+
+
+  - title: Raven
+    slug: raven
+    # （首图）
+    #raven的首图视频【点击播放】
+    video: https://www.bilibili.com/video/BV1wH4y1u7z3/?share_source=copy_web&vd_source=cce8c1304e795ba633c59c1e222ea9c3
+    #具体内容图片
+    imageContent:
+        - assets/images/graphic/raven/raven_2.mp4
+        - assets/images/graphic/raven/raven_3.mp4
+        - assets/images/graphic/raven/raven_4.mp4
+        - assets/images/graphic/raven/raven_5.mp4
+        - assets/images/graphic/raven/raven_6.mp4
+        - assets/images/graphic/raven/raven_7.mp4
+    description: 'Drawing inspiration from the myths and legends about ravens, this animation portrays raven as our shadow selves. It explores the allure of our own obsessions with the chaotic and unbridled aspects within, an irresistible desire to break free from convention and embrace madness.
+The chaos and wildness are not confined solely to our inner world; they can manifest externally as well. By juxtaposing real footage of humans with AI-generated Raven imagery, the animation equates the Raven with contemporary phenomena like AI, with its capacity to disrupt and drive humanity to the brink of madness, much like our own shadow selves.
+However, crazes and chaos come and go. The Raven highlights the mesmerizing and thought-provoking exploration of the eternal dance between chaos and conformity.'
+    designer: Seal Luo
+    designconcept: 'In our video, we explore the fusion and integration of these two parts—the human and the Raven (shadow). We combined live-action footage of humans with AI-generated images of ravens. In the final scene, the raven and human are positioned in the same spot, creating a loop that symbolizes the recurring nature of these crazes and the shadow self—an endless cycle of madness and transformation.'
+    types: Graphic Design
+    tags:
+        - Cooperate with AI
+
+    date: '2023'
+
+
+  - title: Memory Ring
+    slug: memory
+    # （首图）
+    image: assets/images/industrial/memory/memory_1.png
+    #具体内容图片
+    imageContent:
+        - assets/images/industrial/memory/memory_2.png
+        - assets/images/industrial/memory/memory_3.png
+        - assets/images/industrial/memory/memory_4.png
+        - assets/images/industrial/memory/memory_5.png
+    description: 'Memory Ring is a conceptual project, designed to enhance the emotional ritual of farewells at airports. Airports often serve as modern-day ports of departure, and this project aims to bring a deeper sense of ceremony to these moments of parting.'
+    designer: FAN
+    designconcept: 'The Memory Ring is a slow-moving installation situated in airport waiting areas. Its central glass screen captures the reflections of people as they wait, while a visual design on the screen encourages them to wave and take a photo together. After the photo is taken, each participant receives a Memory Card. The back of the card features the photo, while the front contains a dial mechanism that allows users to make a call to the person who holds the other corresponding Memory Card. This concept brings a poetic and interactive element to the act of saying goodbye, fostering connection even after separation.'
+    types: Industrial Design
+    tags:
+        - Concept Design
+    date: '2023'
+
+
+  - title: Glassfrog
+    slug: glassfrog
+    # （首图）
+    #glassfrog的首图视频【点击播放】
+    video: //https://www.bilibili.com/video/BV1oe4ceXELn/
+    #具体内容图片
+    imageContent:
+        - assets/images/graphic/glassfrog/glassfrog_2.jpg
+        - assets/images/graphic/glassfrog/glassfrog_3.jpg
+        - assets/images/graphic/glassfrog/glassfrog_4.jpg
+        - assets/images/graphic/glassfrog/glassfrog_5.mp4
+        - assets/images/graphic/glassfrog/glassfrog_6.mp4
+        - assets/images/graphic/glassfrog/glassfrog_7.mp4
+        - assets/images/graphic/glassfrog/glassfrog_8.jpg
+
+    description: 'Glassfrog is an interactive visual creation primarily developed using TouchDesigner software. In this installation, transparent glass frogs interact with the audience through gesture and sound recognition. The interaction feels almost illusory, as what we capture are the layered ripples left behind when the frogs leap away from the water’s surface.'
+    designer: Yuntang Huang
+    designconcept: 'The design emphasizes the ephemeral and surreal nature of the interaction. The glass frogs, being transparent, evoke a sense of otherworldliness, as if they exist only in the fleeting moments of interaction. The ripples left behind serve as a visual metaphor for the intangible nature of the connection between humans and the digital creatures, blending the boundaries between the virtual and the real. The interaction design creates a delicate and immersive experience, inviting users to engage with a world of subtlety and mystery.'
+    types: Graphic Design
+    tags:
+        - Interactive Design
+
+    date: '2023'
+
+
+
+  - title: Yan-Rice Cooker
+    slug: cooker
+    # （首图）
+    image: assets/images/industrial/cooker/yan_1.png
+    #具体内容图片
+    imageContent:
+        - assets/images/industrial/cooker/yan_2.png
+        - assets/images/industrial/cooker/yan_3.png
+        - assets/images/industrial/cooker/yan_4.png
+        - assets/images/industrial/cooker/yan_5.png
+        - assets/images/industrial/cooker/yan_6.png
+        - assets/images/industrial/cooker/yan_7.png
+    description: "The Yan Rice Cooker was designed for Breville, targeting young professionals with limited time for daily cooking. This digital rice cooker allows users to preset cooking times and customize recipes, making meal preparation more convenient for a busy lifestyle."
+    designer: Wenyao
+    designconcept: "The rice cooker features an innovative water tank that uses heated steam to cook rice, ensuring evenly cooked and flavorful results. The integration of digital presets and recipe customization provides users with flexibility, while the steam-based cooking method enhances the quality of the rice. Yan's design balances modern functionality with intuitive user interaction, offering a seamless cooking experience for time-conscious individuals."
+    types: Industrial Design
+    tags:
+        - Product Design
+    date: '2023'
+
+  - title: Mascot Presence
+    slug: mascot
+    # （首图）
+    #mascot presence的首图视频【点击播放】
+    video: https://www.bilibili.com/video/BV1de4ceXErh/
+    #具体内容图片
+    imageContent:
+        - assets/images/graphic/mascot/mascot_2.gif
+        - assets/images/graphic/mascot/mascot_3.png
+        - assets/images/graphic/mascot/mascot_4.mp4
+        - assets/images/graphic/mascot/mascot_5.png
+        - assets/images/graphic/mascot/mascot_6.png
+        - assets/images/graphic/mascot/mascot_7.png
+        - assets/images/graphic/mascot/mascot_8.gif
+        - assets/images/graphic/mascot/mascot_9.gif
+        - assets/images/graphic/mascot/mascot_10.png
+        - assets/images/graphic/mascot/mascot_11.png
+    description: 'Do they look weird? These characters are mascots who suddenly realize one day that their bodies are fused with their performance costumes. Some of the mascots they play are cute, some are unattractive, and some are perfect icons, but none of these exactly match the personalities of the performers themselves, who, at the moment, become representatives of kimo-kawaii (disgusting-cute). The dilemmas faced by the performers whose bodies are fused with their costumes, the new opportunities they are given, and the confusion they feel inside, all embody how kimo-kawaii speaks to the contemporary time.'
+    designer: Yuntang Huang
+    designconcept: 'The story of kimo-kawaii mascots is unfolding in all corners of the world. They have a unique kimo, a unique kawaii, and a unique state of integration that gives them a unique way of facing opportunities and challenges.'
+    types: Graphic Design
+    tags:
+        - Speculative Design
+    date: '2022'
+
+
+  - title: Gvda Portable Rangefinder
+    slug: ranger
+    # （首图）
+    image: assets/images/industrial/ranger/ranger_1.jpg
+    #具体内容图片
+    imageContent:
+        - assets/images/industrial/ranger/ranger_2.jpg
+        - assets/images/industrial/ranger/ranger_3.jpg
+        - assets/images/industrial/ranger/ranger_4.jpg
+        - assets/images/industrial/ranger/ranger_5.jpg
+        - assets/images/industrial/ranger/ranger_6.jpg
+        - assets/images/industrial/ranger/ranger_7.jpg
+        - assets/images/industrial/ranger/ranger_8.jpg
+    description: "The Gvda Portable Rangefinder was designed for Gvda, combining portability with ergonomic design for professional use. This measuring tool features a robust structure, tailored for various professional environments, while maintaining an elegant appearance through the thoughtful combination of metal and refined leather."
+    designer: Qing
+    designconcept: "The fusion of metal and leather not only creates a minimalist and layered aesthetic but also enhances the user experience by offering both durability and a comfortable, tactile grip. The metal casing ensures reliability in demanding professional scenarios, while the leather accents provide a humanized touch. The intuitive interface is designed to streamline the workflow for professionals, delivering precise measurements in fields such as architectural surveying, interior design, and outdoor exploration."
+    types: Industrial Design
+    tags:
+        - Product Design
+    date: '2022'    
