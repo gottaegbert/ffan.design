@@ -23,6 +23,8 @@ type Props = {
     data: homePageData
 }
 
+const MAX_LOADING_TIME = 10000; // 最长加载时间，10秒
+
 const IndexPage: React.FC<Props> = ({ data }) => {
     const { selectedProjects } = data
     const [selectedProjectIndex, setSelectedProjectIndex] = useState<
@@ -62,40 +64,51 @@ const IndexPage: React.FC<Props> = ({ data }) => {
             return acc + (project.image ? 1 : 0);
         }, 0);
 
+        let loadedImages = 0;
+
         const preloadImage = (src: string) => {
-            return new Promise((resolve, reject) => {
+            return new Promise((resolve) => {
                 const img = document.createElement('img');
                 img.src = src;
-                img.onload = resolve;
-                img.onerror = reject;
+                img.onload = img.onerror = () => {
+                    loadedImages++;
+                    setLoadingProgress((loadedImages / totalImages) * 100);
+                    resolve(null);
+                };
             });
         };
 
         const preloadImages = async () => {
-            for (const project of selectedProjects) {
-                if (project.image) {
-                    try {
-                        await preloadImage(project.image);
-                        setImagesLoaded((prev) => {
-                            const newLoaded = prev + 1;
-                            setLoadingProgress((newLoaded / totalImages) * 100);
-                            if (newLoaded === totalImages) {
-                                setIsLoading(false);
-                            }
-                            return newLoaded;
-                        });
-                    } catch (error) {
-                        console.error('Error loading image:', error);
-                    }
-                }
-            }
+            const imagePromises = selectedProjects
+                .filter(project => project.image)
+                .map(project => preloadImage(project.image));
+
+            // 设置最长加载时间
+            const timeoutPromise = new Promise(resolve => {
+                setTimeout(() => {
+                    console.warn('Loading timed out');
+                    resolve(null);
+                }, MAX_LOADING_TIME);
+            });
+
+            // 等待所有图片加载完成或超时
+            await Promise.race([
+                Promise.all(imagePromises),
+                timeoutPromise
+            ]);
+
+            setIsLoading(false);
         };
 
         preloadImages();
     }, [selectedProjects]);
 
+    const handleSkip = () => {
+        setIsLoading(false);
+    };
+
     if (isLoading) {
-        return <Preloader progress={loadingProgress} />;
+        return <Preloader progress={loadingProgress} onSkip={handleSkip} />;
     }
 
     const handleLabelClick = (label: string) => {

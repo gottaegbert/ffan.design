@@ -6,11 +6,11 @@ import { motion } from 'framer-motion';
 const preloaderWords: string[] = [
   'Loading🎬',
   'ffandesign'
-
 ];
-const Preloader = ({progress}) => {
-  const [index, setIndex] = useState(0); // Index for the array of words
-  const [dimension, setDimension] = useState({ width: 0, height: 0 }); // Window dimensions
+
+const Preloader = ({ progress, onSkip }) => {
+  const [index, setIndex] = useState(0);
+  const [dimension, setDimension] = useState({ width: 0, height: 0 });
 
   useEffect(() => {
     setDimension({ width: window.innerWidth, height: window.innerHeight });
@@ -49,12 +49,31 @@ const Preloader = ({progress}) => {
       {dimension.width > 0 && (
         <>
           <div className={styles.preloader}>
-          <p>Loading... {progress.toFixed(0)}%</p>
-          <div className={styles.loadingBar} style={{ width: `${progress}%` }}></div>
+    
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5, duration: 0.5 }}
+            >
+              Loading... {progress.toFixed(0)}%
+            </motion.p>
+            <motion.div 
+              className={styles.loadingBar}
+              initial={{ width: 0 }}
+              animate={{ width: `${progress}%` }}
+              transition={{ duration: 0.5 }}
+            />
+            <motion.button
+              className={styles.skipButton}
+              onClick={onSkip}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1, duration: 0.5 }}
+            >
+              Skip
+            </motion.button>
           </div>
-       
           <svg>
-
             <motion.path variants={curve} initial="initial" exit="exit"></motion.path>
           </svg>
         </>
