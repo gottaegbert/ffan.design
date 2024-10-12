@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { opacity, slideUp } from './animation';
-import styles from './preloader.module.scss';
+import styles from './Preloader.module.scss';
 import { motion } from 'framer-motion';
 
 const preloaderWords: string[] = [
