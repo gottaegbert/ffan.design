@@ -289,7 +289,7 @@ const handleMouseEnter = (slug, type) => {
                         </li>
                     ))}
                 </ul>
-                <div style={{ marginTop: '1vh' }}></div> 
+                <div style={{ marginTop: '2vh' }}></div> 
                     
             </div>
         ))}
@@ -364,7 +364,7 @@ const handleMouseEnter = (slug, type) => {
                         </li>
                     ))}
                 </ul>
-                <div style={{ marginTop: '20px' }}></div> 
+                <div style={{ marginTop: '2vh' }}></div> 
                 
             </div>
             

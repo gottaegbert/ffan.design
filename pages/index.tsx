@@ -7,7 +7,6 @@ import { useState, useEffect } from 'react'
 import StaggeredTitle from '../components/StaggeredTitle/StaggeredTitle'
 import CaseStudy from '../components/CaseStudy/CaseStudy'
 import { GetStaticProps } from 'next'
-import ReactMarkdown from 'react-markdown'
 import { gePageData } from '../utils/pages' // Corrected typo from gePageData to getPageData
 import { StoreProvider } from '../utils/StoreProvider'
 import BasicMeta from '../utils/BasicMeta'
@@ -17,7 +16,6 @@ import RightNav from '../components/RightNav/RightNav'
 import { useRouter } from 'next/router'
 import Footer from '../components/Footer/Footer'
 import Preloader from '../components/Preloader'
-import Image from 'next/image'
 
 type Props = {
     data: homePageData
@@ -34,7 +32,6 @@ const IndexPage: React.FC<Props> = ({ data }) => {
     const router = useRouter()
     const [isLoading, setIsLoading] = useState(true)
     const [loadingProgress, setLoadingProgress] = useState(0)
-    const [imagesLoaded, setImagesLoaded] = useState(0)
 
     useEffect(() => {
         const handleRouteChange = (url: string) => {
@@ -151,7 +148,6 @@ const IndexPage: React.FC<Props> = ({ data }) => {
                     </div>
 
                     <BasicMeta url={'/work'} />
-                    {/* <AnimatePresence mode="wait">{isLoading && <Preloader />}</AnimatePresence> */}
                     <section
                         id="work-section"  // 添加这个 ID
                         className={cn(
