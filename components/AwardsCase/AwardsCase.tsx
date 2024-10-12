@@ -1,7 +1,6 @@
 import * as React from 'react'
 import styles from './AwardsCase.module.scss'
 import cn from 'classnames'
-import Link from 'next/link'
 import Image from 'next/legacy/image'
 import { selectedAward } from '../../utils/customTypes'
 
@@ -12,10 +11,8 @@ interface AwardsCaseProps extends selectedAward {
 const AwardsCase: React.FC<AwardsCaseProps> = ({
     image,
     title,
-    types,
     designer,
     awardlevel,
-    slug,
     awardname,
     time,
     isLargeItem
@@ -23,7 +20,7 @@ const AwardsCase: React.FC<AwardsCaseProps> = ({
     const ref = React.createRef<HTMLDivElement>()
  
     return (
-        <Link legacyBehavior href={slug}>
+     
             <a className={styles.projWrap}>
                 <article className={cn(styles.article, { [styles.largeItem]: isLargeItem })}>
                     <div className={styles.imgContainer}>
@@ -65,7 +62,7 @@ const AwardsCase: React.FC<AwardsCaseProps> = ({
                     </div>
                 </article>
             </a>
-        </Link>
+
     )
 }
 

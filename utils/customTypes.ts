@@ -6,7 +6,7 @@ export type homePageData = {
 export type selectedAward = {
   title: string;
   image: string;
-  slug: string;
+ 
   time: string;
   types: string;
   designer: string;

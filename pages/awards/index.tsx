@@ -52,6 +52,7 @@ const Awards: React.FC<Props> = ({ data }) => {
                                     label1="Selected Awards"
                                     label2="Industrial Design"
                                     label3="Graphic Design"
+                                    activeLabel={filter}
                                     classname={styles.projTitle}
                                     onLabelClick={handleLabelClick}
                                 />

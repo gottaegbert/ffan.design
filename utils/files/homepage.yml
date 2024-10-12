@@ -131,83 +131,82 @@ selectedAwards:
     - title: Cellularine Series Earbuds
       image: assets/images/awards/muse.jpg
       time: 2024
-      slug: ../../projects/earbuds
       types: Industrial Design
-      designer: Fan
-      awardlevel: Silver Award
-      awardname: Muse Design
-    - title: Cellularine Series Earbuds
-      image: assets/images/awards/muse.jpg
-      time: 2024
-      slug: ../../projects/earbuds
-      types: Industrial Design
-      designer: Fan
-      awardlevel: Silver Award
-      awardname: Muse Design
-    - title: Cellularine Series Earbuds
-      image: assets/images/awards/muse.jpg
-      time: 2024
-      slug: ../../projects/earbuds
-      types: Industrial Design
-      designer: Fan
-      awardlevel: Silver Award
-      awardname: Muse Design
-    - title: Cellularine Series Earbuds
-      image: assets/images/awards/muse.jpg
-      time: 2024
-      slug: ../../projects/earbuds
-      types: Industrial Design
-      designer: Fan
-      awardlevel: Silver Award
-      awardname: Muse Design
-    - title: Cellularine Series Earbuds
-      image: assets/images/awards/muse.jpg
-      time: 2024
-      slug: ../../projects/earbuds
-      types: Industrial Design
-      designer: Fan
-      awardlevel: Silver Award
-      awardname: Muse Design
-
-    - title: Cellularine Series Earbuds
-      image: assets/images/awards/muse.jpg
-      time: 2024
-      slug: ../../projects/earbuds
-      types: Graphic Design
       designer: Fan
       awardlevel: Silver Award
       awardname: Muse Design
     
-    - title: Cellularine Series Earbuds
-      image: assets/images/awards/muse.jpg
+    - title: Medical Integrated Cabinet
+      image: assets/images/awards/reddot.jpg
+      time: 2022
+      types: Industrial Design
+      designer: Canjie
+      awardlevel: "Red Dot Award: Design Concept"
+      awardname: Red Dot
+
+    - title: "#"
+      image: assets/images/awards/if.jpg
+      time: 2021
+      types: Industrial Design
+      designer: "#"
+      awardlevel: "#"
+      awardname: If Award
+    
+    - title: Medical Integrated Bathroom Cabinet
+      image: assets/images/awards/idea.jpg
+      time: 2021
+      types: Industrial Design
+      designer: Can Jie Ou
+      awardlevel: Make the shortlist
+      awardname: IDEA Award
+
+    - title: Mini Robot Vacuum
+      image: assets/images/awards/g-mark.jpg
+      time: 2021
+      types: Industrial Design
+      designer: Zhong Hao Tian
+      awardlevel: Good Design Award
+      awardname: Good Design Award
+
+    - title: "Identity: The Way We Unfold"
+      image: assets/images/awards/d&a.jpg
       time: 2024
-      slug: ../../projects/earbuds
       types: Graphic Design
-      designer: Fan
-      awardlevel: Silver Award
-      awardname: Muse Design
-    - title: Cellularine Series Earbuds
-      image: assets/images/awards/muse.jpg
-      time: 2024
-      slug: ../../projects/earbuds
-      types: Graphic Design
-      designer: Fan
-      awardlevel: Silver Award
-      awardname: Muse Design
-    - title: Cellularine Series Earbuds
-      image: assets/images/awards/muse.jpg
-      time: 2024
-      slug: ../../projects/earbuds
-      types: Graphic Design
-      designer: Fan
-      awardlevel: Silver Award
-      awardname: Muse Design
-    - title: Cellularine Series Earbuds
-      image: assets/images/awards/muse.jpg
+      designer: Yuxi Mei
+      awardlevel: D&A Winner
+      awardname: Design Discovery Award
+
+    - title: Kimo-Kawaii Fashion Show
+      image: assets/images/awards/siggraphic.jpg
       time: 2023
-      slug: ../../projects/earbuds
       types: Graphic Design
-      designer: Fan
+      designer: Yuntang Huang
+      awardlevel: Siggraph Selected Exhibiton
+      awardname: Siggraph Award
+
+    - title: The Fat Market
+      image: assets/images/awards/awards360.jpg
+      time: 2022
+      types: Graphic Design
+      designer: Ye Lee
+      awardlevel: Siggraph Selected Exhibiton
+      awardname: Award360
+
+    - title: Mascots Presence
+      image: assets/images/awards/adc.jpg
+      time: 2023
+      types: Graphic Design
+      designer: Yuntang Huang
       awardlevel: Silver Award
-      awardname: Muse Design
-  
+      awardname: ADC Annual Awards
+
+    - title: Ye Lee's Packaging Design
+      image: assets/images/awards/tdc.jpg
+      time: 2022
+      types: Graphic Design
+      designer: Ye Lee
+      awardlevel: Annual Selected
+      awardname: Tokyo TDC
+
+
+
