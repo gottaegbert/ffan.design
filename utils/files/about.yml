@@ -24,6 +24,7 @@ ourservice2: >-
 teams:
   - Name: YUNTANG HUANG
     Role: CO-FOUNDER
+    image: assets/images/team/yuntang.png
     Description: >-
       Educated in Psychology at Tsinghua University and Communication Design at Pratt Institute, I blend academic rigor with practical expertise in design. My career advanced from a senior graphic designer in Beijing to refining skills in New York's dynamic design scene.
       
@@ -48,6 +49,7 @@ teams:
 
   - Name: FAN
     Role: CO-FOUNDER
+    image: assets/images/team/fan.png
     Description: >-
       Trained in Industrial Design at Hunan University and holding a Master's from Pratt Institute in New York, my design philosophy marries simplicity with functionality. My professional journey across Germany and New York, where I served as a senior industrial designer, has infused my work with a blend of international perspectives and a commitment to honest, practical, and elegant design. 
       

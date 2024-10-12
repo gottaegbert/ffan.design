@@ -34,6 +34,7 @@ type TeamMember = {
   Name: string;
   Role: string;
   Description: string;
+  image: string;
 };
 
 export type aboutPageData = {

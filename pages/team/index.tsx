@@ -122,21 +122,22 @@ const Team: React.FC<Props> = ({ data }) => {
                             </div>
                         </div>
                     </div>
+                    <div className={styles.videoBackground}>
+                    <video
+                        autoPlay
+                        loop
+                        muted
+                    >
+                        <source src="/assets/images/team/ditu.mp4" type="video/mp4" />
+                        您的浏览器不支持视频标签。
+                    </video>
+                    </div>
                 </div>
-                <section
-                    className={cn(
-                        'grid sectionSpacing',
-                        styles.moreWorksSection
-                    )}
-                >
-                    <div
-                        className={cn(
-                            'col-12 col-sm-6 col-md-7',
-                            styles.skillsGrid
-                        )}
-                    ></div>
-                </section>
-
+         
+                                   {/* 新添加的视频背景部分 */}
+                
+                   
+             
                 <section>
                     <div className={cn(styles.teamGrid)}>
                         {data.teams.map((team, idx: number) => (
@@ -154,8 +155,17 @@ const Team: React.FC<Props> = ({ data }) => {
                                
                                 </div>
                                 <div className={cn('grid',styles.descriptionContainer)}>
-                                    <rect className={cn('col-12 col-start-3 col-end-7',styles.image)}>
-                                    </rect>
+                                    {idx < 2 && (  // 只有当索引小于2时才渲染图片
+                                        <div className={cn('col-12 col-start-3 col-end-7',styles.image)}>
+                                            <Image
+                                                src={'/' + team.image}
+                                                width={690}
+                                                height={388}
+                                                alt={team.Name}
+                                                className={cn( 'js-img selected-pj-img')}
+                                            />  
+                                        </div>
+                                    )}
                                     <div className={cn('col-12 col-start-9 col-end-12',styles.description)}>
                                     <ReactMarkdown
                                         components={{
@@ -181,6 +191,7 @@ const Team: React.FC<Props> = ({ data }) => {
                 </section>
                 <Footer />
 
+     
             
             </Layout>
         </StoreProvider>
@@ -217,3 +228,4 @@ export const getStaticProps: GetStaticProps = async () => {
         },
     }
 }
+

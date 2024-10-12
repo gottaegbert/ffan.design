@@ -18,6 +18,21 @@
   }
 
 
+
+
+  
+.videoBackground {
+  position: relative;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  video{
+
+    width: 100vw;
+  }
+}
+
+
 .logoContainer {
   // position: fixed;
   // top: 0;
@@ -97,7 +112,6 @@
 .image{
   width: 100%;
   height: 100%;
-  outline: 1px solid var(--font);
 }
 
 .teamMemberHeader {
