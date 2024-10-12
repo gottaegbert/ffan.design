@@ -25,9 +25,15 @@ const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
   const imgForeground = React.createRef<HTMLDivElement>();
   const hasVideo = data.video && data.video.length > 0;
   const isBilibiliVideo = hasVideo && data.video.includes('bilibili.com');
+  const isVimeoVideo = hasVideo && data.video.includes('vimeo.com');
   
   const getBilibiliVideoId = (url) => {
     const match = url.match(/\/BV(\w+)/);
+    return match ? match[1] : null;
+  };
+
+  const getVimeoVideoId = (url) => {
+    const match = url.match(/vimeo\.com\/(\d+)/);
     return match ? match[1] : null;
   };
 
@@ -59,6 +65,22 @@ const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
                   }}
                   frameBorder="0"
                   sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts"
+                ></iframe>
+              </div>
+            ) : isVimeoVideo ? (
+              <div style={{ padding: '56.25% 0 0 0', position: 'relative' }}>
+                <iframe
+                  src={`https://player.vimeo.com/video/${getVimeoVideoId(data.video)}?h=00000000&autoplay=1&loop=1&title=0&byline=0&portrait=0`}
+                  style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%',
+                  }}
+                  frameBorder="0"
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowFullScreen
                 ></iframe>
               </div>
             ) : (

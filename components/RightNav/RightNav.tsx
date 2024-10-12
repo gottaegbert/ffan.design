@@ -53,7 +53,11 @@ const RightNav = () => {
                             Work
                         </Link>
                     </li>
-                    <li>Awards</li>
+                    <li>
+                        <Link href="/awards" className={styles.navLink}>
+                            Awards
+                        </Link>
+                    </li>
                     <li>
                         <Link href="/team" className={styles.navLink}>
                             Team

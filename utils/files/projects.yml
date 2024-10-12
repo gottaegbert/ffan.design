@@ -159,7 +159,7 @@ projects:
   - title: The Way We Unfold
     slug: identity
     #the way we unfold的首图视频【点击播放】
-    video: assets/images/graphic/identity/identity_1.mp4
+    video: https://vimeo.com/1018682297?share=copy#t=0
     #具体内容图片
     imageContent:
         - assets/images/graphic/identity/identity_2.jpg

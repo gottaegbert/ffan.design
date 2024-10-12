@@ -23,7 +23,7 @@ type Props = {
 }
 
 const IndexPage: React.FC<Props> = ({ data }) => {
-    const { selectedProjects, ndaDisclaimer } = data
+    const { selectedProjects } = data
     const [selectedProjectIndex, setSelectedProjectIndex] = useState<
         number | null
     >(null)
@@ -101,13 +101,7 @@ const IndexPage: React.FC<Props> = ({ data }) => {
                                     <CaseStudy {...proj} />
                                 </div>
                             ))}
-                            <div className={'col-12 col-sm-6 '}>
-                                <ReactMarkdown
-                                    className={cn('fade-in-up', styles.nda)}
-                                >
-                                    {ndaDisclaimer}
-                                </ReactMarkdown>
-                            </div>
+                   
                         </div>
                 <Footer />
                     </section>

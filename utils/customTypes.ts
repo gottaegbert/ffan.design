@@ -1,10 +1,18 @@
 export type homePageData = {
-  aboutShort: string;
   selectedProjects: selectedProject[];
-  moreWorksDesc: string;
-  moreWorks: moreWork[];
-  ndaDisclaimer: string;
+  selectedAwards: selectedAward[];
 };
+
+export type selectedAward = {
+  title: string;
+  image: string;
+  slug: string;
+  time: string;
+  types: string;
+  designer: string;
+  awardlevel: string;
+  awardname: string;
+}
 
 export type selectedProject = {
   image: string;
