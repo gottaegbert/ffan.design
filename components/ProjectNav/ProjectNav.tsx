@@ -151,27 +151,28 @@ const groupedProjectsTypeTwo = groupProjectsByYear(filteredProjectsByType(typeTw
     };
 // 修改handleSelect和handleMouseEnter函数，使它们接收一个slug参数，然后使用这个slug来查找项目的索引
 const handleSelect = (slug, type) => {
-    setIsUserInteracting(true);
-    const projectIndex = projects.findIndex(
-        (project) => project.slug === slug
-    );
-    setSelectedProjectIndex(projectIndex);
-    onSelect(projectIndex);
+   
+    router.push(`/${slug}`);
     setTimeout(() => setIsUserInteracting(false), 200);
 };
 
 const handleMouseEnter = (slug, type) => {
     if (isTypeSwitching) return; // 如果正在切换类型，不触发 hover 效果
+    setIsUserInteracting(true);
     clearInterval(intervalId);
     const projectIndex = projects.findIndex(
         (project) => project.slug === slug
     );
-    setHoveredProjectIndex(projectIndex);
+   
+    setSelectedProjectIndex(projectIndex);
+    onSelect(projectIndex);
+    // setHoveredProjectIndex(projectIndex);
     setImageLoaded(true);
 };
 
     const handleMouseLeave = () => {
         setHoveredProjectIndex(null);
+        setIsUserInteracting(false); // 添加这行
         const id = setInterval(goToNextProject, 5000);
         setIntervalId(id);
     }
