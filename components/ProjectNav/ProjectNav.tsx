@@ -4,7 +4,6 @@ import Image from 'next/image'
 import { gsap } from 'gsap/dist/gsap'
 import cn from 'classnames'
 import PlusIcon from '../../public/assets/images/+.svg';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 const ProjectNav = ({ projects, onSelect }) => {
@@ -95,65 +94,66 @@ const groupedProjectsTypeTwo = groupProjectsByYear(filteredProjectsByType(typeTw
         setIsSlidingOut(true);
         setIsTypeSwitching(true);
 
-        const tl = gsap.timeline({
-            onComplete: () => {
-                setIsSlidingOut(false);
-                setIsUserInteracting(false);
-                setIsTypeSwitching(false);
+        // 添加延迟
+        setTimeout(() => {
+            const tl = gsap.timeline({
+                onComplete: () => {
+                    setIsSlidingOut(false);
+                    setIsUserInteracting(false);
+                    setIsTypeSwitching(false);
+                }
+            });
+
+            if (type === typeOne) {
+                setTypeOneExpanded(true);
+                setTypeTwoExpanded(false);
+
+                tl.to(sectionOneRef.current, {
+                    width: '25vw',
+                    height: '90vh',
+                    duration: 0.5,
+                }).to(sectionTwoRef.current, {
+                    width: '100vw',
+                    height: '10vh',
+                    duration: 0.5,
+                }, "-=0.5");
+
+                if (projects[selectedProjectIndex]?.types !== typeOne) {
+                    const firstProjectIndex = projects.findIndex(
+                        (project) => project.types === typeOne
+                    );
+                    setSelectedProjectIndex(firstProjectIndex);
+                    onSelect(firstProjectIndex);
+                }
+            } else if (type === typeTwo) {
+                setTypeOneExpanded(false);
+                setTypeTwoExpanded(true);
+
+                tl.to(sectionOneRef.current, {
+                    width: '100vw',
+                    height: '10vh',
+                    duration: 0.5,
+                }).to(sectionTwoRef.current, {
+                    width: '25vw',
+                    height: '90vh',
+                    duration: 0.5,
+                }, "-=0.5");
+
+                if (projects[selectedProjectIndex]?.types !== typeTwo) {
+                    const firstProjectIndex = projects.findIndex(
+                        (project) => project.types === typeTwo
+                    );
+                    setSelectedProjectIndex(firstProjectIndex);
+                    onSelect(firstProjectIndex);
+                }
             }
-        });
 
-        if (type === typeOne) {
-            setTypeOneExpanded(true);
-            setTypeTwoExpanded(false);
-
-            tl.to(sectionOneRef.current, {
-                width: '25vw',
-                height: '90vh',
-                duration: 0.5,
-            }).to(sectionTwoRef.current, {
-                width: '100vw',
-                height: '10vh',
-                duration: 0.5,
-            }, "-=0.5");
-
-            if (projects[selectedProjectIndex]?.types !== typeOne) {
-                const firstProjectIndex = projects.findIndex(
-                    (project) => project.types === typeOne
-                );
-                setSelectedProjectIndex(firstProjectIndex);
-                onSelect(firstProjectIndex);
-            }
-        } else if (type === typeTwo) {
-            setTypeOneExpanded(false);
-            setTypeTwoExpanded(true);
-
-            tl.to(sectionOneRef.current, {
-                width: '100vw',
-                height: '10vh',
-                duration: 0.5,
-            }).to(sectionTwoRef.current, {
-                width: '25vw',
-                height: '90vh',
-                duration: 0.5,
-            }, "-=0.5");
-
-            if (projects[selectedProjectIndex]?.types !== typeTwo) {
-                const firstProjectIndex = projects.findIndex(
-                    (project) => project.types === typeTwo
-                );
-                setSelectedProjectIndex(firstProjectIndex);
-                onSelect(firstProjectIndex);
-            }
-        }
-
-        setImageLoaded(true);
+            setImageLoaded(true);
+        }, 300); // 300毫秒的延迟，你可以根据需要调整这个值
     };
 // 修改handleSelect和handleMouseEnter函数，使它们接收一个slug参数，然后使用这个slug来查找项目的索引
-const handleSelect = (slug, type) => {
-   
+const handleSelect = (slug) => {
     router.push(`/${slug}`);
-    setTimeout(() => setIsUserInteracting(false), 200);
 };
 
 const handleMouseEnter = (slug, type) => {
@@ -166,12 +166,10 @@ const handleMouseEnter = (slug, type) => {
    
     setSelectedProjectIndex(projectIndex);
     onSelect(projectIndex);
-    // setHoveredProjectIndex(projectIndex);
     setImageLoaded(true);
 };
 
     const handleMouseLeave = () => {
-        setHoveredProjectIndex(null);
         setIsUserInteracting(false); // 添加这行
         const id = setInterval(goToNextProject, 5000);
         setIntervalId(id);
@@ -240,12 +238,14 @@ const handleMouseEnter = (slug, type) => {
                             'sectionOne',
                             `${styles.section} ${styles.sectionOne} ${typeOneExpanded ? styles.expanded : ''}`
                         )}
-                        onClick={() => handleToggleSection(typeOne)}
-                    >
+                        >
                         <button
                             className={`${styles.sectionButton} ${typeOneExpanded ? styles.expanded : ''}`}
+                            onMouseEnter={() => handleToggleSection(typeOne)}
+                            >
+                            <div className={styles.sectionButtonContent}
                         >
-                            <div className={styles.sectionButtonContent}>
+                          
                             {typeOne}
                             {!typeOneExpanded && (
       <Image src={PlusIcon} alt="Expand" className={styles.plusIcon} />
@@ -273,7 +273,7 @@ const handleMouseEnter = (slug, type) => {
                                     : ''
                             }
                             onClick={() =>
-                                handleSelect(project.slug, typeOne)
+                                handleSelect(project.slug)
                             }
                             onMouseEnter={() =>
                                 handleMouseEnter(project.slug, typeOne)
@@ -314,12 +314,14 @@ const handleMouseEnter = (slug, type) => {
                             'sectionTwo',
                             `${styles.section} ${styles.sectionTwo} ${typeTwoExpanded ? styles.expanded : ''}`
                         )}
-                        onClick={() => handleToggleSection(typeTwo)}
+                       
                     >
                         <button
                             className={`${styles.sectionButton} ${styles.sectionButtonSectionTwo} ${typeTwoExpanded ? styles.expanded : ''}`}
+                            onMouseEnter={() => handleToggleSection(typeTwo)}
                         >
-                          <div className={styles.sectionButtonContent}>
+                          <div className={styles.sectionButtonContent}
+                          >
                             {typeTwo}
                             {!typeTwoExpanded && (
       <Image src={PlusIcon} alt="Expand" className={styles.plusIcon} />
@@ -346,7 +348,7 @@ const handleMouseEnter = (slug, type) => {
                                     : ''
                             }
                             onClick={() =>
-                                handleSelect(project.slug, typeTwo)
+                                handleSelect(project.slug)
                             }
                             onMouseEnter={() =>
                                 handleMouseEnter(project.slug, typeTwo)
