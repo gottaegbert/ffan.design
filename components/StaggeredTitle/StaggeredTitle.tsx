@@ -10,8 +10,10 @@ type Props = {
   label2: string;
   label3: string;
   classname?: string;
-  onLabelClick: (label: string) => void; // 添加回调函数类型
+  onLabelClick: (label: string) => void;
+  activeLabel: string; // 添加这个属性
 };
+
 gsap.registerPlugin(ScrollTrigger);
 
 const StaggeredTitle: React.FC<Props> = ({
@@ -19,10 +21,9 @@ const StaggeredTitle: React.FC<Props> = ({
   label2,
   label3,
   classname,
-  onLabelClick, // 接收回调函数
+  onLabelClick,
+  activeLabel, // 接收 activeLabel 属性
 }) => {
-  const [selectedLabel, setSelectedLabel] = useState(label1); // 添加状态来存储当前选中的标签
-
   const ref1 = React.createRef<HTMLSpanElement>();
   const ref2 = React.createRef<HTMLSpanElement>();
   const ref3 = React.createRef<HTMLSpanElement>();
@@ -45,36 +46,31 @@ const StaggeredTitle: React.FC<Props> = ({
     });
   }, []);
 
-  const handleLabelClick = (label: string) => {
-    setSelectedLabel(label); // 更新选中的标签
-    onLabelClick(label); // 调用传递的回调函数
-  };
-
   return (
     <h3 className={cn(styles.title, classname)}>
       <span>
         <span
           ref={ref1}
-          onClick={() => handleLabelClick(label1)}
-          className={cn({ [styles.selected]: selectedLabel === label1 })}
+          onClick={() => onLabelClick(label1)}
+          className={cn({ [styles.selected]: activeLabel === label1 })}
         >
           {label1}
         </span>
         <span
           ref={ref2}
           className={cn(styles.offset, {
-            [styles.selected]: selectedLabel === label2,
+            [styles.selected]: activeLabel === label2,
           })}
-          onClick={() => handleLabelClick(label2)}
+          onClick={() => onLabelClick(label2)}
         >
           {label2}
         </span>
         <span
           ref={ref3}
           className={cn(styles.offset, {
-            [styles.selected]: selectedLabel === label3,
+            [styles.selected]: activeLabel === label3,
           })}
-          onClick={() => handleLabelClick(label3)}
+          onClick={() => onLabelClick(label3)}
         >
           {label3}
         </span>

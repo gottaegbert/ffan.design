@@ -4,6 +4,8 @@ import Image from 'next/image'
 import { gsap } from 'gsap/dist/gsap'
 import cn from 'classnames'
 import PlusIcon from '../../public/assets/images/+.svg';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const ProjectNav = ({ projects, onSelect }) => {
     const [selectedProjectIndex, setSelectedProjectIndex] = useState(null)
@@ -18,6 +20,7 @@ const ProjectNav = ({ projects, onSelect }) => {
     const [isUserInteracting, setIsUserInteracting] = useState(false);
     const sectionOneRef = useRef(null);
     const sectionTwoRef = useRef(null);
+    const router = useRouter();
 
     const typeOne = 'Industrial Design'
     const typeTwo = 'Graphic Design'
@@ -220,6 +223,10 @@ const handleMouseEnter = (slug, type) => {
         }
     }, [displayedProjectIndex]) // When displayedProjectIndex changes, animate the new image
 
+    const handleCheckAllClick = (filter: string) => {
+        router.push(`/#work-section?filter=${filter}`, undefined, { shallow: true });
+    };
+
     return (
         <div className={styles.layoutContainer}>
             <nav className={styles.projectNav}>
@@ -247,9 +254,10 @@ const handleMouseEnter = (slug, type) => {
 
                         {typeOneExpanded && (
     <div className={styles.projectListDark}>
+        <div>
         {Object.keys(groupedProjects).sort().reverse().map((year: string) => (
             <div key={year}>
-                <p className={styles.time}>{year}</p>
+                <h6 className={styles.time}>{year}</h6>
                 <ul>
                     {groupedProjects[year].map((project: any, index: number) => (
                         <li
@@ -280,9 +288,20 @@ const handleMouseEnter = (slug, type) => {
                         </li>
                     ))}
                 </ul>
-                <div style={{ marginTop: '20px' }}></div> 
+                <div style={{ marginTop: '1vh' }}></div> 
+                    
             </div>
         ))}
+
+        </div>
+        <div 
+           className={cn(`${styles.checkAllLink} ${styles.whiteText}`)}
+          onClick={() => handleCheckAllClick('industrial-design')}
+        >
+          <h6>Check All Industrial Design Works</h6>
+        </div>
+       
+    
     </div>
 )}
                     </div>
@@ -308,9 +327,10 @@ const handleMouseEnter = (slug, type) => {
                         </button>
                         {typeTwoExpanded && (
     <div className={styles.projectListLight}>
+        <div>
         {Object.keys(groupedProjectsTypeTwo).sort().reverse().map(year => (
             <div key={year}>
-                <p className={styles.time}>{year}</p>
+                <h6 className={styles.time}>{year}</h6>
                 <ul>
                     {groupedProjectsTypeTwo[year].map((project) => (
                         <li
@@ -342,8 +362,17 @@ const handleMouseEnter = (slug, type) => {
                     ))}
                 </ul>
                 <div style={{ marginTop: '20px' }}></div> 
+                
             </div>
+            
         ))}
+           </div>
+         <div 
+        className={cn(`${styles.checkAllLink} ${styles.blackText}`)}
+          onClick={() => handleCheckAllClick('graphic-design')}
+        >
+          <h6>Check All Graphic Design Works</h6>
+        </div>
     </div>
 )}
                     </div>

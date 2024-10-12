@@ -27,29 +27,53 @@ const IndexPage: React.FC<Props> = ({ data }) => {
     const [selectedProjectIndex, setSelectedProjectIndex] = useState<
         number | null
     >(null)
-    const handleProjectSelect = (index: number) => {
-        setSelectedProjectIndex(index)
-    }
-
     const [filter, setFilter] = useState('All Works') // 添加过滤状态
+    const router = useRouter()
 
-    const handleLabelClick = (label) => {
-        setFilter(label)
+    useEffect(() => {
+        const handleRouteChange = (url: string) => {
+            if (url.startsWith('/#work-section')) {
+                const filterParam = new URLSearchParams(url.split('?')[1]).get('filter');
+                if (filterParam === 'industrial-design') {
+                    setFilter('Industrial Design');
+                } else if (filterParam === 'graphic-design') {
+                    setFilter('Graphic Design');
+                }
+                document.getElementById('work-section')?.scrollIntoView({ behavior: 'smooth' });
+            }
+        };
+
+        router.events.on('routeChangeComplete', handleRouteChange);
+
+        // 初始加载时也检查 URL
+        handleRouteChange(router.asPath);
+
+        return () => {
+            router.events.off('routeChangeComplete', handleRouteChange);
+        };
+    }, [router]);
+
+    const handleLabelClick = (label: string) => {
+        setFilter(label);
+        let filterParam = '';
+        if (label === 'Industrial Design') filterParam = 'industrial-design';
+        else if (label === 'Graphic Design') filterParam = 'graphic-design';
+        
+        if (filterParam) {
+            router.push(`/#work-section?filter=${filterParam}`, undefined, { shallow: true });
+        } else {
+            router.push('/#work-section', undefined, { shallow: true });
+        }
     }
     const filteredProjects = selectedProjects.filter((project) => {
         if (filter === 'All Works') return true
         return project.types === filter
     })
 
-    const router = useRouter()
-
-    useEffect(() => {
-        // 检查 URL 中是否有 #work-section
-        if (router.asPath === '/#work-section') {
-            // 如果有，滚动到 Work 部分
-            document.getElementById('work-section')?.scrollIntoView({ behavior: 'smooth' })
-        }
-    }, [router.asPath])
+    const handleProjectSelect = (projectId: string) => {
+        // 在这里添加处理项目选择的逻辑
+        console.log('选中的项目ID:', projectId);
+    };
 
     return (
         <StoreProvider>
@@ -84,7 +108,8 @@ const IndexPage: React.FC<Props> = ({ data }) => {
                                     label2="Industrial Design"
                                     label3="Graphic Design"
                                     classname={styles.projTitle}
-                                    onLabelClick={handleLabelClick} // 传递回调函数
+                                    onLabelClick={handleLabelClick}
+                                    activeLabel={filter}
                                 />
                             </div>
                             {filteredProjects.map((proj, idx: number) => (

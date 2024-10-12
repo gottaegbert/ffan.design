@@ -124,15 +124,20 @@
 /* Project list styling */
 .time{
   padding-top: 0px;
+
 }
 .projectListDark {
+  display: flex;
+  flex-direction: column;
+  height: 75vh;
+  justify-content: space-between;
   padding: 0px 48px;
   flex-grow: 1;
   overflow-y: auto;
   width: 25vw;
 }
 
-。
+
 
 .projectListDark li {
   cursor: pointer;
@@ -146,6 +151,11 @@
 
 /* Project list styling */
 .projectListLight {
+  display: flex;
+  flex-direction: column;
+  height: 75vh;
+  justify-content: space-between;
+
   padding: 0px 48px;
   flex-grow: 1;
     width: 25vw;
@@ -174,3 +184,17 @@
 .titleIndented {
   padding-left: 2em; // 增加两格缩进
 }
+
+
+
+
+
+.checkAllLink{
+  cursor: pointer;
+  &:hover{
+    text-decoration: underline;
+  }
+  
+  
+}
+
