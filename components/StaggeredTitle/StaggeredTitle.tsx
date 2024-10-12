@@ -2,7 +2,7 @@ import * as React from "react";
 import styles from "./StaggeredTitle.module.scss";
 import cn from "classnames";
 import { gsap } from "gsap/dist/gsap";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 type Props = {
@@ -11,7 +11,7 @@ type Props = {
   label3: string;
   classname?: string;
   onLabelClick: (label: string) => void;
-  activeLabel: string; // 添加这个属性
+  activeLabel?: string; // 添加这个属性
 };
 
 gsap.registerPlugin(ScrollTrigger);
