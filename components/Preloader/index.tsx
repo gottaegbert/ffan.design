@@ -1,24 +1,14 @@
 import { useEffect, useState } from 'react';
 import { opacity, slideUp } from './animation';
-import styles from './style.module.scss';
+import styles from './preloader.module.scss';
 import { motion } from 'framer-motion';
 
 const preloaderWords: string[] = [
   'Loading🎬',
-  'Discovering🔭',
-
-  'Defining🔍',
-
-  'Designing🎨',
- 
-  'Prototyping🎱',
- 
-  'Testing🧪',
-
-  'Developing🚀',
+  'ffandesign'
 
 ];
-const Preloader = () => {
+const Preloader = ({progress}) => {
   const [index, setIndex] = useState(0); // Index for the array of words
   const [dimension, setDimension] = useState({ width: 0, height: 0 }); // Window dimensions
 
@@ -58,10 +48,13 @@ const Preloader = () => {
     <motion.div variants={slideUp} initial="initial" exit="exit" className={styles.introduction}>
       {dimension.width > 0 && (
         <>
-          <motion.p variants={opacity} initial="initial" animate="animate">
-            {preloaderWords[index]}
-          </motion.p>
+          <div className={styles.preloader}>
+          <p>Loading... {progress.toFixed(0)}%</p>
+          <div className={styles.loadingBar} style={{ width: `${progress}%` }}></div>
+          </div>
+       
           <svg>
+
             <motion.path variants={curve} initial="initial" exit="exit"></motion.path>
           </svg>
         </>

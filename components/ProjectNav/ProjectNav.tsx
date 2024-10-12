@@ -402,6 +402,7 @@ const handleMouseEnter = (slug, type) => {
                                 src={'/' + projects[displayedProjectIndex].image} // Show image based on hovered or selected index
                                 alt={`Main image for ${projects[displayedProjectIndex].title}`}
                                 className={`${styles.projectImage} ${typeOneExpanded ? styles.imageTop : styles.imageBottom}`}
+                                  loading="lazy"
                                 height={
                                     projects[displayedProjectIndex].height || '720'
                                 }
