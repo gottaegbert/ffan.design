@@ -144,13 +144,13 @@ selectedAwards:
       awardlevel: "Red Dot Award: Design Concept"
       awardname: Red Dot
 
-    - title: "#"
+    - title: Intelligent Water Delivery Robot
       image: assets/images/awards/if.jpg
-      time: 2021
+      time: 2023
       types: Industrial Design
-      designer: "#"
-      awardlevel: "#"
-      awardname: If Award
+      designer: Fan Zheng
+      awardlevel: Product Concept /If Design Award
+      awardname: If Design Award
     
     - title: Medical Integrated Bathroom Cabinet
       image: assets/images/awards/idea.jpg
