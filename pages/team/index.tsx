@@ -14,7 +14,7 @@ import BasicMeta from '../../utils/BasicMeta'
 import { aboutPageData, selectedProject } from '../../utils/customTypes'
 import RightNav from '../../components/RightNav/RightNav'
 import logoSrc from '../../public/assets/images/ffandesign.svg'
-import Image from 'next/legacy/image'
+import Image from 'next/image'
 import Footer from '../../components/Footer/Footer'
 
 gsap.registerPlugin(ScrollTrigger)
