@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react'
 import styles from './ProjectNav.module.scss'
-import Image from 'next/image'
+import Image from 'next/legacy/image'
 import { gsap } from 'gsap/dist/gsap'
 import cn from 'classnames'
 import PlusIcon from '../../public/assets/images/+.svg';
@@ -399,10 +399,12 @@ const handleMouseEnter = (slug, type) => {
                             />
                         ) : (
                             <Image
+                            priority
+                            placeholder='blur'
+                            blurDataURL={`/${projects[displayedProjectIndex].image}`}
                                 src={'/' + projects[displayedProjectIndex].image} // Show image based on hovered or selected index
                                 alt={`Main image for ${projects[displayedProjectIndex].title}`}
                                 className={`${styles.projectImage} ${typeOneExpanded ? styles.imageTop : styles.imageBottom}`}
-                                  loading="lazy"
                                 height={
                                     projects[displayedProjectIndex].height || '720'
                                 }

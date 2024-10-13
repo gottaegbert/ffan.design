@@ -1,7 +1,7 @@
 import * as React from "react";
 import styles from "../CaseStudy/CaseStudy.module.scss";
 import cn from "classnames";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Link from "next/link";
 
 type Props = {

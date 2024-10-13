@@ -11,7 +11,7 @@ import { StoreProvider } from "../../utils/StoreProvider";
 import { gePageData } from "../../utils/pages";
 import BasicMeta from "../../utils/BasicMeta";
 import { project, selectedProject } from "../../utils/customTypes";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import RightNav from "../../components/RightNav/RightNav";
 
 type Props = {
@@ -36,6 +36,24 @@ const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
     const match = url.match(/vimeo\.com\/(\d+)/);
     return match ? match[1] : null;
   };
+  useEffect(() => {
+    gsap.set(title.current, { opacity: 1, yPercent:100});
+    gsap.to(title.current, {
+      duration: 1,
+      yPercent: 0,
+      ease: "power4",
+      stagger: 0.1,
+      delay: 0.2,
+    });
+    gsap.to(imgForeground.current, {
+      duration: 1,
+      width: 0,
+      ease: "power4",
+      stagger: 0.2,
+      delay: 0.2,
+    });
+  }, []);
+
 
   return (
     <StoreProvider>
@@ -95,13 +113,22 @@ const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
               />
             )
           ) : data.image ? (
+            <div className={styles.imageContainer}>
             <Image
               src={`/${data.image}`}
               alt={data.title}
-              width={1920}
-              height={1080}
+              layout="responsive"
+              height={9}
+              width={16}
+              objectFit="contain"
+              placeholder="blur"
+              priority
+              blurDataURL={`/${data.image}`}
               className={styles.projImage}
-            />
+            /> 
+             <div ref={imgForeground} className={styles.imgForeground}></div>
+            </div>
+            
           ) : null}
 
           <div className={styles.prjTitleContainer}>
@@ -159,9 +186,7 @@ const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
                             alt={data.title}
                           
                             height={1080}
-                            width={1920}
-                  
-                            
+                            width={1920}          
                             placeholder="blur"
                             blurDataURL={`/${content}`}
                             className={styles.projImage}
