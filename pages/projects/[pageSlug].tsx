@@ -181,16 +181,20 @@ const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
                             // your video css styles
                           />
                         ) : (
+                          <div className={styles.imageContainer}>
                           <Image
                             src={`/${content}`}
                             alt={data.title}
-                          
-                            height={1080}
-                            width={1920}          
+                            layout="responsive"
+                            height={9}
+                            width={16}
+                            objectFit="contain"
+                                   
                             placeholder="blur"
                             blurDataURL={`/${content}`}
                             className={styles.projImage}
                           />
+                      </div>
                         )}
                       </div>
                       {idx === 0 && data.designconcept && (

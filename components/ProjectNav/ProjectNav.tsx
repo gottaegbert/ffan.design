@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react'
 import styles from './ProjectNav.module.scss'
-import Image from 'next/legacy/image'
+import Image from 'next/image'
 import { gsap } from 'gsap/dist/gsap'
 import cn from 'classnames'
 import PlusIcon from '../../public/assets/images/+.svg';
@@ -411,6 +411,7 @@ const handleMouseEnter = (slug, type) => {
                                 width={
                                     projects[displayedProjectIndex].width || '1280'
                                 }
+                                
                             />
                         )}
                     </div>
