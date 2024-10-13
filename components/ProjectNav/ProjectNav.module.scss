@@ -22,13 +22,7 @@
 }
 
 
-.imageContainer {
-  display: flex;
-  z-index: -1;
-}
-
 .projectImage{
-    transition: opacity 0.5s ease-in-out;
   object-fit: cover;
 }
 

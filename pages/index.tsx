@@ -25,9 +25,7 @@ const MAX_LOADING_TIME = 10000; // 最长加载时间，10秒
 
 const IndexPage: React.FC<Props> = ({ data }) => {
     const { selectedProjects } = data
-    const [selectedProjectIndex, setSelectedProjectIndex] = useState<
-        number | null
-    >(null)
+
     const [filter, setFilter] = useState('All Works') // 添加过滤状态
     const router = useRouter()
     const [isLoading, setIsLoading] = useState(true)

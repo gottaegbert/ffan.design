@@ -11,8 +11,6 @@ const ProjectNav = ({ projects, onSelect }) => {
     const [hoveredProjectIndex, setHoveredProjectIndex] = useState(null) // New state for hover
     const [typeOneExpanded, setTypeOneExpanded] = useState(true)
     const [typeTwoExpanded, setTypeTwoExpanded] = useState(false)
-    const [imageLoaded, setImageLoaded] = useState(false)
-    const [isSlidingOut, setIsSlidingOut] = useState(false)
     const [isTypeSwitching, setIsTypeSwitching] = useState(false);
     const imageRef = useRef<HTMLDivElement | null>(null) // Image container ref
     const [intervalId, setIntervalId] = useState(null);
@@ -91,14 +89,12 @@ const groupedProjectsTypeTwo = groupProjectsByYear(filteredProjectsByType(typeTw
 
     const handleToggleSection = (type) => {
         setIsUserInteracting(true);
-        setIsSlidingOut(true);
         setIsTypeSwitching(true);
 
         // 添加延迟
         setTimeout(() => {
             const tl = gsap.timeline({
                 onComplete: () => {
-                    setIsSlidingOut(false);
                     setIsUserInteracting(false);
                     setIsTypeSwitching(false);
                 }
@@ -148,7 +144,6 @@ const groupedProjectsTypeTwo = groupProjectsByYear(filteredProjectsByType(typeTw
                 }
             }
 
-            setImageLoaded(true);
         }, 300); // 300毫秒的延迟，你可以根据需要调整这个值
     };
 // 修改handleSelect和handleMouseEnter函数，使它们接收一个slug参数，然后使用这个slug来查找项目的索引
@@ -167,7 +162,6 @@ const handleMouseEnter = (slug, type) => {
     setHoveredProjectIndex(projectIndex); // 添加这行
     setSelectedProjectIndex(projectIndex);
     onSelect(projectIndex);
-    setImageLoaded(true);
 };
 
     const handleMouseLeave = () => {

@@ -40,14 +40,7 @@
         display: block; // 添加 display: block;。这会移除图片下方可能存在的小空隙。
       }
 
-      .imgForeground {
-        position: absolute;
-        left: 0;
-        top: 0;
-        height: 0;
-        width: 100%;
-        background-color: var(--off-white);
-      }
+
     }
       }
     }

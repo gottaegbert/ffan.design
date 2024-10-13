@@ -50,7 +50,6 @@ const CaseStudy: React.FC<selectedProject> = ({
                             />
                         )}
 
-                        <div className={styles.imgForeground} ref={ref}></div>
                     </div>
 
                     <div className={cn(styles.bottom)}>

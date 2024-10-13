@@ -1,5 +1,5 @@
 {
-  "name": "next-folio",
+  "name": "ffandesign",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -9,25 +9,18 @@
   },
   "dependencies": {
     "@netlify/plugin-nextjs": "^4.41.3",
-    "@react-three/drei": "9.57.0",
-    "@react-three/fiber": "8.11.9",
     "@types/js-yaml": "^4.0.9",
-    "@types/three": "^0.150.2",
     "@vercel/analytics": "^0.1.11",
-    "babel-plugin-macros": "3.1.0",
     "classnames": "^2.5.1",
     "framer-motion": "^10.18.0",
     "gsap": "^3.12.5",
     "js-yaml": "^4.1.0",
-    "locomotive-scroll": "^4.1.4",
     "next": "13.1.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-markdown": "8.0.5",
     "react-youtube": "10.1.0",
-    "sass": "1.58.3",
-    "styled-components": "^6.1.13",
-    "three": "0.150.1"
+    "sass": "1.58.3"
   },
   "devDependencies": {
     "@types/node": "18.14.6",
