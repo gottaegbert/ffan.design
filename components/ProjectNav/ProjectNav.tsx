@@ -5,6 +5,7 @@ import { gsap } from 'gsap/dist/gsap'
 import cn from 'classnames'
 import PlusIcon from '../../public/assets/images/+.svg';
 import { useRouter } from 'next/router';
+import { debounce } from 'lodash';
 
 const ProjectNav = ({ projects, onSelect }) => {
     const [selectedProjectIndex, setSelectedProjectIndex] = useState(null)
@@ -21,6 +22,19 @@ const ProjectNav = ({ projects, onSelect }) => {
 
     const typeOne = 'Industrial Design'
     const typeTwo = 'Graphic Design'
+
+    // 在组件顶部添加这个函数
+    const debouncedHandleMouseEnter = debounce((slug) => {
+        if (isTypeSwitching) return;
+        setIsUserInteracting(true);
+        clearInterval(intervalId);
+        const projectIndex = projects.findIndex(
+            (project) => project.slug === slug
+        );
+        setHoveredProjectIndex(projectIndex);
+        setSelectedProjectIndex(projectIndex);
+        onSelect(projectIndex);
+    }, 100); // 100ms 的延迟
 
     //轮播
     const goToNextProject = () => {
@@ -152,21 +166,13 @@ const handleSelect = (slug) => {
 };
 
 const handleMouseEnter = (slug, type) => {
-    if (isTypeSwitching) return;
-    setIsUserInteracting(true);
-    clearInterval(intervalId);
-    const projectIndex = projects.findIndex(
-        (project) => project.slug === slug
-    );
-   
-    setHoveredProjectIndex(projectIndex); // 添加这行
-    setSelectedProjectIndex(projectIndex);
-    onSelect(projectIndex);
+    debouncedHandleMouseEnter(slug, type);
 };
 
     const handleMouseLeave = () => {
+        debouncedHandleMouseEnter.cancel(); // 取消未执行的防抖函数
         setIsUserInteracting(false);
-        setHoveredProjectIndex(null); // 添加这行
+        setHoveredProjectIndex(null);
         const id = setInterval(goToNextProject, 5000);
         setIntervalId(id);
     }
@@ -381,11 +387,12 @@ const handleMouseEnter = (slug, type) => {
                 {projects[displayedProjectIndex] && (
                     <div
                         className={`${styles.imageContainer} ${typeOneExpanded ? styles.imageTop : styles.imageBottom}`}
-                        ref={imageRef} // Reference to the image container
+                        ref={imageRef}
                     >
-                          {projects[displayedProjectIndex].image.endsWith('.mp4') ? (
+                        {projects[displayedProjectIndex].image.endsWith('.mp4') ? (
                             <video
-                                src={'/' + projects[displayedProjectIndex].image} // Show video based on hovered or selected index
+                                key={projects[displayedProjectIndex].slug}
+                                src={'/' + projects[displayedProjectIndex].image}
                                 autoPlay
                                 loop
                                 muted
@@ -395,19 +402,14 @@ const handleMouseEnter = (slug, type) => {
                             />
                         ) : (
                             <Image
-                            priority
-                            placeholder='blur'
-                            blurDataURL={`/${projects[displayedProjectIndex].image}`}
-                                src={'/' + projects[displayedProjectIndex].image} // Show image based on hovered or selected index
+                                key={projects[displayedProjectIndex].slug}
+                                priority
+                              
+                                src={'/' + projects[displayedProjectIndex].image}
                                 alt={`Main image for ${projects[displayedProjectIndex].title}`}
                                 className={`${styles.projectImage} ${typeOneExpanded ? styles.imageTop : styles.imageBottom}`}
-                                height={
-                                    projects[displayedProjectIndex].height || '720'
-                                }
-                                width={
-                                    projects[displayedProjectIndex].width || '1280'
-                                }
-                                
+                                height={projects[displayedProjectIndex].height || '720'}
+                                width={projects[displayedProjectIndex].width || '1280'}
                             />
                         )}
                     </div>

@@ -24,6 +24,12 @@
 
 .projectImage{
   object-fit: cover;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.imageContainer {
+  transition: opacity 0.3s ease-in-out;
+  z-index: -9;
 }
 
 .imageTop {
