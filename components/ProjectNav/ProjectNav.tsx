@@ -157,20 +157,22 @@ const handleSelect = (slug) => {
 };
 
 const handleMouseEnter = (slug, type) => {
-    if (isTypeSwitching) return; // 如果正在切换类型，不触发 hover 效果
+    if (isTypeSwitching) return;
     setIsUserInteracting(true);
     clearInterval(intervalId);
     const projectIndex = projects.findIndex(
         (project) => project.slug === slug
     );
    
+    setHoveredProjectIndex(projectIndex); // 添加这行
     setSelectedProjectIndex(projectIndex);
     onSelect(projectIndex);
     setImageLoaded(true);
 };
 
     const handleMouseLeave = () => {
-        setIsUserInteracting(false); // 添加这行
+        setIsUserInteracting(false);
+        setHoveredProjectIndex(null); // 添加这行
         const id = setInterval(goToNextProject, 5000);
         setIntervalId(id);
     }
@@ -212,15 +214,15 @@ const handleMouseEnter = (slug, type) => {
 
     // Trigger GSAP animation on image change
     useEffect(() => {
-        if (imageRef.current) {
-            // Fade out the current image
+        const index = hoveredProjectIndex !== null ? hoveredProjectIndex : selectedProjectIndex;
+        if (index !== null && imageRef.current) {
             gsap.fromTo(
                 imageRef.current,
                 { opacity: 0.3 },
                 { opacity: 1, duration: 0.4 }
-            )
+            );
         }
-    }, [displayedProjectIndex]) // When displayedProjectIndex changes, animate the new image
+    }, [hoveredProjectIndex, selectedProjectIndex]);
 
     const handleCheckAllClick = (filter: string) => {
         router.push(`/#work-section?filter=${filter}`, undefined, { shallow: true });
