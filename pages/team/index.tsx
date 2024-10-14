@@ -27,6 +27,8 @@ const Team: React.FC<Props> = ({ data }) => {
     const [expandedDescriptions, setExpandedDescriptions] = useState<{ [key: number]: boolean }>({});
     const spaceRef = useRef<HTMLDivElement>(null)
     const containerRef = useRef<HTMLDivElement>(null)
+    const videoRef = useRef<HTMLVideoElement>(null);
+    const [hasPlayed, setHasPlayed] = useState(false);
 
     const toggleDescription = (idx: number) => {
         setExpandedDescriptions(prev => ({
@@ -55,6 +57,33 @@ const Team: React.FC<Props> = ({ data }) => {
 
     const { aboutus, ourwork } = data
     const refTitle = React.createRef<HTMLSpanElement>()
+
+    useEffect(() => {
+        const options = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.5 // 当视频元素50%可见时触发
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting && !hasPlayed && videoRef.current) {
+                    videoRef.current.play();
+                    setHasPlayed(true);
+                }
+            });
+        }, options);
+
+        if (videoRef.current) {
+            observer.observe(videoRef.current);
+        }
+
+        return () => {
+            if (videoRef.current) {
+                observer.unobserve(videoRef.current);
+            }
+        };
+    }, [hasPlayed]);
 
     return (
         <StoreProvider>
@@ -123,19 +152,18 @@ const Team: React.FC<Props> = ({ data }) => {
                         </div>
                     </div>
                     <div className={styles.videoBackground}>
-                    <video
-                        autoPlay
-                        loop
-                        muted
-                    >
-                        <source src="/assets/images/team/ditu.mp4" type="video/mp4" />
-                        您的浏览器不支持视频标签。
-                    </video>
+                        <video
+                            ref={videoRef}
+                            
+                            muted
+                            playsInline // 添加这个属性以支持移动设备
+                        >
+                            <source src="/assets/images/team/ditu.mp4" type="video/mp4" />
+                            您的浏览器不支持视频标签。
+                        </video>
                     </div>
                 </div>
          
-                                   {/* 新添加的视频背景部分 */}
-                
                    
              
                 <section>
@@ -228,4 +256,3 @@ export const getStaticProps: GetStaticProps = async () => {
         },
     }
 }
-

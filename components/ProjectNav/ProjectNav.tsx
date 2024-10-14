@@ -3,9 +3,24 @@ import styles from './ProjectNav.module.scss'
 import Image from 'next/image'
 import { gsap } from 'gsap/dist/gsap'
 import cn from 'classnames'
-import PlusIcon from '../../public/assets/images/+.svg';
+
 import { useRouter } from 'next/router';
 import { debounce } from 'lodash';
+
+const PlusIcon: React.FC<{ color: string; className?: string }> = ({ color, className }) => (
+    <svg 
+      width="36" 
+      height="36" 
+      viewBox="0 0 36 36" 
+      fill="none" 
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+    >
+      <line y1="18" x2="36" y2="18" stroke={color} strokeWidth="4"/>
+      <line x1="18" y1="36" x2="18" y2="0" stroke={color} strokeWidth="4"/>
+    </svg>
+  );
+
 
 const ProjectNav = ({ projects, onSelect }) => {
     const [selectedProjectIndex, setSelectedProjectIndex] = useState(null)
@@ -62,7 +77,7 @@ const ProjectNav = ({ projects, onSelect }) => {
     };
 
     useEffect(() => {
-        const id = setInterval(goToNextProject, 5000); // 将间隔改为 5 秒
+        const id = setInterval(goToNextProject, 3000); // 将间隔改为 5 秒
         setIntervalId(id);
         return () => clearInterval(id);
     }, [selectedProjectIndex, isUserInteracting]);
@@ -213,16 +228,16 @@ const handleMouseEnter = (slug, type) => {
     }, [projects, selectedProjectIndex, onSelect])
 
     // Trigger GSAP animation on image change
-    useEffect(() => {
-        const index = hoveredProjectIndex !== null ? hoveredProjectIndex : selectedProjectIndex;
-        if (index !== null && imageRef.current) {
-            gsap.fromTo(
-                imageRef.current,
-                { opacity: 0.3 },
-                { opacity: 1, duration: 0.4 }
-            );
-        }
-    }, [hoveredProjectIndex, selectedProjectIndex]);
+    // useEffect(() => {
+    //     const index = hoveredProjectIndex !== null ? hoveredProjectIndex : selectedProjectIndex;
+    //     if (index !== null && imageRef.current) {
+    //         gsap.fromTo(
+    //             imageRef.current,
+    //             { opacity: 0 },
+    //             { opacity: 1, duration: 0.1 }
+    //         );
+    //     }
+    // }, [hoveredProjectIndex, selectedProjectIndex]);
 
     const handleCheckAllClick = (filter: string) => {
         router.push(`/#work-section?filter=${filter}`, undefined, { shallow: true });
@@ -250,7 +265,7 @@ const handleMouseEnter = (slug, type) => {
                           
                             {typeOne}
                             {!typeOneExpanded && (
-      <Image src={PlusIcon} alt="Expand" className={styles.plusIcon} />
+                                <PlusIcon color="#D9D9D9" className={styles.plusIcon} />
     )}
                             </div>
                         </button>
@@ -326,7 +341,8 @@ const handleMouseEnter = (slug, type) => {
                           >
                             {typeTwo}
                             {!typeTwoExpanded && (
-      <Image src={PlusIcon} alt="Expand" className={styles.plusIcon} />
+                                    <PlusIcon color='#797979'
+                            className={styles.plusIconExpanded} />
     )}
                             </div>
                         </button>
