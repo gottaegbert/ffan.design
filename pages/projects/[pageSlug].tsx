@@ -171,15 +171,22 @@ const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
                   const isVideo = content.endsWith(".mp4");
 
                   return (
-                    <React.Fragment key={"stack" + idx}>
+                    <React.Fragment key={ idx}>
                       <div className={cn(styles.skillsCell, "fade-in-up")}>
                         {isVideo ? (
+                           <div className={styles.imageContainer}>
                           <video
                             src={`/${content}`}
-                            controls
+                            autoPlay
+                            loop
+                            muted
+                            
+                            controls={false} 
+                            width="100%" 
                             className={styles.projImage}
-                            // your video css styles
                           />
+                              <div style={{ marginTop: '12px' }}></div> 
+                         </div>
                         ) : (
                           <div className={styles.imageContainer}>
                           <Image
@@ -194,6 +201,9 @@ const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
                             blurDataURL={`/${content}`}
                             className={styles.projImage}
                           />
+                            <div style={{ marginTop: '24px' }}></div> 
+                                          
+
                       </div>
                         )}
                       </div>
@@ -205,6 +215,8 @@ const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
                         </div>
                      
                       )}
+                    
+
                     </React.Fragment>
                   );
                 })}

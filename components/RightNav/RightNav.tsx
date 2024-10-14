@@ -1,11 +1,33 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from './RightNav.module.scss'
 import Link from 'next/link'
-import { useRouter } from 'next/router'  // 添加这行
+import { useRouter } from 'next/router'
 
 const RightNav = () => {
-    const router = useRouter()  // 添加这行
-    const [isRightNavVisible, setIsRightNavVisible] = useState(false) // 控制右侧导航栏是否可见
+    const router = useRouter()
+    const [isRightNavVisible, setIsRightNavVisible] = useState(false)
+    
+    useEffect(() => {
+        // 检查是否在主页
+        const isHomePage = router.pathname === '/'
+        
+        if (isHomePage) {
+            // 如果是主页，立即展开导航栏
+            setIsRightNavVisible(true)
+            
+            // 设置定时器，3秒后关闭导航栏
+            const timer = setTimeout(() => {
+                setIsRightNavVisible(false)
+            }, 3000)
+
+            // 在组件卸载或路由变化时清除定时器
+            return () => clearTimeout(timer)
+        } else {
+            // 如果不是主页，确保导航栏是关闭的
+            setIsRightNavVisible(false)
+        }
+    }, [router.pathname]) // 依赖于路由路径，这样在路由变化时会重新执行
+
     const toggleRightNav = () => {
         setIsRightNavVisible(!isRightNavVisible)
     }
@@ -13,19 +35,17 @@ const RightNav = () => {
     const handleHomeClick = (e) => {
         e.preventDefault()
         router.push('/')
-        setIsRightNavVisible(false)  // 关闭导航栏
+        setIsRightNavVisible(false)
     }
 
     const handleWorkClick = (e) => {
         e.preventDefault()
         if (router.pathname === '/') {
-            // 如果已经在主页，直接滚动到 Work 部分
             document.getElementById('work-section')?.scrollIntoView({ behavior: 'smooth' })
         } else {
-            // 如果不在主页，先导航到主页，然后滚动到 Work 部分
             router.push('/#work-section')
         }
-        setIsRightNavVisible(false)  // 关闭导航栏
+        setIsRightNavVisible(false)
     }
 
     return (
@@ -35,7 +55,7 @@ const RightNav = () => {
                 className={`${styles.hamburgerMenu} ${isRightNavVisible ? styles.graphicDesignExpanded : ''}`}
                 onClick={toggleRightNav}
             >
-                &#9776; {/* Unicode for hamburger icon */}
+                &#9776;
             </button>
 
             {/* 右侧导航栏 */}
