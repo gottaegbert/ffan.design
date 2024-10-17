@@ -10,7 +10,7 @@
   align-items: center; // 添加这一行
   background: none;
   border: none;
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 2vw, 2rem); // 使用 clamp 函数来设置字体大小
   cursor: pointer;
   z-index: 10;
   color: #797979;

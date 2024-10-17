@@ -138,12 +138,12 @@ h5 {
   }
 }
 h6 {
-  font-size: calc(1vh + 0.2vw + 10px);
+  font-size: clamp(14px,2vh, 23px); 
   line-height: 1.2;
   font-family: $font-regular;
   
   @media only screen and (min-width: $breakpoint-md) {
-    font-size: calc(1vh + 0.2vw + 8px);
+    font-size:  clamp(14px,2vh, 23px); 
   }
 }
 
