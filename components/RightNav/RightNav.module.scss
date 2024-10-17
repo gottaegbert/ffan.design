@@ -34,7 +34,7 @@
   width: 360px;
   height: 100%;
   background-color: var(--black);
-  transition: right 0.3s ease;
+  transition: right 2s ease;
   display: flex;
   flex-direction: column;
   padding-left: 48px;
@@ -48,8 +48,12 @@
 
 .rightNav.visible {
   right: 148px; /* 显示导航栏 */
+  transition: right 1s ease;
 }
 
+.rightNav.noTransition {
+  transition: none !important;
+}
 .rightNav ul {
   padding-top: 10vh;
   list-style-type: none;
@@ -57,7 +61,7 @@
 
 .rightNav li  {
   border-bottom: 1px solid #ccc; /* 添加底部边框作为分割线 */
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   font-size: 1.5rem;
   cursor: pointer;
 }
@@ -72,10 +76,10 @@
 
 .contactInfo {
   margin-top: auto; /* 放在底部 */
-  color: #aaa;
+  color: var(--font);
 }
 
 .contactInfo p {
-  margin: 5px 0;
+  line-height: 1.2;
    font-size: clamp(0.5rem, 2vw, 0.75rem); 
 }

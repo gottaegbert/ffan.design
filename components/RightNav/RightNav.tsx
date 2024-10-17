@@ -6,6 +6,7 @@ import { useRouter } from 'next/router'
 const RightNav = () => {
     const router = useRouter()
     const [isRightNavVisible, setIsRightNavVisible] = useState(false)
+    const [isInitialLoad, setIsInitialLoad] = useState(true)
     
     useEffect(() => {
         // 检查是否在主页
@@ -18,6 +19,7 @@ const RightNav = () => {
             // 设置定时器，3秒后关闭导航栏
             const timer = setTimeout(() => {
                 setIsRightNavVisible(false)
+                setIsInitialLoad(false) // 在这里设置 isInitialLoad 为 false
             }, 3000)
 
             // 在组件卸载或路由变化时清除定时器
@@ -25,6 +27,7 @@ const RightNav = () => {
         } else {
             // 如果不是主页，确保导航栏是关闭的
             setIsRightNavVisible(false)
+            setIsInitialLoad(false) // 非主页时也设置 isInitialLoad 为 false
         }
     }, [router.pathname]) // 依赖于路由路径，这样在路由变化时会重新执行
 
@@ -64,7 +67,9 @@ const RightNav = () => {
 
             {/* 右侧导航栏 */}
             <aside
-                className={`${styles.rightNav} ${isRightNavVisible ? styles.visible : ''}`}
+                className={`${styles.rightNav} 
+                            ${isRightNavVisible ? styles.visible : ''} 
+                            ${isInitialLoad ? styles.noTransition : ''}`}
             >
                 <ul>
                     <li>
