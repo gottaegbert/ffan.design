@@ -35,12 +35,23 @@ const IndexPage: React.FC<Props> = ({ data }) => {
         const handleRouteChange = (url: string) => {
             if (url.startsWith('/#work-section')) {
                 const filterParam = new URLSearchParams(url.split('?')[1]).get('filter');
-                if (filterParam === 'industrial-design') {
-                    setFilter('Industrial Design');
-                } else if (filterParam === 'graphic-design') {
-                    setFilter('Graphic Design');
+                switch (filterParam) {
+                    case 'industrial-design':
+                        setFilter('Industrial Design');
+                        break;
+                    case 'graphic-design':
+                        setFilter('Graphic Design');
+                        break;
+                    default:
+                        setFilter('All Works');
                 }
-                document.getElementById('work-section')?.scrollIntoView({ behavior: 'smooth' });
+
+                setTimeout(() => {
+                    const workSection = document.getElementById('work-section');
+                    if (workSection) {
+                        workSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }, 100);
             }
         };
 
@@ -102,9 +113,28 @@ const IndexPage: React.FC<Props> = ({ data }) => {
         setIsLoading(false);
     };
 
-    if (isLoading) {
-        return <Preloader progress={loadingProgress} onSkip={handleSkip} />;
-    }
+    useEffect(() => {
+        const handleInitialScroll = () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const section = urlParams.get('section');
+            if (section === 'work') {
+                setTimeout(() => {
+                    const workSection = document.getElementById('work-section');
+                    if (workSection) {
+                        workSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }, 300);
+            }
+        };
+
+        handleInitialScroll();
+
+        router.events.on('routeChangeComplete', handleInitialScroll);
+
+        return () => {
+            router.events.off('routeChangeComplete', handleInitialScroll);
+        };
+    }, [router]);
 
     const handleLabelClick = (label: string) => {
         setFilter(label);

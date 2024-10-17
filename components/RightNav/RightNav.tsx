@@ -43,7 +43,11 @@ const RightNav = () => {
         if (router.pathname === '/') {
             document.getElementById('work-section')?.scrollIntoView({ behavior: 'smooth' })
         } else {
-            router.push('/#work-section')
+            router.push('/?section=work').then(() => {
+                setTimeout(() => {
+                    document.getElementById('work-section')?.scrollIntoView({ behavior: 'smooth' })
+                }, 300)
+            })
         }
         setIsRightNavVisible(false)
     }
@@ -70,7 +74,7 @@ const RightNav = () => {
                     </li>
                     <li>
                         <Link href="/#work-section" onClick={handleWorkClick} className={styles.navLink}>
-                            Work
+                            Works
                         </Link>
                     </li>
                     <li>
