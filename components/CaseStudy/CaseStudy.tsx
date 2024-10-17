@@ -56,14 +56,14 @@ const CaseStudy: React.FC<selectedProject> = ({
                         <div className={'tagContainer'}>
                             {tags.map((tag, ix) => (
                                 <React.Fragment key={'tag' + ix}>
-                                    <p className={'small'}>
+                                    <p >
                                         [{tag}]
                                     </p>
                                     <p className={'small indentbig'}> {time}</p>
                                 </React.Fragment>
                             ))}
                         </div>
-                        <p className="small indent">{title}</p>
+                        <p className="indent">{title}</p>
                     </div>
                 </article>
             </a>

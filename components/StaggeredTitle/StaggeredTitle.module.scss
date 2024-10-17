@@ -11,7 +11,7 @@
   display: inline-block;;
   span {
     overflow: hidden;
-    font-size: 30px;
+    font-size:  clamp(23px,2vw, 30px); 
     font-weight: 400;
     letter-spacing: -0.25px;
     @media only screen and (min-width: $breakpoint-sm) {

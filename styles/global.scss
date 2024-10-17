@@ -149,12 +149,10 @@ h6 {
 
 p {
   font-family: $font-light;
-  font-size: 23px;
+  font-size:  clamp(14px,2vw, 23px); 
+  
   line-height: 1.4;
-  @media only screen and (min-width: $breakpoint-md) {
-    font-size: 20px;
-    line-height: 1.6;
-  }
+ 
 }
 p.small {
   font-family: $font-light;
@@ -282,6 +280,7 @@ li {
     display: inline;
     position: relative;
     margin-right: 24px;
+    font-size:  clamp(14px,2vw, 23px); 
     color: var(--dark-grey);
     text-decoration: none;
 
