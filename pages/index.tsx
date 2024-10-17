@@ -160,60 +160,66 @@ const IndexPage: React.FC<Props> = ({ data }) => {
 
     return (
         <StoreProvider>
-            <RightNav />
-            <Layout>
-                <BasicMeta url={'/'} />
-                {/* Page wrapper for two-column layout */}
-                <div className={styles.container}>
-                    <div className={styles.pageWrapper}>
-                        {/* Left-side Navigation */}
-                        <div className={styles.leftNav}>
-                            <ProjectNav
-                                projects={selectedProjects} // Pass the selectedProjects from data
-                                onSelect={handleProjectSelect} // Pass handler for project selection
-                            />
-                        </div>
-                    </div>
-
-                    <BasicMeta url={'/work'} />
-                    <section
-                        id="work-section"  // 添加这个 ID
-                        className={cn(
-                            'sectionSpacing',
-                            styles.selectedWorkContainer
-                        )}
-                    >
-                        <div className="grid">
-                            <div>
-                                <StaggeredTitle
-                                    label1="All Works"
-                                    label2="Industrial Design"
-                                    label3="Graphic Design"
-                                    classname={styles.projTitle}
-                                    onLabelClick={handleLabelClick}
-                                    activeLabel={filter}
-                                />
-                            </div>
-                            {filteredProjects.map((proj, idx: number) => (
-                                <div
-                                    key={idx}
-                                    className={cn(
-                                        'col-12 col-sm-6',
-                                        styles.caseStudyCol,
-                                        {
-                                            [styles.offsetCol]: idx === 1,
-                                        }
-                                    )}
-                                >
-                                    <CaseStudy {...proj} />
+            {isLoading ? (
+                <Preloader progress={loadingProgress} onSkip={handleSkip} />
+            ) : (
+                <>
+                    <RightNav />
+                    <Layout>
+                        <BasicMeta url={'/'} />
+                        {/* Page wrapper for two-column layout */}
+                        <div className={styles.container}>
+                            <div className={styles.pageWrapper}>
+                                {/* Left-side Navigation */}
+                                <div className={styles.leftNav}>
+                                    <ProjectNav
+                                        projects={selectedProjects} // Pass the selectedProjects from data
+                                        onSelect={handleProjectSelect} // Pass handler for project selection
+                                    />
                                 </div>
-                            ))}
+                            </div>
+
+                            <BasicMeta url={'/work'} />
+                            <section
+                                id="work-section"  // 添加这个 ID
+                                className={cn(
+                                    'sectionSpacing',
+                                    styles.selectedWorkContainer
+                                )}
+                            >
+                                <div className="grid">
+                                    <div>
+                                        <StaggeredTitle
+                                            label1="All Works"
+                                            label2="Industrial Design"
+                                            label3="Graphic Design"
+                                            classname={styles.projTitle}
+                                            onLabelClick={handleLabelClick}
+                                            activeLabel={filter}
+                                        />
+                                    </div>
+                                    {filteredProjects.map((proj, idx: number) => (
+                                        <div
+                                            key={idx}
+                                            className={cn(
+                                                'col-12 col-sm-6',
+                                                styles.caseStudyCol,
+                                                {
+                                                    [styles.offsetCol]: idx === 1,
+                                                }
+                                            )}
+                                        >
+                                            <CaseStudy {...proj} />
+                                        </div>
+                                    ))}
                    
+                                </div>
+                            <Footer />
+                            </section>
                         </div>
-                <Footer />
-                    </section>
-                </div>
-            </Layout>
+                    </Layout>
+                </>
+            )}
         </StoreProvider>
     )
 }

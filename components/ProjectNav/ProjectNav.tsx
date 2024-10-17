@@ -402,7 +402,9 @@ const handleMouseEnter = (slug, type) => {
                 {/* Image display for hovered or selected project */}
                 {projects[displayedProjectIndex] && (
                     <div
-                        className={`${styles.imageContainer} ${typeOneExpanded ? styles.imageTop : styles.imageBottom}`}
+                        className={`${styles.imageContainer} ${
+                            typeOneExpanded ? styles.imageTopDark : styles.imageBottom
+                        }`}
                         ref={imageRef}
                     >
                         {projects[displayedProjectIndex].image.endsWith('.mp4') ? (
@@ -414,16 +416,19 @@ const handleMouseEnter = (slug, type) => {
                                 muted
                                 playsInline
                                 controls={false}    
-                                className={`${styles.projectImage} ${typeOneExpanded ? styles.imageTop : styles.imageBottom}`}
+                                className={`${styles.projectImage} ${
+                                    typeOneExpanded ? styles.imageTopDark : styles.imageBottom
+                                }`}
                             />
                         ) : (
                             <Image
                                 key={projects[displayedProjectIndex].slug}
                                 priority
-                              
                                 src={'/' + projects[displayedProjectIndex].image}
                                 alt={`Main image for ${projects[displayedProjectIndex].title}`}
-                                className={`${styles.projectImage} ${typeOneExpanded ? styles.imageTop : styles.imageBottom}`}
+                                className={`${styles.projectImage} ${
+                                    typeOneExpanded ? styles.imageTopDark : styles.imageBottom
+                                }`}
                                 height={projects[displayedProjectIndex].height || '720'}
                                 width={projects[displayedProjectIndex].width || '1280'}
                             />

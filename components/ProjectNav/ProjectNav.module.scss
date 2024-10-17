@@ -30,6 +30,19 @@
   z-index: -9;
 }
 
+.imageTopDark {
+  background-color: black;
+  width: 75vw; // 设置图片容器的宽度为75vw
+  display: flex;
+  height: 90vh;
+
+  // 其他需要的样式
+}
+
+.imageBottom {
+  background-color: white; // 或者您想要的其他颜色
+  // 其他需要的样式
+}
 .imageTop {
   width: 75vw; // 设置图片容器的宽度为75vw
   display: flex;
@@ -42,6 +55,7 @@
   width: 75vw; // 设置图片容器的宽度为75vw
   display: flex;
   height: 90vh; // 设置图片容器的高度为90vh
+  background-color: white; // 或者您想要的其他颜色
 }
 
 .section {
@@ -197,5 +211,6 @@
   
   
 }
+
 
 

@@ -29,7 +29,7 @@ const Footer: React.FC<Props> = ({}) => {
                             <p>Phone</p>
                         </div>
                         <div className={styles.details}>
-                            <p>info@ffandesign.com</p>
+                            <p>ffandesign.info@gmail.com</p>
                             <p>@ffan.design</p>
                             <p>+86 13260458928</p>
                         </div>

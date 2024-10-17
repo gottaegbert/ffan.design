@@ -1,15 +1,22 @@
 {
-  "base_url": "https://egbert.vercel.app/",
+  "base_url": "https://ffandesign.net",
   "site_title": "FFANDESIGN",
   "site_description": "Portfolio",
   "site_keywords": [
-    "Web Developer",
+    "Graphic Design",
     "Web Development",
-    "Front-end",
-    "Interaction Design",
-    "Javascript",
-    "React",
-    "Typescript"
+    "Industrial Design",
+    "Egbert Studio",
+    "ffandesign",
+    "Fan",
+    "Design",
+    "Graphic Design",
+    "Web Design",
+    "Industrial Design",
+    "Product Design",
+    "Visual Design",
+    "Branding",
+    "Packaging Design"
   ],
   "github_account": "gottaegbert"
 }

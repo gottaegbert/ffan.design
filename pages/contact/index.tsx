@@ -99,8 +99,8 @@ const Contact: React.FC<Props> = ({ data }) => {
                             <Link href="https://www.instagram.com/ffan.design/" target="_blank" rel="noopener noreferrer" className={styles.contactlink}>
                                 Instagram: ffan.design
                             </Link>
-                            <a href="mailto:info@ffandesign.com" className={styles.contactlink}>
-                                Email: info@ffandesign.com
+                            <a href="mailto:ffandesign.info@gmail.com" className={styles.contactlink}>
+                                Email: ffandesign.info@gmail.com
                             </a>
                             <div className={styles.contactlink}>Phone: +86 13260458928</div>
                         </div>
