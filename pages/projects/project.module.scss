@@ -64,8 +64,10 @@
 
 
 .designConcept {
-  margin-top: 1rem;
-  padding: 1rem 0;
+  
+  padding:  0;
+  
+  padding-bottom: 48px;
   p{
     color: var(--dark-grey);
     font-size: 23px;
@@ -149,25 +151,8 @@
   }
   .imageContainer {
     position: relative;
-    display:flexbox;
     height: 100%;
-    z-index: 0;
-    & > * {
-      margin: 0;
-    }
-    // @media only screen and (min-width: $breakpoint-md) {
-    //   position: absolute;
-    //   right: 0;
-    //   top: 50%;
-    //   width: 600px;
-    //   transform: translateY(-50%);
-    // }
-    // @media only screen and (min-width: $breakpoint-lg) {
-    //   width: 900px;
-    // }
-
-  
-
+    display: flex;
     .projImage {
       object-fit: contain;
       width: 100% !important;
@@ -190,13 +175,7 @@
   }
 }
 .description {
-  margin-top: 0;
-  @media only screen and (min-width: $breakpoint-sm) {
-    margin-top: 0;
-  }
-  @media only screen and (min-width: $breakpoint-md) {
-    margin-top: 0px;
-  }
+  margin-bottom: 48px;
   p{
     padding-top: 10px;
     color: var(--dark-grey);
@@ -233,28 +212,7 @@
     }
   }
 }
-.projDetailsSection {
-  .detailLabel {
-    margin-bottom: 16px;
-  }
-  .detailBody {
-    margin-bottom: 64px;
-    @media only screen and (min-width: $breakpoint-md) {
-      margin-bottom: 96px;
-    }
-  }
 
-  p {
-    margin-bottom: 24px;
-    @media only screen and (min-width: $breakpoint-md) {
-      margin-bottom: 32px;
-    }
-  }
-
-  .divider {
-    border-bottom: 1px solid var(light-gray);
-  }
-}
 
 .skillsGrid {
   display: flex;

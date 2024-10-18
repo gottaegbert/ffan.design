@@ -161,22 +161,21 @@ const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
      
             </h1>
           </div>
-          <div className={cn("col-8", styles.description)}>
+          <div className={cn("col-9", styles.description)}>
 
             <ReactMarkdown >
               {data.description}
             </ReactMarkdown>
            
           </div>
-
+          
+          
         
           {/* content */}
 
           {data.imageContent && (
             <>
-              <div className={cn(styles.detailLabel)}>
-        
-              </div>
+            
               <div className={styles.imageContainer}>
                 {data.imageContent.map((content, idx: number) => {
                   const isVideo = content.endsWith(".mp4");
@@ -212,7 +211,7 @@ const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
                             blurDataURL={`/${content}`}
                             className={styles.projImage}
                           />
-                            <div style={{ marginTop: '24px' }}></div> 
+                            <div style={{ marginTop: idx === 0 ? '12px' : '24px' }}></div>
                                           
 
                       </div>
