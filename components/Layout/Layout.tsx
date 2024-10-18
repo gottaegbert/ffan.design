@@ -1,9 +1,12 @@
 import * as React from "react";
-
 import { gsap } from "gsap/dist/gsap";
 import { useEffect } from "react";
+import CustomScrollbar from "../CustomScrollbar/CustomScrollbar";
+import { useRouter } from 'next/router';
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const router = useRouter();
+
   useEffect(() => {
     initAnimations();
   }, []);
@@ -26,9 +29,8 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
   return (
     <>
-      {/* <Navigation /> */}
       <main>{children}</main>
-      {/* <Footer /> */}
+      {router.pathname !== '/' && <CustomScrollbar />}
     </>
   );
 };
