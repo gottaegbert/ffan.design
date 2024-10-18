@@ -19,32 +19,50 @@ const Work: React.FC<Props> = ({ image, title, time, slug, tags }) => {
   return (
   <Link legacyBehavior href={slug}>
       <a className={styles.projWrap}>
-        <article>
-          <div className={styles.imgContainer}>
-            <Image
-              src={"/" + image}
-              layout="fill"
-              alt={title}
-              className={cn(styles.pgImage, "js-img selected-pj-img")}
-            />
+      <article>
+                    <div className={styles.imgContainer}>
+                    {image.endsWith('.mp4') ? (
+                            <video
+                                src={'/' + image}
+                                autoPlay
+                                loop
+                                playsInline
+                                controls={false}
+                                muted
+                                className={cn(
+                                    styles.pgImage,
+                                    'js-img selected-pj-img'
+                                )}
+                            />
+                        ) : (
+                            <Image
+                                src={'/' + image}
+                                layout="fill"
+                                alt={title}
+                                className={cn(
+                                    styles.pgImage,
+                                    'js-img selected-pj-img'
+                                )}
+                                
+                            />
+                        )}
 
-            <div className={styles.imgForeground} ref={ref}></div>
-          </div>
+                    </div>
 
-          <div className={cn(styles.bottom)}>
-            <div className={"tagContainer"}>
-              {tags.map((tag, ix) => (
-                <>
-                  <p className={"small"} key={"tag" + ix}>
-                    [{tag}]
-                  </p>
-                  <p className={"small indentbig"}> {time}</p>
-                </>
-              ))}
-            </div>
-            <p className="small indent">{title}</p>
-          </div>
-        </article>
+                    <div className={cn(styles.bottom)}>
+                        <div className={'tagContainer'}>
+                            {tags.map((tag, ix) => (
+                                <React.Fragment key={'tag' + ix}>
+                                    <p >
+                                        [{tag}]
+                                    </p>
+                                    <p className={'small indentbig'}> {time}</p>
+                                </React.Fragment>
+                            ))}
+                        </div>
+                        <p className="indent">{title}</p>
+                    </div>
+                </article>
       </a>
     </Link>
   );
