@@ -26,12 +26,20 @@ const MAX_LOADING_TIME = 10000; // 最长加载时间，10秒
 const IndexPage: React.FC<Props> = ({ data }) => {
     const { selectedProjects } = data
 
-    const [filter, setFilter] = useState('All Works') // 添加过滤状态
+    const [filter, setFilter] = useState('All Works') // 添加过滤���态
     const router = useRouter()
     const [isLoading, setIsLoading] = useState(true)
     const [loadingProgress, setLoadingProgress] = useState(0)
     const [isPreloaderComplete, setIsPreloaderComplete] = useState(false);
     const [isPageLoaded, setIsPageLoaded] = useState(false);
+    const [showPreloader, setShowPreloader] = useState(true)
+
+    useEffect(() => {
+        const hasSeenPreloader = localStorage.getItem('hasSeenPreloader')
+        if (hasSeenPreloader) {
+            setShowPreloader(false)
+        }
+    }, [])
 
     useEffect(() => {
         const handleRouteChange = (url: string) => {
@@ -161,7 +169,8 @@ const IndexPage: React.FC<Props> = ({ data }) => {
     };
 
     const handlePreloaderComplete = () => {
-        setIsPreloaderComplete(true);
+        setIsPreloaderComplete(true)
+        localStorage.setItem('hasSeenPreloader', 'true')
     };
 
     useEffect(() => {
@@ -173,13 +182,9 @@ const IndexPage: React.FC<Props> = ({ data }) => {
 
     return (
         <StoreProvider>
-            {!isPreloaderComplete && (
-                <Preloader 
-                    onComplete={handlePreloaderComplete} 
-                    isPageLoaded={isPageLoaded}
-                />
-            )}
-            {isPreloaderComplete && (
+            {showPreloader ? (
+                <Preloader onComplete={handlePreloaderComplete} />
+            ) : (
                 <>
                     <RightNav />
                     <Layout>
