@@ -212,6 +212,7 @@ const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
                             className={styles.projImage}
                           />
                             <div style={{ marginTop: idx === 0 ? '12px' : '24px' }}></div>
+                     
                                           
 
                       </div>

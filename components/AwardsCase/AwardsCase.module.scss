@@ -1,9 +1,12 @@
 @import "../../styles/variables.scss";
 
 .projWrap {
-
-
-
+  h1{
+    color: var(--font);
+    &:hover{
+      color: var(--dark-grey);
+    }
+  }
   text-decoration: none;
   @media only screen and (min-width: $breakpoint-sm) {
     margin-bottom:20px;
@@ -14,6 +17,7 @@
   &:hover {
     color: inherit;
   }
+  
 
 
   article {
@@ -38,9 +42,11 @@
 
       .infoContainer {
     > * {
+      line-height: 1;
       margin: 0;
       padding: 0;
     }
+    
     display: flex;
     flex-direction: column;
     gap: 0;
