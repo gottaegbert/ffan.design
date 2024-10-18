@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from './CaseStudy.module.scss'
 import cn from 'classnames'
 import Link from 'next/link'
@@ -17,55 +17,69 @@ const CaseStudy: React.FC<selectedProject> = ({
     tags,
     time,
 }) => {
-    const ref = React.createRef<HTMLDivElement>()
- 
+    const [isLoaded, setIsLoaded] = useState(false);
+
+    useEffect(() => {
+        // 模拟加载过程
+        const timer = setTimeout(() => setIsLoaded(true), 1000);
+        return () => clearTimeout(timer);
+    }, []);
+
     return (
         <Link legacyBehavior href={slug}>
-            <a className={styles.projWrap}>
-                <article>
-                    <div className={styles.imgContainer}>
-                    {image.endsWith('.mp4') ? (
-                            <video
-                                src={'/' + image}
-                                autoPlay
-                                loop
-                                playsInline
-                                controls={false}
-                                muted
-                                className={cn(
-                                    styles.pgImage,
-                                    'js-img selected-pj-img'
+            <a className={`${styles.projWrap} ${isLoaded ? styles.loaded : ''}`}>
+                {isLoaded ? (
+                    // 渲染加载完成的内容
+                    <div>
+                        <article>
+                            <div className={styles.imgContainer}>
+                            {image.endsWith('.mp4') ? (
+                                    <video
+                                        src={'/' + image}
+                                        autoPlay
+                                        loop
+                                        playsInline
+                                        controls={false}
+                                        muted
+                                        className={cn(
+                                            styles.pgImage,
+                                            'js-img selected-pj-img'
+                                        )}
+                                    />
+                                ) : (
+                                    <Image
+                                        src={'/' + image}
+                                        layout="fill"
+                                        alt={title}
+                                        className={cn(
+                                            styles.pgImage,
+                                            'js-img selected-pj-img'
+                                        )}
+                                        
+                                    />
                                 )}
-                            />
-                        ) : (
-                            <Image
-                                src={'/' + image}
-                                layout="fill"
-                                alt={title}
-                                className={cn(
-                                    styles.pgImage,
-                                    'js-img selected-pj-img'
-                                )}
-                                
-                            />
-                        )}
 
-                    </div>
+                            </div>
 
-                    <div className={cn(styles.bottom)}>
-                        <div className={'tagContainer'}>
-                            {tags.map((tag, ix) => (
-                                <React.Fragment key={'tag' + ix}>
-                                    <p >
-                                        [{tag}]
-                                    </p>
-                                    <p className={'small indentbig'}> {time}</p>
-                                </React.Fragment>
-                            ))}
-                        </div>
-                        <p className="indent">{title}</p>
+                            <div className={cn(styles.bottom)}>
+                                <div className={'tagContainer'}>
+                                    {tags.map((tag, ix) => (
+                                        <React.Fragment key={'tag' + ix}>
+                                            <p >
+                                                [{tag}]
+                                            </p>
+                                            <p className={'small indentbig'}> {time}</p>
+                                        </React.Fragment>
+                                    ))}
+                                </div>
+                                <p className="indent">{title}</p>
+                            </div>
+                        </article>
                     </div>
-                </article>
+                ) : (
+                    // 可以添加一个加载指示器
+                    <div className={styles.loadingIndicator}>Loading...</div>
+                )}
             </a>
         </Link>
     )

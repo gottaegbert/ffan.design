@@ -6,6 +6,10 @@
   justify-content: space-between;
 }
 
+.moreWorksSection{
+  padding-top:10vh;
+}
+
 .navButton {
   background: none;
   border: none;
@@ -32,12 +36,14 @@
 .horizontalScrollContainer > * {
   flex: 0 0 100%;
   scroll-snap-align: start;
+  height: 100%; // 确保子元素填满容器高度
+  overflow-y: hidden; // 如果内容超出，允许垂直滚动
+  scroll-snap-type: none;
 }
 
 .container {
   display: flex;
   justify-content: flex-start; /* Align to the right */
-  padding-bottom: 48px;
 }
 .typeHeader{
   display: flex;
@@ -70,7 +76,7 @@
   display: flex;
   overflow-x: auto; /* Enable horizontal scrolling */
   gap: 48px; /* Add space between items */
-  padding: 20px 0; /* Add padding to the container */
+  padding: 20px 0 0 0; /* Add padding to the container */
 }
 
 .horizontalScrollContainer > * {

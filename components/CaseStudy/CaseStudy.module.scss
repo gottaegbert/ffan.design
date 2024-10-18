@@ -2,17 +2,8 @@
 
 .projWrap {
   text-decoration: none;
-  @media only screen and (min-width: $breakpoint-sm) {
-    margin-bottom:20px;
-  }
-  @media only screen and (min-width: $breakpoint-lg) {
-    margin-bottom: 20px;
-  }
-  &:hover {
-    color: inherit;
-  }
-
-
+  overflow-x: hidden;
+  aspect-ratio: 16 / 12; // 或者其他适合你设计的比例
   article {
   
     .imgContainer {

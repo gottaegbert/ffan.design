@@ -13,7 +13,7 @@ import BasicMeta from "../../utils/BasicMeta";
 import { project, selectedProject } from "../../utils/customTypes";
 import Image from "next/legacy/image";
 import RightNav from "../../components/RightNav/RightNav";
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 
 type Props = {
   data: project;
@@ -57,26 +57,12 @@ const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
 
 
   const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  useEffect(() => {
-    // 找到当前项目在 moreProjs 中的索引
-    const index = moreProjs.findIndex(proj => proj.slug === data.slug);
-    setCurrentIndex(index >= 0 ? index : 0);
-  }, [data.slug, moreProjs]);
 
   const scrollToProject = (direction: 'prev' | 'next') => {
     if (scrollContainerRef.current) {
-      const container = scrollContainerRef.current;
-      const itemWidth = container.offsetWidth;
-      let newIndex = direction === 'next' ? currentIndex + 1 : currentIndex - 1;
-
-      // 确保新索引在有效范围内
-      newIndex = Math.max(0, Math.min(newIndex, moreProjs.length - 1));
-
-      const scrollPosition = newIndex * itemWidth;
-      container.scrollTo({ left: scrollPosition, behavior: 'smooth' });
-      setCurrentIndex(newIndex);
+      const containerWidth = scrollContainerRef.current.offsetWidth;
+      const scrollAmount = direction === 'next' ? containerWidth : -containerWidth;
+      scrollContainerRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     }
   };
 
@@ -253,26 +239,16 @@ const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
         </section>
         <section className={cn("grid sectionSpacing", styles.moreWorksSection)}>
         <div className={styles.navigationButtons}>
-        <button 
-          onClick={() => scrollToProject('prev')} 
-          className={styles.navButton}
-          disabled={currentIndex === 0}
-        >
+        <button onClick={() => scrollToProject('prev')} className={styles.navButton}>
           ← Previous
         </button>
-        <button 
-          onClick={() => scrollToProject('next')} 
-          className={styles.navButton}
-          disabled={currentIndex === moreProjs.length - 1}
-        >
+        <button onClick={() => scrollToProject('next')} className={styles.navButton}>
           Next →
         </button>
       </div>
-      <div ref={scrollContainerRef} className={styles.horizontalScrollContainer}>
+      <div className={styles.horizontalScrollContainer}>
         {moreProjs.map((work, idx: number) => (
-          <div key={`work-${idx}`} className={styles.workItem}>
-            <Work {...work} />
-          </div>
+          <Work {...work} key={"work" + idx} />
         ))}
       </div>
     </section>
