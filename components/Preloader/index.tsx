@@ -1,30 +1,37 @@
-import { useEffect, useState } from 'react';
-import { opacity, slideUp } from './animation';
+import { useEffect, useState, useRef } from 'react';
 import styles from './Preloader.module.scss';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
-const preloaderWords: string[] = [
-  'Loading🎬',
-  'ffandesign'
-];
-
-const Preloader = ({ progress, onSkip }) => {
-  const [index, setIndex] = useState(0);
+const Preloader = ({ onComplete }) => {
   const [dimension, setDimension] = useState({ width: 0, height: 0 });
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isVideoEnded, setIsVideoEnded] = useState(false);
 
   useEffect(() => {
     setDimension({ width: window.innerWidth, height: window.innerHeight });
+    if (videoRef.current) {
+      videoRef.current.play();
+    }
   }, []);
 
   useEffect(() => {
-    if (index === preloaderWords.length - 1) return;
-    setTimeout(
-      () => {
-        setIndex(index + 1);
-      },
-      index === 0 ? 1000 : 150
-    );
-  }, [index]);
+    const video = videoRef.current;
+    if (video) {
+      video.addEventListener('ended', handleVideoEnd);
+    }
+    return () => {
+      if (video) {
+        video.removeEventListener('ended', handleVideoEnd);
+      }
+    };
+  }, []);
+
+  const handleVideoEnd = () => {
+    setIsVideoEnded(true);
+    setTimeout(() => {
+      onComplete();
+    }, 1000); // 延迟调用 onComplete，给动画一些时间
+  };
 
   const initialPath = `M0 0 L${dimension.width} 0 L${dimension.width} ${dimension.height} Q${
     dimension.width / 2
@@ -36,7 +43,6 @@ const Preloader = ({ progress, onSkip }) => {
   const curve = {
     initial: {
       d: initialPath,
-      transition: { duration: 0.7, ease: [0.76, 0, 0.24, 1] }
     },
     exit: {
       d: targetPath,
@@ -44,41 +50,36 @@ const Preloader = ({ progress, onSkip }) => {
     }
   };
 
+  const containerVariants = {
+    initial: { y: 0 },
+    exit: { y: '-100%', transition: { duration: 0.7, ease: [0.76, 0, 0.24, 1] } }
+  };
+
   return (
-    <motion.div variants={slideUp} initial="initial" exit="exit" className={styles.introduction}>
-      {dimension.width > 0 && (
-        <>
-          <div className={styles.preloader}>
-    
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5, duration: 0.5 }}
-            >
-              Loading... {progress.toFixed(0)}%
-            </motion.p>
-            <motion.div 
-              className={styles.loadingBar}
-              initial={{ width: 0 }}
-              animate={{ width: `${progress}%` }}
-              transition={{ duration: 0.5 }}
-            />
-            <motion.button
-              className={styles.skipButton}
-              onClick={onSkip}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1, duration: 0.5 }}
-            >
-              Skip
-            </motion.button>
-          </div>
-          <svg>
-            <motion.path variants={curve} initial="initial" exit="exit"></motion.path>
-          </svg>
-        </>
+    <AnimatePresence>
+      {!isVideoEnded && (
+        <motion.div 
+          variants={containerVariants}
+          initial="initial"
+          animate="initial"
+          exit="exit"
+          className={styles.introduction}
+        >
+          <video 
+            ref={videoRef}
+            className={styles.backgroundVideo}
+            src="./assets/images/loading.mp4"
+            muted
+            playsInline
+          />
+          {dimension.width > 0 && (
+            <svg className={styles.svgCurve}>
+              <motion.path variants={curve} initial="initial" exit="exit"></motion.path>
+            </svg>
+          )}
+        </motion.div>
       )}
-    </motion.div>
+    </AnimatePresence>
   );
 };
 

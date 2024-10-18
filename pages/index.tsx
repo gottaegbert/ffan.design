@@ -30,6 +30,8 @@ const IndexPage: React.FC<Props> = ({ data }) => {
     const router = useRouter()
     const [isLoading, setIsLoading] = useState(true)
     const [loadingProgress, setLoadingProgress] = useState(0)
+    const [isPreloaderComplete, setIsPreloaderComplete] = useState(false);
+    const [isPageLoaded, setIsPageLoaded] = useState(false);
 
     useEffect(() => {
         const handleRouteChange = (url: string) => {
@@ -158,11 +160,26 @@ const IndexPage: React.FC<Props> = ({ data }) => {
         console.log('选中的项目ID:', projectId);
     };
 
+    const handlePreloaderComplete = () => {
+        setIsPreloaderComplete(true);
+    };
+
+    useEffect(() => {
+        // 这里添加您的页面加载逻辑
+        // 例如，等待所有资源加载完成
+        window.addEventListener('load', () => setIsPageLoaded(true));
+        return () => window.removeEventListener('load', () => setIsPageLoaded(true));
+    }, []);
+
     return (
         <StoreProvider>
-            {isLoading ? (
-                <Preloader progress={loadingProgress} onSkip={handleSkip} />
-            ) : (
+            {!isPreloaderComplete && (
+                <Preloader 
+                    onComplete={handlePreloaderComplete} 
+                    isPageLoaded={isPageLoaded}
+                />
+            )}
+            {isPreloaderComplete && (
                 <>
                     <RightNav />
                     <Layout>
