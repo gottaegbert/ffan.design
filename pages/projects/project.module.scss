@@ -8,6 +8,7 @@
 
 .moreWorksSection{
   padding-top:10vh;
+  height:fit-content;
 }
 
 .navButton {
@@ -24,21 +25,24 @@
 .horizontalScrollContainer {
   display: flex;
   overflow-x: auto;
-  scroll-snap-type: x mandatory;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  gap: 48px;
+  padding: 20px 0 0 0;
   -webkit-overflow-scrolling: touch;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none;  /* Internet Explorer 10+ */
-  &::-webkit-scrollbar { 
-    display: none;  /* WebKit */
-  }
+  height: auto; // 允许高度自动调整
+  min-height: 0; // 确保容器可以收缩到内容的高度
 }
 
 .horizontalScrollContainer > * {
-  flex: 0 0 100%;
-  scroll-snap-align: start;
-  height: 100%; // 确保子元素填满容器高度
-  overflow-y: hidden; // 如果内容超出，允许垂直滚动
-  scroll-snap-type: none;
+  flex: 0 0 auto;
+  width: calc(50% - 24px); // 调整为 gap 的一半
+}
+
+@media (max-width: 768px) {
+  .horizontalScrollContainer > * {
+    width: calc(100% - 48px); // 调整为完整的 gap
+  }
 }
 
 .container {
@@ -77,8 +81,11 @@
 .horizontalScrollContainer {
   display: flex;
   overflow-x: auto; /* Enable horizontal scrolling */
+  overflow-y: hidden; /* 禁用垂直滚动 */
+  scroll-behavior: smooth;
   gap: 48px; /* Add space between items */
   padding: 20px 0 0 0; /* Add padding to the container */
+  -webkit-overflow-scrolling: touch; /* 在iOS设备上提供平滑滚动 */
 }
 
 .horizontalScrollContainer > * {

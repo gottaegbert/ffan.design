@@ -58,6 +58,24 @@ const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
 
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
+  useEffect(() => {
+    const setContainerHeight = () => {
+      if (scrollContainerRef.current) {
+        const firstChild = scrollContainerRef.current.firstElementChild as HTMLElement;
+        if (firstChild) {
+          scrollContainerRef.current.style.height = `${firstChild.offsetHeight}px`;
+        }
+      }
+    };
+
+    setContainerHeight();
+    window.addEventListener('resize', setContainerHeight);
+
+    return () => {
+      window.removeEventListener('resize', setContainerHeight);
+    };
+  }, [moreProjs]); // 依赖于 moreProjs，以便在数据加载后重新计算
+
   const scrollToProject = (direction: 'prev' | 'next') => {
     if (scrollContainerRef.current) {
       const containerWidth = scrollContainerRef.current.offsetWidth;
@@ -246,7 +264,7 @@ const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
           Next →
         </button>
       </div>
-      <div className={styles.horizontalScrollContainer}>
+      <div ref={scrollContainerRef} className={styles.horizontalScrollContainer}>
         {moreProjs.map((work, idx: number) => (
           <Work {...work} key={"work" + idx} />
         ))}

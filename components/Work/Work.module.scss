@@ -1,65 +1,53 @@
 @import "../../styles/variables.scss";
-.work {
-  text-decoration: none;
-  position: relative;
+
+.projWrap {
   display: block;
-  article {
-    padding: 50px 0 26px 0;
-    border-bottom: 1px solid var(light-gray);
+  text-decoration: none;
+  overflow: hidden;
+  height: fit-content;
+  color: inherit;
+
+  aspect-ratio: 16 / 11; // 或者其他适合你设计的比例
+  @media only screen and (min-width: $breakpoint-sm) {
+    margin-bottom:20px;
   }
-  &:hover {
-    color: inherit;
+  @media only screen and (min-width: $breakpoint-lg) {
+    margin-bottom: 20px;
   }
-  &:hover .arrowContainer {
-    transform: rotate(-30deg);
-    transition: transition(transform);
-  }
-  &:hover .titleContainer .arrowContainer .arrowBg {
-    height: 60px;
-    width: 60px;
-    transition: height 150ms ease-out, width 150ms ease-out;
-  }
-  .titleContainer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    h4 {
-      margin-bottom: 8px;
-      text-decoration: none;
-    }
-    .arrowContainer {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+
+
+  article { 
+
+    .imgContainer {
       position: relative;
-      transition: transition(transform);
-    
+      display: block;
+      width: 100%;
 
-      svg
-       {
-        fill:var(--arrow);
-        z-index: 1;
-        width: 60%;
-        @media only screen and (min-width: $breakpoint-md) {
-          width: unset;
-        }
+      @media only screen and (min-width: $breakpoint-md) {
+        margin-bottom: 10px;
+      }
+      
+
+      > span {
+        position: unset !important;
+      }
+      
+
+      .pgImage {
+        object-fit: cover;
+        width: 100% !important;
+        position: relative !important;
+        height: unset !important;
       }
 
-      .arrowBg {
-        background-color: var(--accent-color);
-        height: 0;
-        width: 0;
-        border-radius: 50%;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 0;
-        transition: height 150ms ease-out, width 150ms ease-out;
+      video.pgImage {
+
+        display: block; // 添加 display: block;。这会移除图片下方可能存在的小空隙。
+      }
+
+
+    }
       }
     }
-  }
-  .desc {
-    margin-right: 52px;
-  }
-}
+  
+
