@@ -3,37 +3,17 @@ import styles from './RightNav.module.scss'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
-const RightNav = () => {
+interface RightNavProps {
+    autoExpand?: boolean;
+}
+
+const RightNav: React.FC<RightNavProps> = ({ autoExpand = false }) => {
     const router = useRouter()
     const [isRightNavVisible, setIsRightNavVisible] = useState(false)
-    const [isInitialLoad, setIsInitialLoad] = useState(true)
+
     useEffect(() => {
-        // 检查是否在主页
-        const isHomePage = router.pathname === '/'
-        
-        if (isHomePage) {
-            // 如果是主页，5秒后展开导航栏
-            const showTimer = setTimeout(() => {
-                setIsRightNavVisible(true)
-            }, 3000)
-
-            // 10秒后关闭导航栏
-            const hideTimer = setTimeout(() => {
-                setIsRightNavVisible(false)
-                setIsInitialLoad(false)
-            }, 10000)
-
-            // 在组件卸载或路由变化时清除定时器
-            return () => {
-                clearTimeout(showTimer)
-                clearTimeout(hideTimer)
-            }
-        } else {
-            // 如果不是主页，确保导航栏是关闭的
-            setIsRightNavVisible(false)
-            setIsInitialLoad(false)
-        }
-    }, [router.pathname]) // 依赖于路由路径，这样在路由变化时会重新执行
+        setIsRightNavVisible(autoExpand)
+    }, [autoExpand])
 
     const toggleRightNav = () => {
         setIsRightNavVisible(!isRightNavVisible)
@@ -73,7 +53,7 @@ const RightNav = () => {
             <aside
                 className={`${styles.rightNav} 
                             ${isRightNavVisible ? styles.visible : ''} 
-                            ${isInitialLoad ? styles.noTransition : ''}`}
+                            ${autoExpand ? styles.visible : ''}`}
             >
                 <ul>
                     <li>

@@ -25,13 +25,51 @@ const MAX_LOADING_TIME = 10000; // 最长加载时间，10秒
 
 const IndexPage: React.FC<Props> = ({ data }) => {
     const { selectedProjects } = data
+    const [showPreloader, setShowPreloader] = useState(false)
+    const [isPreloaderComplete, setIsPreloaderComplete] = useState(false)
+    const [showMainContent, setShowMainContent] = useState(false)
+    const [autoExpandRightNav, setAutoExpandRightNav] = useState(false)
+    const router = useRouter()
+
+    useEffect(() => {
+        // 检查 URL 是否包含 work 部分的标识符
+        const isWorkSection = router.asPath.includes('#work-section') || router.query.section === 'work'
+        
+        if (!isWorkSection) {
+            setShowPreloader(true)
+            // 3秒后显示主内容
+            const showContentTimer = setTimeout(() => {
+                setShowMainContent(true)
+            }, 3000)
+
+            // 5秒后自动展开 RightNav
+            const expandNavTimer = setTimeout(() => {
+                setAutoExpandRightNav(true)
+            }, 5000)
+
+            // 10秒后自动收起 RightNav
+            const collapseNavTimer = setTimeout(() => {
+                setAutoExpandRightNav(false)
+            }, 10000)
+
+            return () => {
+                clearTimeout(showContentTimer)
+                clearTimeout(expandNavTimer)
+                clearTimeout(collapseNavTimer)
+            }
+        } else {
+            // 如果是 work 部分，直接显示主内容，不自动展开 RightNav
+            setShowMainContent(true)
+        }
+    }, [router.asPath, router.query])
+
+    const handlePreloaderComplete = () => {
+        setIsPreloaderComplete(true)
+    }
 
     const [filter, setFilter] = useState('All Works') // 添加过滤状态
-    const router = useRouter()
     const [isLoading, setIsLoading] = useState(true)
     const [loadingProgress, setLoadingProgress] = useState(0)
-    const [isPreloaderVisible, setIsPreloaderVisible] = useState(true)
-    const [showMainContent, setShowMainContent] = useState(false);
 
     useEffect(() => {
         const handleRouteChange = (url: string) => {
@@ -160,30 +198,14 @@ const IndexPage: React.FC<Props> = ({ data }) => {
         console.log('选中的项目ID:', projectId);
     };
 
-    const handlePreloaderComplete = () => {
-        setIsPreloaderVisible(false)
-    };
-
-
-    useEffect(() => {
-        // 设置一个 3 秒的定时器来显示主要内容
-        const timer = setTimeout(() => {
-            setShowMainContent(true)
-        }, 3000)
-
-        return () => clearTimeout(timer) // 清理定时器
-    }, [])
-
     return (
         <StoreProvider>
-            {isPreloaderVisible && (
-                <Preloader 
-                    onComplete={handlePreloaderComplete} 
-                />
+            {showPreloader && !isPreloaderComplete && (
+                <Preloader onComplete={handlePreloaderComplete} />
             )}
             {showMainContent && (
                 <>
-                    <RightNav />
+                    <RightNav autoExpand={autoExpandRightNav} />
                     <Layout>
                         <BasicMeta url={'/'} />
                         {/* Page wrapper for two-column layout */}
