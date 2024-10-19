@@ -47,8 +47,7 @@
 }
 .typeHeader{
   display: flex;
-  padding-top: 45px;
-
+  padding: 45px 0;
   align-items: center; /* Vertically center the items */
   gap: 10px; 
 }
@@ -68,6 +67,7 @@
   padding:  0;
   
   padding-bottom: 48px;
+  
   p{
     color: var(--dark-grey);
     font-size: 23px;

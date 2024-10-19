@@ -222,7 +222,7 @@ const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
                    
                         <div className={cn("grid",styles.designConcept)}>
                           <p className={cn("col-3")}>Design Concept</p>
-                          <ReactMarkdown className={cn("col-9")}>{data.designconcept}</ReactMarkdown>
+                          <p className={cn("col-9")}>{data.designconcept}</p>
                         </div>
                      
                       )}
