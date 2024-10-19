@@ -26,22 +26,28 @@
   display: flex;
   overflow-x: auto;
   overflow-y: hidden;
+  scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   gap: 48px;
-  padding: 20px 0 0 0;
+  padding: 20px 0;
   -webkit-overflow-scrolling: touch;
-  height: auto; // 允许高度自动调整
-  min-height: 0; // 确保容器可以收缩到内容的高度
-}
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  &::-webkit-scrollbar { 
+    display: none;  /* WebKit */
+  }
 
-.horizontalScrollContainer > * {
-  flex: 0 0 auto;
-  width: calc(50% - 24px); // 调整为 gap 的一半
-}
+  > * {
+    flex: 0 0 auto;
+    width: calc(50% - 24px);
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
 
-@media (max-width: 768px) {
-  .horizontalScrollContainer > * {
-    width: calc(100% - 48px); // 调整为完整的 gap
+  @media (max-width: 768px) {
+    > * {
+      width: calc(100% - 48px);
+    }
   }
 }
 

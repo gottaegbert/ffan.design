@@ -58,23 +58,6 @@ const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
 
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const setContainerHeight = () => {
-      if (scrollContainerRef.current) {
-        const firstChild = scrollContainerRef.current.firstElementChild as HTMLElement;
-        if (firstChild) {
-          scrollContainerRef.current.style.height = `${firstChild.offsetHeight}px`;
-        }
-      }
-    };
-
-    setContainerHeight();
-    window.addEventListener('resize', setContainerHeight);
-
-    return () => {
-      window.removeEventListener('resize', setContainerHeight);
-    };
-  }, [moreProjs]); // 依赖于 moreProjs，以便在数据加载后重新计算
 
   const scrollToProject = (direction: 'prev' | 'next') => {
     if (scrollContainerRef.current) {
@@ -83,6 +66,34 @@ const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
       scrollContainerRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     }
   };
+
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (!container) return;
+
+    const handleScrollEnd = () => {
+      const scrollLeft = container.scrollLeft;
+      const containerWidth = container.clientWidth;
+      const itemWidth = containerWidth / 2;
+      const gap = 48;
+
+      const nearestIndex = Math.round(scrollLeft / (itemWidth + gap));
+      const targetScrollLeft = nearestIndex * (itemWidth + gap);
+
+      if (Math.abs(scrollLeft - targetScrollLeft) > 1) {
+        container.scrollTo({
+          left: targetScrollLeft,
+          behavior: 'smooth'
+        });
+      }
+    };
+
+    container.addEventListener('scrollend', handleScrollEnd);
+
+    return () => {
+      container.removeEventListener('scrollend', handleScrollEnd);
+    };
+  }, []);
 
   return (
     <StoreProvider>

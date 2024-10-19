@@ -1,13 +1,10 @@
 @import "../../styles/variables.scss";
 
 .projWrap {
-  display: block;
   text-decoration: none;
   overflow: hidden;
-  height: fit-content;
-  color: inherit;
 
-  aspect-ratio: 16 / 11; // 或者其他适合你设计的比例
+  aspect-ratio: 16 / 12; // 或者其他适合你设计的比例
   @media only screen and (min-width: $breakpoint-sm) {
     margin-bottom:20px;
   }
