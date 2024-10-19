@@ -7,27 +7,31 @@ const RightNav = () => {
     const router = useRouter()
     const [isRightNavVisible, setIsRightNavVisible] = useState(false)
     const [isInitialLoad, setIsInitialLoad] = useState(true)
-    
     useEffect(() => {
         // 检查是否在主页
         const isHomePage = router.pathname === '/'
         
         if (isHomePage) {
-            // 如果是主页，立即展开导航栏
-            setIsRightNavVisible(true)
-            
-            // 设置定时器，3秒后关闭导航栏
-            const timer = setTimeout(() => {
-                setIsRightNavVisible(false)
-                setIsInitialLoad(false) // 在这里设置 isInitialLoad 为 false
+            // 如果是主页，5秒后展开导航栏
+            const showTimer = setTimeout(() => {
+                setIsRightNavVisible(true)
             }, 3000)
 
+            // 10秒后关闭导航栏
+            const hideTimer = setTimeout(() => {
+                setIsRightNavVisible(false)
+                setIsInitialLoad(false)
+            }, 10000)
+
             // 在组件卸载或路由变化时清除定时器
-            return () => clearTimeout(timer)
+            return () => {
+                clearTimeout(showTimer)
+                clearTimeout(hideTimer)
+            }
         } else {
             // 如果不是主页，确保导航栏是关闭的
             setIsRightNavVisible(false)
-            setIsInitialLoad(false) // 非主页时也设置 isInitialLoad 为 false
+            setIsInitialLoad(false)
         }
     }, [router.pathname]) // 依赖于路由路径，这样在路由变化时会重新执行
 

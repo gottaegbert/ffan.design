@@ -30,8 +30,8 @@ const IndexPage: React.FC<Props> = ({ data }) => {
     const router = useRouter()
     const [isLoading, setIsLoading] = useState(true)
     const [loadingProgress, setLoadingProgress] = useState(0)
-    const [isPreloaderComplete, setIsPreloaderComplete] = useState(false);
-    const [isPageLoaded, setIsPageLoaded] = useState(false);
+    const [isPreloaderVisible, setIsPreloaderVisible] = useState(true)
+    const [showMainContent, setShowMainContent] = useState(false);
 
     useEffect(() => {
         const handleRouteChange = (url: string) => {
@@ -161,24 +161,27 @@ const IndexPage: React.FC<Props> = ({ data }) => {
     };
 
     const handlePreloaderComplete = () => {
-        setIsPreloaderComplete(true);
+        setIsPreloaderVisible(false)
     };
 
+
     useEffect(() => {
-        // 这里添加您的页面加载逻辑
-        // 例如，等待所有资源加载完成
-        window.addEventListener('load', () => setIsPageLoaded(true));
-        return () => window.removeEventListener('load', () => setIsPageLoaded(true));
-    }, []);
+        // 设置一个 3 秒的定时器来显示主要内容
+        const timer = setTimeout(() => {
+            setShowMainContent(true)
+        }, 3000)
+
+        return () => clearTimeout(timer) // 清理定时器
+    }, [])
 
     return (
         <StoreProvider>
-            {!isPreloaderComplete && (
+            {isPreloaderVisible && (
                 <Preloader 
                     onComplete={handlePreloaderComplete} 
                 />
             )}
-            {isPreloaderComplete && (
+            {showMainContent && (
                 <>
                     <RightNav />
                     <Layout>
@@ -189,15 +192,15 @@ const IndexPage: React.FC<Props> = ({ data }) => {
                                 {/* Left-side Navigation */}
                                 <div className={styles.leftNav}>
                                     <ProjectNav
-                                        projects={selectedProjects} // Pass the selectedProjects from data
-                                        onSelect={handleProjectSelect} // Pass handler for project selection
+                                        projects={selectedProjects}
+                                        onSelect={handleProjectSelect}
                                     />
                                 </div>
                             </div>
 
                             <BasicMeta url={'/work'} />
                             <section
-                                id="work-section"  // 添加这个 ID
+                                id="work-section"
                                 className={cn(
                                     'sectionSpacing',
                                     styles.selectedWorkContainer
@@ -228,13 +231,12 @@ const IndexPage: React.FC<Props> = ({ data }) => {
                                             <CaseStudy {...proj} />
                                         </div>
                                     ))}
-                   
                                 </div>
-                            <Footer />
+                                <Footer />
                             </section>
-                        </div>
-                    </Layout>
-                </>
+                </div>
+                        </Layout>
+                 </>
             )}
         </StoreProvider>
     )

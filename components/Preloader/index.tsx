@@ -30,7 +30,7 @@ const Preloader = ({ onComplete }) => {
     setIsVideoEnded(true);
     setTimeout(() => {
       onComplete();
-    }, 1000); // 延迟调用 onComplete，给动画一些时间
+    }, 500); // 延迟调用 onComplete，给动画一些时间
   };
 
   const initialPath = `M0 0 L${dimension.width} 0 L${dimension.width} ${dimension.height} Q${
@@ -52,7 +52,7 @@ const Preloader = ({ onComplete }) => {
 
   const containerVariants = {
     initial: { y: 0 },
-    exit: { y: '-100%', transition: { duration: 0.7, ease: [0.76, 0, 0.24, 1] } }
+    exit: { y: '-100%', transition: { duration: 0.5, ease: [0.76, 0, 0.24, 1] } }
   };
 
   return (
