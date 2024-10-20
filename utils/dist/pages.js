@@ -1,16 +1,20 @@
-"use strict";
-exports.__esModule = true;
-exports.gePageData = void 0;
-var fs_1 = require("fs");
-var js_yaml_1 = require("js-yaml");
+'use strict'
+exports.__esModule = true
+exports.gePageData = void 0
+var fs_1 = require('fs')
+var js_yaml_1 = require('js-yaml')
 function gePageData(pageName) {
-    var doc;
+    var doc
     try {
-        doc = js_yaml_1["default"].load(fs_1["default"].readFileSync("utils/files/" + pageName + ".yml", "utf8"));
+        doc = js_yaml_1['default'].load(
+            fs_1['default'].readFileSync(
+                'utils/files/' + pageName + '.yml',
+                'utf8'
+            )
+        )
+    } catch (e) {
+        console.error(e)
     }
-    catch (e) {
-        console.error(e);
-    }
-    return doc;
+    return doc
 }
-exports.gePageData = gePageData;
+exports.gePageData = gePageData

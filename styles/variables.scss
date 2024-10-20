@@ -1,4 +1,3 @@
-
 // Breakpoints
 $breakpoint-sm: 768px;
 $breakpoint-md: 992px;
@@ -30,7 +29,6 @@ $grid-max-width: 3600px;
 
 // Colors
 
-
 // @function customLighten($color-variable, $value) {
 //     $color-variable-h: var(#{$color-variable + "-h"});
 //     $color-variable-s: var(#{$color-variable + "-s"});
@@ -42,8 +40,6 @@ $grid-max-width: 3600px;
 //   $color-variable-h: var(#{$color-variable});
 //   @return $color-variable-h;
 // }
-
-
 
 // .light{
 // var(--black): #000000;
@@ -61,21 +57,50 @@ $nav-h-md: 100px;
 $nav-h-lg: 100px;
 
 // Font
-$font-extra-light: Helvetica, -apple-system, BlinkMacSystemFont,
-  "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
-  sans-serif;
+$font-extra-light:
+    Helvetica,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Open Sans',
+    'Helvetica Neue',
+    sans-serif;
 
-$font-light: Helvetica, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-  Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+$font-light:
+    Helvetica,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Open Sans',
+    'Helvetica Neue',
+    sans-serif;
 
-$font-regular:Helvetica,  -apple-system, BlinkMacSystemFont, "Segoe UI",
-  Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+$font-regular:
+    Helvetica,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Open Sans',
+    'Helvetica Neue',
+    sans-serif;
 
 @function transition(
-  $property,
-  $duration: 150ms,
-  $delay: 0s,
-  $timing-function: ease-out
+    $property,
+    $duration: 150ms,
+    $delay: 0s,
+    $timing-function: ease-out
 ) {
-  @return $property $duration $timing-function $delay;
+    @return $property $duration $timing-function $delay;
 }

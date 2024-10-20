@@ -17,23 +17,25 @@ const CaseStudy: React.FC<selectedProject> = ({
     tags,
     time,
 }) => {
-    const [isLoaded, setIsLoaded] = useState(false);
+    const [isLoaded, setIsLoaded] = useState(false)
 
     useEffect(() => {
         // 模拟加载过程
-        const timer = setTimeout(() => setIsLoaded(true), 1000);
-        return () => clearTimeout(timer);
-    }, []);
+        const timer = setTimeout(() => setIsLoaded(true), 1000)
+        return () => clearTimeout(timer)
+    }, [])
 
     return (
         <Link legacyBehavior href={slug}>
-            <a className={`${styles.projWrap} ${isLoaded ? styles.loaded : ''}`}>
+            <a
+                className={`${styles.projWrap} ${isLoaded ? styles.loaded : ''}`}
+            >
                 {isLoaded ? (
                     // 渲染加载完成的内容
                     <div>
                         <article>
                             <div className={styles.imgContainer}>
-                            {image.endsWith('.mp4') ? (
+                                {image.endsWith('.mp4') ? (
                                     <video
                                         src={'/' + image}
                                         autoPlay
@@ -55,20 +57,19 @@ const CaseStudy: React.FC<selectedProject> = ({
                                             styles.pgImage,
                                             'js-img selected-pj-img'
                                         )}
-                                        
                                     />
                                 )}
-
                             </div>
 
                             <div className={cn(styles.bottom)}>
                                 <div className={'tagContainer'}>
                                     {tags.map((tag, ix) => (
                                         <React.Fragment key={'tag' + ix}>
-                                            <p >
-                                                [{tag}]
+                                            <p>[{tag}]</p>
+                                            <p className={'small indentbig'}>
+                                                {' '}
+                                                {time}
                                             </p>
-                                            <p className={'small indentbig'}> {time}</p>
                                         </React.Fragment>
                                     ))}
                                 </div>

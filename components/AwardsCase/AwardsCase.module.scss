@@ -1,107 +1,97 @@
-@import "../../styles/variables.scss";
+@import '../../styles/variables.scss';
 
 .projWrap {
-  h1{
-    color: var(--font);
-    &:hover{
-      color: var(--dark-grey);
+    h1 {
+        color: var(--font);
+        &:hover {
+            color: var(--dark-grey);
+        }
     }
-  }
-  text-decoration: none;
-  @media only screen and (min-width: $breakpoint-sm) {
-    margin-bottom:20px;
-  }
-  @media only screen and (min-width: $breakpoint-lg) {
-    margin-bottom: 20px;
-  }
-  &:hover {
-    color: inherit;
-  }
-  
-
-
-  article {
-    display: flex;
-  flex-direction: column;
-  width: 100%;
-  padding: 0 0 40px 0;
-  &.largeItem {
-    flex-direction: row;
-    gap: 4rem;
-    .imgContainer {
-      width: 50%;
+    text-decoration: none;
+    @media only screen and (min-width: $breakpoint-sm) {
+        margin-bottom: 20px;
+    }
+    @media only screen and (min-width: $breakpoint-lg) {
+        margin-bottom: 20px;
+    }
+    &:hover {
+        color: inherit;
     }
 
-    .infoContainer {
-      width: 50%;
-      padding-left: 1rem;
+    article {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 0 0 40px 0;
+        &.largeItem {
+            flex-direction: row;
+            gap: 4rem;
+            .imgContainer {
+                width: 50%;
+            }
+
+            .infoContainer {
+                width: 50%;
+                padding-left: 1rem;
+            }
+        }
+
+        .infoContainer {
+            > * {
+                line-height: 1;
+                margin: 0;
+                padding: 0;
+            }
+
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+        .nametimecontainer {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+        }
+
+        .award {
+            padding-top: 28px;
+            font-size: 42px;
+            text-transform: uppercase;
+        }
+
+        .info {
+            font-size: 23px;
+            font-weight: bold;
+            color: var(--font);
+        }
+        .infocontainer {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+        }
+
+        .imgContainer {
+            position: relative;
+            display: block;
+            width: 100%;
+            @media only screen and (min-width: $breakpoint-md) {
+                margin-bottom: 10px;
+            }
+
+            > span {
+                position: unset !important;
+            }
+
+            .pgImage {
+                object-fit: cover;
+                width: 100% !important;
+                position: relative !important;
+                height: unset !important;
+            }
+
+            video.pgImage {
+                display: block; // 添加 display: block;。这会移除图片下方可能存在的小空隙。
+            }
+        }
     }
-  }
-
-  
-
-      .infoContainer {
-    > * {
-      line-height: 1;
-      margin: 0;
-      padding: 0;
-    }
-    
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
-  .nametimecontainer {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-  }
-
-  .award{
-    padding-top: 28px;
-    font-size: 42px;
-    text-transform: uppercase;
-  }
-
-  .info{
-    font-size: 23px;
-    font-weight: bold;
-  color: var(--font);
-  }
-  .infocontainer {
-
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-  }
-  
-    .imgContainer {
-      position: relative;
-      display: block;
-      width: 100%;
-      @media only screen and (min-width: $breakpoint-md) {
-        margin-bottom: 10px;
-      }
-
-      > span {
-        position: unset !important;
-      }
-      
-
-      .pgImage {
-        object-fit: cover;
-        width: 100% !important;
-        position: relative !important;
-        height: unset !important;
-      }
-
-      video.pgImage {
-
-        display: block; // 添加 display: block;。这会移除图片下方可能存在的小空隙。
-      }
-
-    }
-      }
-    }
-  
-
+}

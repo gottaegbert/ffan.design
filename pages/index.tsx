@@ -21,7 +21,7 @@ type Props = {
     data: homePageData
 }
 
-const MAX_LOADING_TIME = 10000; // 最长加载时间，10秒
+const MAX_LOADING_TIME = 10000 // 最长加载时间，10秒
 
 const IndexPage: React.FC<Props> = ({ data }) => {
     const { selectedProjects } = data
@@ -33,8 +33,10 @@ const IndexPage: React.FC<Props> = ({ data }) => {
 
     useEffect(() => {
         // 检查 URL 是否包含 work 部分的标识符
-        const isWorkSection = router.asPath.includes('#work-section') || router.query.section === 'work'
-        
+        const isWorkSection =
+            router.asPath.includes('#work-section') ||
+            router.query.section === 'work'
+
         if (!isWorkSection) {
             setShowPreloader(true)
             // 3秒后显示主内容
@@ -74,118 +76,119 @@ const IndexPage: React.FC<Props> = ({ data }) => {
     useEffect(() => {
         const handleRouteChange = (url: string) => {
             if (url.startsWith('/#work-section')) {
-                const filterParam = new URLSearchParams(url.split('?')[1]).get('filter');
+                const filterParam = new URLSearchParams(url.split('?')[1]).get(
+                    'filter'
+                )
                 switch (filterParam) {
                     case 'industrial-design':
-                        setFilter('Industrial Design');
-                        break;
+                        setFilter('Industrial Design')
+                        break
                     case 'graphic-design':
-                        setFilter('Graphic Design');
-                        break;
+                        setFilter('Graphic Design')
+                        break
                     default:
-                        setFilter('All Works');
+                        setFilter('All Works')
                 }
 
                 setTimeout(() => {
-                    const workSection = document.getElementById('work-section');
+                    const workSection = document.getElementById('work-section')
                     if (workSection) {
-                        workSection.scrollIntoView({ behavior: 'smooth' });
+                        workSection.scrollIntoView({ behavior: 'smooth' })
                     }
-                }, 100);
+                }, 100)
             }
-        };
+        }
 
-        router.events.on('routeChangeComplete', handleRouteChange);
+        router.events.on('routeChangeComplete', handleRouteChange)
 
         // 初始加载时也检查 URL
-        handleRouteChange(router.asPath);
+        handleRouteChange(router.asPath)
 
         return () => {
-            router.events.off('routeChangeComplete', handleRouteChange);
-        };
-    }, [router]);
+            router.events.off('routeChangeComplete', handleRouteChange)
+        }
+    }, [router])
 
     useEffect(() => {
         const totalImages = selectedProjects.reduce((acc, project) => {
-            return acc + (project.image ? 1 : 0);
-        }, 0);
+            return acc + (project.image ? 1 : 0)
+        }, 0)
 
-        let loadedImages = 0;
+        let loadedImages = 0
 
         const preloadImage = (src: string) => {
             return new Promise((resolve) => {
-                const img = document.createElement('img');
-                img.src = src;
+                const img = document.createElement('img')
+                img.src = src
                 img.onload = img.onerror = () => {
-                    loadedImages++;
-                    setLoadingProgress((loadedImages / totalImages) * 100);
-                    resolve(null);
-                };
-            });
-        };
+                    loadedImages++
+                    setLoadingProgress((loadedImages / totalImages) * 100)
+                    resolve(null)
+                }
+            })
+        }
 
         const preloadImages = async () => {
             const imagePromises = selectedProjects
-                .filter(project => project.image)
-                .map(project => preloadImage(project.image));
+                .filter((project) => project.image)
+                .map((project) => preloadImage(project.image))
 
             // 设置最长加载时间
-            const timeoutPromise = new Promise(resolve => {
+            const timeoutPromise = new Promise((resolve) => {
                 setTimeout(() => {
-                    console.warn('Loading timed out');
-                    resolve(null);
-                }, MAX_LOADING_TIME);
-            });
+                    console.warn('Loading timed out')
+                    resolve(null)
+                }, MAX_LOADING_TIME)
+            })
 
             // 等待所有图片加载完成或超时
-            await Promise.race([
-                Promise.all(imagePromises),
-                timeoutPromise
-            ]);
+            await Promise.race([Promise.all(imagePromises), timeoutPromise])
 
-            setIsLoading(false);
-        };
+            setIsLoading(false)
+        }
 
-        preloadImages();
-    }, [selectedProjects]);
+        preloadImages()
+    }, [selectedProjects])
 
     const handleSkip = () => {
-        setIsLoading(false);
-    };
+        setIsLoading(false)
+    }
 
     useEffect(() => {
         const handleInitialScroll = () => {
-            const urlParams = new URLSearchParams(window.location.search);
-            const section = urlParams.get('section');
+            const urlParams = new URLSearchParams(window.location.search)
+            const section = urlParams.get('section')
             if (section === 'work') {
                 setTimeout(() => {
-                    const workSection = document.getElementById('work-section');
+                    const workSection = document.getElementById('work-section')
                     if (workSection) {
-                        workSection.scrollIntoView({ behavior: 'smooth' });
+                        workSection.scrollIntoView({ behavior: 'smooth' })
                     }
-                }, 300);
+                }, 300)
             }
-        };
+        }
 
-        handleInitialScroll();
+        handleInitialScroll()
 
-        router.events.on('routeChangeComplete', handleInitialScroll);
+        router.events.on('routeChangeComplete', handleInitialScroll)
 
         return () => {
-            router.events.off('routeChangeComplete', handleInitialScroll);
-        };
-    }, [router]);
+            router.events.off('routeChangeComplete', handleInitialScroll)
+        }
+    }, [router])
 
     const handleLabelClick = (label: string) => {
-        setFilter(label);
-        let filterParam = '';
-        if (label === 'Industrial Design') filterParam = 'industrial-design';
-        else if (label === 'Graphic Design') filterParam = 'graphic-design';
-        
+        setFilter(label)
+        let filterParam = ''
+        if (label === 'Industrial Design') filterParam = 'industrial-design'
+        else if (label === 'Graphic Design') filterParam = 'graphic-design'
+
         if (filterParam) {
-            router.push(`/#work-section?filter=${filterParam}`, undefined, { shallow: true });
+            router.push(`/#work-section?filter=${filterParam}`, undefined, {
+                shallow: true,
+            })
         } else {
-            router.push('/#work-section', undefined, { shallow: true });
+            router.push('/#work-section', undefined, { shallow: true })
         }
     }
     const filteredProjects = selectedProjects.filter((project) => {
@@ -195,8 +198,8 @@ const IndexPage: React.FC<Props> = ({ data }) => {
 
     const handleProjectSelect = (projectId: string) => {
         // 在这里添加处理项目选择的逻辑
-        console.log('选中的项目ID:', projectId);
-    };
+        console.log('选中的项目ID:', projectId)
+    }
 
     return (
         <StoreProvider>
@@ -239,26 +242,29 @@ const IndexPage: React.FC<Props> = ({ data }) => {
                                             activeLabel={filter}
                                         />
                                     </div>
-                                    {filteredProjects.map((proj, idx: number) => (
-                                        <div
-                                            key={idx}
-                                            className={cn(
-                                                'col-12 col-sm-6',
-                                                styles.caseStudyCol,
-                                                {
-                                                    [styles.offsetCol]: idx === 1,
-                                                }
-                                            )}
-                                        >
-                                            <CaseStudy {...proj} />
-                                        </div>
-                                    ))}
+                                    {filteredProjects.map(
+                                        (proj, idx: number) => (
+                                            <div
+                                                key={idx}
+                                                className={cn(
+                                                    'col-12 col-sm-6',
+                                                    styles.caseStudyCol,
+                                                    {
+                                                        [styles.offsetCol]:
+                                                            idx === 1,
+                                                    }
+                                                )}
+                                            >
+                                                <CaseStudy {...proj} />
+                                            </div>
+                                        )
+                                    )}
                                 </div>
                                 <Footer />
                             </section>
-                </div>
-                        </Layout>
-                 </>
+                        </div>
+                    </Layout>
+                </>
             )}
         </StoreProvider>
     )

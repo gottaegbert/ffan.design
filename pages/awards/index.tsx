@@ -45,9 +45,17 @@ const Awards: React.FC<Props> = ({ data }) => {
             <Layout>
                 <div className={styles.container}>
                     <BasicMeta url={'/awards'} />
-                    <section id="work-section" className={cn('sectionSpacing', styles.selectedWorkContainer)}>
+                    <section
+                        id="work-section"
+                        className={cn(
+                            'sectionSpacing',
+                            styles.selectedWorkContainer
+                        )}
+                    >
                         <div className="grid">
-                            <div className={cn('col-12', styles.titleContainer)}>
+                            <div
+                                className={cn('col-12', styles.titleContainer)}
+                            >
                                 <StaggeredTitle
                                     label1="Selected Awards"
                                     label2="Industrial Design"
@@ -61,12 +69,20 @@ const Awards: React.FC<Props> = ({ data }) => {
                                 <div
                                     key={idx}
                                     className={cn(
-                                        isLargeItem(idx) ? 'col-12' : 'col-12 col-sm-4',
+                                        isLargeItem(idx)
+                                            ? 'col-12'
+                                            : 'col-12 col-sm-4',
                                         styles.awardItem,
-                                        { [styles.lastLargeItem]: isLastLargeItem(idx) }
+                                        {
+                                            [styles.lastLargeItem]:
+                                                isLastLargeItem(idx),
+                                        }
                                     )}
                                 >
-                                    <AwardsCase {...proj} isLargeItem={isLargeItem(idx)} />
+                                    <AwardsCase
+                                        {...proj}
+                                        isLargeItem={isLargeItem(idx)}
+                                    />
                                 </div>
                             ))}
                         </div>

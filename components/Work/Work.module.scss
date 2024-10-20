@@ -1,50 +1,41 @@
-@import "../../styles/variables.scss";
+@import '../../styles/variables.scss';
 
 .projWrap {
-  text-decoration: none;
-  overflow: hidden;
+    text-decoration: none;
+    overflow: hidden;
 
-  aspect-ratio: 16 / 12; // 或者其他适合你设计的比例
-  @media only screen and (min-width: $breakpoint-sm) {
-    margin-bottom:20px;
-  }
-  @media only screen and (min-width: $breakpoint-lg) {
-    margin-bottom: 20px;
-  }
-
-
-  article { 
-
-    .imgContainer {
-      position: relative;
-      display: block;
-      width: 100%;
-
-      @media only screen and (min-width: $breakpoint-md) {
-        margin-bottom: 10px;
-      }
-      
-
-      > span {
-        position: unset !important;
-      }
-      
-
-      .pgImage {
-        object-fit: cover;
-        width: 100% !important;
-        position: relative !important;
-        height: unset !important;
-      }
-
-      video.pgImage {
-
-        display: block; // 添加 display: block;。这会移除图片下方可能存在的小空隙。
-      }
-
-
+    aspect-ratio: 16 / 12; // 或者其他适合你设计的比例
+    @media only screen and (min-width: $breakpoint-sm) {
+        margin-bottom: 20px;
     }
-      }
+    @media only screen and (min-width: $breakpoint-lg) {
+        margin-bottom: 20px;
     }
-  
 
+    article {
+        .imgContainer {
+            position: relative;
+            display: block;
+            width: 100%;
+
+            @media only screen and (min-width: $breakpoint-md) {
+                margin-bottom: 10px;
+            }
+
+            > span {
+                position: unset !important;
+            }
+
+            .pgImage {
+                object-fit: cover;
+                width: 100% !important;
+                position: relative !important;
+                height: unset !important;
+            }
+
+            video.pgImage {
+                display: block; // 添加 display: block;。这会移除图片下方可能存在的小空隙。
+            }
+        }
+    }
+}

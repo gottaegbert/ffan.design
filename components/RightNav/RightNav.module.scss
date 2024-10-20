@@ -1,85 +1,81 @@
 // 导航栏右侧
 
-
 .hamburgerMenu {
-  position: fixed;
-  top: 0; // 改为 0
-  right: 48px;
-  height: 10vh; // 添加这一行
-  display: flex; // 添加这一行
-  align-items: center; // 添加这一行
-  background: none;
-  border: none;
-  font-size: clamp(1.5rem, 2vw, 2rem); // 使用 clamp 函数来设置字体大小
-  cursor: pointer;
-  z-index: 10;
-  color: #797979;
+    position: fixed;
+    top: 0; // 改为 0
+    right: 48px;
+    height: 10vh; // 添加这一行
+    display: flex; // 添加这一行
+    align-items: center; // 添加这一行
+    background: none;
+    border: none;
+    font-size: clamp(1.5rem, 2vw, 2rem); // 使用 clamp 函数来设置字体大小
+    cursor: pointer;
+    z-index: 10;
+    color: #797979;
 }
 
 .hamburgerMenu:hover {
-  color: var(--highlight);
+    color: var(--highlight);
 }
 
 .hamburgerMenu.graphicDesignExpanded {
-  color: var(--light-grey); // Graphic Design 展开时文字颜色为黑色
+    color: var(--light-grey); // Graphic Design 展开时文字颜色为黑色
 }
 
-
-
-
 .rightNav {
-  position: fixed;
-  top: 0;
-  right: -100%;
-  width: 360px;
-  height: 100%;
-  background-color: var(--black);
-  transition: right 2s ease;
-  display: flex;
-  flex-direction: column;
-  padding-left: 48px;
-  padding-right: 48px;
-  padding-bottom: 48px;
-  color: var(--white);
-  pointer-events: auto; 
-  z-index: 10;
-    overflow-y: auto; 
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 360px;
+    height: 100%;
+    background-color: var(--black);
+    transition: right 2s ease;
+    display: flex;
+    flex-direction: column;
+    padding-left: 48px;
+    padding-right: 48px;
+    padding-bottom: 48px;
+    color: var(--white);
+    pointer-events: auto;
+    z-index: 10;
+    overflow-y: auto;
 }
 
 .rightNav.visible {
-  right: 148px; /* 显示导航栏 */
-  transition: right 1s ease;
+    right: 148px; /* 显示导航栏 */
+    transition: right 1s ease;
 }
 
 .rightNav.noTransition {
-  transition: none !important;
+    transition: none !important;
 }
 .rightNav ul {
-  padding-top: 10vh;
-  list-style-type: none;
+    padding-top: 10vh;
+    list-style-type: none;
 }
 
-.rightNav li  {
-  border-bottom: 1px solid #ccc; /* 添加底部边框作为分割线 */
-  margin-bottom: 10px;
-  font-size: 1.5rem;
-  cursor: pointer;
+.rightNav li {
+    border-bottom: 1px solid #ccc; /* 添加底部边框作为分割线 */
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
 }
 
 .navLink {
-  color: var(--white);
-  text-decoration: none; /* 移除下划线 */
-  &:hover {
-    color: var(--accent-color) /* 悬停时的颜色 */
-  }
+    color: var(--white);
+    text-decoration: none; /* 移除下划线 */
+    &:hover {
+        color: var(--accent-color); /* 悬停时的颜色 */
+    }
 }
 
 .contactInfo {
-  margin-top: auto; /* 放在底部 */
-  color: var(--font);
+    margin-top: auto; /* 放在底部 */
+    color: var(--font);
 }
 
 .contactInfo p {
-  line-height: 1.2;
-   font-size: clamp(0.5rem, 2vw, 0.75rem); 
+    line-height: 1.2;
+    font-size: clamp(0.5rem, 2vw, 0.75rem);
 }

@@ -1,251 +1,246 @@
-@import "../../styles/variables.scss";
-
+@import '../../styles/variables.scss';
 
 .navigationButtons {
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
 
-.moreWorksSection{
-  padding-top:10vh;
-  height:fit-content;
+.moreWorksSection {
+    padding-top: 10vh;
+    height: fit-content;
 }
 
 .navButton {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size:  clamp(14px,2vw, 23px); 
-  font-family: $font-extra-light;
-  color:var(--dark-grey);
-  transition: background-color 0.3s ease;
-
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: clamp(14px, 2vw, 23px);
+    font-family: $font-extra-light;
+    color: var(--dark-grey);
+    transition: background-color 0.3s ease;
 }
 
 .horizontalScrollContainer {
-  display: flex;
-  overflow-x: auto;
-  overflow-y: hidden;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  gap: 48px;
-  padding: 20px 0;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none;  /* Internet Explorer 10+ */
-  &::-webkit-scrollbar { 
-    display: none;  /* WebKit */
-  }
-
-  > * {
-    flex: 0 0 auto;
-    width: calc(50% - 24px);
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-  }
-
-  @media (max-width: 768px) {
-    > * {
-      width: calc(100% - 48px);
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    gap: 48px;
+    padding: 20px 0;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    &::-webkit-scrollbar {
+        display: none; /* WebKit */
     }
-  }
+
+    > * {
+        flex: 0 0 auto;
+        width: calc(50% - 24px);
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+    }
+
+    @media (max-width: 768px) {
+        > * {
+            width: calc(100% - 48px);
+        }
+    }
 }
 
 .container {
-  display: flex;
-  justify-content: flex-start; /* Align to the right */
+    display: flex;
+    justify-content: flex-start; /* Align to the right */
 }
-.typeHeader{
-  display: flex;
-  padding: 45px 0;
-  align-items: center; /* Vertically center the items */
-  gap: 10px; 
+.typeHeader {
+    display: flex;
+    padding: 45px 0;
+    align-items: center; /* Vertically center the items */
+    gap: 10px;
 }
 
 .inlineContainer {
-
-  padding-top: 10px;
-  display: flex;
-  justify-content: space-between; /* Distribute items evenly */
-  width: 100%; /* Ensure it takes full width */
- 
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between; /* Distribute items evenly */
+    width: 100%; /* Ensure it takes full width */
 }
-
 
 .designConcept {
-  
-  padding:  0;
-  
-  padding-bottom: 48px;
-  
-  p{
-    color: var(--dark-grey);
-    font-size: 23px;
-    line-height: 1.2;
-  }
+    padding: 0;
+
+    padding-bottom: 48px;
+
+    p {
+        color: var(--dark-grey);
+        font-size: 23px;
+        line-height: 1.2;
+    }
 }
 .horizontalScrollContainer {
-  display: flex;
-  overflow-x: auto; /* Enable horizontal scrolling */
-  overflow-y: hidden; /* 禁用垂直滚动 */
-  scroll-behavior: smooth;
-  gap: 48px; /* Add space between items */
-  padding: 20px 0 0 0; /* Add padding to the container */
-  -webkit-overflow-scrolling: touch; /* 在iOS设备上提供平滑滚动 */
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    overflow-y: hidden; /* 禁用垂直滚动 */
+    scroll-behavior: smooth;
+    gap: 48px; /* Add space between items */
+    padding: 20px 0 0 0; /* Add padding to the container */
+    -webkit-overflow-scrolling: touch; /* 在iOS设备上提供平滑滚动 */
 }
 
 .horizontalScrollContainer > * {
-  flex: 0 0 auto; /* Prevent items from shrinking or growing */
-  width: calc(50% - 20px); /* Each item takes 50% of the container width minus the gap */
+    flex: 0 0 auto; /* Prevent items from shrinking or growing */
+    width: calc(
+        50% - 20px
+    ); /* Each item takes 50% of the container width minus the gap */
 }
 
 @media (max-width: 768px) {
-  .horizontalScrollContainer > * {
-    width: calc(100% - 20px); /* On small screens, each item takes full width minus the gap */
-  }
+    .horizontalScrollContainer > * {
+        width: calc(
+            100% - 20px
+        ); /* On small screens, each item takes full width minus the gap */
+    }
 }
 
 .prjTitleContainer {
-  display: flex;
-  width: 100%;
-  position: relative;
-  flex-direction: column;
-  justify-content: center;
-  @media only screen and (min-width: $breakpoint-sm) {
-    padding: 0 0 0px 0;
-  }
-  @media only screen and (min-width: $breakpoint-md) {
-    // padding: 180px 0 180px 0;
-    min-height: 0;
-  }
-  @media only screen and (min-width: $breakpoint-lg) {
-    min-height: 0;
-  }
-  @media only screen and (min-width: $breakpoint-xl) {
-    // padding: 220px 0 220px 0;
-  }
-  .title {
-    margin-bottom: 0;
-    color: var(--dark-grey);
-    margin-top:12px;
-    text-transform: uppercase;
-    @media only screen and (min-width: $breakpoint-md) {
-      margin-bottom: 0;
-      max-width: 100%;
-    }
-
-    span {
-      overflow: hidden;
-      display: block;
-      .titleSpan {
-        opacity: 1;
-      }
-    }
-  }
-
-  .videoContainer{   
-    margin:0px;
-    padding:0px;
-    overflow:hidden;
+    display: flex;
+    width: 100%;
     position: relative;
-    display: block;
-    height: 100%;
-    z-index: 0;
+    flex-direction: column;
+    justify-content: center;
+    @media only screen and (min-width: $breakpoint-sm) {
+        padding: 0 0 0px 0;
+    }
     @media only screen and (min-width: $breakpoint-md) {
-      position: absolute;
-      right: 0;
-      top: 50%;
-      width: 600px;
-      transform: translateY(-50%);
+        // padding: 180px 0 180px 0;
+        min-height: 0;
     }
     @media only screen and (min-width: $breakpoint-lg) {
-      width: 900px;
+        min-height: 0;
     }
-  }
-  .imageContainer {
-    position: relative;
-    height: 100%;
-    display: flex;
-    .projImage {
-      object-fit: contain;
-      width: 100% !important;
-      position: relative !important;
-      height: unset !important;
-      max-height: 100%;
-      max-width: 100%;
-      
+    @media only screen and (min-width: $breakpoint-xl) {
+        // padding: 220px 0 220px 0;
+    }
+    .title {
+        margin-bottom: 0;
+        color: var(--dark-grey);
+        margin-top: 12px;
+        text-transform: uppercase;
+        @media only screen and (min-width: $breakpoint-md) {
+            margin-bottom: 0;
+            max-width: 100%;
+        }
+
+        span {
+            overflow: hidden;
+            display: block;
+            .titleSpan {
+                opacity: 1;
+            }
+        }
     }
 
-    .imgForeground {
-      background-color: var(--white);
-      height: 100%;
-      width: 100%;
-      z-index: 1;
-      position: absolute;
-      top: 0;
-      left: 0;
+    .videoContainer {
+        margin: 0px;
+        padding: 0px;
+        overflow: hidden;
+        position: relative;
+        display: block;
+        height: 100%;
+        z-index: 0;
+        @media only screen and (min-width: $breakpoint-md) {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            width: 600px;
+            transform: translateY(-50%);
+        }
+        @media only screen and (min-width: $breakpoint-lg) {
+            width: 900px;
+        }
     }
-  }
+    .imageContainer {
+        position: relative;
+        height: 100%;
+        display: flex;
+        .projImage {
+            object-fit: contain;
+            width: 100% !important;
+            position: relative !important;
+            height: unset !important;
+            max-height: 100%;
+            max-width: 100%;
+        }
+
+        .imgForeground {
+            background-color: var(--white);
+            height: 100%;
+            width: 100%;
+            z-index: 1;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
 }
 .description {
-  margin-bottom: 48px;
-  p{
-    padding-top: 10px;
-    color: var(--dark-grey);
-    line-height: 1.2;
-    font-size: 23px;
-  }
+    margin-bottom: 48px;
+    p {
+        padding-top: 10px;
+        color: var(--dark-grey);
+        line-height: 1.2;
+        font-size: 23px;
+    }
 }
 
-.projImage { 
-  width: 100%; /* or any preferred dimension */
-  height: auto; /* or any preferred dimension */
-  
+.projImage {
+    width: 100%; /* or any preferred dimension */
+    height: auto; /* or any preferred dimension */
 }
 .bottomTitleSection {
-  border-bottom: 1px solid var(light-gray);
-  padding-bottom: 0;
-  @media only screen and (min-width: $breakpoint-sm) {
-    padding-bottom: 64px;
-  }
-  p.label {
-    margin-bottom: 8px;
-    font-family: $font-extra-light;
-  }
-  p.keyFact {
-    margin-bottom: 16px;
-    font-family: $font-regular;
-    margin-bottom: 32px;
+    border-bottom: 1px solid var(light-gray);
+    padding-bottom: 0;
     @media only screen and (min-width: $breakpoint-sm) {
-      margin-bottom: 0;
+        padding-bottom: 64px;
     }
-    img {
-      height: 24px;
-      width: 24px;
+    p.label {
+        margin-bottom: 8px;
+        font-family: $font-extra-light;
     }
-  }
+    p.keyFact {
+        margin-bottom: 16px;
+        font-family: $font-regular;
+        margin-bottom: 32px;
+        @media only screen and (min-width: $breakpoint-sm) {
+            margin-bottom: 0;
+        }
+        img {
+            height: 24px;
+            width: 24px;
+        }
+    }
 }
 
-
 .skillsGrid {
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 64px;
-  @media only screen and (min-width: $breakpoint-md) {
-    margin-bottom: 96px;
-  }
-
-  .skillsCell {
-    height: 50px;
     display: flex;
-    align-items: center;
-    width: 33%;
-
+    flex-wrap: wrap;
+    margin-bottom: 64px;
     @media only screen and (min-width: $breakpoint-md) {
-      height: 70px;
+        margin-bottom: 96px;
     }
-    p {
-      font-family: $font-extra-light;
+
+    .skillsCell {
+        height: 50px;
+        display: flex;
+        align-items: center;
+        width: 33%;
+
+        @media only screen and (min-width: $breakpoint-md) {
+            height: 70px;
+        }
+        p {
+            font-family: $font-extra-light;
+        }
     }
-  }
 }

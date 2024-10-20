@@ -40,16 +40,15 @@ const Footer: React.FC<Props> = ({}) => {
                     <p>Address</p>
                     <br />
                     <div className={styles.contactInfo}>
-                    <div className={styles.labels}>
-                    <p>China</p>
-                    <p>US</p>
+                        <div className={styles.labels}>
+                            <p>China</p>
+                            <p>US</p>
                         </div>
                         <div className={styles.details}>
-                        <p>Wangjingyuan D-602, Beijing. 100102</p>
+                            <p>Wangjingyuan D-602, Beijing. 100102</p>
                             <p>100 Steuben 4D, Brooklyn, NY 11205</p>
                         </div>
-                        </div>
-                  
+                    </div>
                 </div>
             </div>
         </footer>

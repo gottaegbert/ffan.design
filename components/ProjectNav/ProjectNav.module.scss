@@ -1,311 +1,290 @@
 .layoutContainer {
-  display: flex;
-  height: 100vh; // Full viewport height
+    display: flex;
+    height: 100vh; // Full viewport height
 }
 
 .projectNav {
-  overflow-x: visible;
-  scrollbar-width: none;  /* Firefox */
-  -ms-overflow-style: none;  /* Internet Explorer 10+ */
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  height: 100%; // 设置高度为窗口高度
+    overflow-x: visible;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    height: 100%; // 设置高度为窗口高度
 }
 
 .navContainer {
-  height: 100%; // Make sure the container takes full height
-  width: 25vw; // Set the width of the container
-  display: flex;
-  flex-direction: column;
+    height: 100%; // Make sure the container takes full height
+    width: 25vw; // Set the width of the container
+    display: flex;
+    flex-direction: column;
 
-  @media (max-width: 768px) {
-    width: 100vw;
-    height: 10vh;
-  }
-}
-
-
-.projectImage{
-  object-fit: cover;
-}
-
-.imageContainer {
-  z-index: -9;
-}
-
-.imageTopDark {
-  background-color: black;
-  width: 75vw; // 设置图片容器的宽度为75vw
-  display: flex;
-  height: 90vh;
-
-  // 其他需要的样式
-}
-
-.imageBottom {
-  background-color: white; // 或者您想要的其他颜色
-  // 其他需要的样式
-}
-.imageTop {
-  width: 75vw; // 设置图片容器的宽度为75vw
-  display: flex;
-  height: 90vh;
-}
-
-
-.imageBottom {
-  transform: translateY(calc(100vh - 95vh)); // 使图片容器贴到窗口底部
-  width: 75vw; // 设置图片容器的宽度为75vw
-  display: flex;
-  height: 90vh; // 设置图片容器的高度为90vh
-  background-color: white; // 或者您想要的其他颜色
-}
-
-.section {
-  cursor: pointer;
-  width: 100vw;
-}
-
-.sectionButton {
-  height: 10vh;
-  width: 30vw;
-  padding: 0 48px; // 修改这一行
-  font-size: 1.5rem;
-  background-color: transparent;
-  border: none;
-  text-align: left;
-  cursor: pointer;
-  color: var(--light-grey);
-  transition: color 0.3s ease;
-  display: flex; // 添加这一行
-  align-items: center; // 添加这一行
-  justify-content: space-between;
-  @media (max-width: 768px) {
-      height: 8vh;
-  width: 100vw;
-  }
-}
-
-.sectionButton.expanded {
-  font-size: 1rem;
-  text-transform: uppercase; // 将文本转换为大写
-  color:var(--white);
-}
-
-.sectionButtonContent {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-
-  @media (max-width: 768px) {
-    gap: 16px; // 在小屏幕上减小间隔
-  }
-
-  @media (min-width: 1200px) {
-    gap: 32px; // 在大屏幕上增加间隔
-  }
-}
-
-.plusIcon {
-  transition: transform 0.3s ease;
-  @media (max-width: 768px) {
-    width: 24px;
-    height: 24px;
-  }
-}
-
-
-
-
-
-.sectionButtonSectionTwo{
-  color:var(--font);
-}
-
-.sectionButtonSectionTwo.expanded {
-   color: var(--black);
-}
-/* Section-specific background colors */
-.sectionOne {
-  background-color: var(--dark-grey); 
-}
-
-.sectionOne.expanded {
-  width: 25vw; // 展开时占窗口宽度的25%
-  height: 90vh;
-  @media (max-width: 768px) {
-    width: 100vw;
-  }
-}
-
-.sectionTwo {
-  background-color: var(--light-grey); // Lighter grey background for Graphic Design
-}
-
-
-.sectionTwo.expanded {
-  width: 25vw; // 展开时占窗口宽度的25%
-    height: 90vh;
     @media (max-width: 768px) {
-      width: 100vw;
+        width: 100vw;
+        height: 10vh;
     }
 }
 
+.projectImage {
+    object-fit: cover;
+}
+
+.imageContainer {
+    z-index: -9;
+}
+
+.imageTopDark {
+    background-color: black;
+    width: 75vw; // 设置图片容器的宽度为75vw
+    display: flex;
+    height: 90vh;
+
+    // 其他需要的样式
+}
+
+.imageBottom {
+    background-color: white; // 或者您想要的其他颜色
+    // 其他需要的样式
+}
+.imageTop {
+    width: 75vw; // 设置图片容器的宽度为75vw
+    display: flex;
+    height: 90vh;
+}
+
+.imageBottom {
+    transform: translateY(calc(100vh - 95vh)); // 使图片容器贴到窗口底部
+    width: 75vw; // 设置图片容器的宽度为75vw
+    display: flex;
+    height: 90vh; // 设置图片容器的高度为90vh
+    background-color: white; // 或者您想要的其他颜色
+}
+
+.section {
+    cursor: pointer;
+    width: 100vw;
+}
+
+.sectionButton {
+    height: 10vh;
+    width: 30vw;
+    padding: 0 48px; // 修改这一行
+    font-size: 1.5rem;
+    background-color: transparent;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    color: var(--light-grey);
+    transition: color 0.3s ease;
+    display: flex; // 添加这一行
+    align-items: center; // 添加这一行
+    justify-content: space-between;
+    @media (max-width: 768px) {
+        height: 8vh;
+        width: 100vw;
+    }
+}
+
+.sectionButton.expanded {
+    font-size: 1rem;
+    text-transform: uppercase; // 将文本转换为大写
+    color: var(--white);
+}
+
+.sectionButtonContent {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    @media (max-width: 768px) {
+        gap: 16px; // 在小屏幕上减小间隔
+    }
+
+    @media (min-width: 1200px) {
+        gap: 32px; // 在大屏幕上增加间隔
+    }
+}
+
+.plusIcon {
+    transition: transform 0.3s ease;
+    @media (max-width: 768px) {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+.sectionButtonSectionTwo {
+    color: var(--font);
+}
+
+.sectionButtonSectionTwo.expanded {
+    color: var(--black);
+}
+/* Section-specific background colors */
+.sectionOne {
+    background-color: var(--dark-grey);
+}
+
+.sectionOne.expanded {
+    width: 25vw; // 展开时占窗口宽度的25%
+    height: 90vh;
+    @media (max-width: 768px) {
+        width: 100vw;
+    }
+}
+
+.sectionTwo {
+    background-color: var(
+        --light-grey
+    ); // Lighter grey background for Graphic Design
+}
+
+.sectionTwo.expanded {
+    width: 25vw; // 展开时占窗口宽度的25%
+    height: 90vh;
+    @media (max-width: 768px) {
+        width: 100vw;
+    }
+}
 
 /* Project list styling */
-.time{
-  padding-top: 0px;
-
+.time {
+    padding-top: 0px;
 }
 .projectListDark {
-  display: flex;
-  flex-direction: column;
-  height: 75vh;
-  justify-content: space-between;
-  padding: 0px 48px;
-  flex-grow: 1;
-  overflow-y: auto;
-  width: 25vw;
+    display: flex;
+    flex-direction: column;
+    height: 75vh;
+    justify-content: space-between;
+    padding: 0px 48px;
+    flex-grow: 1;
+    overflow-y: auto;
+    width: 25vw;
 }
 
-
-
 .projectListDark li {
-  cursor: pointer;
-  transition: color 0.3s ease;
+    cursor: pointer;
+    transition: color 0.3s ease;
 }
 
 .projectListDark li:hover {
-  color: var(--light-grey); // Highlight text color on hover
-  text-decoration: underline; // Add underline on hover
+    color: var(--light-grey); // Highlight text color on hover
+    text-decoration: underline; // Add underline on hover
 }
 
 /* Project list styling */
 .projectListLight {
-  display: flex;
-  flex-direction: column;
-  height: 75vh;
-  justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    height: 75vh;
+    justify-content: space-between;
 
-  padding: 0px 48px;
-  flex-grow: 1;
+    padding: 0px 48px;
+    flex-grow: 1;
     width: 25vw;
-  overflow-y: auto;
-
+    overflow-y: auto;
 }
 
 .projectListLight li {
-
-  cursor: pointer;
-  transition: color 0.3s ease;
+    cursor: pointer;
+    transition: color 0.3s ease;
 }
 
 .projectListLight li:hover {
-  text-decoration: underline; // Add underline on hover
+    text-decoration: underline; // Add underline on hover
 }
 
 .selectedsection1 {
-  color:var(--white);
+    color: var(--white);
 }
 .selectedsection2 {
-  color:var(--black);
+    color: var(--black);
 }
-
 
 .titleIndented {
-  padding-left: 2em; // 增加两格缩进
+    padding-left: 2em; // 增加两格缩进
 }
 
-
-
-
-
-.checkAllLink{
-  cursor: pointer;
-  &:hover{
-    text-decoration: underline;
-  }
-  
-  
+.checkAllLink {
+    cursor: pointer;
+    &:hover {
+        text-decoration: underline;
+    }
 }
-
-
-
 
 // 移动端样式
 .mobileContainer {
-  width: 100%;
-  height: 100vh;
-  position: relative;
-  overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
 }
 
 .mobileImageContainer {
-  position: relative;
-  width: 100%;
-  height: 100vh;
+    position: relative;
+    width: 100%;
+    height: 100vh;
 }
 
 .mobileProjectImage {
-  object-fit: cover;
+    object-fit: cover;
 }
 
 .mobileProjectInfo {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: rgba(0, 0, 0, 0.7);
-  color: white;
-  padding: 16px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 16px;
 
-  h2 {
-    font-size: 1.5rem;
-    margin-bottom: 8px;
-  }
+    h2 {
+        font-size: 1.5rem;
+        margin-bottom: 8px;
+    }
 
-  p {
-    font-size: 1rem;
-    margin-bottom: 12px;
-  }
+    p {
+        font-size: 1rem;
+        margin-bottom: 12px;
+    }
 }
 
 .mobileTypeToggle {
-  background-color: #D9D9D9;
-  color: #000;
-  border: none;
-  padding: 8px 16px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+    background-color: #d9d9d9;
+    color: #000;
+    border: none;
+    padding: 8px 16px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 
-  &:hover {
-    background-color: #BDBDBD;
-  }
+    &:hover {
+        background-color: #bdbdbd;
+    }
 }
 
 // 媒体查询
 @media (max-width: 768px) {
-  .layoutContainer {
-    display: none;
-  }
+    .layoutContainer {
+        display: none;
+    }
 }
 
 @media (min-width: 769px) {
-  .mobileContainer {
-    display: none;
-  }
+    .mobileContainer {
+        display: none;
+    }
 }
 
 .loadingPlaceholder {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #f0f0f0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #f0f0f0;
 }

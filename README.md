@@ -2,14 +2,15 @@ TODO:
 
 -[] filter
 -[] projectnav layout
+
 ## 🚀 Portfolio
 
-Live at 👉 
+Live at 👉
 
 ## ✨ Stack
 
-- Next.js
-- Typescript
-- Scss
-- GSAP
-- Netlify CMS
+-   Next.js
+-   Typescript
+-   Scss
+-   GSAP
+-   Netlify CMS

@@ -5,7 +5,7 @@ import Image from 'next/legacy/image'
 import { selectedAward } from '../../utils/customTypes'
 
 interface AwardsCaseProps extends selectedAward {
-    isLargeItem: boolean;
+    isLargeItem: boolean
 }
 
 const AwardsCase: React.FC<AwardsCaseProps> = ({
@@ -15,57 +15,62 @@ const AwardsCase: React.FC<AwardsCaseProps> = ({
     awardlevel,
     awardname,
     time,
-    isLargeItem
+    isLargeItem,
 }) => {
     const ref = React.createRef<HTMLDivElement>()
- 
+
     return (
-     
-            <a className={styles.projWrap}>
-                <article className={cn(styles.article, { [styles.largeItem]: isLargeItem })}>
-                    <div className={styles.imgContainer}>
-                        {image.endsWith('.mp4') ? (
-                            <video
-                                src={'/' + image}
-                                autoPlay
-                                loop
-                                playsInline
-                                controls={false}
-                                muted
-                                className={cn(styles.pgImage, 'js-img selected-pj-img')}
-                            />
-                        ) : (
-                            <Image
+        <a className={styles.projWrap}>
+            <article
+                className={cn(styles.article, {
+                    [styles.largeItem]: isLargeItem,
+                })}
+            >
+                <div className={styles.imgContainer}>
+                    {image.endsWith('.mp4') ? (
+                        <video
                             src={'/' + image}
-          alt={title}
-          layout="responsive"
-          width={isLargeItem ? 1200 : 600}
-          height={isLargeItem ? 800 : 400}
-          objectFit="cover"
-          loading="lazy"
-        />
-                        )}
-                        <div className={styles.imgForeground} ref={ref}></div>
-                    </div>
+                            autoPlay
+                            loop
+                            playsInline
+                            controls={false}
+                            muted
+                            className={cn(
+                                styles.pgImage,
+                                'js-img selected-pj-img'
+                            )}
+                        />
+                    ) : (
+                        <Image
+                            src={'/' + image}
+                            alt={title}
+                            layout="responsive"
+                            width={isLargeItem ? 1200 : 600}
+                            height={isLargeItem ? 800 : 400}
+                            objectFit="cover"
+                            loading="lazy"
+                        />
+                    )}
+                    <div className={styles.imgForeground} ref={ref}></div>
+                </div>
 
-                    <div className={styles.infoContainer}>
-                        <div className={styles.nametimecontainer}>
-                            <p className={styles.info}>{title}</p>
-                            <p className={styles.info}>{time}</p>
-                        </div>
-                        <h1 className={styles.award}>{awardname}</h1>
-                        <div className={styles.infocontainer}>
-                            <p className={styles.info}>Award</p>
-                            <p className={styles.info}>{awardlevel}</p>
-                        </div>
-                        <div className={styles.infocontainer}>
-                            <p className={styles.info}>Designer</p>
-                            <p className={styles.info}>{designer}</p>
-                        </div>
+                <div className={styles.infoContainer}>
+                    <div className={styles.nametimecontainer}>
+                        <p className={styles.info}>{title}</p>
+                        <p className={styles.info}>{time}</p>
                     </div>
-                </article>
-            </a>
-
+                    <h1 className={styles.award}>{awardname}</h1>
+                    <div className={styles.infocontainer}>
+                        <p className={styles.info}>Award</p>
+                        <p className={styles.info}>{awardlevel}</p>
+                    </div>
+                    <div className={styles.infocontainer}>
+                        <p className={styles.info}>Designer</p>
+                        <p className={styles.info}>{designer}</p>
+                    </div>
+                </div>
+            </article>
+        </a>
     )
 }
 

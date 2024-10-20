@@ -24,22 +24,25 @@ type Props = {
     projData: selectedProject[]
 }
 const Team: React.FC<Props> = ({ data }) => {
-    const [expandedDescriptions, setExpandedDescriptions] = useState<{ [key: number]: boolean }>({});
+    const [expandedDescriptions, setExpandedDescriptions] = useState<{
+        [key: number]: boolean
+    }>({})
     const spaceRef = useRef<HTMLDivElement>(null)
     const containerRef = useRef<HTMLDivElement>(null)
-    const videoRef = useRef<HTMLVideoElement>(null);
-    const [hasPlayed, setHasPlayed] = useState(false);
+    const videoRef = useRef<HTMLVideoElement>(null)
+    const [hasPlayed, setHasPlayed] = useState(false)
 
     const toggleDescription = (idx: number) => {
-        setExpandedDescriptions(prev => ({
+        setExpandedDescriptions((prev) => ({
             ...prev,
-            [idx]: !prev[idx]
-        }));
-    };
+            [idx]: !prev[idx],
+        }))
+    }
 
     useEffect(() => {
         if (spaceRef.current && containerRef.current) {
-            gsap.fromTo(spaceRef.current, 
+            gsap.fromTo(
+                spaceRef.current,
                 { height: '20vh' },
                 {
                     height: '0vh',
@@ -49,7 +52,7 @@ const Team: React.FC<Props> = ({ data }) => {
                         start: 'top top',
                         end: '+=20%',
                         scrub: true,
-                    }
+                    },
                 }
             )
         }
@@ -62,28 +65,28 @@ const Team: React.FC<Props> = ({ data }) => {
         const options = {
             root: null,
             rootMargin: '0px',
-            threshold: 0.5 // 当视频元素50%可见时触发
-        };
+            threshold: 0.5, // 当视频元素50%可见时触发
+        }
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting && !hasPlayed && videoRef.current) {
-                    videoRef.current.play();
-                    setHasPlayed(true);
+                    videoRef.current.play()
+                    setHasPlayed(true)
                 }
-            });
-        }, options);
+            })
+        }, options)
 
         if (videoRef.current) {
-            observer.observe(videoRef.current);
+            observer.observe(videoRef.current)
         }
 
         return () => {
             if (videoRef.current) {
-                observer.unobserve(videoRef.current);
+                observer.unobserve(videoRef.current)
             }
-        };
-    }, [hasPlayed]);
+        }
+    }, [hasPlayed])
 
     return (
         <StoreProvider>
@@ -99,10 +102,7 @@ const Team: React.FC<Props> = ({ data }) => {
                             className={cn('logo', styles.logo)}
                         />
                     </div>
-                    <div 
-                        ref={spaceRef}
-                        className={styles.space}
-                    ></div>
+                    <div ref={spaceRef} className={styles.space}></div>
                     <div
                         className={cn(
                             'content-container',
@@ -154,62 +154,108 @@ const Team: React.FC<Props> = ({ data }) => {
                     <div className={styles.videoBackground}>
                         <video
                             ref={videoRef}
-                            
                             muted
                             playsInline // 添加这个属性以支持移动设备
                         >
-                            <source src="/assets/images/team/ditu.mp4" type="video/mp4" />
+                            <source
+                                src="/assets/images/team/ditu.mp4"
+                                type="video/mp4"
+                            />
                             您的浏览器不支持视频标签。
                         </video>
                     </div>
                 </div>
-         
-                   
-             
+
                 <section>
                     <div className={cn(styles.teamGrid)}>
                         {data.teams.map((team, idx: number) => (
-                            <div 
-                                className={cn(styles.teamMember, { [styles.expanded]: expandedDescriptions[idx] })} 
+                            <div
+                                className={cn(styles.teamMember, {
+                                    [styles.expanded]:
+                                        expandedDescriptions[idx],
+                                })}
                                 key={'team' + idx}
                                 onClick={() => toggleDescription(idx)}
                             >
-                                <div className={cn('grid', styles.teamMemberHeader)}>
-                                   
-                                        <h4 className={cn('col-12 col-start-sm-1 col-end-sm-2 col-start-md-1 col-end-md-2 col-start-lg-1 col-end-lg-2')}>
-                                            {team.Role}
-                                            </h4>
-                                        <h4 className={cn('col-12 col-start-sm-11 col-end-sm-12 col-start-md-11 col-end-md-12 col-start-lg-11 col-end-lg-12')}>{team.Name}</h4>
-                               
+                                <div
+                                    className={cn(
+                                        'grid',
+                                        styles.teamMemberHeader
+                                    )}
+                                >
+                                    <h4
+                                        className={cn(
+                                            'col-12 col-start-sm-1 col-end-sm-2 col-start-md-1 col-end-md-2 col-start-lg-1 col-end-lg-2'
+                                        )}
+                                    >
+                                        {team.Role}
+                                    </h4>
+                                    <h4
+                                        className={cn(
+                                            'col-12 col-start-sm-11 col-end-sm-12 col-start-md-11 col-end-md-12 col-start-lg-11 col-end-lg-12'
+                                        )}
+                                    >
+                                        {team.Name}
+                                    </h4>
                                 </div>
-                                <div className={cn('grid',styles.descriptionContainer)}>
-                                    {idx < 2 && (  // 只有当索引小于2时才渲染图片
-                                        <div className={cn('col-12 col-start-3 col-end-7',styles.image)}>
+                                <div
+                                    className={cn(
+                                        'grid',
+                                        styles.descriptionContainer
+                                    )}
+                                >
+                                    {idx < 2 && ( // 只有当索引小于2时才渲染图片
+                                        <div
+                                            className={cn(
+                                                'col-12 col-start-3 col-end-7',
+                                                styles.image
+                                            )}
+                                        >
                                             <Image
                                                 src={'/' + team.image}
                                                 width={690}
                                                 height={388}
                                                 alt={team.Name}
-                                                className={cn( 'js-img selected-pj-img')}
-                                            />  
+                                                className={cn(
+                                                    'js-img selected-pj-img'
+                                                )}
+                                            />
                                         </div>
                                     )}
-                                    <div className={cn('col-12 col-start-9 col-end-12',styles.description)}>
-                                    <ReactMarkdown
-                                        components={{
-                                            p: ({ children }) => {
-                                                const content = children
-                                                    .map(child => (typeof child === 'string' ? child : ''))
-                                                    .join('');
-                                                
-                                                if (content.includes('[TIME]')) {
-                                                    return <CustomRenderer value={content} />;
-                                                }
-                                                return <p>{children}</p>;
-                                            },
-                                        }}
+                                    <div
+                                        className={cn(
+                                            'col-12 col-start-9 col-end-12',
+                                            styles.description
+                                        )}
                                     >
-                                        {team.Description}
+                                        <ReactMarkdown
+                                            components={{
+                                                p: ({ children }) => {
+                                                    const content = children
+                                                        .map((child) =>
+                                                            typeof child ===
+                                                            'string'
+                                                                ? child
+                                                                : ''
+                                                        )
+                                                        .join('')
+
+                                                    if (
+                                                        content.includes(
+                                                            '[TIME]'
+                                                        )
+                                                    ) {
+                                                        return (
+                                                            <CustomRenderer
+                                                                value={content}
+                                                            />
+                                                        )
+                                                    }
+                                                    return <p>{children}</p>
+                                                },
+                                            }}
+                                        >
+                                            {team.Description}
                                         </ReactMarkdown>
                                     </div>
                                 </div>
@@ -218,30 +264,29 @@ const Team: React.FC<Props> = ({ data }) => {
                     </div>
                 </section>
                 <Footer />
-
-     
-            
             </Layout>
         </StoreProvider>
     )
 }
 
 const CustomRenderer = ({ value }: { value: string }) => {
-    const parts = value.split(/\[TIME\](.*?)\[\/TIME\]/g);
+    const parts = value.split(/\[TIME\](.*?)\[\/TIME\]/g)
     return (
         <div className={styles.workExperiences}>
             {parts.map((part, index) => {
-                if (index % 2 === 0) return null; // 跳过空字符串
+                if (index % 2 === 0) return null // 跳过空字符串
                 return (
                     <div key={index} className={styles.experienceItem}>
                         <div className={styles.timeColumn}>{part}</div>
-                        <div className={styles.descriptionColumn}>{parts[index + 1]?.trim()}</div>
+                        <div className={styles.descriptionColumn}>
+                            {parts[index + 1]?.trim()}
+                        </div>
                     </div>
-                );
+                )
             })}
         </div>
-    );
-};
+    )
+}
 
 export default Team
 

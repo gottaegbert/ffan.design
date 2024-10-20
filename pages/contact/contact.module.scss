@@ -1,70 +1,61 @@
-@import "../../styles/variables.scss";
-
+@import '../../styles/variables.scss';
 
 .heroContainer {
-  width: 100%;
-  height: 100vh;
-  z-index: 0;
-  justify-content:space-between;
-  min-height: 100vh; // 确保有足够的滚动空间
+    width: 100%;
+    height: 100vh;
+    z-index: 0;
+    justify-content: space-between;
+    min-height: 100vh; // 确保有足够的滚动空间
 }
 
+.contentContainer {
+    .intro {
+        padding-top: 48px;
+    }
+    .value {
+        // padding-top: 124px;
+        // padding-bottom: 110px;
+        padding-top: 72px;
+        padding-bottom: 54px;
+        color: #000;
+        text-transform: uppercase;
+        font-size: 40px;
+        text-align: center;
+        font-weight: bold !important;
+    }
 
-
-
-.contentContainer{
-  .intro{
-    padding-top: 48px;
-  }
- .value{
-  // padding-top: 124px;
-  // padding-bottom: 110px;
-  padding-top: 72px;
-  padding-bottom:54px;
-  color: #000;
-  text-transform: uppercase;
-  font-size: 40px;
-  text-align: center;
-  font-weight: bold !important;
- }
- 
-  .introBio {
-    opacity: 1;
-    
-  }
-  .descBio {
-    opacity: 1;
-    
-  }
-  h4 {
-    line-height: 1.4;
-    margin-bottom: 32px;
-  }
-  p {
-    line-height: 1.2;
-    margin-bottom: 32px;
-font-weight: bold;
-
-  }
-  .contactblock{
-    padding-top: 5vh;
-  }
-  .contact{
-    text-transform: uppercase;
-    color: #000;
-    font-size: 40px;
-    text-align: left;
-    font-weight: bold !important;
-   }
-   .contactlink{
-    text-transform: uppercase;
-    color: #000;
-    font-size: 40px;
-    text-align: left;
-    font-weight: bold !important;
-
-    
-   }
+    .introBio {
+        opacity: 1;
+    }
+    .descBio {
+        opacity: 1;
+    }
+    h4 {
+        line-height: 1.4;
+        margin-bottom: 32px;
+    }
+    p {
+        line-height: 1.2;
+        margin-bottom: 32px;
+        font-weight: bold;
+    }
+    .contactblock {
+        padding-top: 5vh;
+    }
+    .contact {
+        text-transform: uppercase;
+        color: #000;
+        font-size: 40px;
+        text-align: left;
+        font-weight: bold !important;
+    }
+    .contactlink {
+        text-transform: uppercase;
+        color: #000;
+        font-size: 40px;
+        text-align: left;
+        font-weight: bold !important;
+    }
 }
 
 .contactlinkContainer {
@@ -78,9 +69,11 @@ font-weight: bold;
     font-size: 40px;
     text-align: left;
     font-weight: bold !important;
-    transition: color 0.3s ease, text-decoration 0.3s ease;
+    transition:
+        color 0.3s ease,
+        text-decoration 0.3s ease;
     cursor: pointer;
-    text-decoration:none;
+    text-decoration: none;
 
     &:hover {
         text-decoration: underline;
@@ -89,6 +82,6 @@ font-weight: bold;
 
 .contactlinkContainer:hover {
     .contactlink:not(:hover) {
-        color:var(--font) // 灰色，可以根据需要调整
+        color: var(--font); // 灰色，可以根据需要调整
     }
 }

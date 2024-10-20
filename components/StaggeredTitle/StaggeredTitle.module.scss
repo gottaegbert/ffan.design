@@ -1,42 +1,44 @@
-@import "../../styles/variables.scss";
+@import '../../styles/variables.scss';
 
 .title {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  gap: 20em;
-  font-weight:normal;
-  font-size: 1rem;
-  color: var(--font-color);
-  display: inline-block;;
-  span {
-    overflow: hidden;
-    font-size:  clamp(23px,2vw, 30px); 
-    font-weight: 400;
-    letter-spacing: -0.25px;
-    @media only screen and (min-width: $breakpoint-sm) {
-      display: flex;
-      overflow: hidden;
-        gap: 3em;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 20em;
+    font-weight: normal;
+    font-size: 1rem;
+    color: var(--font-color);
+    display: inline-block;
+    span {
+        overflow: hidden;
+        font-size: clamp(23px, 2vw, 30px);
+        font-weight: 400;
+        letter-spacing: -0.25px;
+        @media only screen and (min-width: $breakpoint-sm) {
+            display: flex;
+            overflow: hidden;
+            gap: 3em;
+        }
     }
-  }
 }
 
 .selected {
-  color: var(--dark-grey);
-  text-decoration: underline; // 选中时的下划线
+    color: var(--dark-grey);
+    text-decoration: underline; // 选中时的下划线
 }
 
 .offset {
-  display: inline-block;
-  transition: color 0.3s ease, text-decoration 0.3s ease;
-  &:before {
-    content: " ";
-    @media only screen and (min-width: $breakpoint-sm) {
-      display: none;
+    display: inline-block;
+    transition:
+        color 0.3s ease,
+        text-decoration 0.3s ease;
+    &:before {
+        content: ' ';
+        @media only screen and (min-width: $breakpoint-sm) {
+            display: none;
+        }
     }
-  }
-  @media only screen and (min-width: $breakpoint-sm) {
-    margin-left: 0px;
-  }
+    @media only screen and (min-width: $breakpoint-sm) {
+        margin-left: 0px;
+    }
 }

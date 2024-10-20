@@ -1,313 +1,309 @@
-@import "../styles/variables.scss";
-
+@import '../styles/variables.scss';
 
 .pageWrapper {
-  display: flex;
-  height: 100vh;
+    display: flex;
+    height: 100vh;
     scroll-snap-align: start;
-  scroll-snap-stop: always;
+    scroll-snap-stop: always;
 }
-.container{
-  height: 100vh;
-  // overflow: visible;
-  overflow-y: scroll;
-  scroll-snap-type: y mandatory;
+.container {
+    height: 100vh;
+    // overflow: visible;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
 }
 
 .leftNav {
-  width: 425px;
-  height: 100%;
-  
-  .navItem {
-    font-size: 18px;
-    color: var(--light-gray); /* or white for more contrast */
-    margin-bottom: 20px;
-    cursor: pointer;
-    
-    &:hover {
-      text-decoration: underline;
-      color: var(--primary-color); /* Accent color on hover */
-    }
-  }
+    width: 425px;
+    height: 100%;
 
-  .year {
-    font-size: 16px;
-    font-weight: bold;
-    margin-top: 30px;
-    color: var(--light-gray);
-  }
+    .navItem {
+        font-size: 18px;
+        color: var(--light-gray); /* or white for more contrast */
+        margin-bottom: 20px;
+        cursor: pointer;
+
+        &:hover {
+            text-decoration: underline;
+            color: var(--primary-color); /* Accent color on hover */
+        }
+    }
+
+    .year {
+        font-size: 16px;
+        font-weight: bold;
+        margin-top: 30px;
+        color: var(--light-gray);
+    }
 }
 
 .content {
-  flex-grow: 1;
-  background-color: var(--off-white); /* Same as current design */
-  // padding-left: 48px;
+    flex-grow: 1;
+    background-color: var(--off-white); /* Same as current design */
+    // padding-left: 48px;
 }
 
 .projectList {
-  display: flex;
-  flex-direction: column;
-  
-  .projectItem {
-    margin-bottom: 20px;
-    font-size: 16px;
-    
-    &:hover {
-      color: var(--accent-color);
-      text-decoration: underline;
+    display: flex;
+    flex-direction: column;
+
+    .projectItem {
+        margin-bottom: 20px;
+        font-size: 16px;
+
+        &:hover {
+            color: var(--accent-color);
+            text-decoration: underline;
+        }
     }
-  }
 }
 
 .heroTextLine {
-  font-size: 32px; /* Adjust this size based on the visual */
-  margin-bottom: 40px;
-  color: var(--dark-gray);
+    font-size: 32px; /* Adjust this size based on the visual */
+    margin-bottom: 40px;
+    color: var(--dark-gray);
 }
 
 .heroTextLine {
-  opacity: 0;
-  transform: translateY(100%);
-  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+    opacity: 0;
+    transform: translateY(100%);
+    transition:
+        transform 0.5s ease-out,
+        opacity 0.5s ease-out;
 
-  &.animate {
-    opacity: 1;
-    transform: translateY(0%);
-  }
+    &.animate {
+        opacity: 1;
+        transform: translateY(0%);
+    }
 }
-
 
 .projTitle {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
-
-
 
 .heroContainer {
     scroll-snap-align: start;
-  scroll-snap-stop: always;
-  background-color: var(--off-white);
-  display:flex;
-  align-items: center;
-  width: 100%;
-  padding: 170px 0 0 0;
-  @media only screen and (min-width: $breakpoint-sm) {
-    padding: 200px 0 90px 0;
-  }
-  @media only screen and (min-width: $breakpoint-md) {
-    padding: 280px 0 180px 0;
-  }
-  @media only screen and (min-width: $breakpoint-lg) {
-    padding: 280px 0 180px 0;
-  }
-  @media only screen and (min-width: $breakpoint-xl) {
-    padding: 320px 0 220px 0;
-  }
+    scroll-snap-stop: always;
+    background-color: var(--off-white);
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 170px 0 0 0;
+    @media only screen and (min-width: $breakpoint-sm) {
+        padding: 200px 0 90px 0;
+    }
+    @media only screen and (min-width: $breakpoint-md) {
+        padding: 280px 0 180px 0;
+    }
+    @media only screen and (min-width: $breakpoint-lg) {
+        padding: 280px 0 180px 0;
+    }
+    @media only screen and (min-width: $breakpoint-xl) {
+        padding: 320px 0 220px 0;
+    }
 }
-
-
 
 .bottomSection {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 48px 0;
-  background-color: var(--light-gray);
-  
-  button {
-    font-size: 18px;
-    cursor: pointer;
-    background-color: var(--primary-color);
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    
-    &:hover {
-      background-color: var(--accent-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 48px 0;
+    background-color: var(--light-gray);
+
+    button {
+        font-size: 18px;
+        cursor: pointer;
+        background-color: var(--primary-color);
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+
+        &:hover {
+            background-color: var(--accent-color);
+        }
     }
-  }
 }
 
-.three{
-
-
-  position: absolute;
+.three {
+    position: absolute;
     z-index: 2;
     @media only screen and (max-width: $breakpoint-sm) {
-    width:  100vw;
-    height: 80vh;
-  }
-  @media only screen and (min-width: $breakpoint-sm) {
-    width:  100vw;
-    height: 60vh;
-  }
-  @media only screen and (min-width: $breakpoint-md) {
-     width:  160vw;
-    height: 80vh;
-  }
-  @media only screen and (min-width: $breakpoint-lg) {
-    width:  160vw;
-    height: 80vh;
-  }
-  @media only screen and (min-width: $breakpoint-xl) {
-    width:  160vw;
-    height:  80vh;
-  }
-  // background: linear-gradient(to bottom, var(--accent-color) 0%, var(--off-white) 100%);
+        width: 100vw;
+        height: 80vh;
+    }
+    @media only screen and (min-width: $breakpoint-sm) {
+        width: 100vw;
+        height: 60vh;
+    }
+    @media only screen and (min-width: $breakpoint-md) {
+        width: 160vw;
+        height: 80vh;
+    }
+    @media only screen and (min-width: $breakpoint-lg) {
+        width: 160vw;
+        height: 80vh;
+    }
+    @media only screen and (min-width: $breakpoint-xl) {
+        width: 160vw;
+        height: 80vh;
+    }
+    // background: linear-gradient(to bottom, var(--accent-color) 0%, var(--off-white) 100%);
 }
 
-.threegradient{
-  position: absolute;
-  z-index: 4;
+.threegradient {
+    position: absolute;
+    z-index: 4;
     @media only screen and (max-width: $breakpoint-sm) {
-    width:  100vw;
-    height: 80vh;
-  }
-  @media only screen and (min-width: $breakpoint-sm) {
-    width:  100vw;
-    height: 60vh;
-  }
-  @media only screen and (min-width: $breakpoint-md) {
-     width:  160vw;
-    height: 80vh;
-  }
-  @media only screen and (min-width: $breakpoint-lg) {
-    width:  160vw;
-    height: 80vh;
-  }
-  @media only screen and (min-width: $breakpoint-xl) {
-    width:  160vw;
-    height:  80vh;
-  }
-  background: linear-gradient(to bottom, var(--off-white) 0%, var(--gradient-color) 50%, var(--off-white) 100%);
+        width: 100vw;
+        height: 80vh;
+    }
+    @media only screen and (min-width: $breakpoint-sm) {
+        width: 100vw;
+        height: 60vh;
+    }
+    @media only screen and (min-width: $breakpoint-md) {
+        width: 160vw;
+        height: 80vh;
+    }
+    @media only screen and (min-width: $breakpoint-lg) {
+        width: 160vw;
+        height: 80vh;
+    }
+    @media only screen and (min-width: $breakpoint-xl) {
+        width: 160vw;
+        height: 80vh;
+    }
+    background: linear-gradient(
+        to bottom,
+        var(--off-white) 0%,
+        var(--gradient-color) 50%,
+        var(--off-white) 100%
+    );
 }
-
 
 .name {
-  font-size: 20px;
-  line-height: 1;
-  margin-bottom: 20px;
-  position: flex;
-  z-index: 1;
-  @media only screen and (min-width: $breakpoint-sm) {
-    font-size: 24px;
-    margin-bottom: 24px;
-  }
-  @media only screen and (min-width: $breakpoint-md) {
-    margin-bottom: 32px;
-  }
-  span {
-    display: block;
-    overflow: hidden;
-    & > span {
-      opacity: 0;
+    font-size: 20px;
+    line-height: 1;
+    margin-bottom: 20px;
+    position: flex;
+    z-index: 1;
+    @media only screen and (min-width: $breakpoint-sm) {
+        font-size: 24px;
+        margin-bottom: 24px;
     }
-  }
+    @media only screen and (min-width: $breakpoint-md) {
+        margin-bottom: 32px;
+    }
+    span {
+        display: block;
+        overflow: hidden;
+        & > span {
+            opacity: 0;
+        }
+    }
 }
 
-
 .subTitle {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  
-  overflow: hidden;
-    
-  div::before {
-	            position:absolute;
-	            top:0;
-	            left:0;
-	            content:attr(data-char);
-	            transform:translateY(-103%);}
-  div{
-	            display:inline-block;
-	            letter-spacing:-0.3vw;}
-
-
-  span {
+    position: relative;
+    z-index: 1;
     display: flex;
+
     overflow: hidden;
-    & > span {
-      opacity: 1;
+
+    div::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: attr(data-char);
+        transform: translateY(-103%);
+    }
+    div {
+        display: inline-block;
+        letter-spacing: -0.3vw;
     }
 
-    &.offset {
-      margin-left: 10px;
-      margin-top: 60px;
-      margin-bottom: 32px;
-      @media only screen and (min-width: $breakpoint-sm) {
-        margin-left: 121px;
-        margin-bottom: 32px;
-      }
-      @media only screen and (min-width: $breakpoint-md) {
-        margin-left: 138px;
-        margin-bottom: 0;
-      }
-      @media only screen and (min-width: $breakpoint-lg) {
-        margin-left: 168px;
-      }
+    span {
+        display: flex;
+        overflow: hidden;
+        & > span {
+            opacity: 1;
+        }
+
+        &.offset {
+            margin-left: 10px;
+            margin-top: 60px;
+            margin-bottom: 32px;
+            @media only screen and (min-width: $breakpoint-sm) {
+                margin-left: 121px;
+                margin-bottom: 32px;
+            }
+            @media only screen and (min-width: $breakpoint-md) {
+                margin-left: 138px;
+                margin-bottom: 0;
+            }
+            @media only screen and (min-width: $breakpoint-lg) {
+                margin-left: 168px;
+            }
+        }
     }
-   
-  }
 }
 
 .heroLinkContainer {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  position: relative;
-  z-index: 4;
-  min-height: 120px;
-  @media only screen and (min-width: $breakpoint-md) {
-    min-height: unset;
-  }
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 4;
+    min-height: 120px;
+    @media only screen and (min-width: $breakpoint-md) {
+        min-height: unset;
+    }
 }
 
 .selectedWorkContainer {
-  background-color: var(--off-white);
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
+    background-color: var(--off-white);
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
 
-  .projTitle {
-    margin-bottom: 36px;
-
-  }
-  .caseStudyCol {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    @media only screen and (min-width: $breakpoint-sm) {
-      margin-top: 0px;
+    .projTitle {
+        margin-bottom: 36px;
     }
-    @media only screen and (min-width: $breakpoint-md) {
-      margin-top: 0px;
+    .caseStudyCol {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        @media only screen and (min-width: $breakpoint-sm) {
+            margin-top: 0px;
+        }
+        @media only screen and (min-width: $breakpoint-md) {
+            margin-top: 0px;
+        }
     }
-  }
 }
 
 .aboutCol {
-  a {
-    display: block;
-    width: fit-content;
-  }
+    a {
+        display: block;
+        width: fit-content;
+    }
 }
 
 @media (max-width: 768px) {
-  .pageWrapper {
-    flex-direction: column;
-    padding:0px;
-  }
+    .pageWrapper {
+        flex-direction: column;
+        padding: 0px;
+    }
 
-  .leftNav {
-    width: 100%;
-    padding-right: 0;
-    margin-bottom: 20px;
-  }
+    .leftNav {
+        width: 100%;
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
 
-  .content {
-    padding-left: 0;
-  }
+    .content {
+        padding-left: 0;
+    }
 }

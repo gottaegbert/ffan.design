@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 
 interface RightNavProps {
-    autoExpand?: boolean;
+    autoExpand?: boolean
 }
 
 const RightNav: React.FC<RightNavProps> = ({ autoExpand = false }) => {
@@ -28,11 +28,15 @@ const RightNav: React.FC<RightNavProps> = ({ autoExpand = false }) => {
     const handleWorkClick = (e) => {
         e.preventDefault()
         if (router.pathname === '/') {
-            document.getElementById('work-section')?.scrollIntoView({ behavior: 'smooth' })
+            document
+                .getElementById('work-section')
+                ?.scrollIntoView({ behavior: 'smooth' })
         } else {
             router.push('/?section=work').then(() => {
                 setTimeout(() => {
-                    document.getElementById('work-section')?.scrollIntoView({ behavior: 'smooth' })
+                    document
+                        .getElementById('work-section')
+                        ?.scrollIntoView({ behavior: 'smooth' })
                 }, 300)
             })
         }
@@ -57,12 +61,20 @@ const RightNav: React.FC<RightNavProps> = ({ autoExpand = false }) => {
             >
                 <ul>
                     <li>
-                        <Link href="/" onClick={handleHomeClick} className={styles.navLink}>
+                        <Link
+                            href="/"
+                            onClick={handleHomeClick}
+                            className={styles.navLink}
+                        >
                             ffan Home
                         </Link>
                     </li>
                     <li>
-                        <Link href="/#work-section" onClick={handleWorkClick} className={styles.navLink}>
+                        <Link
+                            href="/#work-section"
+                            onClick={handleWorkClick}
+                            className={styles.navLink}
+                        >
                             Works
                         </Link>
                     </li>
