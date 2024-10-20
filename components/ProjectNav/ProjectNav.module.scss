@@ -7,8 +7,6 @@
   overflow-x: visible;
   scrollbar-width: none;  /* Firefox */
   -ms-overflow-style: none;  /* Internet Explorer 10+ */
-  
-  
   list-style: none;
   padding: 0;
   margin: 0;
@@ -23,6 +21,11 @@
   width: 25vw; // Set the width of the container
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 768px) {
+    width: 100vw;
+    height: 10vh;
+  }
 }
 
 
@@ -81,6 +84,10 @@
   display: flex; // 添加这一行
   align-items: center; // 添加这一行
   justify-content: space-between;
+  @media (max-width: 768px) {
+      height: 8vh;
+  width: 100vw;
+  }
 }
 
 .sectionButton.expanded {
@@ -105,6 +112,10 @@
 
 .plusIcon {
   transition: transform 0.3s ease;
+  @media (max-width: 768px) {
+    width: 24px;
+    height: 24px;
+  }
 }
 
 
@@ -126,6 +137,9 @@
 .sectionOne.expanded {
   width: 25vw; // 展开时占窗口宽度的25%
   height: 90vh;
+  @media (max-width: 768px) {
+    width: 100vw;
+  }
 }
 
 .sectionTwo {
@@ -136,6 +150,9 @@
 .sectionTwo.expanded {
   width: 25vw; // 展开时占窗口宽度的25%
     height: 90vh;
+    @media (max-width: 768px) {
+      width: 100vw;
+    }
 }
 
 
@@ -218,3 +235,77 @@
 
 
 
+
+// 移动端样式
+.mobileContainer {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.mobileImageContainer {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.mobileProjectImage {
+  object-fit: cover;
+}
+
+.mobileProjectInfo {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 16px;
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+  }
+
+  p {
+    font-size: 1rem;
+    margin-bottom: 12px;
+  }
+}
+
+.mobileTypeToggle {
+  background-color: #D9D9D9;
+  color: #000;
+  border: none;
+  padding: 8px 16px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #BDBDBD;
+  }
+}
+
+// 媒体查询
+@media (max-width: 768px) {
+  .layoutContainer {
+    display: none;
+  }
+}
+
+@media (min-width: 769px) {
+  .mobileContainer {
+    display: none;
+  }
+}
+
+.loadingPlaceholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f0f0f0;
+}

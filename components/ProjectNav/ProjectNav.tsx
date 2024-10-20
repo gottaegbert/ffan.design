@@ -113,9 +113,8 @@ const ProjectNav = ({ projects, onSelect }) => {
         filteredProjectsByType(typeOne)
     )
     // 在你的组件中使用这个函数
-const groupedProjectsTypeTwo = groupProjectsByYear(filteredProjectsByType(typeTwo));
-
-
+    const groupedProjectsTypeTwo = groupProjectsByYear(filteredProjectsByType(typeTwo));
+    
     const handleToggleSection = (type) => {
         setIsUserInteracting(true);
         setIsTypeSwitching(true);
@@ -173,7 +172,7 @@ const groupedProjectsTypeTwo = groupProjectsByYear(filteredProjectsByType(typeTw
                 }
             }
 
-        }, 300); // 300毫秒的延迟，你可以根据需要调整这个值
+        }, 300); // 300毫秒���延迟，你可以根据需要调整这个值
     };
 // 修改handleSelect和handleMouseEnter函数，使它们接收一个slug参数，然后使用这个slug来查找项目的索引
 const handleSelect = (slug) => {
@@ -226,18 +225,6 @@ const handleMouseEnter = (slug, type) => {
             onSelect(firstTypeOneProjectIndex)
         }
     }, [projects, selectedProjectIndex, onSelect])
-
-    // Trigger GSAP animation on image change
-    // useEffect(() => {
-    //     const index = hoveredProjectIndex !== null ? hoveredProjectIndex : selectedProjectIndex;
-    //     if (index !== null && imageRef.current) {
-    //         gsap.fromTo(
-    //             imageRef.current,
-    //             { opacity: 0 },
-    //             { opacity: 1, duration: 0.1 }
-    //         );
-    //     }
-    // }, [hoveredProjectIndex, selectedProjectIndex]);
 
     const handleCheckAllClick = (filter: string) => {
         router.push(`/#work-section?filter=${filter}`, undefined, { shallow: true });

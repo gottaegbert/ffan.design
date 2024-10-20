@@ -6,7 +6,6 @@
   height: 100vh;
     scroll-snap-align: start;
   scroll-snap-stop: always;
-
 }
 .container{
   height: 100vh;
@@ -299,7 +298,7 @@
 @media (max-width: 768px) {
   .pageWrapper {
     flex-direction: column;
-    padding: 24px;
+    padding:0px;
   }
 
   .leftNav {
