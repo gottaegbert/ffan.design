@@ -17,7 +17,7 @@ import { useRef } from 'react'
 
 type Props = {
     data: project
-    moreProjs: selectedProject[]
+    moreProjs: project[]
     slug: string
 }
 
@@ -56,14 +56,29 @@ const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
     }, [])
 
     const scrollContainerRef = useRef<HTMLDivElement>(null)
-
     const scrollToProject = (direction: 'prev' | 'next') => {
         if (scrollContainerRef.current) {
-            const containerWidth = scrollContainerRef.current.offsetWidth
-            const scrollAmount =
-                direction === 'next' ? containerWidth : -containerWidth
-            scrollContainerRef.current.scrollBy({
-                left: scrollAmount,
+            const container = scrollContainerRef.current
+            const containerWidth = container.offsetWidth
+            const itemWidth = containerWidth / 2 // 假设每次显示两个项目
+            const gap = 48 // 项目之间的间隙
+
+            // 获取当前滚动位置和当前项目索引
+            const scrollLeft = container.scrollLeft
+            const nearestIndex = Math.round(scrollLeft / (itemWidth + gap))
+
+            let targetIndex
+            if (direction === 'next') {
+                targetIndex = (nearestIndex + 1) % moreProjs.length // 循环到第一个项目
+            } else {
+                targetIndex =
+                    (nearestIndex - 1 + moreProjs.length) % moreProjs.length // 循环到最后一个项目
+            }
+
+            const targetScrollLeft = targetIndex * (itemWidth + gap)
+
+            container.scrollTo({
+                left: targetScrollLeft,
                 behavior: 'smooth',
             })
         }
@@ -367,9 +382,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
             params?.pageSlug?.toString().toLowerCase()
     )[0]
 
-    const homeData = await gePageData('homepage')
-    const selectedPjs = homeData.selectedProjects.filter(
-        (el: selectedProject) => el.slug !== `/projects/${params?.pageSlug}`
+    const homeData = await gePageData('projects')
+    const selectedPjs = homeData.projects.filter(
+        (el: project) => el.slug !== `/projects/${params?.pageSlug}`
     )
     // const works = homeData.moreWorks;
     const moreProjs = [...selectedPjs]

@@ -49,6 +49,7 @@ projects:
   - title: Buoyant
     slug: buoyant
     # （首图）
+    image: assets/images/industrial/buoyant/buoyant_0.jpg
     video: assets/images/industrial/buoyant/buoyant_1.mp4
     #buoyant的首图视频【无需点击，直接循环播放】
     #具体内容图片
@@ -114,6 +115,7 @@ projects:
   
   - title: Other Island Bookfair
     slug: islands
+    image: assets/images/graphic/islands/islands_0.png
     video: assets/images/graphic/islands/islands_1.mp4
     imageContent:
         - assets/images/graphic/islands/islands_2.png
@@ -136,6 +138,7 @@ projects:
   - title: Liquid Society
     slug: liquid
     #liquid society的首图视频【点击播放】
+    image: assets/images/graphic/liquid/liquid_0.mp4
     video: assets/images/graphic/liquid/liquid_1.mp4
     #具体内容图片
     imageContent:
@@ -159,6 +162,7 @@ projects:
   - title: The Way We Unfold
     slug: identity
     #the way we unfold的首图视频【点击播放】
+    image: assets/images/graphic/identity/identity_0.jpg
     video: https://vimeo.com/1018682297?share=copy#t=0
     #具体内容图片
     imageContent:
@@ -265,6 +269,7 @@ projects:
 
   - title: Hyborg Forest
     slug: hyborg
+    image: assets/images/graphic/hyborg/hyborg_0.png
     video: https://www.bilibili.com/video/BV1ie4ceXEyo/
     #具体内容图片
     imageContent:
@@ -311,6 +316,7 @@ projects:
     slug: raven
     # （首图）
     #raven的首图视频【点击播放】
+    image: assets/images/graphic/raven/raven_0.mp4
     video: https://www.bilibili.com/video/BV1wH4y1u7z3/?share_source=copy_web&vd_source=cce8c1304e795ba633c59c1e222ea9c3
     #具体内容图片
     imageContent:
@@ -355,6 +361,7 @@ However, crazes and chaos come and go. The Raven highlights the mesmerizing and 
     slug: glassfrog
     # （首图）
     #glassfrog的首图视频【点击播放】
+    image: assets/images/graphic/glassfrog/glassfrog_0.jpg
     video: //https://www.bilibili.com/video/BV1oe4ceXELn/
     #具体内容图片
     imageContent:
@@ -401,6 +408,7 @@ However, crazes and chaos come and go. The Raven highlights the mesmerizing and 
     slug: mascot
     # （首图）
     #mascot presence的首图视频【点击播放】
+    image: assets/images/graphic/mascot/mascot_9.gif
     video: https://www.bilibili.com/video/BV1de4ceXErh/
     #具体内容图片
     imageContent:
