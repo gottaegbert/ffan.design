@@ -7,7 +7,7 @@ import { useState, useEffect } from 'react'
 import StaggeredTitle from '../components/StaggeredTitle/StaggeredTitle'
 import CaseStudy from '../components/CaseStudy/CaseStudy'
 import { GetStaticProps } from 'next'
-import { gePageData } from '../utils/pages' // Corrected typo from gePageData to getPageData
+import { gePageData } from '../utils/pages'
 import { StoreProvider } from '../utils/StoreProvider'
 import BasicMeta from '../utils/BasicMeta'
 import { homePageData } from '../utils/customTypes'
@@ -21,8 +21,6 @@ type Props = {
     data: homePageData
 }
 
-const MAX_LOADING_TIME = 10000 // 最长加载时间，10秒
-
 const IndexPage: React.FC<Props> = ({ data }) => {
     const { selectedProjects } = data
     const [showPreloader, setShowPreloader] = useState(false)
@@ -32,38 +30,25 @@ const IndexPage: React.FC<Props> = ({ data }) => {
     const router = useRouter()
 
     useEffect(() => {
-        // 检查 URL 是否包含 work 部分的标识符
-        const isWorkSection =
-            router.asPath.includes('#work-section') ||
-            router.query.section === 'work'
+        // 检查 localStorage 中是否存在标记
+        const hasVisited = localStorage.getItem('hasVisited')
 
-        if (!isWorkSection) {
+        if (!hasVisited) {
             setShowPreloader(true)
             // 3秒后显示主内容
             const showContentTimer = setTimeout(() => {
                 setShowMainContent(true)
+                localStorage.setItem('hasVisited', 'true') // 设置标记，表示用户已访问
             }, 3000)
-
-            // 5秒后自动展开 RightNav
-            const expandNavTimer = setTimeout(() => {
-                setAutoExpandRightNav(true)
-            }, 5000)
-
-            // 10秒后自动收起 RightNav
-            const collapseNavTimer = setTimeout(() => {
-                setAutoExpandRightNav(false)
-            }, 10000)
 
             return () => {
                 clearTimeout(showContentTimer)
-                clearTimeout(expandNavTimer)
-                clearTimeout(collapseNavTimer)
             }
         } else {
-            // 如果是 work 部分，直接显示主内容，不自动展开 RightNav
+            // 如果用户已访问，直接显示主内容
             setShowMainContent(true)
         }
-    }, [router.asPath, router.query])
+    }, [])
 
     const handlePreloaderComplete = () => {
         setIsPreloaderComplete(true)
@@ -138,7 +123,7 @@ const IndexPage: React.FC<Props> = ({ data }) => {
                 setTimeout(() => {
                     console.warn('Loading timed out')
                     resolve(null)
-                }, MAX_LOADING_TIME)
+                })
             })
 
             // 等待所有图片加载完成或超时
@@ -273,7 +258,7 @@ const IndexPage: React.FC<Props> = ({ data }) => {
 export default IndexPage
 
 export const getStaticProps: GetStaticProps = async () => {
-    const data = gePageData('homepage') // Corrected typo
+    const data = await gePageData('homepage') // 确保 gePageData 是异步的
     return {
         props: {
             data,
