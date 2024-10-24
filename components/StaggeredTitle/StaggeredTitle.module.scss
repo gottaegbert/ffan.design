@@ -10,14 +10,20 @@
     color: var(--font-color);
     display: inline-block;
     span {
-        overflow: hidden;
-        font-size: clamp(23px, 2vw, 30px);
+        display: flex; // 确保 span 元素在一行中
+        justify-content: space-between; // 在行中均匀分布
+        align-items: center; // 垂直居中对齐
+        font-size: clamp(14px, 2vw, 30px);
         font-weight: 400;
         letter-spacing: -0.25px;
         @media only screen and (min-width: $breakpoint-sm) {
             display: flex;
             overflow: hidden;
             gap: 3em;
+        }
+        // 针对手机端的样式
+        @media only screen and (max-width: $breakpoint-sm) {
+            margin-right: 1.5em; // 为每个 span 添加右边距
         }
     }
 }

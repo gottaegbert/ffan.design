@@ -3,6 +3,10 @@
 .footer {
     margin-top: 180px;
     padding: 80px 0;
+    @media only screen and (max-width: $breakpoint-sm) {
+        margin-top: 0px;
+        padding: 14px 0;
+    }
     @media only screen and (min-width: $breakpoint-sm) {
         margin-top: 180px;
         padding: 90px 0;
@@ -19,6 +23,9 @@
 .bottom {
     border-top: 2px solid #1e1e1e;
     padding-top: 40px;
+    @media only screen and (max-width: $breakpoint-sm) {
+        padding-top: 20px;
+    }
     @media only screen and (min-width: $breakpoint-sm) {
         padding-top: 45px;
     }
@@ -39,6 +46,18 @@
     }
 }
 
+.singleLine {
+    display: flex; // 使用 Flexbox
+    flex-direction: column; // 水平排列
+    align-items: left; // 垂直居中对齐
+    justify-content: flex-start; // 左对齐
+    gap: 2px; // 添加间距（可选）
+
+    @media only screen and (max-width: 768px) {
+        flex-direction: row; // 手机端改为垂直排列
+        align-items: center; // 垂直居中对齐
+    }
+}
 .contactInfo {
     display: flex;
     justify-content: space-between;

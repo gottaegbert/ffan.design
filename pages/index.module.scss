@@ -264,9 +264,9 @@
 }
 
 .selectedWorkContainer {
-    background-color: var(--off-white);
     scroll-snap-align: start;
     scroll-snap-stop: always;
+    overflow-x: hidden; // 禁用横向滑动
 
     .projTitle {
         margin-bottom: 36px;

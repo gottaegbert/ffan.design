@@ -236,6 +236,9 @@ li {
     position: relative;
     padding-top: 36px;
     padding-bottom: 36px;
+    @media screen and (max-width: $breakpoint-sm) {
+        padding-top: 3vh;
+    }
     // @media only screen and (min-width: $breakpoint-sm) {
     //   padding-top: 90px;
     //   padding-bottom: 90px;

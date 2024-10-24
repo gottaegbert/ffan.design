@@ -5,6 +5,9 @@
     overflow: hidden;
     height: fit-content;
     // aspect-ratio: 16 / 11.2; // 或者其他适合你设计的比例
+    @media only screen and (max-width: $breakpoint-sm) {
+        margin-bottom: 14px;
+    }
     @media only screen and (min-width: $breakpoint-sm) {
         margin-bottom: 20px;
     }

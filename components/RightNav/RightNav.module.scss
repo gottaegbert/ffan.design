@@ -1,4 +1,4 @@
-// 导航栏右侧
+@import '../../styles/variables.scss';
 
 .hamburgerMenu {
     position: fixed;
@@ -9,10 +9,13 @@
     align-items: center; // 添加这一行
     background: none;
     border: none;
-    font-size: clamp(1.5rem, 2vw, 2rem); // 使用 clamp 函数来设置字体大小
+    font-size: clamp(1.2rem, 2vw, 2rem); // 使用 clamp 函数来设置字体大小
     cursor: pointer;
-    z-index: 10;
+    z-index: 11;
     color: #797979;
+    @media screen and (max-width: $breakpoint-sm) {
+        right: 24px;
+    }
 }
 
 .hamburgerMenu:hover {
@@ -62,7 +65,51 @@
     cursor: pointer;
 }
 
+@media screen and (max-width: 768px) {
+    .rightNav {
+        position: fixed;
+        top: 0;
+        right: -100%; // 初始状态在视口外
+        width: 100%; // 占满整个屏幕
+        height: 100%; // 占满整个屏幕
+        background-color: var(--black);
+        transition: right 0.3s ease; // 动画效果
+        display: flex;
+        flex-direction: column;
+        padding: 48px; // 统一内边距
+        color: var(--white);
+        pointer-events: auto;
+        z-index: 10;
+        overflow-y: auto;
+    }
+
+    .rightNav.visible {
+        right: 0; // 显示导航栏
+    }
+
+    .rightNav.noTransition {
+        transition: none !important;
+    }
+
+    .rightNav ul {
+        padding-top: 10vh;
+        list-style-type: none;
+    }
+
+    .rightNav li {
+        border-bottom: 1px solid #ccc; /* 添加底部边框作为分割线 */
+        margin-bottom: 10px;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    .navLink {
+        font-size: 36px;
+    }
+}
+
 .navLink {
+    font-size: 42px;
     color: var(--white);
     text-decoration: none; /* 移除下划线 */
     &:hover {
@@ -77,5 +124,5 @@
 
 .contactInfo p {
     line-height: 1.2;
-    font-size: clamp(0.5rem, 2vw, 0.75rem);
+    font-size: clamp(0.6rem, 2vw, 0.75rem);
 }
