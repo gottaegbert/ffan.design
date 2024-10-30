@@ -11,6 +11,9 @@
 .contentContainer {
     .intro {
         padding-top: 48px;
+        @media only screen and (max-width: $breakpoint-sm) {
+            padding-top: 96px;
+        }
     }
     .value {
         // padding-top: 124px;
@@ -20,6 +23,9 @@
         color: #000;
         text-transform: uppercase;
         font-size: 40px;
+        @media only screen and (max-width: $breakpoint-sm) {
+            font-size: 16px;
+        }
         text-align: center;
         font-weight: bold !important;
     }
@@ -41,6 +47,9 @@
     }
     .contactblock {
         padding-top: 5vh;
+        @media only screen and (max-width: $breakpoint-sm) {
+            padding-top: 3vh;
+        }
     }
     .contact {
         text-transform: uppercase;
@@ -48,11 +57,17 @@
         font-size: 40px;
         text-align: left;
         font-weight: bold !important;
+        @media only screen and (max-width: $breakpoint-sm) {
+            font-size: 16px;
+        }
     }
     .contactlink {
         text-transform: uppercase;
         color: #000;
         font-size: 40px;
+        @media only screen and (max-width: $breakpoint-sm) {
+            font-size: 16px;
+        }
         text-align: left;
         font-weight: bold !important;
     }
