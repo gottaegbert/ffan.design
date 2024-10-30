@@ -27,30 +27,16 @@ const AwardsCase: React.FC<AwardsCaseProps> = ({
                 })}
             >
                 <div className={styles.imgContainer}>
-                    {image.endsWith('.mp4') ? (
-                        <video
-                            src={'/' + image}
-                            autoPlay
-                            loop
-                            playsInline
-                            controls={false}
-                            muted
-                            className={cn(
-                                styles.pgImage,
-                                'js-img selected-pj-img'
-                            )}
-                        />
-                    ) : (
-                        <Image
-                            src={'/' + image}
-                            alt={title}
-                            layout="responsive"
-                            width={isLargeItem ? 1200 : 600}
-                            height={isLargeItem ? 800 : 400}
-                            objectFit="cover"
-                            loading="lazy"
-                        />
-                    )}
+                    <Image
+                        src={'/' + image}
+                        alt={title}
+                        layout="responsive"
+                        width={isLargeItem ? 1200 : 600}
+                        height={isLargeItem ? 800 : 400}
+                        objectFit="cover"
+                        loading="lazy"
+                    />
+
                     <div className={styles.imgForeground} ref={ref}></div>
                 </div>
 

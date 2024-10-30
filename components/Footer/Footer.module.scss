@@ -24,6 +24,8 @@
     border-top: 2px solid #1e1e1e;
     padding-top: 40px;
     @media only screen and (max-width: $breakpoint-sm) {
+        grid-template-columns: 1fr; // 手机端改为单列布局
+        gap: 24px; // 增加行间距
         padding-top: 20px;
     }
     @media only screen and (min-width: $breakpoint-sm) {
@@ -36,7 +38,7 @@
     p {
         font-size: clamp(14px, 2vw, 18px);
         font-weight: bold;
-        text-align: center;
+        text-align: left;
         margin-bottom: 8px;
         color: var(--dark-grey);
         @media only screen and (min-width: $breakpoint-sm) {
@@ -51,16 +53,17 @@
     flex-direction: column; // 水平排列
     align-items: left; // 垂直居中对齐
     justify-content: flex-start; // 左对齐
-    gap: 2px; // 添加间距（可选）
-
-    @media only screen and (max-width: 768px) {
-        flex-direction: row; // 手机端改为垂直排列
-        align-items: center; // 垂直居中对齐
+    gap: 24px;
+    @media only screen and (max-width: $breakpoint-sm) {
+        flex-direction: column; // 手机端改为垂直排列
+        align-items: left; // 垂直居中对齐
+        gap: 4px;
     }
 }
 .contactInfo {
     display: flex;
     justify-content: space-between;
+    width: 90%; // 确保占满整个宽度
 }
 
 .labels {

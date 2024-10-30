@@ -58,12 +58,12 @@
 
         .award {
             padding-top: 28px;
-            font-size: 42px;
+            font-size: clamp(24px, 2vw, 42px);
             text-transform: uppercase;
         }
 
         .info {
-            font-size: 23px;
+            font-size: clamp(18px, 2vw, 23px);
             font-weight: bold;
             color: var(--font);
         }

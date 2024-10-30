@@ -13,6 +13,7 @@ import { homePageData } from '../../utils/customTypes'
 import RightNav from '../../components/RightNav/RightNav'
 import Footer from '../../components/Footer/Footer'
 import { gePageData } from '../../utils/pages'
+import { useResponsive } from '../../hooks/useResponsive'
 
 type Props = {
     data: homePageData
@@ -21,6 +22,7 @@ type Props = {
 const Awards: React.FC<Props> = ({ data }) => {
     const { selectedAwards } = data
     const [filter, setFilter] = useState('Selected Awards')
+    const isMobile = useResponsive()
 
     const handleLabelClick = (label) => {
         setFilter(label)
@@ -69,19 +71,28 @@ const Awards: React.FC<Props> = ({ data }) => {
                                 <div
                                     key={idx}
                                     className={cn(
-                                        isLargeItem(idx)
-                                            ? 'col-12'
-                                            : 'col-12 col-sm-4',
+                                        {
+                                            'col-12': true,
+                                            'col-sm-4':
+                                                !isMobile && !isLargeItem(idx),
+                                        },
                                         styles.awardItem,
                                         {
+                                            [styles.largeGridItem]:
+                                                !isMobile && isLargeItem(idx),
+                                            [styles.smallGridItem]:
+                                                !isMobile && !isLargeItem(idx),
                                             [styles.lastLargeItem]:
+                                                !isMobile &&
                                                 isLastLargeItem(idx),
                                         }
                                     )}
                                 >
                                     <AwardsCase
                                         {...proj}
-                                        isLargeItem={isLargeItem(idx)}
+                                        isLargeItem={
+                                            !isMobile && isLargeItem(idx)
+                                        }
                                     />
                                 </div>
                             ))}

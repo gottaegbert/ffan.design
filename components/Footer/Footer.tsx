@@ -9,11 +9,13 @@ const Footer: React.FC<Props> = ({}) => {
     return (
         <footer className={styles.footer}>
             <div className={`${'grid'} ${styles.bottom}`}>
-                <Image src={logo} alt="FFAN Design Logo" className={'col-1'} />
+                <div className={'col-1'}>
+                    <Image src={logo} alt="FFAN Design Logo" />
+                </div>
                 <div className={'col-4'}>
                     <div className={styles.singleLine}>
                         <p className={'small'}>ffan.design</p>
-                        <br />
+
                         <p className={'small'}>
                             is an industrial and graphic design studio Based in
                             Brooklyn & Beijing
@@ -23,7 +25,7 @@ const Footer: React.FC<Props> = ({}) => {
                 <div className={'col-3'}>
                     <div className={styles.singleLine}>
                         <p>Contact Us</p>
-                        <br />
+
                         <div className={styles.contactInfo}>
                             <div className={styles.labels}>
                                 <p>Email</p>
@@ -42,7 +44,7 @@ const Footer: React.FC<Props> = ({}) => {
                 <div className={'col-4'}>
                     <div className={styles.singleLine}>
                         <p>Address</p>
-                        <br />
+
                         <div className={styles.contactInfo}>
                             <div className={styles.labels}>
                                 <p>China</p>
