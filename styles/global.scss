@@ -133,6 +133,9 @@ h4 {
     @media only screen and (min-width: $breakpoint-md) {
         font-size: 32px;
     }
+    @media only screen and (max-width: $breakpoint-sm) {
+        font-size: 14px;
+    }
 }
 h5 {
     font-size: 20px;

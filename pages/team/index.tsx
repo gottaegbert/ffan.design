@@ -213,8 +213,8 @@ const Team: React.FC<Props> = ({ data }) => {
                                         >
                                             <Image
                                                 src={'/' + team.image}
-                                                width={690}
-                                                height={388}
+                                                width={552}
+                                                height={310.4}
                                                 alt={team.Name}
                                                 className={cn(
                                                     'js-img selected-pj-img'
