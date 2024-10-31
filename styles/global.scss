@@ -240,19 +240,11 @@ li {
 
 .sectionSpacing {
     position: relative;
-    padding-top: 5vh;
-    padding-bottom: 5vh;
+    padding-top: 4vh;
+    padding-bottom: 4vh;
     @media screen and (max-width: $breakpoint-sm) {
         padding-top: 3vh;
     }
-    // @media only screen and (min-width: $breakpoint-sm) {
-    //   padding-top: 90px;
-    //   padding-bottom: 90px;
-    // }
-    // @media only screen and (min-width: $breakpoint-md) {
-    //   padding-top: 120px;
-    //   padding-bottom: 120px;
-    // }
 }
 
 .moreWorksSection {

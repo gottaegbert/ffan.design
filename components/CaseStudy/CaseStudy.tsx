@@ -30,57 +30,51 @@ const CaseStudy: React.FC<selectedProject> = ({
             <a
                 className={`${styles.projWrap} ${isLoaded ? styles.loaded : ''}`}
             >
-                {isLoaded ? (
-                    // 渲染加载完成的内容
-                    <div>
-                        <article>
-                            <div className={styles.imgContainer}>
-                                {image.endsWith('.mp4') ? (
-                                    <video
-                                        src={'/' + image}
-                                        autoPlay
-                                        loop
-                                        playsInline
-                                        controls={false}
-                                        muted
-                                        className={cn(
-                                            styles.pgImage,
-                                            'js-img selected-pj-img'
-                                        )}
-                                    />
-                                ) : (
-                                    <Image
-                                        src={'/' + image}
-                                        layout="fill"
-                                        alt={title}
-                                        className={cn(
-                                            styles.pgImage,
-                                            'js-img selected-pj-img'
-                                        )}
-                                    />
-                                )}
-                            </div>
+                <div>
+                    <article>
+                        <div className={styles.imgContainer}>
+                            {image.endsWith('.mp4') ? (
+                                <video
+                                    src={'/' + image}
+                                    autoPlay
+                                    loop
+                                    playsInline
+                                    controls={false}
+                                    muted
+                                    className={cn(
+                                        styles.pgImage,
+                                        'js-img selected-pj-img'
+                                    )}
+                                />
+                            ) : (
+                                <Image
+                                    src={'/' + image}
+                                    layout="fill"
+                                    alt={title}
+                                    className={cn(
+                                        styles.pgImage,
+                                        'js-img selected-pj-img'
+                                    )}
+                                />
+                            )}
+                        </div>
 
-                            <div className={cn(styles.bottom)}>
-                                <div className={'tagContainer'}>
-                                    {tags.map((tag, ix) => (
-                                        <React.Fragment key={'tag' + ix}>
-                                            <p>[{tag}]</p>
-                                            <p className={'small indentbig'}>
-                                                {' '}
-                                                {time}
-                                            </p>
-                                        </React.Fragment>
-                                    ))}
-                                </div>
-                                <p className="indent">{title}</p>
+                        <div className={cn(styles.bottom)}>
+                            <div className={'tagContainer'}>
+                                {tags.map((tag, ix) => (
+                                    <React.Fragment key={'tag' + ix}>
+                                        <p>[{tag}]</p>
+                                        <p className={'small indentbig'}>
+                                            {' '}
+                                            {time}
+                                        </p>
+                                    </React.Fragment>
+                                ))}
                             </div>
-                        </article>
-                    </div>
-                ) : (
-                    // 可以添加一个加载指示器
-                    <div className={styles.loadingIndicator}>Loading...</div>
-                )}
+                            <p className="indent">{title}</p>
+                        </div>
+                    </article>
+                </div>
             </a>
         </Link>
     )

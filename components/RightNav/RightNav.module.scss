@@ -4,7 +4,7 @@
     position: fixed;
     top: 0px; // 改为 0
     right: 48px;
-    padding: 3vh 0;
+    height: 10vh;
     display: flex; // 添加这一行
     align-items: center; // 添加这一行
     background: none;
@@ -16,7 +16,7 @@
     @media screen and (max-width: $breakpoint-sm) {
         right: 12px;
         font-size: 1.4rem;
-        height: 4vh;
+        height: 10vh;
     }
 }
 

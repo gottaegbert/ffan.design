@@ -55,8 +55,7 @@
 }
 .typeHeader {
     display: flex;
-    padding: 2vh 0;
-
+    height: 10vh;
     align-items: center; /* Vertically center the items */
     gap: 10px;
     @media screen and (max-width: $breakpoint-sm) {
