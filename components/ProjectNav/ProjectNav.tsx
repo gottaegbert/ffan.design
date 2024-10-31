@@ -144,13 +144,13 @@ const ProjectNav = ({ projects, onSelect }) => {
                     // 手机端动画
                     tl.to(sectionOneRef.current, {
                         width: '100vw',
-                        height: '18vh', // 调整高度
+                        height: '20vh', // 调整高度
                         duration: 0.5,
                     }).to(
                         sectionTwoRef.current,
                         {
                             width: '100vw',
-                            height: '8vh',
+                            height: '10vh',
                             duration: 0.5,
                         },
                         '-=0.5'
@@ -187,13 +187,13 @@ const ProjectNav = ({ projects, onSelect }) => {
                     // 手机端动画
                     tl.to(sectionOneRef.current, {
                         width: '100vw',
-                        height: '8vh',
+                        height: '10vh',
                         duration: 0.5,
                     }).to(
                         sectionTwoRef.current,
                         {
                             width: '100vw',
-                            height: '18vh', // 调整高度
+                            height: '20vh', // 调整高度
                             duration: 0.5,
                         },
                         '-=0.5'
@@ -332,6 +332,14 @@ const ProjectNav = ({ projects, onSelect }) => {
                             </div>
                             <div className={styles.time}>
                                 {currentProject.time}
+                            </div>
+                            <div
+                                className={styles.launchProject}
+                                onClick={() =>
+                                    router.push(`/${currentProject.slug}`)
+                                }
+                            >
+                                Launch Project
                             </div>
                         </div>
                     </>

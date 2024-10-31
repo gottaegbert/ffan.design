@@ -220,7 +220,7 @@
     }
 
     .navContainer {
-        height: 26vh;
+        height: 20vh;
         width: 100vw; // Set the width of the container
         display: flex;
         flex-direction: column;
@@ -237,7 +237,7 @@
         right: 0;
         bottom: 0;
         z-index: -9;
-        height: 74vh;
+        height: 72vh;
         width: 100vw;
 
         img {
@@ -251,7 +251,7 @@
         background-color: black;
         width: 100vw; // 设置图片容器的宽度为75vw
         display: flex;
-        height: 74vh;
+        height: 72vh;
 
         // 其他需要的样式
     }
@@ -263,14 +263,14 @@
     .imageTop {
         width: 100vw; // 设置图片容器的宽度为75vw
         display: flex;
-        height: 74vh;
+        height: 72vh;
     }
 
     .imageBottom {
         transform: translateY(calc(100vh - 96vh)); // 使图片容器贴到窗口底部
         width: 100vw; // 设置图片容器的宽度为75vw
         display: flex;
-        height: 74vh; // 设置图片容器的高度为90vh
+        height: 72vh; // 设置图片容器的高度为90vh
         background-color: white; // 或者您想要的其他颜色
     }
 
@@ -280,7 +280,7 @@
     }
 
     .sectionButton {
-        height: 8vh;
+        height: 10vh;
         width: 100vw;
         padding: 0 15px; // 修改这一行
         font-size: 20px;
@@ -323,14 +323,13 @@
     /* Section-specific background colors */
     .sectionOne {
         background-color: var(--dark-grey);
-        height: 8vh;
+        height: 10vh;
     }
 
     .sectionOne.expanded {
         position: absolute;
-        bottom: 8vh;
+        bottom: 10vh;
         width: 100vw; // 展开时占窗口宽度的25%
-        height: 18vh;
     }
 
     .sectionTwo {
@@ -344,7 +343,6 @@
     .sectionTwo.expanded {
         position: absolute;
         width: 100vw; // 展开时占窗口宽度的25%
-        height: 18vh;
         bottom: 0;
     }
 
@@ -410,7 +408,7 @@
 
         // 展开状态
         &.expanded.typeOne {
-            bottom: 20vh; // 位于展开的导航上方
+            bottom: 23vh; // 位于展开的导航上方
             padding: 15px;
 
             .projectMeta {
@@ -419,7 +417,7 @@
             }
         }
         &.expanded.typeTwo {
-            bottom: 12vh; // 位于展开的导航上方
+            bottom: 14vh; // 位于展开的导航上方
             padding: 15px;
 
             .projectMeta {
@@ -459,7 +457,14 @@
 
         .projectMeta {
             transition: all 0.3s ease;
-
+            .launchProject {
+                position: absolute;
+                right: 15px;
+                top: -5.5vh;
+                text-decoration: underline;
+                cursor: pointer;
+                color: var(--font);
+            }
             // .tags {
             //     font-size: 0.9rem;
             //     margin-bottom: 4px;
