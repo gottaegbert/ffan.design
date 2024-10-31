@@ -14,6 +14,7 @@ import { project, selectedProject } from '../../utils/customTypes'
 import Image from 'next/legacy/image'
 import RightNav from '../../components/RightNav/RightNav'
 import { useRef } from 'react'
+import { useResponsive } from '../../hooks/useResponsive'
 
 type Props = {
     data: project
@@ -111,6 +112,8 @@ const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
             container.removeEventListener('scrollend', handleScrollEnd)
         }
     }, [])
+
+    const isMobile = useResponsive()
 
     return (
         <StoreProvider>
@@ -293,8 +296,7 @@ const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
                                                             <div
                                                                 style={{
                                                                     marginTop:
-                                                                        window.innerWidth <=
-                                                                        768
+                                                                        isMobile
                                                                             ? idx ===
                                                                               0
                                                                                 ? '7.5px'
