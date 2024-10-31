@@ -2,9 +2,9 @@
 
 .hamburgerMenu {
     position: fixed;
-    top: 0; // 改为 0
+    top: 0px; // 改为 0
     right: 48px;
-    height: 10vh; // 添加这一行
+    padding: 3vh 0;
     display: flex; // 添加这一行
     align-items: center; // 添加这一行
     background: none;
@@ -14,7 +14,9 @@
     z-index: 11;
     color: #797979;
     @media screen and (max-width: $breakpoint-sm) {
-        right: 24px;
+        right: 12px;
+        font-size: 1.4rem;
+        height: 4vh;
     }
 }
 

@@ -55,9 +55,13 @@
 }
 .typeHeader {
     display: flex;
-    padding: 45px 0;
+    padding: 2vh 0;
+
     align-items: center; /* Vertically center the items */
     gap: 10px;
+    @media screen and (max-width: $breakpoint-sm) {
+        font-size: 20px;
+    }
 }
 
 .inlineContainer {
@@ -191,6 +195,9 @@
         color: var(--dark-grey);
         line-height: 1.2;
         font-size: 23px;
+        @media screen and (max-width: $breakpoint-sm) {
+            font-size: 14px;
+        }
     }
 }
 

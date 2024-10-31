@@ -240,8 +240,8 @@ li {
 
 .sectionSpacing {
     position: relative;
-    padding-top: 36px;
-    padding-bottom: 36px;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
     @media screen and (max-width: $breakpoint-sm) {
         padding-top: 3vh;
     }
