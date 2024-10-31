@@ -3,7 +3,6 @@ import styles from './ProjectNav.module.scss'
 import Image from 'next/image'
 import { gsap } from 'gsap/dist/gsap'
 import cn from 'classnames'
-
 import { useRouter } from 'next/router'
 import { debounce } from 'lodash'
 

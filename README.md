@@ -1,16 +1,14 @@
-TODO:
+## 🚀ffandesign studio official website
 
--[] filter
--[] projectnav layout
-
-## 🚀 Portfolio
-
-Live at 👉
+Live at 👉 ffandesign.net
 
 ## ✨ Stack
 
 -   Next.js
+-   Three.js
 -   Typescript
 -   Scss
 -   GSAP
--   Netlify CMS
+-   yaml CMS
+
+@siyuhu

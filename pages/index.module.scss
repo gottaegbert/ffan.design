@@ -127,63 +127,6 @@
     }
 }
 
-.three {
-    position: absolute;
-    z-index: 2;
-    @media only screen and (max-width: $breakpoint-sm) {
-        width: 100vw;
-        height: 80vh;
-    }
-    @media only screen and (min-width: $breakpoint-sm) {
-        width: 100vw;
-        height: 60vh;
-    }
-    @media only screen and (min-width: $breakpoint-md) {
-        width: 160vw;
-        height: 80vh;
-    }
-    @media only screen and (min-width: $breakpoint-lg) {
-        width: 160vw;
-        height: 80vh;
-    }
-    @media only screen and (min-width: $breakpoint-xl) {
-        width: 160vw;
-        height: 80vh;
-    }
-    // background: linear-gradient(to bottom, var(--accent-color) 0%, var(--off-white) 100%);
-}
-
-.threegradient {
-    position: absolute;
-    z-index: 4;
-    @media only screen and (max-width: $breakpoint-sm) {
-        width: 100vw;
-        height: 80vh;
-    }
-    @media only screen and (min-width: $breakpoint-sm) {
-        width: 100vw;
-        height: 60vh;
-    }
-    @media only screen and (min-width: $breakpoint-md) {
-        width: 160vw;
-        height: 80vh;
-    }
-    @media only screen and (min-width: $breakpoint-lg) {
-        width: 160vw;
-        height: 80vh;
-    }
-    @media only screen and (min-width: $breakpoint-xl) {
-        width: 160vw;
-        height: 80vh;
-    }
-    background: linear-gradient(
-        to bottom,
-        var(--off-white) 0%,
-        var(--gradient-color) 50%,
-        var(--off-white) 100%
-    );
-}
-
 .name {
     font-size: 20px;
     line-height: 1;
@@ -291,7 +234,7 @@
     }
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: $breakpoint-sm) {
     .pageWrapper {
         flex-direction: column;
         padding: 0px;
