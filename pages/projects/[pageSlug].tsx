@@ -297,8 +297,8 @@ const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
                                                                         768
                                                                             ? idx ===
                                                                               0
-                                                                                ? '6px'
-                                                                                : '12px'
+                                                                                ? '7.5px'
+                                                                                : '15px'
                                                                             : idx ===
                                                                                 0
                                                                               ? '12px'
