@@ -181,10 +181,7 @@ const IndexPage: React.FC<Props> = ({ data }) => {
         return project.types === filter
     })
 
-    const handleProjectSelect = (projectId: string) => {
-        // 在这里添加处理项目选择的逻辑
-        console.log('选中的项目ID:', projectId)
-    }
+    const handleProjectSelect = (projectId: string) => {}
 
     return (
         <StoreProvider>

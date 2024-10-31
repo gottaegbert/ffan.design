@@ -23,11 +23,6 @@
     width: 25vw; // Set the width of the container
     display: flex;
     flex-direction: column;
-
-    @media screen and (max-width: $breakpoint-sm) {
-        width: 100vw;
-        height: 10vh;
-    }
 }
 
 .projectImage {
@@ -74,7 +69,7 @@
     height: 10vh;
     width: 30vw;
     padding: 0 48px; // 修改这一行
-    font-size: 1.5rem;
+    font-size: clamp(30px, 2vh, 60px);
     background-color: transparent;
     border: none;
     text-align: left;
@@ -84,14 +79,10 @@
     display: flex; // 添加这一行
     align-items: center; // 添加这一行
     justify-content: space-between;
-    @media (max-width: 768px) {
-        height: 8vh;
-        width: 100vw;
-    }
 }
 
 .sectionButton.expanded {
-    font-size: 1rem;
+    font-size: clamp(16px, 2vh, 30px);
     text-transform: uppercase; // 将文本转换为大写
     color: var(--white);
 }
@@ -99,23 +90,12 @@
 .sectionButtonContent {
     display: flex;
     align-items: center;
+    font-family: $font-regular;
     gap: 24px;
-
-    @media (max-width: 768px) {
-        gap: 16px; // 在小屏幕上减小间隔
-    }
-
-    @media (min-width: 1200px) {
-        gap: 32px; // 在大屏幕上增加间隔
-    }
 }
 
 .plusIcon {
     transition: transform 0.3s ease;
-    @media (max-width: 768px) {
-        width: 24px;
-        height: 24px;
-    }
 }
 
 .sectionButtonSectionTwo {
@@ -133,9 +113,6 @@
 .sectionOne.expanded {
     width: 25vw; // 展开时占窗口宽度的25%
     height: 90vh;
-    @media (max-width: 768px) {
-        width: 100vw;
-    }
 }
 
 .sectionTwo {
@@ -147,9 +124,6 @@
 .sectionTwo.expanded {
     width: 25vw; // 展开时占窗口宽度的25%
     height: 90vh;
-    @media (max-width: 768px) {
-        width: 100vw;
-    }
 }
 
 /* Project list styling */
@@ -217,71 +191,6 @@
     }
 }
 
-// 移动端样式
-.mobileContainer {
-    width: 100%;
-    height: 100vh;
-    position: relative;
-    overflow: hidden;
-}
-
-.mobileImageContainer {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-}
-
-.mobileProjectImage {
-    object-fit: cover;
-}
-
-.mobileProjectInfo {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 16px;
-
-    h2 {
-        font-size: 1.5rem;
-        margin-bottom: 8px;
-    }
-
-    p {
-        font-size: 1rem;
-        margin-bottom: 12px;
-    }
-}
-
-.mobileTypeToggle {
-    background-color: #d9d9d9;
-    color: #000;
-    border: none;
-    padding: 8px 16px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-
-    &:hover {
-        background-color: #bdbdbd;
-    }
-}
-
-// 媒体查询
-@media (max-width: 768px) {
-    .layoutContainer {
-        display: none;
-    }
-}
-
-@media (min-width: 769px) {
-    .mobileContainer {
-        display: none;
-    }
-}
-
 .loadingPlaceholder {
     position: absolute;
     top: 0;
@@ -289,4 +198,204 @@
     right: 0;
     bottom: 0;
     background-color: #f0f0f0;
+}
+
+@media only screen and (max-width: $breakpoint-sm) {
+    .layoutContainer {
+        display: flex;
+        position: relative; // 添加相对定位
+        height: 100vh; // Full viewport height
+    }
+
+    .projectNav {
+        position: absolute; // 绝对定位
+        bottom: 0; // 固定在底部
+        left: 0;
+        right: 0;
+        z-index: 10; // 确保在图片上层
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh; // 高度自适应
+    }
+
+    .navContainer {
+        height: 26vh;
+        width: 100vw; // Set the width of the container
+        display: flex;
+        flex-direction: column;
+    }
+
+    .projectImage {
+        object-fit: cover;
+    }
+
+    .imageContainer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -9;
+        height: 74vh;
+        width: 100vw;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .imageTopDark {
+        background-color: black;
+        width: 100vw; // 设置图片容器的宽度为75vw
+        display: flex;
+        height: 74vh;
+
+        // 其他需要的样式
+    }
+
+    .imageBottom {
+        background-color: white; // 或者您想要的其他颜色
+        // 其他需要的样式
+    }
+    .imageTop {
+        width: 100vw; // 设置图片容器的宽度为75vw
+        display: flex;
+        height: 74vh;
+    }
+
+    .imageBottom {
+        transform: translateY(calc(100vh - 96vh)); // 使图片容器贴到窗口底部
+        width: 100vw; // 设置图片容器的宽度为75vw
+        display: flex;
+        height: 74vh; // 设置图片容器的高度为90vh
+        background-color: white; // 或者您想要的其他颜色
+    }
+
+    .section {
+        cursor: pointer;
+        width: 100vw;
+    }
+
+    .sectionButton {
+        height: 8vh;
+        width: 100vw;
+        padding: 0 15px; // 修改这一行
+        font-size: 20px;
+        background-color: transparent;
+        border: none;
+        text-align: left;
+        cursor: pointer;
+        color: var(--light-grey);
+        transition: color 0.3s ease;
+        display: flex; // 添加这一行
+        align-items: center; // 添加这一行
+        justify-content: space-between;
+    }
+
+    .sectionButton.expanded {
+        font-size: 14px;
+        text-transform: uppercase; // 将文本转换为大写
+        color: var(--white);
+    }
+
+    .sectionButtonContent {
+        display: flex;
+        align-items: center;
+        font-family: $font-regular;
+    }
+
+    .plusIcon {
+        transition: transform 0.3s ease;
+        width: 20px;
+        height: 20px;
+    }
+
+    .sectionButtonSectionTwo {
+        color: var(--font);
+    }
+
+    .sectionButtonSectionTwo.expanded {
+        color: var(--black);
+    }
+    /* Section-specific background colors */
+    .sectionOne {
+        background-color: var(--dark-grey);
+        height: 8vh;
+    }
+
+    .sectionOne.expanded {
+        position: absolute;
+        bottom: 8vh;
+        width: 100vw; // 展开时占窗口宽度的25%
+        height: 18vh;
+    }
+
+    .sectionTwo {
+        position: absolute;
+        bottom: 0;
+        background-color: var(
+            --light-grey
+        ); // Lighter grey background for Graphic Design
+    }
+
+    .sectionTwo.expanded {
+        position: absolute;
+        width: 100vw; // 展开时占窗口宽度的25%
+        height: 18vh;
+        bottom: 0;
+    }
+
+    /* Project list styling */
+    .time {
+        padding-top: 0px;
+    }
+
+    // 新增移动端项目列表容器样式
+    .mobileProjectInfo {
+        position: absolute;
+        bottom: 10vh; // 位于底部导航按钮上方
+        z-index: 20;
+        padding: 0 15px;
+        background: transparent;
+        color: var(--light-grey);
+        transform: translateY(100%);
+        font-size: 13px;
+    }
+
+    // 移动端项目标题样式
+    // 隐藏桌面端的项目列表
+    .projectListDark,
+    .projectListLight {
+        display: none;
+    }
+
+    .selectedsection1 {
+        color: var(--white);
+    }
+    .selectedsection2 {
+        color: var(--black);
+    }
+
+    .titleIndented {
+        padding-left: 2em; // 增加两格缩进
+    }
+
+    .checkAllLink {
+        cursor: pointer;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .loadingPlaceholder {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #f0f0f0;
+    }
 }

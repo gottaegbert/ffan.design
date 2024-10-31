@@ -35,6 +35,7 @@ const ProjectNav = ({ projects, onSelect }) => {
     const sectionOneRef = useRef(null)
     const sectionTwoRef = useRef(null)
     const router = useRouter()
+    const [isMobile, setIsMobile] = useState(false)
 
     const typeOne = 'Industrial Design'
     const typeTwo = 'Graphic Design'
@@ -124,7 +125,9 @@ const ProjectNav = ({ projects, onSelect }) => {
         setIsUserInteracting(true)
         setIsTypeSwitching(true)
 
-        // 添加延迟
+        // 检测是否为移动端
+        const isMobile = window.innerWidth <= 768
+
         setTimeout(() => {
             const tl = gsap.timeline({
                 onComplete: () => {
@@ -137,19 +140,37 @@ const ProjectNav = ({ projects, onSelect }) => {
                 setTypeOneExpanded(true)
                 setTypeTwoExpanded(false)
 
-                tl.to(sectionOneRef.current, {
-                    width: '25vw',
-                    height: '90vh',
-                    duration: 0.5,
-                }).to(
-                    sectionTwoRef.current,
-                    {
+                if (isMobile) {
+                    // 手机端动画
+                    tl.to(sectionOneRef.current, {
                         width: '100vw',
-                        height: '10vh',
+                        height: '18vh', // 调整高度
                         duration: 0.5,
-                    },
-                    '-=0.5'
-                )
+                    }).to(
+                        sectionTwoRef.current,
+                        {
+                            width: '100vw',
+                            height: '8vh',
+                            duration: 0.5,
+                        },
+                        '-=0.5'
+                    )
+                } else {
+                    // 桌面端动画
+                    tl.to(sectionOneRef.current, {
+                        width: '25vw',
+                        height: '90vh',
+                        duration: 0.5,
+                    }).to(
+                        sectionTwoRef.current,
+                        {
+                            width: '100vw',
+                            height: '10vh',
+                            duration: 0.5,
+                        },
+                        '-=0.5'
+                    )
+                }
 
                 if (projects[selectedProjectIndex]?.types !== typeOne) {
                     const firstProjectIndex = projects.findIndex(
@@ -162,19 +183,37 @@ const ProjectNav = ({ projects, onSelect }) => {
                 setTypeOneExpanded(false)
                 setTypeTwoExpanded(true)
 
-                tl.to(sectionOneRef.current, {
-                    width: '100vw',
-                    height: '10vh',
-                    duration: 0.5,
-                }).to(
-                    sectionTwoRef.current,
-                    {
-                        width: '25vw',
-                        height: '90vh',
+                if (isMobile) {
+                    // 手机端动画
+                    tl.to(sectionOneRef.current, {
+                        width: '100vw',
+                        height: '8vh',
                         duration: 0.5,
-                    },
-                    '-=0.5'
-                )
+                    }).to(
+                        sectionTwoRef.current,
+                        {
+                            width: '100vw',
+                            height: '18vh', // 调整高度
+                            duration: 0.5,
+                        },
+                        '-=0.5'
+                    )
+                } else {
+                    // 桌面端动画
+                    tl.to(sectionOneRef.current, {
+                        width: '100vw',
+                        height: '10vh',
+                        duration: 0.5,
+                    }).to(
+                        sectionTwoRef.current,
+                        {
+                            width: '25vw',
+                            height: '90vh',
+                            duration: 0.5,
+                        },
+                        '-=0.5'
+                    )
+                }
 
                 if (projects[selectedProjectIndex]?.types !== typeTwo) {
                     const firstProjectIndex = projects.findIndex(
@@ -184,7 +223,7 @@ const ProjectNav = ({ projects, onSelect }) => {
                     onSelect(firstProjectIndex)
                 }
             }
-        }, 300) // 300毫秒���延迟，你可以根据需要调整这个值
+        }, 300)
     }
 
     const handleSelect = (slug) => {
@@ -244,6 +283,91 @@ const ProjectNav = ({ projects, onSelect }) => {
         })
     }
 
+    // 为了避免 SSR 问题，添加一个 useEffect 来处理窗口大小变化
+    useEffect(() => {
+        const handleResize = () => {
+            const isMobile = window.innerWidth <= 768
+            // 根据需要更新状态或重新设置动画
+        }
+
+        window.addEventListener('resize', handleResize)
+        return () => window.removeEventListener('resize', handleResize)
+    }, [])
+
+    // 检测设备类型
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth <= 768)
+        }
+        checkMobile()
+        window.addEventListener('resize', checkMobile)
+        return () => window.removeEventListener('resize', checkMobile)
+    }, [])
+
+    // 渲染移动端项目列表
+    const renderMobileProjectList = () => {
+        if (!isMobile) return null
+
+        const currentType = typeOneExpanded ? typeOne : typeTwo
+        const currentProjects = filteredProjectsByType(currentType)
+        const isExpanded = typeOneExpanded || typeTwoExpanded
+        const currentProject = projects[selectedProjectIndex]
+
+        return (
+            <div
+                className={cn(styles.mobileProjectInfo, {
+                    [styles.expanded]: isExpanded,
+                    [styles.sectionOne]: typeOneExpanded,
+                    [styles.sectionTwo]: typeTwoExpanded,
+                })}
+            >
+                {isExpanded ? (
+                    // 展开状态显示项目列表
+                    <div className={styles.projectsList}>
+                        {currentProjects.map((project) => (
+                            <div
+                                key={project.slug}
+                                className={cn(styles.projectItem, {
+                                    [styles.active]:
+                                        selectedProjectIndex ===
+                                        projects.findIndex(
+                                            (p) => p.slug === project.slug
+                                        ),
+                                })}
+                                onClick={() => handleSelect(project.slug)}
+                            >
+                                <div className={styles.projectTags}>
+                                    [{project.tags}]
+                                </div>
+                                <div className={styles.projectTitle}>
+                                    {project.title}
+                                </div>
+                                <div className={styles.projectTime}>
+                                    {project.time}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                ) : (
+                    // 未展开状态只显示当前项目
+                    currentProject && (
+                        <div className={styles.currentProject}>
+                            <div className={styles.projectTags}>
+                                [{currentProject.tags}]
+                            </div>
+                            <div className={styles.projectTitle}>
+                                {currentProject.title}
+                            </div>
+                            <div className={styles.projectTime}>
+                                {currentProject.time}
+                            </div>
+                        </div>
+                    )
+                )}
+            </div>
+        )
+    }
+
     return (
         <div className={styles.layoutContainer}>
             <nav className={styles.projectNav}>
@@ -273,22 +397,142 @@ const ProjectNav = ({ projects, onSelect }) => {
                         </button>
 
                         {typeOneExpanded && (
-                            <div className={styles.projectListDark}>
-                                <div>
-                                    {Object.keys(groupedProjects)
-                                        .sort()
-                                        .reverse()
-                                        .map((year: string) => (
-                                            <div key={year}>
-                                                <h6 className={styles.time}>
-                                                    {year}
-                                                </h6>
-                                                <ul>
-                                                    {groupedProjects[year].map(
-                                                        (
-                                                            project: any,
-                                                            index: number
-                                                        ) => (
+                            <>
+                                <div className={styles.projectListDark}>
+                                    <div>
+                                        {Object.keys(groupedProjects)
+                                            .sort()
+                                            .reverse()
+                                            .map((year: string) => (
+                                                <div key={year}>
+                                                    <h6 className={styles.time}>
+                                                        {year}
+                                                    </h6>
+                                                    <ul>
+                                                        {groupedProjects[
+                                                            year
+                                                        ].map(
+                                                            (
+                                                                project: any,
+                                                                index: number
+                                                            ) => (
+                                                                <li
+                                                                    key={
+                                                                        project.slug
+                                                                    }
+                                                                    className={
+                                                                        selectedProjectIndex ===
+                                                                        projects.findIndex(
+                                                                            (
+                                                                                p
+                                                                            ) =>
+                                                                                p.slug ===
+                                                                                project.slug
+                                                                        )
+                                                                            ? styles.selectedsection1
+                                                                            : ''
+                                                                    }
+                                                                    onClick={() =>
+                                                                        handleSelect(
+                                                                            project.slug
+                                                                        )
+                                                                    }
+                                                                    onMouseEnter={() =>
+                                                                        handleMouseEnter(
+                                                                            project.slug,
+                                                                            typeOne
+                                                                        )
+                                                                    }
+                                                                    onMouseLeave={
+                                                                        handleMouseLeave
+                                                                    } // Reset hover state on mouse leave
+                                                                >
+                                                                    <h6>
+                                                                        [
+                                                                        {
+                                                                            project.tags
+                                                                        }
+                                                                        ]
+                                                                    </h6>
+                                                                    <h6
+                                                                        className={
+                                                                            styles.titleIndented
+                                                                        }
+                                                                    >
+                                                                        {
+                                                                            project.title
+                                                                        }
+                                                                    </h6>
+                                                                </li>
+                                                            )
+                                                        )}
+                                                    </ul>
+                                                    <div
+                                                        style={{
+                                                            marginTop: '2vh',
+                                                        }}
+                                                    ></div>
+                                                </div>
+                                            ))}
+                                    </div>
+                                    <div
+                                        className={cn(
+                                            `${styles.checkAllLink} ${styles.whiteText}`
+                                        )}
+                                        onClick={() =>
+                                            handleCheckAllClick(
+                                                'industrial-design'
+                                            )
+                                        }
+                                    >
+                                        <h6>
+                                            Check All Industrial Design Works
+                                        </h6>
+                                    </div>
+                                </div>
+                                {renderMobileProjectList()}
+                            </>
+                        )}
+                    </div>
+
+                    {/* Section 2: Graphic Design */}
+                    <div
+                        ref={sectionTwoRef}
+                        className={cn(
+                            'sectionTwo',
+                            `${styles.section} ${styles.sectionTwo} ${typeTwoExpanded ? styles.expanded : ''}`
+                        )}
+                    >
+                        <button
+                            className={`${styles.sectionButton} ${styles.sectionButtonSectionTwo} ${typeTwoExpanded ? styles.expanded : ''}`}
+                            onMouseEnter={() => handleToggleSection(typeTwo)}
+                        >
+                            <div className={styles.sectionButtonContent}>
+                                {typeTwo}
+                                {!typeTwoExpanded && (
+                                    <PlusIcon
+                                        color="#797979"
+                                        className={styles.plusIcon}
+                                    />
+                                )}
+                            </div>
+                        </button>
+                        <>
+                            {typeTwoExpanded && (
+                                <div className={styles.projectListLight}>
+                                    <div>
+                                        {Object.keys(groupedProjectsTypeTwo)
+                                            .sort()
+                                            .reverse()
+                                            .map((year) => (
+                                                <div key={year}>
+                                                    <h6 className={styles.time}>
+                                                        {year}
+                                                    </h6>
+                                                    <ul>
+                                                        {groupedProjectsTypeTwo[
+                                                            year
+                                                        ].map((project) => (
                                                             <li
                                                                 key={
                                                                     project.slug
@@ -300,7 +544,7 @@ const ProjectNav = ({ projects, onSelect }) => {
                                                                             p.slug ===
                                                                             project.slug
                                                                     )
-                                                                        ? styles.selectedsection1
+                                                                        ? styles.selectedsection2
                                                                         : ''
                                                                 }
                                                                 onClick={() =>
@@ -311,7 +555,7 @@ const ProjectNav = ({ projects, onSelect }) => {
                                                                 onMouseEnter={() =>
                                                                     handleMouseEnter(
                                                                         project.slug,
-                                                                        typeOne
+                                                                        typeTwo
                                                                     )
                                                                 }
                                                                 onMouseLeave={
@@ -335,124 +579,32 @@ const ProjectNav = ({ projects, onSelect }) => {
                                                                     }
                                                                 </h6>
                                                             </li>
-                                                        )
-                                                    )}
-                                                </ul>
-                                                <div
-                                                    style={{ marginTop: '2vh' }}
-                                                ></div>
-                                            </div>
-                                        ))}
+                                                        ))}
+                                                    </ul>
+                                                    <div
+                                                        style={{
+                                                            marginTop: '2vh',
+                                                        }}
+                                                    ></div>
+                                                </div>
+                                            ))}
+                                    </div>
+                                    <div
+                                        className={cn(
+                                            `${styles.checkAllLink} ${styles.blackText}`
+                                        )}
+                                        onClick={() =>
+                                            handleCheckAllClick(
+                                                'graphic-design'
+                                            )
+                                        }
+                                    >
+                                        <h6>Check All Graphic Design Works</h6>
+                                    </div>
                                 </div>
-                                <div
-                                    className={cn(
-                                        `${styles.checkAllLink} ${styles.whiteText}`
-                                    )}
-                                    onClick={() =>
-                                        handleCheckAllClick('industrial-design')
-                                    }
-                                >
-                                    <h6>Check All Industrial Design Works</h6>
-                                </div>
-                            </div>
-                        )}
-                    </div>
-
-                    {/* Section 2: Graphic Design */}
-                    <div
-                        ref={sectionTwoRef}
-                        className={cn(
-                            'sectionTwo',
-                            `${styles.section} ${styles.sectionTwo} ${typeTwoExpanded ? styles.expanded : ''}`
-                        )}
-                    >
-                        <button
-                            className={`${styles.sectionButton} ${styles.sectionButtonSectionTwo} ${typeTwoExpanded ? styles.expanded : ''}`}
-                            onMouseEnter={() => handleToggleSection(typeTwo)}
-                        >
-                            <div className={styles.sectionButtonContent}>
-                                {typeTwo}
-                                {!typeTwoExpanded && (
-                                    <PlusIcon
-                                        color="#797979"
-                                        className={styles.plusIconExpanded}
-                                    />
-                                )}
-                            </div>
-                        </button>
-                        {typeTwoExpanded && (
-                            <div className={styles.projectListLight}>
-                                <div>
-                                    {Object.keys(groupedProjectsTypeTwo)
-                                        .sort()
-                                        .reverse()
-                                        .map((year) => (
-                                            <div key={year}>
-                                                <h6 className={styles.time}>
-                                                    {year}
-                                                </h6>
-                                                <ul>
-                                                    {groupedProjectsTypeTwo[
-                                                        year
-                                                    ].map((project) => (
-                                                        <li
-                                                            key={project.slug}
-                                                            className={
-                                                                selectedProjectIndex ===
-                                                                projects.findIndex(
-                                                                    (p) =>
-                                                                        p.slug ===
-                                                                        project.slug
-                                                                )
-                                                                    ? styles.selectedsection2
-                                                                    : ''
-                                                            }
-                                                            onClick={() =>
-                                                                handleSelect(
-                                                                    project.slug
-                                                                )
-                                                            }
-                                                            onMouseEnter={() =>
-                                                                handleMouseEnter(
-                                                                    project.slug,
-                                                                    typeTwo
-                                                                )
-                                                            }
-                                                            onMouseLeave={
-                                                                handleMouseLeave
-                                                            } // Reset hover state on mouse leave
-                                                        >
-                                                            <h6>
-                                                                [{project.tags}]
-                                                            </h6>
-                                                            <h6
-                                                                className={
-                                                                    styles.titleIndented
-                                                                }
-                                                            >
-                                                                {project.title}
-                                                            </h6>
-                                                        </li>
-                                                    ))}
-                                                </ul>
-                                                <div
-                                                    style={{ marginTop: '2vh' }}
-                                                ></div>
-                                            </div>
-                                        ))}
-                                </div>
-                                <div
-                                    className={cn(
-                                        `${styles.checkAllLink} ${styles.blackText}`
-                                    )}
-                                    onClick={() =>
-                                        handleCheckAllClick('graphic-design')
-                                    }
-                                >
-                                    <h6>Check All Graphic Design Works</h6>
-                                </div>
-                            </div>
-                        )}
+                            )}
+                            {renderMobileProjectList()}
+                        </>
                     </div>
                 </div>
 
