@@ -399,3 +399,82 @@
         background-color: #f0f0f0;
     }
 }
+
+.mobileProjectInfo {
+    @media only screen and (max-width: $breakpoint-sm) {
+        position: absolute;
+        left: 0;
+        right: 0;
+        z-index: 20;
+        transition: all 0.3s ease;
+
+        // 展开状态
+        &.expanded.typeOne {
+            bottom: 20vh; // 位于展开的导航上方
+            padding: 15px;
+
+            .projectMeta {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        &.expanded.typeTwo {
+            bottom: 12vh; // 位于展开的导航上方
+            padding: 15px;
+
+            .projectMeta {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        // 收起状态
+        &.collapsed {
+            padding: 15px;
+            background: transparent;
+
+            .projectMeta {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+        }
+
+        // Industrial Design 样式
+        &.typeOne {
+            .tags,
+            .title,
+            .time {
+                color: var(--white);
+            }
+        }
+
+        // Graphic Design 样式
+        &.typeTwo {
+            .tags,
+            .title,
+            .time {
+                color: var(--black);
+            }
+        }
+
+        .projectMeta {
+            transition: all 0.3s ease;
+
+            // .tags {
+            //     font-size: 0.9rem;
+            //     margin-bottom: 4px;
+            // }
+
+            // .title {
+            //     font-size: 1.2rem;
+            //     font-weight: bold;
+            //     margin-bottom: 8px;
+            // }
+
+            // .time {
+            //     font-size: 0.9rem;
+            //     opacity: 0.8;
+            // }
+        }
+    }
+}

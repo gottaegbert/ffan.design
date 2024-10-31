@@ -308,61 +308,33 @@ const ProjectNav = ({ projects, onSelect }) => {
     const renderMobileProjectList = () => {
         if (!isMobile) return null
 
-        const currentType = typeOneExpanded ? typeOne : typeTwo
-        const currentProjects = filteredProjectsByType(currentType)
-        const isExpanded = typeOneExpanded || typeTwoExpanded
         const currentProject = projects[selectedProjectIndex]
+        const isExpanded = typeOneExpanded || typeTwoExpanded
+        const currentType = typeOneExpanded ? typeOne : typeTwo
 
         return (
             <div
                 className={cn(styles.mobileProjectInfo, {
                     [styles.expanded]: isExpanded,
-                    [styles.sectionOne]: typeOneExpanded,
-                    [styles.sectionTwo]: typeTwoExpanded,
+                    [styles.collapsed]: !isExpanded,
+                    [styles.typeOne]: typeOneExpanded,
+                    [styles.typeTwo]: typeTwoExpanded,
                 })}
             >
-                {isExpanded ? (
-                    // 展开状态显示项目列表
-                    <div className={styles.projectsList}>
-                        {currentProjects.map((project) => (
-                            <div
-                                key={project.slug}
-                                className={cn(styles.projectItem, {
-                                    [styles.active]:
-                                        selectedProjectIndex ===
-                                        projects.findIndex(
-                                            (p) => p.slug === project.slug
-                                        ),
-                                })}
-                                onClick={() => handleSelect(project.slug)}
-                            >
-                                <div className={styles.projectTags}>
-                                    [{project.tags}]
-                                </div>
-                                <div className={styles.projectTitle}>
-                                    {project.title}
-                                </div>
-                                <div className={styles.projectTime}>
-                                    {project.time}
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                ) : (
-                    // 未展开状态只显示当前项目
-                    currentProject && (
-                        <div className={styles.currentProject}>
-                            <div className={styles.projectTags}>
+                {currentProject && currentProject.types === currentType && (
+                    <>
+                        <div className={styles.projectMeta}>
+                            <div className={styles.tags}>
                                 [{currentProject.tags}]
                             </div>
-                            <div className={styles.projectTitle}>
+                            <div className={styles.title}>
                                 {currentProject.title}
                             </div>
-                            <div className={styles.projectTime}>
+                            <div className={styles.time}>
                                 {currentProject.time}
                             </div>
                         </div>
-                    )
+                    </>
                 )}
             </div>
         )
@@ -490,7 +462,6 @@ const ProjectNav = ({ projects, onSelect }) => {
                                         </h6>
                                     </div>
                                 </div>
-                                {renderMobileProjectList()}
                             </>
                         )}
                     </div>
