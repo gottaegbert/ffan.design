@@ -74,10 +74,16 @@
     padding: 0;
 
     padding-bottom: 48px;
+    @media screen and (max-width: $breakpoint-sm) {
+        padding-bottom: 0px;
+    }
 
     p {
         color: var(--dark-grey);
         font-size: 23px;
+        @media screen and (max-width: $breakpoint-sm) {
+            font-size: 14px;
+        }
         line-height: 1.2;
     }
 }
@@ -87,6 +93,7 @@
     overflow-y: hidden; /* 禁用垂直滚动 */
     scroll-behavior: smooth;
     gap: 48px; /* Add space between items */
+
     padding: 20px 0 0 0; /* Add padding to the container */
     -webkit-overflow-scrolling: touch; /* 在iOS设备上提供平滑滚动 */
 }
@@ -98,7 +105,7 @@
     ); /* Each item takes 50% of the container width minus the gap */
 }
 
-@media (max-width: 768px) {
+@media only screen and (min-width: $breakpoint-sm) {
     .horizontalScrollContainer > * {
         width: calc(
             100% - 20px
@@ -167,6 +174,7 @@
         position: relative;
         height: 100%;
         display: flex;
+
         .projImage {
             object-fit: contain;
             width: 100% !important;
@@ -189,6 +197,9 @@
 }
 .description {
     margin-bottom: 48px;
+    @media screen and (max-width: $breakpoint-sm) {
+        margin-bottom: 0px;
+    }
     p {
         padding-top: 10px;
         color: var(--dark-grey);

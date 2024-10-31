@@ -203,6 +203,7 @@
 @media only screen and (max-width: $breakpoint-sm) {
     .layoutContainer {
         display: flex;
+        z-index: 9;
         position: relative; // 添加相对定位
         height: 100vh; // Full viewport height
     }

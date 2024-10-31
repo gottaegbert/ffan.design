@@ -293,10 +293,16 @@ const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
                                                             <div
                                                                 style={{
                                                                     marginTop:
-                                                                        idx ===
-                                                                        0
-                                                                            ? '12px'
-                                                                            : '24px',
+                                                                        window.innerWidth <=
+                                                                        768
+                                                                            ? idx ===
+                                                                              0
+                                                                                ? '6px'
+                                                                                : '12px'
+                                                                            : idx ===
+                                                                                0
+                                                                              ? '12px'
+                                                                              : '24px',
                                                                 }}
                                                             ></div>
                                                         </div>
