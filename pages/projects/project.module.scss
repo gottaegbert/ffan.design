@@ -75,7 +75,7 @@
 
     padding-bottom: 48px;
     @media screen and (max-width: $breakpoint-sm) {
-        padding-bottom: 0px;
+        padding-bottom: 15px;
     }
 
     p {
@@ -94,7 +94,7 @@
     scroll-behavior: smooth;
     gap: 48px; /* Add space between items */
     @media screen and (max-width: $breakpoint-sm) {
-        gap: 10px;
+        gap: 15px;
     }
     padding: 20px 0 0 0; /* Add padding to the container */
     -webkit-overflow-scrolling: touch; /* 在iOS设备上提供平滑滚动 */
@@ -195,7 +195,7 @@
 .description {
     margin-bottom: 48px;
     @media screen and (max-width: $breakpoint-sm) {
-        margin-bottom: 20px;
+        margin-bottom: 15px;
     }
     p {
         padding-top: 10px;
