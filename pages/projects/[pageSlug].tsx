@@ -39,14 +39,6 @@ const ProjectPage: React.FC<Props> = ({ data, moreProjs, slug }) => {
         return match ? match[1] : null
     }
     useEffect(() => {
-        gsap.set(title.current, { opacity: 1, yPercent: 100 })
-        gsap.to(title.current, {
-            duration: 1,
-            yPercent: 0,
-            ease: 'power4',
-            stagger: 0.1,
-            delay: 0.2,
-        })
         gsap.to(imgForeground.current, {
             duration: 1,
             width: 0,

@@ -59,7 +59,7 @@
     align-items: center; /* Vertically center the items */
     gap: 10px;
     @media screen and (max-width: $breakpoint-sm) {
-        font-size: 20px;
+        font-size: clamp(12px, 2vw, 23px);
     }
 }
 
@@ -93,7 +93,9 @@
     overflow-y: hidden; /* 禁用垂直滚动 */
     scroll-behavior: smooth;
     gap: 48px; /* Add space between items */
-
+    @media screen and (max-width: $breakpoint-sm) {
+        gap: 10px;
+    }
     padding: 20px 0 0 0; /* Add padding to the container */
     -webkit-overflow-scrolling: touch; /* 在iOS设备上提供平滑滚动 */
 }
@@ -103,13 +105,8 @@
     width: calc(
         50% - 20px
     ); /* Each item takes 50% of the container width minus the gap */
-}
-
-@media only screen and (min-width: $breakpoint-sm) {
-    .horizontalScrollContainer > * {
-        width: calc(
-            100% - 20px
-        ); /* On small screens, each item takes full width minus the gap */
+    @media screen and (max-width: $breakpoint-sm) {
+        width: calc(100%);
     }
 }
 
@@ -198,7 +195,7 @@
 .description {
     margin-bottom: 48px;
     @media screen and (max-width: $breakpoint-sm) {
-        margin-bottom: 0px;
+        margin-bottom: 20px;
     }
     p {
         padding-top: 10px;
