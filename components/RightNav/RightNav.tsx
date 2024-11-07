@@ -18,10 +18,20 @@ const RightNav: React.FC<RightNavProps> = ({ autoExpand = false }) => {
     const toggleRightNav = () => {
         setIsRightNavVisible(!isRightNavVisible)
     }
-
     const handleHomeClick = (e) => {
         e.preventDefault()
-        router.push('/')
+
+        router.push('/').then(() => {
+            // 等待路由跳转完成后，滚动到指定元素
+            const pageWrapper = document.getElementById('page-wrapper')
+            if (pageWrapper) {
+                pageWrapper.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start',
+                })
+            }
+        })
+
         setIsRightNavVisible(false)
     }
 

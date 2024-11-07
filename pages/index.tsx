@@ -195,7 +195,10 @@ const IndexPage: React.FC<Props> = ({ data }) => {
                         <BasicMeta url={'/'} />
                         {/* Page wrapper for two-column layout */}
                         <div className={styles.container}>
-                            <div className={styles.pageWrapper}>
+                            <div
+                                className={styles.pageWrapper}
+                                id="page-wrapper"
+                            >
                                 {/* Left-side Navigation */}
                                 <div className={styles.leftNav}>
                                     <ProjectNav
