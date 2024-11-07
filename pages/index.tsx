@@ -176,10 +176,12 @@ const IndexPage: React.FC<Props> = ({ data }) => {
             router.push('/#work-section', undefined, { shallow: true })
         }
     }
-    const filteredProjects = selectedProjects.filter((project) => {
-        if (filter === 'All Works') return true
-        return project.types === filter
-    })
+    const filteredProjects = selectedProjects
+        .filter((project) => {
+            if (filter === 'All Works') return true
+            return project.types === filter
+        })
+        .sort((a, b) => a.order - b.order) // 按 order 升序排序
 
     const handleProjectSelect = (projectId: string) => {}
 

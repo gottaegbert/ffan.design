@@ -21,6 +21,7 @@ export type selectedProject = {
     tags: string[]
     title: string
     time: string
+    order: number
 }
 
 export type moreWork = {

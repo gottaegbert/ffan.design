@@ -8,13 +8,13 @@ type Props = {
     title: string
     image: string
     url?: string
-    time?: string
+    date?: string
     slug?: string
     description?: string
     tags?: string[]
 }
 
-const Work: React.FC<Props> = ({ image, title, time, slug, tags }) => {
+const Work: React.FC<Props> = ({ image, title, date, slug, tags }) => {
     const ref = React.createRef<HTMLDivElement>()
     return (
         <Link legacyBehavior href={slug}>
@@ -52,7 +52,7 @@ const Work: React.FC<Props> = ({ image, title, time, slug, tags }) => {
                             {tags.map((tag, ix) => (
                                 <React.Fragment key={'tag' + ix}>
                                     <p>[{tag}]</p>
-                                    <p className={'small indentbig'}> {time}</p>
+                                    <p className={'small indentbig'}> {date}</p>
                                 </React.Fragment>
                             ))}
                         </div>
