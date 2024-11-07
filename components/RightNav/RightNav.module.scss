@@ -67,7 +67,7 @@
     cursor: pointer;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: $breakpoint-sm) {
     .rightNav {
         position: fixed;
         top: 0;
@@ -116,6 +116,9 @@
     text-decoration: none; /* 移除下划线 */
     &:hover {
         color: var(--accent-color); /* 悬停时的颜色 */
+    }
+    @media screen and (max-width: $breakpoint-sm) {
+        font-size: 36px;
     }
 }
 
