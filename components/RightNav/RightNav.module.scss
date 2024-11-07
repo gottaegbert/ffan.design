@@ -14,7 +14,9 @@
     z-index: 11;
     color: #797979;
     @media screen and (max-width: $breakpoint-sm) {
-        right: 0px;
+        right: -25px;
+        position: fixed;
+        top: 0px; // 改为 0
         font-size: 1.4rem;
         height: 10vh;
     }

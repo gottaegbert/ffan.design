@@ -7,23 +7,22 @@
     gap: 20em;
     font-weight: normal;
     font-size: 1rem;
+
     color: var(--font-color);
     display: inline-block;
+    white-space: nowrap; // 添加这行防止换行
     span {
         display: flex; // 确保 span 元素在一行中
         justify-content: space-between; // 在行中均匀分布
         align-items: center; // 垂直居中对齐
-        font-size: clamp(14px, 2vw, 30px);
+        font-size: clamp(12px, 2vw, 30px);
         font-weight: 400;
         letter-spacing: -0.25px;
-        @media only screen and (min-width: $breakpoint-sm) {
+        margin-right: 2em;
+        @media only screen and (max-width: $breakpoint-sm) {
             display: flex;
             overflow: hidden;
-            gap: 3em;
-        }
-        // 针对手机端的样式
-        @media only screen and (max-width: $breakpoint-sm) {
-            margin-right: 1.5em; // 为每个 span 添加右边距
+            margin-right: 1em;
         }
     }
 }
