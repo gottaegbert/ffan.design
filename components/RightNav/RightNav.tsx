@@ -108,6 +108,16 @@ const RightNav: React.FC<RightNavProps> = ({ autoExpand = false }) => {
                     <p>Based in Brooklyn & Beijing</p>
                     <p>Instagram: ffan.design</p>
                     <p>Email: info@ffandesign.com</p>
+                    <p>-</p>
+                    <p>
+                        Developed by{' '}
+                        <a
+                            href="mailto:635872585@qq.com"
+                            className={styles.contactlink}
+                        >
+                            @Siyu{' '}
+                        </a>{' '}
+                    </p>
                 </div>
             </aside>
         </div>
