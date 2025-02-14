@@ -4,6 +4,7 @@
     height: 100vh;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
+    -webkit-overflow-scrolling: touch; // 增加平滑滚动支持
 }
 
 .projTitle {

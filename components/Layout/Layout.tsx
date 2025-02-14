@@ -30,7 +30,9 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     return (
         <>
             <main>{children}</main>
-            {router.pathname !== '/' && <CustomScrollbar />}
+            {router.pathname !== '/' &&
+                router.pathname !== '/awards' &&
+                router.pathname !== '/contact' && <CustomScrollbar />}
         </>
     )
 }

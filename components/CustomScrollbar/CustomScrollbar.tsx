@@ -7,17 +7,34 @@ const CustomScrollbar: React.FC = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            const scrollHeight =
-                document.documentElement.scrollHeight - window.innerHeight
-            const currentScroll = window.pageYOffset
-            const newScrollPercentage = (currentScroll / scrollHeight) * 100
+            // 获取实际可滚动容器
+            const container =
+                document.querySelector('.container') || document.documentElement
+            const scrollHeight = container.scrollHeight - window.innerHeight
+            const currentScroll = container.scrollTop || window.pageYOffset
+
+            // 确保不会出现负值或超过100的情况
+            const newScrollPercentage = Math.min(
+                Math.max((currentScroll / scrollHeight) * 100, 0),
+                100
+            )
             setScrollPercentage(newScrollPercentage)
         }
 
+        // 同时监听 window 和容器的滚动事件
+        const container = document.querySelector('.container')
+        if (container) {
+            container.addEventListener('scroll', handleScroll)
+        }
         window.addEventListener('scroll', handleScroll)
         handleScroll() // 初始化滚动条位置
 
-        return () => window.removeEventListener('scroll', handleScroll)
+        return () => {
+            if (container) {
+                container.removeEventListener('scroll', handleScroll)
+            }
+            window.removeEventListener('scroll', handleScroll)
+        }
     }, [])
 
     useEffect(() => {
@@ -27,7 +44,9 @@ const CustomScrollbar: React.FC = () => {
             const scrollbarThumbHeight = scrollbarRef.current.clientHeight
             const maxTop = scrollbarHeight - scrollbarThumbHeight
             const newTop = (scrollPercentage / 100) * maxTop
-            scrollbarRef.current.style.top = `${newTop}px`
+
+            // 使用 transform 代替 top 属性以获得更好的性能
+            scrollbarRef.current.style.transform = `translateY(${newTop}px)`
         }
     }, [scrollPercentage])
 
