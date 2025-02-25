@@ -185,6 +185,33 @@ const IndexPage: React.FC<Props> = ({ data }) => {
 
     const handleProjectSelect = (projectId: string) => {}
 
+    useEffect(() => {
+        const preloadProjectsInViewport = () => {
+            // 预加载当前视口附近的图片
+            const viewportHeight = window.innerHeight
+            const scrollTop = window.scrollY
+            const preloadMargin = viewportHeight * 2 // 预加载视口上下2倍高度范围内的图片
+            
+            filteredProjects.forEach(project => {
+                const projectEl = document.querySelector(`[data-project-id="${project.slug}"]`)
+                if (projectEl) {
+                    const rect = projectEl.getBoundingClientRect()
+                    const isNearViewport = rect.top < viewportHeight + preloadMargin && rect.bottom > -preloadMargin
+                    
+                    if (isNearViewport && project.image) {
+                        const img = new Image()
+                        img.src = '/' + project.image
+                    }
+                }
+            })
+        }
+        
+        preloadProjectsInViewport()
+        window.addEventListener('scroll', preloadProjectsInViewport)
+        
+        return () => window.removeEventListener('scroll', preloadProjectsInViewport)
+    }, [filteredProjects])
+
     return (
         <StoreProvider>
             {showPreloader && !isPreloaderComplete && (
