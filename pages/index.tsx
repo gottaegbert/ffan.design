@@ -3,7 +3,7 @@ import * as React from 'react'
 import styles from './index.module.scss'
 import Layout from '../components/Layout/Layout'
 import cn from 'classnames'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import StaggeredTitle from '../components/StaggeredTitle/StaggeredTitle'
 import CaseStudy from '../components/CaseStudy/CaseStudy'
 import { GetStaticProps } from 'next'
@@ -16,6 +16,7 @@ import RightNav from '../components/RightNav/RightNav'
 import { useRouter } from 'next/router'
 import Footer from '../components/Footer/Footer'
 import Preloader from '../components/Preloader'
+import gsap from 'gsap'
 
 type Props = {
     data: homePageData
@@ -54,9 +55,14 @@ const IndexPage: React.FC<Props> = ({ data }) => {
         setIsPreloaderComplete(true)
     }
 
-    const [filter, setFilter] = useState('All Works') // 添加过滤状态
+    const [filter, setFilter] = useState('All Works')
+    const [prevFilter, setPrevFilter] = useState(null)
+    const projectsContainerRef = useRef(null)
     const [isLoading, setIsLoading] = useState(true)
     const [loadingProgress, setLoadingProgress] = useState(0)
+    const [isFilterChanging, setIsFilterChanging] = useState(false)
+    const [previousFilter, setPreviousFilter] = useState('Selected Awards')
+    const projectItemsRef = useRef([])
 
     useEffect(() => {
         const handleRouteChange = (url: string) => {
@@ -162,23 +168,70 @@ const IndexPage: React.FC<Props> = ({ data }) => {
         }
     }, [router])
 
-    const handleLabelClick = (label: string) => {
-        setFilter(label)
-        let filterParam = ''
-        if (label === 'Industrial Design') filterParam = 'industrial-design'
-        else if (label === 'Graphic Design') filterParam = 'graphic-design'
-
-        if (filterParam) {
-            router.push(`/#work-section?filter=${filterParam}`, undefined, {
-                shallow: true,
-            })
-        } else {
-            router.push('/#work-section', undefined, { shallow: true })
-        }
+    const handleLabelClick = (label) => {
+        if (label === filter) return
+        
+        // 记录前一个过滤器
+        setPreviousFilter(filter)
+        setIsFilterChanging(true)
+        
+        // 创建移出动画
+        const timeline = gsap.timeline({
+            onComplete: () => {
+                // 动画完成后更新过滤器
+                setFilter(label)
+                
+                // 在下一帧中创建移入动画
+                setTimeout(() => {
+                    // 获取所有新的项目元素
+                    const newItems = document.querySelectorAll(`.${styles.caseStudyCol}`)
+                    
+                    gsap.fromTo(
+                        newItems,
+                        {
+                            opacity: 0,
+                            y: 50,
+                            scale: 0.95
+                        },
+                        {
+                            opacity: 1,
+                            y: 0,
+                            scale: 1,
+                            duration: 0.5,
+                            stagger: 0.1,
+                            ease: "power2.out",
+                            onComplete: () => {
+                                setIsFilterChanging(false)
+                            }
+                        }
+                    )
+                }, 0)
+            }
+        })
+        
+        // 选择当前显示的项目
+        const currentItems = document.querySelectorAll(`.${styles.caseStudyCol}`)
+        
+        // 确定移动方向 (向左或向右)
+        const moveDirection = label === 'All Works' ? -100 : 
+                            (label === 'Industrial Design' && filter === 'All Works') ? 100 : 
+                            (label === 'Graphic Design' && filter !== 'Graphic Design') ? 100 : -100
+        
+        // 执行移出动画
+        timeline.to(currentItems, {
+            opacity: 0,
+            x: moveDirection,
+            scale: 0.95,
+            duration: 0.4,
+            stagger: 0.05,
+            ease: "power2.in"
+        })
     }
+
     const filteredProjects = selectedProjects
         .filter((project) => {
-            if (filter === 'All Works') return true
+            if (filter === 'All Works') return true 
+            if (filter === 'Selected Awards') return true
             return project.types === filter
         })
         .sort((a, b) => a.order - b.order) // 按 order 升序排序
@@ -245,21 +298,21 @@ const IndexPage: React.FC<Props> = ({ data }) => {
                                     styles.selectedWorkContainer
                                 )}
                             >
-                                <div className="grid">
-                                    <div>
-                                        <StaggeredTitle
-                                            label1="All Works"
-                                            label2="Industrial Design"
-                                            label3="Graphic Design"
-                                            classname={styles.projTitle}
-                                            onLabelClick={handleLabelClick}
-                                            activeLabel={filter}
-                                        />
-                                    </div>
-                                    {filteredProjects.map(
-                                        (proj, idx: number) => (
+                                <div className="container">
+                                    <div className="grid" ref={projectsContainerRef}>
+                                        <div>
+                                            <StaggeredTitle
+                                                label1="All Works"
+                                                label2="Industrial Design"
+                                                label3="Graphic Design"
+                                                classname={styles.projTitle}
+                                                onLabelClick={handleLabelClick}
+                                                activeLabel={filter}
+                                            />
+                                        </div>
+                                        {filteredProjects.map((proj, idx: number) => (
                                             <div
-                                                key={idx}
+                                                key={`${filter}-${proj.slug}-${idx}`}
                                                 className={cn(
                                                     'col-12 col-sm-6',
                                                     styles.caseStudyCol,
@@ -268,11 +321,12 @@ const IndexPage: React.FC<Props> = ({ data }) => {
                                                             idx === 1,
                                                     }
                                                 )}
+                                                style={{opacity: isFilterChanging ? 0 : 1}}
                                             >
                                                 <CaseStudy {...proj} />
                                             </div>
-                                        )
-                                    )}
+                                        ))}
+                                    </div>
                                 </div>
                                 <Footer />
                             </section>
