@@ -46,6 +46,7 @@
 .imageContainer {
   position: relative;
   width: 100%;
+  aspect-ratio: 16/9;
   padding-bottom: 66.67%; /* 3:2比例 */
   overflow: hidden;
 }
@@ -60,7 +61,6 @@
   background-size: 200% 100%;
   animation: shimmer 1.5s infinite;
   transition: opacity 0.3s ease;
-  border-radius: 4px; // Optional: add some rounded corners
 }
 
 .hidden {

@@ -3,19 +3,19 @@
 .layoutContainer {
     display: flex;
     height: 100vh; // Full viewport height
+    width: 100vw;
 }
 
 .projectNav {
-    overflow-x: visible;
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* Internet Explorer 10+ */
     list-style: none;
+    overflow: hidden;
     padding: 0;
     margin: 0;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    height: 100%; // 设置高度为窗口高度
 }
 
 .navContainer {
@@ -214,11 +214,11 @@
         left: 0;
         right: 0;
         z-index: 10; // 确保在图片上层
+        overflow: hidden;
         display: flex;
         flex-direction: column;
         width: 100%;
         min-height: 100%;
-        height: auto; // 改为自适应高度
     }
 
     .navContainer {
@@ -239,7 +239,6 @@
         right: 0;
         bottom: 0;
         z-index: -9;
-        height: 72vh;
         width: 100vw;
 
         img {
