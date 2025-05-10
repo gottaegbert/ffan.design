@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import styles from './CaseStudy.module.scss'
 import cn from 'classnames'
 import Link from 'next/link'
@@ -17,63 +17,94 @@ const CaseStudy: React.FC<selectedProject> = ({
     time,
 }) => {
     const [imageLoaded, setImageLoaded] = useState(false)
+    const skeletonRef = useRef<HTMLDivElement>(null)
+    const shineRef = useRef<HTMLDivElement>(null)
+    const containerRef = useRef<HTMLDivElement>(null)
+    
+    // Setup skeleton animation on mount
+    useEffect(() => {
+        if (!skeletonRef.current || !shineRef.current) return
+        
+        // Create shine animation
+        const shineTl = gsap.timeline({ repeat: -1 })
+        shineTl.fromTo(
+            shineRef.current,
+            { x: "-100%" },
+            { x: "100%", duration: 1.5, ease: "power2.inOut" }
+        )
+        
+        return () => {
+            shineTl.kill()
+        }
+    }, [])
+    
+    // Handle image loading
+    useEffect(() => {
+        if (imageLoaded && skeletonRef.current) {
+            // 图片加载完成后，降低骨架屏的不透明度
+            gsap.to(skeletonRef.current, {
+                opacity: 0.2,
+                duration: 0.3
+            })
+        }
+    }, [imageLoaded])
 
     return (
         <Link legacyBehavior href={slug}>
             <a className={styles.projWrap}>
                 <article>
-            
+                    <div ref={containerRef} className={styles.imgContainer}>
+                        <div 
+                            ref={skeletonRef} 
+                            className={styles.skeleton}
+                        >
+                            <div ref={shineRef} className={styles.skeletonShine}></div>
+                        </div>
                         
-                  
-              
-                        <div className={styles.imgContainer}>
-                        <div className={`${styles.skeleton} ${imageLoaded ? styles.hidden : ''}`}></div>
-                            {image.endsWith('.mp4') ? (
-                                <video
-                                    src={'/' + image}
-                                    autoPlay
-                                    loop
-                                    playsInline
-                                    controls={false}
-                                    muted
-                                    className={cn(
-                                        styles.pgImage,
-                                        'js-img selected-pj-img'
-                                    )}
-                                />
-                            ) : (
-                                <Image
-                                    src={'/' + image}
-                                    layout="fill"
-                                    alt={title}
-                                    className={cn(
-                                        styles.pgImage,
-                                        imageLoaded ? styles.loaded : styles.loading,
-                                        'js-img selected-pj-img'
-                                    )}
-                                    onLoadingComplete={() => setImageLoaded(true)}
-                                    placeholder="blur"
-                                    blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/2wBDAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/wAARCAAJAAoDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD+xT/gmL/wWQ/aP/akfte+I/hh+0P4r8HeLNC0n4WeMfF/hG2svBPh/wAOXVnrtpq/hiOK6utQ0jTbW6u4JLLWrvyY5Z3SMm4YqGKlV/lVvY7f/gjL/wAqmvxU/wCzw/2xf/Tz+z3X9FP7EX/BSb9lr9m+b9o34d/FHx7pGgfFvwh8cvHvw1+D0jPJHp3xU8O3urNfnRrK9FrNaQ+KtOm1fZ5d8qz3FvbWu9Utbm32T/0lftFf8E5v+Cj/AIO/4Ju/tFfCH4W/Br4neGvHWp/sr/GLSNM8R3XhnxTdw2154c8HarA97ZYNRL+Ss0TCQx/MMYYqcZ/j2pKUZe0dSm5VKb/eSTu4u6U5pK8WtGtrNpJo/Cqlac5yhzTcoTnGNWcnKSTbjFylFXcdE04u6aujP//Z"
-                             
-                                />
-                            )}
-                        </div>
+                        {image.endsWith('.mp4') ? (
+                            <video
+                                src={'/' + image}
+                                autoPlay
+                                loop
+                                playsInline
+                                controls={false}
+                                muted
+                                className={cn(
+                                    styles.pgImage,
+                                    'js-img selected-pj-img'
+                                )}
+                                onLoadedData={() => setImageLoaded(true)}
+                            />
+                        ) : (
+                            <Image
+                                src={'/' + image}
+                                layout="fill"
+                                alt={title}
+                                className={cn(
+                                    styles.pgImage,
+                                    'js-img selected-pj-img'
+                                )}
+                                onLoadingComplete={() => setImageLoaded(true)}
+                                placeholder="empty"
+                            />
+                        )}
+                    </div>
 
-                        <div className={cn(styles.bottom)}>
-                            <div className={'tagContainer'}>
-                                {tags.map((tag, ix) => (
-                                    <React.Fragment key={'tag' + ix}>
-                                        <p>[{tag}]</p>
-                                        <p className={'small indentbig'}>
-                                            {' '}
-                                            {time}
-                                        </p>
-                                    </React.Fragment>
-                                ))}
-                            </div>
-                            <p className="indent">{title}</p>
+                    <div className={cn(styles.bottom)}>
+                        <div className={'tagContainer'}>
+                            {tags.map((tag, ix) => (
+                                <React.Fragment key={'tag' + ix}>
+                                    <p>[{tag}]</p>
+                                    <p className={'small indentbig'}>
+                                        {' '}
+                                        {time}
+                                    </p>
+                                </React.Fragment>
+                            ))}
                         </div>
-                    </article>
+                        <p className="indent">{title}</p>
+                    </div>
+                </article>
             </a>
         </Link>
     )

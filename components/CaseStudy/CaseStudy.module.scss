@@ -20,7 +20,8 @@
             position: relative;
             display: block;
             width: 100%;
-            aspect-ratio: 16/9; // Add a default aspect ratio
+            aspect-ratio: 16/9;
+            min-height: 200px; /* 确保有最小高度 */
             @media only screen and (min-width: $breakpoint-md) {
                 margin-bottom: 10px;
             }
@@ -34,10 +35,11 @@
                 width: 100% !important;
                 position: relative !important;
                 height: unset !important;
+                z-index: 1; /* 确保图片在骨架屏上方 */
             }
 
             video.pgImage {
-                display: block; // 添加 display: block;。这会移除图片下方可能存在的小空隙。
+                display: block;
             }
         }
     }
@@ -46,7 +48,6 @@
 .imageContainer {
   position: relative;
   width: 100%;
-  aspect-ratio: 16/9;
   padding-bottom: 66.67%; /* 3:2比例 */
   overflow: hidden;
 }
@@ -56,36 +57,39 @@
   top: 0;
   left: 0;
   width: 100%;
-  aspect-ratio: 16/9; 
-  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-  background-size: 200% 100%;
-  animation: shimmer 1.5s infinite;
+  height: 100%; /* 使用height: 100%而不是aspect-ratio */
+  background: #f0f0f0;
+  overflow: hidden;
+  border-radius: 4px;
+  will-change: opacity;
+  z-index: 0; /* 确保骨架屏在图片下方 */
   transition: opacity 0.3s ease;
 }
 
+.skeletonShine {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  will-change: transform;
+}
+
 .hidden {
-  opacity: 0;
+  opacity: 0.2; /* 不完全隐藏，保留一点灰色 */
+  visibility: visible;
 }
 
 .pgImage {
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  will-change: opacity, transform;
 }
 
-.loading {
-  opacity: 0;
-  transform: scale(1.05);
-}
-
-.loaded {
-  opacity: 1;
-  transform: scale(1);
-}
-
-@keyframes shimmer {
-  0% {
-    background-position: -200% 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
+.bottom {
+  margin-top: 8px;
 }
