@@ -59,8 +59,15 @@ const RightNav: React.FC<RightNavProps> = ({ autoExpand = false }) => {
             <button
                 className={`${styles.hamburgerMenu} ${isRightNavVisible ? styles.graphicDesignExpanded : ''}`}
                 onClick={toggleRightNav}
+                aria-label="Toggle menu"
             >
-                &#9776;
+                <span
+                    className={`${styles.burgerLines} ${isRightNavVisible ? styles.open : ''}`}
+                >
+                    <span className={styles.line}></span>
+                    <span className={styles.line}></span>
+                    <span className={styles.line}></span>
+                </span>
             </button>
 
             {/* 右侧导航栏 */}

@@ -9,7 +9,6 @@
     align-items: center; // 添加这一行
     background: none;
     border: none;
-    font-size: clamp(1.2rem, 2vw, 2rem); // 使用 clamp 函数来设置字体大小
     cursor: pointer;
     z-index: 11;
     color: #797979;
@@ -17,7 +16,6 @@
         right: -25px;
         position: fixed;
         top: 0px; // 改为 0
-        font-size: 1.4rem;
         height: 10vh;
     }
 }
@@ -28,6 +26,37 @@
 
 .hamburgerMenu.graphicDesignExpanded {
     color: var(--light-grey); // Graphic Design 展开时文字颜色为黑色
+}
+
+.burgerLines {
+    position: relative;
+    width: 26px;
+    height: 18px;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.35s ease;
+}
+
+.line {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: currentColor;
+    border-radius: 2px;
+    transition: transform 0.35s ease, opacity 0.2s ease;
+}
+
+.burgerLines.open .line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.burgerLines.open .line:nth-child(2) {
+    opacity: 0;
+}
+
+.burgerLines.open .line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
 }
 
 .rightNav {
