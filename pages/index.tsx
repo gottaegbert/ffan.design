@@ -27,6 +27,7 @@ const IndexPage: React.FC<Props> = ({ data }) => {
     const [showPreloader, setShowPreloader] = useState(false)
     const [isPreloaderComplete, setIsPreloaderComplete] = useState(false)
     const [showMainContent, setShowMainContent] = useState(false)
+    const [canPreloadImages, setCanPreloadImages] = useState(false)
     const [autoExpandRightNav, setAutoExpandRightNav] = useState(false)
     const router = useRouter()
 
@@ -48,11 +49,16 @@ const IndexPage: React.FC<Props> = ({ data }) => {
         } else {
             // 如果用户已访问，直接显示主内容
             setShowMainContent(true)
+            setCanPreloadImages(true)
         }
     }, [])
 
     const handlePreloaderComplete = () => {
         setIsPreloaderComplete(true)
+    }
+
+    const handleIntroVideoStart = () => {
+        setCanPreloadImages(true)
     }
 
     const [filter, setFilter] = useState('All Works')
@@ -101,16 +107,27 @@ const IndexPage: React.FC<Props> = ({ data }) => {
     }, [router])
 
     useEffect(() => {
+        if (!canPreloadImages) return
+
         const totalImages = selectedProjects.reduce((acc, project) => {
             return acc + (project.image ? 1 : 0)
         }, 0)
+
+        if (totalImages === 0) {
+            setLoadingProgress(100)
+            setIsLoading(false)
+            return
+        }
+
+        setIsLoading(true)
+        setLoadingProgress(0)
 
         let loadedImages = 0
 
         const preloadImage = (src: string) => {
             return new Promise((resolve) => {
                 const img = document.createElement('img')
-                img.src = src
+                img.src = src.startsWith('/') ? src : `/${src}`
                 img.onload = img.onerror = () => {
                     loadedImages++
                     setLoadingProgress((loadedImages / totalImages) * 100)
@@ -124,22 +141,25 @@ const IndexPage: React.FC<Props> = ({ data }) => {
                 .filter((project) => project.image)
                 .map((project) => preloadImage(project.image))
 
-            // 设置最长加载时间
+            let timeoutId: ReturnType<typeof setTimeout> | undefined
             const timeoutPromise = new Promise((resolve) => {
-                setTimeout(() => {
+                timeoutId = setTimeout(() => {
                     console.warn('Loading timed out')
                     resolve(null)
-                })
+                }, 10000)
             })
 
-            // 等待所有图片加载完成或超时
             await Promise.race([Promise.all(imagePromises), timeoutPromise])
+
+            if (timeoutId) {
+                clearTimeout(timeoutId)
+            }
 
             setIsLoading(false)
         }
 
         preloadImages()
-    }, [selectedProjects])
+    }, [selectedProjects, canPreloadImages])
 
     const handleSkip = () => {
         setIsLoading(false)
@@ -239,10 +259,11 @@ const IndexPage: React.FC<Props> = ({ data }) => {
     const handleProjectSelect = (projectId: string) => {}
 
     useEffect(() => {
+        if (!canPreloadImages) return
+
         const preloadProjectsInViewport = () => {
             // 预加载当前视口附近的图片
             const viewportHeight = window.innerHeight
-            const scrollTop = window.scrollY
             const preloadMargin = viewportHeight * 2 // 预加载视口上下2倍高度范围内的图片
             
             filteredProjects.forEach(project => {
@@ -253,7 +274,7 @@ const IndexPage: React.FC<Props> = ({ data }) => {
                     
                     if (isNearViewport && project.image) {
                         const img = new Image()
-                        img.src = '/' + project.image
+                        img.src = project.image.startsWith('/') ? project.image : `/${project.image}`
                     }
                 }
             })
@@ -263,12 +284,15 @@ const IndexPage: React.FC<Props> = ({ data }) => {
         window.addEventListener('scroll', preloadProjectsInViewport)
         
         return () => window.removeEventListener('scroll', preloadProjectsInViewport)
-    }, [filteredProjects])
+    }, [filteredProjects, canPreloadImages])
 
     return (
         <StoreProvider>
             {showPreloader && !isPreloaderComplete && (
-                <Preloader onComplete={handlePreloaderComplete} />
+                <Preloader
+                    onComplete={handlePreloaderComplete}
+                    onVideoReady={handleIntroVideoStart}
+                />
             )}
             {showMainContent && (
                 <>
